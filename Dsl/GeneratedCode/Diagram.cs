@@ -326,6 +326,7 @@ namespace JA.Risk
 			global::JA.Risk.PortShape.DecoratorsInitialized += PortShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.ContainerShape.DecoratorsInitialized += ContainerShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.InteractsLink.DecoratorsInitialized += InteractsLinkDecoratorMap.OnDecoratorsInitialized;
+			global::JA.Risk.ContainsLink.DecoratorsInitialized += ContainsLinkDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -382,6 +383,24 @@ namespace JA.Risk
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Interaction.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ContainsLink.
+		/// </summary>
+		internal static partial class ContainsLinkDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ContainsLink.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Contains.NumberDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Number").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -990,7 +1009,9 @@ namespace JA.Risk
 		/// so we can update the decorator host's bounds.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::JA.Risk.NamedElement), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::JA.Risk.Container), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Interaction), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::JA.Risk.Contains), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
@@ -1006,12 +1027,28 @@ namespace JA.Risk
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Port.DomainClassId);
 					}
 				}
+				else if (e.DomainProperty.Id == global::JA.Risk.Container.TypeDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::JA.Risk.ContainerShape.FindContainerShapeDecorator("Type");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Container.DomainClassId);
+					}
+				}
 				else if (e.DomainProperty.Id == global::JA.Risk.Interaction.NameDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::JA.Risk.InteractsLink.FindInteractsLinkDecorator("Name");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Interaction.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::JA.Risk.Contains.NumberDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::JA.Risk.ContainsLink.FindContainsLinkDecorator("Number");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Contains.DomainClassId);
 					}
 				}
 			}

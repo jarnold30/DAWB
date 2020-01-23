@@ -185,6 +185,13 @@
       </Target>
     </DomainRelationship>
     <DomainRelationship Id="48911222-c25b-409b-b5be-86345561a3f1" Description="Description for JA.Risk.Contains" Name="Contains" DisplayName="Contains" Namespace="JA.Risk">
+      <Properties>
+        <DomainProperty Id="fd9bfec8-ebcd-4cf0-8b64-5e054eb4b237" Description="Description for JA.Risk.Contains.Number" Name="Number" DisplayName="Number">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <Source>
         <DomainRole Id="08ee4421-b90f-44e3-ac07-40df44d49993" Description="Description for JA.Risk.Contains.SourceContainer" Name="SourceContainer" DisplayName="Source Container" PropertyName="TargetContainers" PropertyDisplayName="Target Containers">
           <RolePlayer>
@@ -239,15 +246,15 @@
     </CompartmentShape>
   </Shapes>
   <Connectors>
-    <Connector Id="df711bf1-2083-4550-a040-755ee2d314ab" Description="" Name="InteractsLink" DisplayName="Interacts Link" Namespace="JA.Risk" FixedTooltipText="Interacts Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
+    <Connector Id="df711bf1-2083-4550-a040-755ee2d314ab" Description="" Name="InteractsLink" DisplayName="Interacts Link" Namespace="JA.Risk" FixedTooltipText="Interacts Link" Color="113, 111, 110" Thickness="0.01">
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="4d24e955-8568-4b61-bbcb-3292a9f7f276" Description="" Name="GeneralizationLink" DisplayName="Generalization Link" Namespace="JA.Risk" FixedTooltipText="Generalization Link" Color="113, 111, 110" SourceEndStyle="HollowArrow" Thickness="0.01" />
-    <Connector Id="b24d3f7b-f24f-488a-92ff-ebe349688eb5" Description="Description for JA.Risk.ContainsLink" Name="ContainsLink" DisplayName="Contains Link" Namespace="JA.Risk" FixedTooltipText="Contains Link">
-      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
-        <IconDecorator Name="Aggregation" DisplayName="Aggregation" DefaultIcon="Resources\CommentLinkTool.bmp" />
+    <Connector Id="b24d3f7b-f24f-488a-92ff-ebe349688eb5" Description="Description for JA.Risk.ContainsLink" Name="ContainsLink" DisplayName="Contains Link" Namespace="JA.Risk" FixedTooltipText="Contains Link" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow">
+      <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+        <TextDecorator Name="Number" DisplayName="Number" DefaultText="Number" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -346,6 +353,11 @@
       </XmlClassData>
       <XmlClassData TypeName="Contains" MonikerAttributeName="" SerializeId="true" MonikerElementName="containsMoniker" ElementName="contains" MonikerTypeName="ContainsMoniker">
         <DomainRelationshipMoniker Name="Contains" />
+        <ElementData>
+          <XmlPropertyData XmlName="number">
+            <DomainPropertyMoniker Name="Contains/Number" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ContainsLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="containsLinkMoniker" ElementName="containsLink" MonikerTypeName="ContainsLinkMoniker">
         <ConnectorMoniker Name="ContainsLink" />
@@ -526,6 +538,14 @@
       <ConnectorMap>
         <ConnectorMoniker Name="ContainsLink" />
         <DomainRelationshipMoniker Name="Contains" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ContainsLink/Number" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Contains/Number" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -537,19 +557,19 @@
       <XmlSerializationBehaviorMoniker Name="ComponentsSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="Risk">
-      <ElementTool Name="Container" ToolboxIcon="Resources\Container.bmp" Caption="Container" Tooltip="Create a Container" HelpKeyword="CreateContainerF1Keyword">
+      <ElementTool Name="Container" ToolboxIcon="Resources\Container.bmp" Caption="Container" Tooltip="A container or structure" HelpKeyword="CreateContainerF1Keyword">
         <DomainClassMoniker Name="Container" />
       </ElementTool>
-      <ElementTool Name="Port" ToolboxIcon="Resources\Port.bmp" Caption="Port" Tooltip="Port" HelpKeyword="Port">
+      <ElementTool Name="Port" ToolboxIcon="Resources\Port.bmp" Caption="Port" Tooltip="An interaction method" HelpKeyword="Port">
         <DomainClassMoniker Name="Port" />
       </ElementTool>
       <ConnectionTool Name="Generalization" ToolboxIcon="resources\GeneralizationTool.bmp" Caption="Generalization" Tooltip="Connect a Container to a base Container." HelpKeyword="ConnectGeneralizationF1Keyword" ReversesDirection="true">
         <ConnectionBuilderMoniker Name="Risk/GeneralizationBuilder" />
       </ConnectionTool>
-      <ConnectionTool Name="Interaction" ToolboxIcon="Resources\GeneralizationTool.bmp" Caption="Interaction" Tooltip="Connect 2 Ports to show an Interaction" HelpKeyword="Interaction">
+      <ConnectionTool Name="Interaction" ToolboxIcon="Resources\InteractionTool.bmp" Caption="Interaction" Tooltip="Connect 2 Ports to show an Interaction" HelpKeyword="Interaction">
         <ConnectionBuilderMoniker Name="Risk/InteractionBuilder" />
       </ConnectionTool>
-      <ConnectionTool Name="Contains" ToolboxIcon="Resources\Contains.bmp" Caption="Contains" Tooltip="Contains" HelpKeyword="Contains">
+      <ConnectionTool Name="Contains" ToolboxIcon="Resources\ContainsTool.bmp" Caption="Contains" Tooltip="Show that one container can be found located within another" HelpKeyword="Contains">
         <ConnectionBuilderMoniker Name="Risk/ContainsBuilder" />
       </ConnectionTool>
     </ToolboxTab>

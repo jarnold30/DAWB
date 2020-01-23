@@ -108,6 +108,7 @@ namespace JA.Risk
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "Type", Container.TypeDomainPropertyId, typeof(Container.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(Interaction), "Name", Interaction.NameDomainPropertyId, typeof(Interaction.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Contains), "Number", Contains.NumberDomainPropertyId, typeof(Contains.NumberPropertyHandler)),
 			};
 		}
 		/// <summary>

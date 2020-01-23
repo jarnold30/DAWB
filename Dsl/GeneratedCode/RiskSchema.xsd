@@ -564,6 +564,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Number -->
+        <xsd:attribute name="number" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

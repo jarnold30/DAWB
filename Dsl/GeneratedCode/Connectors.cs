@@ -135,15 +135,6 @@ namespace JA.Risk
 			
 		}
 		
-		/// <summary>
-		/// Initializes resources associated with this connector instance.
-		/// </summary>
-		protected override void InitializeInstanceResources()
-		{
-			base.InitializeInstanceResources();
-			this.SetDecorators(null, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorEmptyArrow, new DslDiagrams::SizeD(0.1,0.1), false);
-		}
-		
 		#endregion
 		
 		#region Decorators
@@ -456,6 +447,15 @@ namespace JA.Risk
 		#endregion
 		
 		#region Connector styles
+		/// <summary>
+		/// Initializes resources associated with this connector instance.
+		/// </summary>
+		protected override void InitializeInstanceResources()
+		{
+			base.InitializeInstanceResources();
+			this.SetDecorators(DslDiagrams::LinkDecorator.DecoratorFilledDiamond, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorFilledArrow, new DslDiagrams::SizeD(0.1,0.1), false);
+		}
+		
 		#endregion
 		
 		#region Decorators
@@ -476,9 +476,14 @@ namespace JA.Risk
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ImageField field1 = new DslDiagrams::ImageField("Aggregation");
-			field1.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("ContainsLinkAggregationDefaultImage"));
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Number");
+			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainsLinkNumberDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.TargetTop, DslDiagrams::PointD.Empty, true);
 			decorators.Add(decorator1);
 				
 		}

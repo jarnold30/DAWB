@@ -1641,6 +1641,93 @@ namespace JA.Risk
 			return GetRoleCollection<DslModeling::LinkedElementCollection<Container>, Container>(element, SourceContainerDomainRoleId);
 		}
 		#endregion
+		#region Number domain property code
+		
+		/// <summary>
+		/// Number domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NumberDomainPropertyId = new global::System.Guid(0xfd9bfec8, 0xebcd, 0x4cf0, 0x8b, 0x64, 0x5e, 0x05, 0x4e, 0xb4, 0xb2, 0x37);
+		
+		/// <summary>
+		/// Storage for Number
+		/// </summary>
+		private global::System.String numberPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Number domain property.
+		/// Description for JA.Risk.Contains.Number
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Contains/Number.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Contains/Number.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("fd9bfec8-ebcd-4cf0-8b64-5e054eb4b237")]
+		public global::System.String Number
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return numberPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NumberPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Contains.Number domain property.
+		/// </summary>
+		internal sealed partial class NumberPropertyHandler : DslModeling::DomainPropertyValueHandler<Contains, global::System.String>
+		{
+			private NumberPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Contains.Number domain property value handler.
+			/// </summary>
+			public static readonly NumberPropertyHandler Instance = new NumberPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Contains.Number domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NumberDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Contains element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.numberPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Contains element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.numberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region SourceContainer link accessor
 		/// <summary>
 		/// Get the list of Contains links to a Container.

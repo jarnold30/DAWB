@@ -388,15 +388,6 @@ namespace JA.Risk
 			field2.DefaultFocusable = true;
 			shapeFields.Add(field2);
 			
-			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Type");
-			field3.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerShapeTypeDefaultText");
-			field3.DefaultFocusable = true;
-			field3.DefaultAutoSize = true;
-			field3.AnchoringBehavior.MinimumHeightInLines = 1;
-			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field3);
-			
 		}
 		
 		/// <summary>
@@ -416,8 +407,14 @@ namespace JA.Risk
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ExpandCollapseDecorator(this.Store, (DslDiagrams::ToggleButtonField)field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
 				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Type");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Type");
+			field3.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerShapeTypeDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator3);
 				
 		}

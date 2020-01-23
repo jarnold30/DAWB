@@ -9204,7 +9204,7 @@ namespace JA.Risk
 			
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
+	
 			// Read nested XML elements, which include at least the monikerized instance of target role-player TargetContainer
 			if (!serializationContext.Result.Failed)
 			{
@@ -9316,7 +9316,26 @@ namespace JA.Risk
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// There is no property to read; do nothing
+			Contains instanceOfContains = element as Contains;
+			global::System.Diagnostics.Debug.Assert(instanceOfContains != null, "Expecting an instance of Contains");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				string attribNumber = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "number");
+				if (attribNumber != null)
+				{
+					global::System.String valueOfNumber;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribNumber, out valueOfNumber))
+					{
+						instanceOfContains.Number = valueOfNumber;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "number", typeof(global::System.String), attribNumber);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -9800,7 +9819,20 @@ namespace JA.Risk
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			// There are no properties; do nothing
+			Contains instanceOfContains = element as Contains;
+			global::System.Diagnostics.Debug.Assert(instanceOfContains != null, "Expecting an instance of Contains");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfContains.Number;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "number", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>

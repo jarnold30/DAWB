@@ -56,7 +56,7 @@ namespace JA.Risk
 							true); 
 			this.AddExplorerNodeCustomSetting(global::JA.Risk.Contains.DomainClassId, 
 							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainsExplorerImage")), 
-							false); 
+							true); 
 		}
 	
 	

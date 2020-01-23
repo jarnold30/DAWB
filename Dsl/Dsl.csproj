@@ -159,6 +159,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ContainsTool.bmp" />
     <Content Include="Resources\Contains.bmp" />
     <Content Include="Resources\Port.bmp" />
     <None Include="DslDefinition.dsl.diagram">
@@ -229,16 +230,9 @@
     <Content Include="Resources\Agent.bmp" />
     <Content Include="Resources\Assets.bmp" />
     <Content Include="Resources\Container.bmp" />
-    <Content Include="Resources\OutPortImage.bmp" />
-    <Content Include="Resources\InPortImage.bmp" />
-    <Content Include="Resources\ComponentTool.bmp" />
-    <Content Include="Resources\CommentLinkTool.bmp" />
-    <Content Include="Resources\CommentTool.bmp" />
-    <Content Include="Resources\InPortTool.bmp" />
     <Content Include="Resources\File.ico" />
     <Content Include="Resources\GeneralizationTool.bmp" />
-    <Content Include="Resources\OutPortTool.bmp" />
-    <Content Include="Resources\ConnectionTool.bmp" />
+    <Content Include="Resources\InteractionTool.bmp" />
     <None Include="GeneratedCode\Serializer.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Serializer.cs</LastGenOutput>
