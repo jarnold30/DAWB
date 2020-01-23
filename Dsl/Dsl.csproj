@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.20725</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{76fd8c02-9d0e-40dd-ab94-ff12ea69e391}</ProjectGuid>
+    <ProjectGuid>{76FD8C02-9D0E-40DD-AB94-FF12EA69E391}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JA.Risk</RootNamespace>
@@ -159,6 +159,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Contains.bmp" />
+    <Content Include="Resources\Port.bmp" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>
@@ -224,6 +226,9 @@
       </SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Agent.bmp" />
+    <Content Include="Resources\Assets.bmp" />
+    <Content Include="Resources\Container.bmp" />
     <Content Include="Resources\OutPortImage.bmp" />
     <Content Include="Resources\InPortImage.bmp" />
     <Content Include="Resources\ComponentTool.bmp" />

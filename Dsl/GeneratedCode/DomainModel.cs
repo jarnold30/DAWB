@@ -71,19 +71,29 @@ namespace JA.Risk
 				typeof(RiskModel),
 				typeof(Container),
 				typeof(Port),
+				typeof(Asset),
+				typeof(ThreatAgent),
 				typeof(ContainerHasPorts),
 				typeof(RiskModelHasContainers),
 				typeof(Generalization),
-				typeof(ContainerHasTargetContainers),
-				typeof(PortReferencesTargetPorted),
+				typeof(Interaction),
+				typeof(ContainerHasAssets),
+				typeof(ContainerHasAgents),
+				typeof(Contains),
 				typeof(RiskDiagram),
-				typeof(AssociationLink),
+				typeof(InteractsLink),
 				typeof(GeneralizationLink),
-				typeof(Connector1),
-				typeof(ComponentShape),
+				typeof(ContainsLink),
+				typeof(ContainerShape),
 				typeof(PortShape),
 				typeof(global::JA.Risk.FixUpDiagram),
+				typeof(global::JA.Risk.DecoratorPropertyChanged),
 				typeof(global::JA.Risk.ConnectorRolePlayerChanged),
+				typeof(global::JA.Risk.CompartmentItemAddRule),
+				typeof(global::JA.Risk.CompartmentItemDeleteRule),
+				typeof(global::JA.Risk.CompartmentItemRolePlayerChangeRule),
+				typeof(global::JA.Risk.CompartmentItemRolePlayerPositionChangeRule),
+				typeof(global::JA.Risk.CompartmentItemChangeRule),
 			};
 		}
 		/// <summary>
@@ -96,7 +106,8 @@ namespace JA.Risk
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
-				new DomainMemberInfo(typeof(Container), "Kind", Container.KindDomainPropertyId, typeof(Container.KindPropertyHandler)),
+				new DomainMemberInfo(typeof(Container), "Type", Container.TypeDomainPropertyId, typeof(Container.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(Interaction), "Name", Interaction.NameDomainPropertyId, typeof(Interaction.NamePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -113,10 +124,14 @@ namespace JA.Risk
 				new DomainRolePlayerInfo(typeof(RiskModelHasContainers), "Container", RiskModelHasContainers.ContainerDomainRoleId),
 				new DomainRolePlayerInfo(typeof(Generalization), "Superclass", Generalization.SuperclassDomainRoleId),
 				new DomainRolePlayerInfo(typeof(Generalization), "Subclass", Generalization.SubclassDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ContainerHasTargetContainers), "SourceContainer", ContainerHasTargetContainers.SourceContainerDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ContainerHasTargetContainers), "TargetContainer", ContainerHasTargetContainers.TargetContainerDomainRoleId),
-				new DomainRolePlayerInfo(typeof(PortReferencesTargetPorted), "SourcePort", PortReferencesTargetPorted.SourcePortDomainRoleId),
-				new DomainRolePlayerInfo(typeof(PortReferencesTargetPorted), "TargetPort", PortReferencesTargetPorted.TargetPortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(Interaction), "SourcePort", Interaction.SourcePortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(Interaction), "TargetPort", Interaction.TargetPortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ContainerHasAssets), "Container", ContainerHasAssets.ContainerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ContainerHasAssets), "Asset", ContainerHasAssets.AssetDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ContainerHasAgents), "Container", ContainerHasAgents.ContainerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ContainerHasAgents), "ThreatAgent", ContainerHasAgents.ThreatAgentDomainRoleId),
+				new DomainRolePlayerInfo(typeof(Contains), "SourceContainer", Contains.SourceContainerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(Contains), "TargetContainer", Contains.TargetContainerDomainRoleId),
 			};
 		}
 		#endregion
@@ -138,15 +153,18 @@ namespace JA.Risk
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(12);
 				createElementMap.Add(typeof(RiskModel), 0);
 				createElementMap.Add(typeof(Container), 1);
-				createElementMap.Add(typeof(RiskDiagram), 2);
-				createElementMap.Add(typeof(AssociationLink), 3);
-				createElementMap.Add(typeof(GeneralizationLink), 4);
-				createElementMap.Add(typeof(Connector1), 5);
-				createElementMap.Add(typeof(ComponentShape), 6);
-				createElementMap.Add(typeof(PortShape), 7);
+				createElementMap.Add(typeof(Port), 2);
+				createElementMap.Add(typeof(Asset), 3);
+				createElementMap.Add(typeof(ThreatAgent), 4);
+				createElementMap.Add(typeof(RiskDiagram), 5);
+				createElementMap.Add(typeof(InteractsLink), 6);
+				createElementMap.Add(typeof(GeneralizationLink), 7);
+				createElementMap.Add(typeof(ContainsLink), 8);
+				createElementMap.Add(typeof(ContainerShape), 9);
+				createElementMap.Add(typeof(PortShape), 10);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -162,12 +180,15 @@ namespace JA.Risk
 			{
 				case 0: return new RiskModel(partition, propertyAssignments);
 				case 1: return new Container(partition, propertyAssignments);
-				case 2: return new RiskDiagram(partition, propertyAssignments);
-				case 3: return new AssociationLink(partition, propertyAssignments);
-				case 4: return new GeneralizationLink(partition, propertyAssignments);
-				case 5: return new Connector1(partition, propertyAssignments);
-				case 6: return new ComponentShape(partition, propertyAssignments);
-				case 7: return new PortShape(partition, propertyAssignments);
+				case 2: return new Port(partition, propertyAssignments);
+				case 3: return new Asset(partition, propertyAssignments);
+				case 4: return new ThreatAgent(partition, propertyAssignments);
+				case 5: return new RiskDiagram(partition, propertyAssignments);
+				case 6: return new InteractsLink(partition, propertyAssignments);
+				case 7: return new GeneralizationLink(partition, propertyAssignments);
+				case 8: return new ContainsLink(partition, propertyAssignments);
+				case 9: return new ContainerShape(partition, propertyAssignments);
+				case 10: return new PortShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -190,12 +211,14 @@ namespace JA.Risk
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementLinkMap.Add(typeof(ContainerHasPorts), 0);
 				createElementLinkMap.Add(typeof(RiskModelHasContainers), 1);
 				createElementLinkMap.Add(typeof(Generalization), 2);
-				createElementLinkMap.Add(typeof(ContainerHasTargetContainers), 3);
-				createElementLinkMap.Add(typeof(PortReferencesTargetPorted), 4);
+				createElementLinkMap.Add(typeof(Interaction), 3);
+				createElementLinkMap.Add(typeof(ContainerHasAssets), 4);
+				createElementLinkMap.Add(typeof(ContainerHasAgents), 5);
+				createElementLinkMap.Add(typeof(Contains), 6);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -213,8 +236,10 @@ namespace JA.Risk
 				case 0: return new ContainerHasPorts(partition, roleAssignments, propertyAssignments);
 				case 1: return new RiskModelHasContainers(partition, roleAssignments, propertyAssignments);
 				case 2: return new Generalization(partition, roleAssignments, propertyAssignments);
-				case 3: return new ContainerHasTargetContainers(partition, roleAssignments, propertyAssignments);
-				case 4: return new PortReferencesTargetPorted(partition, roleAssignments, propertyAssignments);
+				case 3: return new Interaction(partition, roleAssignments, propertyAssignments);
+				case 4: return new ContainerHasAssets(partition, roleAssignments, propertyAssignments);
+				case 5: return new ContainerHasAgents(partition, roleAssignments, propertyAssignments);
+				case 6: return new Contains(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -335,7 +360,13 @@ namespace JA.Risk
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::JA.Risk.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::JA.Risk.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::JA.Risk.ConnectorRolePlayerChanged));
+			ruleManager.EnableRule(typeof(global::JA.Risk.CompartmentItemAddRule));
+			ruleManager.EnableRule(typeof(global::JA.Risk.CompartmentItemDeleteRule));
+			ruleManager.EnableRule(typeof(global::JA.Risk.CompartmentItemRolePlayerChangeRule));
+			ruleManager.EnableRule(typeof(global::JA.Risk.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.EnableRule(typeof(global::JA.Risk.CompartmentItemChangeRule));
 		}
 		
 		/// <summary>
@@ -347,7 +378,13 @@ namespace JA.Risk
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::JA.Risk.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::JA.Risk.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::JA.Risk.ConnectorRolePlayerChanged));
+			ruleManager.DisableRule(typeof(global::JA.Risk.CompartmentItemAddRule));
+			ruleManager.DisableRule(typeof(global::JA.Risk.CompartmentItemDeleteRule));
+			ruleManager.DisableRule(typeof(global::JA.Risk.CompartmentItemRolePlayerChangeRule));
+			ruleManager.DisableRule(typeof(global::JA.Risk.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.DisableRule(typeof(global::JA.Risk.CompartmentItemChangeRule));
 		}
 		#endregion
 	}
@@ -385,7 +422,8 @@ namespace JA.Risk
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::JA.Risk.ContainerHasPorts.PortDomainRoleId, true);
 			DomainRoles.Add(global::JA.Risk.RiskModelHasContainers.ContainerDomainRoleId, true);
-			DomainRoles.Add(global::JA.Risk.ContainerHasTargetContainers.TargetContainerDomainRoleId, true);
+			DomainRoles.Add(global::JA.Risk.ContainerHasAssets.AssetDomainRoleId, true);
+			DomainRoles.Add(global::JA.Risk.ContainerHasAgents.ThreatAgentDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

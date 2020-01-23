@@ -51,6 +51,14 @@ namespace JA.Risk
 		/// Toolbox item filter string used to identify Generalization connector tool.
 		/// </summary>
 		public const string GeneralizationFilterString = "Generalization.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify Interaction connector tool.
+		/// </summary>
+		public const string InteractionFilterString = "Interaction.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify Contains connector tool.
+		/// </summary>
+		public const string ContainsFilterString = "Contains.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -98,7 +106,7 @@ namespace JA.Risk
 		{
 			get
 			{
-				return 2;
+				return 5;
 			}
 		}
 		
@@ -147,18 +155,34 @@ namespace JA.Risk
 			global::System.Globalization.CultureInfo resourceCulture = global::System.Globalization.CultureInfo.CurrentUICulture;
 			switch(itemId)
 			{
-				case "JA.Risk.ComponentToolboxItem":
-					// Add Component shape tool.
+				case "JA.Risk.ContainerToolboxItem":
+					// Add Container shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"JA.Risk.ComponentToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"JA.Risk.ContainerToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						1, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("ComponentToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ComponentToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("ContainerToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainerToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"CreateComponentF1Keyword", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("ComponentToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"CreateContainerF1Keyword", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ContainerToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::JA.Risk.Container.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "JA.Risk.PortToolboxItem":
+					// Add Port shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"JA.Risk.PortToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						2, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("PortToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("PortToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Port", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("PortToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::JA.Risk.Port.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
@@ -168,7 +192,7 @@ namespace JA.Risk
 					// Add Generalization connector tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"JA.Risk.GeneralizationToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						2, // Position relative to other items in the same toolbox tab.
+						3, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("GeneralizationToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("GeneralizationToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -179,6 +203,42 @@ namespace JA.Risk
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(GeneralizationFilterString)
+						});
+					break;
+				case "JA.Risk.InteractionToolboxItem":
+
+					// Add Interaction connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"JA.Risk.InteractionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("InteractionToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("InteractionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Interaction", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("InteractionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(InteractionFilterString)
+						});
+					break;
+				case "JA.Risk.ContainsToolboxItem":
+
+					// Add Contains connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"JA.Risk.ContainsToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						5, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ContainsToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainsToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Contains", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ContainsToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ContainsFilterString)
 						});
 					break;
 				default:

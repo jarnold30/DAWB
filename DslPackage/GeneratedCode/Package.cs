@@ -29,13 +29,21 @@ namespace JA.Risk
 	[VSShell::ProvideToolWindowVisibility(typeof(RiskExplorerToolWindow), Constants.RiskEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@RiskToolboxTab;JA.Risk.Dsl.dll", "JA.Risk.RiskToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
-					"@ComponentToolboxItem;JA.Risk.Dsl.dll", 
-					"JA.Risk.ComponentToolboxItem", 
+					"@ContainerToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.ContainerToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"CreateComponentF1Keyword", 
-					"@ComponentToolboxBitmap;JA.Risk.Dsl.dll", 
+					"CreateContainerF1Keyword", 
+					"@ContainerToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@PortToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.PortToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Port", 
+					"@PortToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
 					"@GeneralizationToolboxItem;JA.Risk.Dsl.dll", 
 					"JA.Risk.GeneralizationToolboxItem", 
@@ -43,7 +51,23 @@ namespace JA.Risk
 					"ConnectGeneralizationF1Keyword", 
 					"@GeneralizationToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
-					Index = 1)]
+					Index = 2)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@InteractionToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.InteractionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Interaction", 
+					"@InteractionToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 3)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@ContainsToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.ContainsToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Contains", 
+					"@ContainsToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 4)]
 	[VSShell::ProvideEditorFactory(typeof(RiskEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RiskEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RiskEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

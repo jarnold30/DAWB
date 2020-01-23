@@ -14,14 +14,14 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace JA.Risk
 {
 	/// <summary>
-	/// DomainClass AssociationLink
+	/// DomainClass InteractsLink
 	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.AssociationLink.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.AssociationLink.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("JA.Risk.InteractsLink.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.InteractsLink.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("df711bf1-2083-4550-a040-755ee2d314ab")]
-	public partial class AssociationLink : DslDiagrams::BinaryLinkShape
+	public partial class InteractsLink : DslDiagrams::BinaryLinkShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -86,9 +86,9 @@ namespace JA.Risk
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with AssociationLink.
+		/// Finds a decorator associated with InteractsLink.
 		/// </summary>
-		public static DslDiagrams::Decorator FindAssociationLinkDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindInteractsLinkDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -164,25 +164,15 @@ namespace JA.Risk
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("TargetRoleName");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssociationLinkTargetRoleNameDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("InteractsLinkNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.TargetTop, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty, true);
 			decorators.Add(decorator1);
-				
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("SourceRoleName");
-			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssociationLinkSourceRoleNameDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ConnectorDecorator(field2, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator2);
 				
 		}
 		
@@ -191,7 +181,7 @@ namespace JA.Risk
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// AssociationLink domain class Id.
+		/// InteractsLink domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdf711bf1, 0x2083, 0x4550, 0xa0, 0x40, 0x75, 0x5e, 0xe2, 0xd3, 0x14, 0xab);
 		/// <summary>
@@ -199,7 +189,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AssociationLink(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public InteractsLink(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -209,7 +199,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AssociationLink(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public InteractsLink(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -364,15 +354,15 @@ namespace JA.Risk
 namespace JA.Risk
 {
 	/// <summary>
-	/// DomainClass Connector1
-	/// Description for JA.Risk.Connector1
+	/// DomainClass ContainsLink
+	/// Description for JA.Risk.ContainsLink
 	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.Connector1.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.Connector1.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("JA.Risk.ContainsLink.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ContainsLink.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("dbcff03e-7231-4582-b83d-c269f8ea6614")]
-	public partial class Connector1 : DslDiagrams::BinaryLinkShape
+	[DslModeling::DomainObjectId("b24d3f7b-f24f-488a-92ff-ebe349688eb5")]
+	public partial class ContainsLink : DslDiagrams::BinaryLinkShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -437,31 +427,76 @@ namespace JA.Risk
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with Connector1.
+		/// Finds a decorator associated with ContainsLink.
 		/// </summary>
-		public static DslDiagrams::Decorator FindConnector1Decorator(string decoratorName)
+		public static DslDiagrams::Decorator FindContainsLinkDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
 		}
 		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
 		#endregion
 		
 		#region Connector styles
 		#endregion
 		
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ImageField field1 = new DslDiagrams::ImageField("Aggregation");
+			field1.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("ContainsLinkAggregationDefaultImage"));
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+		}
+		
+		#endregion
+		
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// Connector1 domain class Id.
+		/// ContainsLink domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdbcff03e, 0x7231, 0x4582, 0xb8, 0x3d, 0xc2, 0x69, 0xf8, 0xea, 0x66, 0x14);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb24d3f7b, 0xf24f, 0x488a, 0x92, 0xff, 0xeb, 0xe3, 0x49, 0x68, 0x8e, 0xb5);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public Connector1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ContainsLink(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -471,7 +506,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public Connector1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ContainsLink(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

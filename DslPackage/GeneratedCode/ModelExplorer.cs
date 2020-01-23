@@ -38,6 +38,25 @@ namespace JA.Risk
 		protected RiskExplorerBase(global::System.IServiceProvider serviceProvider) : base(serviceProvider)
 		{
 			
+			
+			// Adds custom tree node settings...
+			global::System.Resources.ResourceManager resourceManager = global::JA.Risk.RiskDomainModel.SingletonResourceManager;
+			
+			this.AddExplorerNodeCustomSetting(global::JA.Risk.Asset.DomainClassId, 
+							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AssetExplorerImage")), 
+							true); 
+			this.AddExplorerNodeCustomSetting(global::JA.Risk.Container.DomainClassId, 
+							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainerExplorerImage")), 
+							true); 
+			this.AddExplorerNodeCustomSetting(global::JA.Risk.ThreatAgent.DomainClassId, 
+							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ThreatAgentExplorerImage")), 
+							true); 
+			this.AddExplorerNodeCustomSetting(global::JA.Risk.Port.DomainClassId, 
+							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("PortExplorerImage")), 
+							true); 
+			this.AddExplorerNodeCustomSetting(global::JA.Risk.Contains.DomainClassId, 
+							DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainsExplorerImage")), 
+							false); 
 		}
 	
 	
