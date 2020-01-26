@@ -184,12 +184,8 @@
     <ProjectReference Include="..\Dsl\RiskDsl.csproj">
       <Project>{76fd8c02-9d0e-40dd-ab94-ff12ea69e391}</Project>
       <Name>RiskDsl</Name>
-      <IncludeOutputGroupsInVSIX>
-        BuiltProjectOutputGroup;
-      </IncludeOutputGroupsInVSIX>
-      <IncludeOutputGroupsInVSIXLocalOnly>
-        DebugSymbolsProjectOutputGroup;
-      </IncludeOutputGroupsInVSIXLocalOnly>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
