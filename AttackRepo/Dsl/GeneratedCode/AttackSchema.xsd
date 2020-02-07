@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="AttackSchema" targetNamespace="http://schemas.microsoft.com/dsltools/Attack" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/Attack" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- AttackGraph -->
+  <xsd:element name="attackGraph" type="AttackGraph" substitutionGroup="namedElement" />
+  <xsd:complexType name="AttackGraph">
+    <xsd:annotation>
+      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: AttackGraphHasElements -->
+          <xsd:element name="elements" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of AttackGraphHasElements</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="attackGraphHasElements">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from AttackGraphHasElements needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="flowElement" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AttackGraph Moniker -->
+  <xsd:element name="attackGraphMoniker" type="AttackGraphMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="AttackGraphMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AttackGraph instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FlowElement -->
+  <xsd:element name="flowElement" abstract="true" type="FlowElement" substitutionGroup="namedElement" />
+  <xsd:complexType name="FlowElement" abstract="true" >
+    <xsd:annotation>
+      <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: FlowRelationship -->
+          <xsd:element name="targetFlowElements" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FlowRelationship</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="flowRelationship" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FlowRelationship needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FlowElement Moniker -->
+  <xsd:element name="flowElementMoniker" abstract="true" type="FlowElementMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="FlowElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FlowElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Synchronisation -->
+  <xsd:element name="synchronisation" type="Synchronisation" substitutionGroup="flowElement" />
+  <xsd:complexType name="Synchronisation">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Synchronisation Moniker -->
+  <xsd:element name="synchronisationMoniker" type="SynchronisationMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="SynchronisationMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Synchronisation instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StartPoint -->
+  <xsd:element name="startPoint" type="StartPoint" substitutionGroup="flowElement" />
+  <xsd:complexType name="StartPoint">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StartPoint Moniker -->
+  <xsd:element name="startPointMoniker" type="StartPointMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="StartPointMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StartPoint instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndPoint -->
+  <xsd:element name="endPoint" type="EndPoint" substitutionGroup="flowElement" />
+  <xsd:complexType name="EndPoint">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndPoint Moniker -->
+  <xsd:element name="endPointMoniker" type="EndPointMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="EndPointMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EndPoint instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MergeBranch -->
+  <xsd:element name="mergeBranch" type="MergeBranch" substitutionGroup="flowElement" />
+  <xsd:complexType name="MergeBranch">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MergeBranch Moniker -->
+  <xsd:element name="mergeBranchMoniker" type="MergeBranchMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="MergeBranchMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for MergeBranch instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Task -->
+  <xsd:element name="task" type="Task" substitutionGroup="flowElement" />
+  <xsd:complexType name="Task">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: TaskHasPreConditions -->
+          <xsd:element name="preConditions" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of TaskHasPreConditions</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="taskHasPreConditions" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TaskHasPreConditions needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Task Moniker -->
+  <xsd:element name="taskMoniker" type="TaskMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="TaskMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Task instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- State -->
+  <xsd:element name="state" type="State" substitutionGroup="flowElement" />
+  <xsd:complexType name="State">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateHasPostConditions -->
+          <xsd:element name="postConditions" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of StateHasPostConditions</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateHasPostConditions" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateHasPostConditions needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- State Moniker -->
+  <xsd:element name="stateMoniker" type="StateMoniker" substitutionGroup="flowElementMoniker" />
+  <xsd:complexType name="StateMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for State instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FlowElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NamedElement -->
+  <xsd:element name="namedElement" type="NamedElement" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="NamedElement">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NamedElement Moniker -->
+  <xsd:element name="namedElementMoniker" type="NamedElementMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="NamedElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for NamedElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Condition -->
+  <xsd:element name="condition" type="Condition" substitutionGroup="namedElement" />
+  <xsd:complexType name="Condition">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Condition Moniker -->
+  <xsd:element name="conditionMoniker" type="ConditionMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ConditionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Condition instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PreCondition -->
+  <xsd:element name="preCondition" type="PreCondition" substitutionGroup="condition" />
+  <xsd:complexType name="PreCondition">
+    <xsd:complexContent>
+      <xsd:extension base="Condition">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PreCondition Moniker -->
+  <xsd:element name="preConditionMoniker" type="PreConditionMoniker" substitutionGroup="conditionMoniker" />
+  <xsd:complexType name="PreConditionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for PreCondition instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ConditionMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PostCondition -->
+  <xsd:element name="postCondition" type="PostCondition" substitutionGroup="condition" />
+  <xsd:complexType name="PostCondition">
+    <xsd:complexContent>
+      <xsd:extension base="Condition">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PostCondition Moniker -->
+  <xsd:element name="postConditionMoniker" type="PostConditionMoniker" substitutionGroup="conditionMoniker" />
+  <xsd:complexType name="PostConditionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for PostCondition instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ConditionMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AttackGraphHasElements -->
+  <xsd:element name="attackGraphHasElements" abstract="true" type="AttackGraphHasElements" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="AttackGraphHasElements" abstract="true" >
+    <xsd:annotation>
+      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end FlowElement -->
+          <xsd:element ref="flowElement" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AttackGraphHasElements Moniker -->
+  <xsd:element name="attackGraphHasElementsMoniker" type="AttackGraphHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="AttackGraphHasElementsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AttackGraphHasElements instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TaskHasPreConditions -->
+  <xsd:element name="taskHasPreConditions" type="TaskHasPreConditions" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TaskHasPreConditions">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end PreCondition -->
+          <xsd:element ref="preCondition" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TaskHasPreConditions Moniker -->
+  <xsd:element name="taskHasPreConditionsMoniker" type="TaskHasPreConditionsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TaskHasPreConditionsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TaskHasPreConditions instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasPostConditions -->
+  <xsd:element name="stateHasPostConditions" type="StateHasPostConditions" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasPostConditions">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end PostCondition -->
+          <xsd:element ref="postCondition" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasPostConditions Moniker -->
+  <xsd:element name="stateHasPostConditionsMoniker" type="StateHasPostConditionsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasPostConditionsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateHasPostConditions instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FlowRelationship -->
+  <xsd:element name="flowRelationship" type="FlowRelationship" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FlowRelationship">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end FlowElement -->
+          <xsd:element ref="flowElementMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FlowRelationship Moniker -->
+  <xsd:element name="flowRelationshipMoniker" type="FlowRelationshipMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FlowRelationshipMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FlowRelationship instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+</xsd:schema>
+
