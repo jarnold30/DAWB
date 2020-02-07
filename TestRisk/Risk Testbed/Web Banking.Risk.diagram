@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskDiagram dslVersion="1.0.0.0" Id="79426cc3-3d43-4093-8334-f08c40c81378" absoluteBounds="0, 0, 11.125, 8.5" name="Web Banking">
+  <riskModelMoniker name="/Web Banking" />
+  <nestedChildShapes>
+    <containerShape Id="efb3df88-3569-4657-8dde-33f915d09504" absoluteBounds="2.25, 5.5, 1.5, 1.8110807291666653">
+      <containerMoniker name="/Web Banking/PC 1" />
+      <relativeChildShapes>
+        <portShape Id="dc855d7c-6530-4661-a5d6-b1eb86ffa809" absoluteBounds="3.65, 6.15625, 0.2, 0.2">
+          <portMoniker name="/Web Banking/PC 1/Web Browser" />
+          <relativeChildShapes />
+        </portShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="c985b729-0f24-4096-9d4b-0a2a56bceef6" absoluteBounds="2.2649999999999997, 6.51, 1.4700000000000002, 0.2493896484375" name="Assets" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="efc22d3a-d696-4c4c-b74e-a1f923fdedba" absoluteBounds="2.2649999999999997, 6.7693896484375, 1.4700000000000002, 0.44169108072916663" name="Agents" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </containerShape>
+    <containerShape Id="add5fbf7-1f45-4ad1-b77e-d7c0f766bec3" absoluteBounds="2.125, 1.25, 1.5, 1.8110807291666666">
+      <containerMoniker name="/Web Banking/PC 2" />
+      <relativeChildShapes>
+        <portShape Id="fc1bc740-98de-47e9-bb91-3c6abc5d5608" absoluteBounds="3.525, 1.75, 0.2, 0.2">
+          <portMoniker name="/Web Banking/PC 2/Web Browser" />
+          <relativeChildShapes />
+        </portShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="f7ea191f-b1e1-4600-a764-23724390e20b" absoluteBounds="2.14, 2.26, 1.4700000000000002, 0.2493896484375" name="Assets" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e97a2eb9-5411-4ee6-b6d3-ead52d8830db" absoluteBounds="2.14, 2.5193896484375, 1.4700000000000002, 0.44169108072916663" name="Agents" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </containerShape>
+    <containerShape Id="c7eeebe0-74c9-4a15-a176-090a2217c493" absoluteBounds="9, 3.5, 1.875, 1.8110807291666662">
+      <containerMoniker name="/Web Banking/Internet Banking Service" />
+      <relativeChildShapes>
+        <portShape Id="9025bc14-63ae-4715-8a88-46a95e6b4368" absoluteBounds="8.9, 3.96875, 0.2, 0.2">
+          <portMoniker name="/Web Banking/Internet Banking Service/Web Site" />
+          <relativeChildShapes />
+        </portShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="43a42c19-4299-472e-af16-e560eac10b5c" absoluteBounds="9.015, 4.51, 1.8450000000000002, 0.44169108072916674" name="Assets" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="44ff9450-1885-4cc5-a146-85f117dccb51" absoluteBounds="9.015, 4.9616910807291665, 1.8450000000000002, 0.2493896484375" name="Agents" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </containerShape>
+    <interactsLink Id="65040b07-a6dd-43a2-9280-1764d314360b" edgePoints="[(3.725 : 1.85); (4.1 : 1.85); (4.1 : 4.06875); (8.9 : 4.06875)]" fixedFrom="Caller" fixedTo="Caller">
+      <interactionMoniker Id="05160738-23a9-4e9c-b0a8-13a320c2d22b" />
+      <relativeChildShapes />
+      <nodes>
+        <portShapeMoniker Id="fc1bc740-98de-47e9-bb91-3c6abc5d5608" />
+        <portShapeMoniker Id="9025bc14-63ae-4715-8a88-46a95e6b4368" />
+      </nodes>
+    </interactsLink>
+    <interactsLink Id="a3c7eb09-f18d-46e0-9a50-41da46666c9b" edgePoints="[(3.85 : 6.25625); (4.475 : 6.25625); (4.475 : 4.06875); (8.9 : 4.06875)]" fixedFrom="Caller" fixedTo="Caller">
+      <interactionMoniker Id="75c0ff12-07d4-4f66-9a31-5fd5d394e3b8" />
+      <relativeChildShapes />
+      <nodes>
+        <portShapeMoniker Id="dc855d7c-6530-4661-a5d6-b1eb86ffa809" />
+        <portShapeMoniker Id="9025bc14-63ae-4715-8a88-46a95e6b4368" />
+      </nodes>
+    </interactsLink>
+  </nestedChildShapes>
+</riskDiagram>

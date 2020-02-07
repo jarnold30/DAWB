@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dd7a4b9a-bee4-452d-b2fc-7e171da192d7" name="Web Banking" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+  <containers>
+    <riskModelHasContainers Id="eb62cc12-7320-4360-976c-e8ddeffa842c">
+      <container Id="d9655331-c37f-4b08-a5a5-1167cc35e1b2" name="PC 1">
+        <ports>
+          <port Id="1ff392f6-a72a-4e36-b7a6-758c2e48cf2e" name="Web Browser">
+            <targetPort>
+              <interaction Id="75c0ff12-07d4-4f66-9a31-5fd5d394e3b8">
+                <portMoniker name="/Web Banking/Internet Banking Service/Web Site" />
+              </interaction>
+            </targetPort>
+          </port>
+        </ports>
+        <threatAgents>
+          <containerHasAgents Id="7a915a5d-dc65-4e47-985d-f64a324d957c">
+            <threatAgent Id="dc08bfd2-7a0b-423c-b139-6c1fa5ee8bfc" name="Legitimate User" />
+          </containerHasAgents>
+        </threatAgents>
+      </container>
+    </riskModelHasContainers>
+    <riskModelHasContainers Id="20df03fb-bb0e-423a-bd3e-90a013492929">
+      <container Id="66bf27e5-2593-4bf9-a908-5c15cd66334a" name="PC 2">
+        <ports>
+          <port Id="8fb5aef8-8f24-4cfb-8a0f-60e1d0899eca" name="Web Browser">
+            <targetPort>
+              <interaction Id="05160738-23a9-4e9c-b0a8-13a320c2d22b">
+                <portMoniker name="/Web Banking/Internet Banking Service/Web Site" />
+              </interaction>
+            </targetPort>
+          </port>
+        </ports>
+        <threatAgents>
+          <containerHasAgents Id="4c7b11bf-a3d3-450f-b09a-17ac59293457">
+            <threatAgent Id="c5997709-017e-4911-bfc0-8d5ff51db509" name="Internet Hacker" />
+          </containerHasAgents>
+        </threatAgents>
+      </container>
+    </riskModelHasContainers>
+    <riskModelHasContainers Id="ad724b2b-83f5-4406-b01f-f163214efe8c">
+      <container Id="e8ca1be5-6e29-4500-adbb-14f3d36e79c5" name="Internet Banking Service">
+        <ports>
+          <port Id="58c30e1e-fc95-4d0c-ac1a-75e1b0aab89e" name="Web Site" />
+        </ports>
+        <assets>
+          <containerHasAssets Id="15b140d4-3ac9-42a4-ae9a-e58a4bde232d">
+            <asset Id="61803090-4e4a-4dbf-9b3e-29b4ad235a98" name="Bank Accounts" />
+          </containerHasAssets>
+        </assets>
+      </container>
+    </riskModelHasContainers>
+  </containers>
+</riskModel>

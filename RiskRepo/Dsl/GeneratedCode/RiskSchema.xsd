@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="RiskSchema" targetNamespace="http://schemas.microsoft.com/dsltools/Risk" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/Risk" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- NamedElement -->
+  <xsd:element name="namedElement" abstract="true" type="NamedElement" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="NamedElement" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NamedElement Moniker -->
+  <xsd:element name="namedElementMoniker" abstract="true" type="NamedElementMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="NamedElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for NamedElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- RiskModel -->
+  <xsd:element name="riskModel" type="RiskModel" substitutionGroup="namedElement" />
+  <xsd:complexType name="RiskModel">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: RiskModelHasContainers -->
+          <xsd:element name="containers" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of RiskModelHasContainers</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="riskModelHasContainers" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of RiskModelHasContainers needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- RiskModel Moniker -->
+  <xsd:element name="riskModelMoniker" type="RiskModelMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="RiskModelMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for RiskModel instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Container -->
+  <xsd:element name="container" type="Container" substitutionGroup="namedElement" />
+  <xsd:complexType name="Container">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ContainerHasPorts -->
+          <xsd:element name="ports" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ContainerHasPorts</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="containerHasPorts">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from ContainerHasPorts needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="port" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: Generalization -->
+          <xsd:element name="subclasses" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Generalization</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="generalization">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from Generalization needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="containerMoniker" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ContainerHasAssets -->
+          <xsd:element name="assets" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ContainerHasAssets</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="containerHasAssets" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ContainerHasAssets needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ContainerHasAgents -->
+          <xsd:element name="threatAgents" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ContainerHasAgents</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="containerHasAgents" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ContainerHasAgents needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: Contains -->
+          <xsd:element name="targetContainers" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Contains</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="contains" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of Contains needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Container Moniker -->
+  <xsd:element name="containerMoniker" type="ContainerMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ContainerMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Container instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Port -->
+  <xsd:element name="port" type="Port" substitutionGroup="namedElement" />
+  <xsd:complexType name="Port">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: Interaction -->
+          <xsd:element name="targetPort" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Interaction</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="interaction" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of Interaction needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Port Moniker -->
+  <xsd:element name="portMoniker" type="PortMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="PortMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Port instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Asset -->
+  <xsd:element name="asset" type="Asset" substitutionGroup="namedElement" />
+  <xsd:complexType name="Asset">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Asset Moniker -->
+  <xsd:element name="assetMoniker" type="AssetMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="AssetMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Asset instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ThreatAgent -->
+  <xsd:element name="threatAgent" type="ThreatAgent" substitutionGroup="namedElement" />
+  <xsd:complexType name="ThreatAgent">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ThreatAgent Moniker -->
+  <xsd:element name="threatAgentMoniker" type="ThreatAgentMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ThreatAgentMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ThreatAgent instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasPorts -->
+  <xsd:element name="containerHasPorts" abstract="true" type="ContainerHasPorts" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ContainerHasPorts" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Port -->
+          <xsd:element ref="port" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasPorts Moniker -->
+  <xsd:element name="containerHasPortsMoniker" type="ContainerHasPortsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ContainerHasPortsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ContainerHasPorts instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- RiskModelHasContainers -->
+  <xsd:element name="riskModelHasContainers" type="RiskModelHasContainers" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="RiskModelHasContainers">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Container -->
+          <xsd:element ref="container" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- RiskModelHasContainers Moniker -->
+  <xsd:element name="riskModelHasContainersMoniker" type="RiskModelHasContainersMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="RiskModelHasContainersMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for RiskModelHasContainers instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Generalization -->
+  <xsd:element name="generalization" abstract="true" type="Generalization" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Generalization" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Container -->
+          <xsd:element ref="containerMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Generalization Moniker -->
+  <xsd:element name="generalizationMoniker" type="GeneralizationMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="GeneralizationMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Generalization instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Interaction -->
+  <xsd:element name="interaction" type="Interaction" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Interaction">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Port -->
+          <xsd:element ref="portMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Interaction Moniker -->
+  <xsd:element name="interactionMoniker" type="InteractionMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="InteractionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Interaction instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasAssets -->
+  <xsd:element name="containerHasAssets" type="ContainerHasAssets" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ContainerHasAssets">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Asset -->
+          <xsd:element ref="asset" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasAssets Moniker -->
+  <xsd:element name="containerHasAssetsMoniker" type="ContainerHasAssetsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ContainerHasAssetsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ContainerHasAssets instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasAgents -->
+  <xsd:element name="containerHasAgents" type="ContainerHasAgents" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ContainerHasAgents">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ThreatAgent -->
+          <xsd:element ref="threatAgent" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ContainerHasAgents Moniker -->
+  <xsd:element name="containerHasAgentsMoniker" type="ContainerHasAgentsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ContainerHasAgentsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ContainerHasAgents instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Contains -->
+  <xsd:element name="contains" type="Contains" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Contains">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Container -->
+          <xsd:element ref="containerMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Number -->
+        <xsd:attribute name="number" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Contains Moniker -->
+  <xsd:element name="containsMoniker" type="ContainsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ContainsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Contains instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+</xsd:schema>
+

@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{44cceb09-1ab3-4682-8f46-ff435b7a6190}</TemplateID>
+		<Name Package="{c8c96252-ab8f-4284-84ea-defc13ac854b}" ID="103"/>
+		<Description Package="{c8c96252-ab8f-4284-84ea-defc13ac854b}" ID="102"/>
+		<Icon Package="{c8c96252-ab8f-4284-84ea-defc13ac854b}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>Risk.Risk</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.Risk">Risk.Risk</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.Risk.diagram">Risk.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+
