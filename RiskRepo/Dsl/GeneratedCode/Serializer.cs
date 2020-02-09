@@ -2485,7 +2485,7 @@ namespace JA.Risk
 			#endregion
 			
 			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
@@ -2517,6 +2517,44 @@ namespace JA.Risk
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory Port instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			Port instanceOfPort = element as Port;
+			global::System.Diagnostics.Debug.Assert(instanceOfPort != null, "Expecting an instance of Port");
+	
+			// ThreatEventFrequency
+			if (!serializationContext.Result.Failed)
+			{
+				string attribThreatEventFrequency = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "threatEventFrequency");
+				if (attribThreatEventFrequency != null)
+				{
+					global::System.String valueOfThreatEventFrequency;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribThreatEventFrequency, out valueOfThreatEventFrequency))
+					{
+						instanceOfPort.ThreatEventFrequency = valueOfThreatEventFrequency;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "threatEventFrequency", typeof(global::System.String), attribThreatEventFrequency);
+					}
+				}
+			}
+		}
 	
 		/// <summary>
 		/// This methods deserializes nested XML elements inside the passed-in element.
@@ -2982,7 +3020,7 @@ namespace JA.Risk
 			// Write out element Id.
 			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
 	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+			WritePropertiesAsAttributes(serializationContext, element, writer);
 	
 			// Write out any extension data if this is the root element
 			if (rootElementSettings != null && !serializationContext.Result.Failed)
@@ -2997,6 +3035,34 @@ namespace JA.Risk
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">Port instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			Port instanceOfPort = element as Port;
+			global::System.Diagnostics.Debug.Assert(instanceOfPort != null, "Expecting an instance of Port");
+	
+			// ThreatEventFrequency
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfPort.ThreatEventFrequency;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "threatEventFrequency", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>
@@ -3225,7 +3291,7 @@ namespace JA.Risk
 			#endregion
 			
 			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
@@ -3257,6 +3323,95 @@ namespace JA.Risk
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory Asset instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			Asset instanceOfAsset = element as Asset;
+			global::System.Diagnostics.Debug.Assert(instanceOfAsset != null, "Expecting an instance of Asset");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				string attribNumber = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "number");
+				if (attribNumber != null)
+				{
+					global::System.String valueOfNumber;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribNumber, out valueOfNumber))
+					{
+						instanceOfAsset.Number = valueOfNumber;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "number", typeof(global::System.String), attribNumber);
+					}
+				}
+			}
+			// SingleConfidentialityValue
+			if (!serializationContext.Result.Failed)
+			{
+				string attribSingleConfidentialityValue = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "singleConfidentialityValue");
+				if (attribSingleConfidentialityValue != null)
+				{
+					global::System.String valueOfSingleConfidentialityValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribSingleConfidentialityValue, out valueOfSingleConfidentialityValue))
+					{
+						instanceOfAsset.SingleConfidentialityValue = valueOfSingleConfidentialityValue;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "singleConfidentialityValue", typeof(global::System.String), attribSingleConfidentialityValue);
+					}
+				}
+			}
+			// SingleIntegrityValue
+			if (!serializationContext.Result.Failed)
+			{
+				string attribSingleIntegrityValue = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "singleIntegrityValue");
+				if (attribSingleIntegrityValue != null)
+				{
+					global::System.String valueOfSingleIntegrityValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribSingleIntegrityValue, out valueOfSingleIntegrityValue))
+					{
+						instanceOfAsset.SingleIntegrityValue = valueOfSingleIntegrityValue;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "singleIntegrityValue", typeof(global::System.String), attribSingleIntegrityValue);
+					}
+				}
+			}
+			// SingleAvailabilityValue
+			if (!serializationContext.Result.Failed)
+			{
+				string attribSingleAvailabilityValue = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "singleAvailabilityValue");
+				if (attribSingleAvailabilityValue != null)
+				{
+					global::System.String valueOfSingleAvailabilityValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribSingleAvailabilityValue, out valueOfSingleAvailabilityValue))
+					{
+						instanceOfAsset.SingleAvailabilityValue = valueOfSingleAvailabilityValue;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "singleAvailabilityValue", typeof(global::System.String), attribSingleAvailabilityValue);
+					}
+				}
+			}
+		}
 	
 		#region TryCreateInstance
 		/// <summary>
@@ -3613,7 +3768,7 @@ namespace JA.Risk
 			// Write out element Id.
 			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
 	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+			WritePropertiesAsAttributes(serializationContext, element, writer);
 	
 			// Write out any extension data if this is the root element
 			if (rootElementSettings != null && !serializationContext.Result.Failed)
@@ -3628,6 +3783,67 @@ namespace JA.Risk
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">Asset instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			Asset instanceOfAsset = element as Asset;
+			global::System.Diagnostics.Debug.Assert(instanceOfAsset != null, "Expecting an instance of Asset");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfAsset.Number;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "number", propValue);
+	
+				}
+			}
+			// SingleConfidentialityValue
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfAsset.SingleConfidentialityValue;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "singleConfidentialityValue", propValue);
+	
+				}
+			}
+			// SingleIntegrityValue
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfAsset.SingleIntegrityValue;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "singleIntegrityValue", propValue);
+	
+				}
+			}
+			// SingleAvailabilityValue
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfAsset.SingleAvailabilityValue;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "singleAvailabilityValue", propValue);
+	
+				}
+			}
 		}
 		#endregion
 	
@@ -3807,7 +4023,7 @@ namespace JA.Risk
 			#endregion
 			
 			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
@@ -3839,6 +4055,44 @@ namespace JA.Risk
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory ThreatAgent instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			ThreatAgent instanceOfThreatAgent = element as ThreatAgent;
+			global::System.Diagnostics.Debug.Assert(instanceOfThreatAgent != null, "Expecting an instance of ThreatAgent");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				string attribNumber = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "number");
+				if (attribNumber != null)
+				{
+					global::System.String valueOfNumber;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribNumber, out valueOfNumber))
+					{
+						instanceOfThreatAgent.Number = valueOfNumber;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "number", typeof(global::System.String), attribNumber);
+					}
+				}
+			}
+		}
 	
 		#region TryCreateInstance
 		/// <summary>
@@ -4195,7 +4449,7 @@ namespace JA.Risk
 			// Write out element Id.
 			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
 	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+			WritePropertiesAsAttributes(serializationContext, element, writer);
 	
 			// Write out any extension data if this is the root element
 			if (rootElementSettings != null && !serializationContext.Result.Failed)
@@ -4210,6 +4464,34 @@ namespace JA.Risk
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">ThreatAgent instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			ThreatAgent instanceOfThreatAgent = element as ThreatAgent;
+			global::System.Diagnostics.Debug.Assert(instanceOfThreatAgent != null, "Expecting an instance of ThreatAgent");
+	
+			// Number
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfThreatAgent.Number;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "number", propValue);
+	
+				}
+			}
 		}
 		#endregion
 	
@@ -6843,20 +7125,20 @@ namespace JA.Risk
 			Interaction instanceOfInteraction = element as Interaction;
 			global::System.Diagnostics.Debug.Assert(instanceOfInteraction != null, "Expecting an instance of Interaction");
 	
-			// Name
+			// Attack
 			if (!serializationContext.Result.Failed)
 			{
-				string attribName = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
-				if (attribName != null)
+				string attribAttack = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "attack");
+				if (attribAttack != null)
 				{
-					global::System.String valueOfName;
-					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
+					global::System.String valueOfAttack;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribAttack, out valueOfAttack))
 					{
-						instanceOfInteraction.Name = valueOfName;
+						instanceOfInteraction.Attack = valueOfAttack;
 					}
 					else
 					{	// Invalid property value, ignored.
-						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribName);
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "attack", typeof(global::System.String), attribAttack);
 					}
 				}
 			}
@@ -7346,14 +7628,14 @@ namespace JA.Risk
 			Interaction instanceOfInteraction = element as Interaction;
 			global::System.Diagnostics.Debug.Assert(instanceOfInteraction != null, "Expecting an instance of Interaction");
 	
-			// Name
+			// Attack
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfInteraction.Name;
+				global::System.String propValue = instanceOfInteraction.Attack;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
-						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "attack", propValue);
 	
 				}
 			}
@@ -9336,6 +9618,23 @@ namespace JA.Risk
 					}
 				}
 			}
+			// Attack
+			if (!serializationContext.Result.Failed)
+			{
+				string attribAttack = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "attack");
+				if (attribAttack != null)
+				{
+					global::System.String valueOfAttack;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribAttack, out valueOfAttack))
+					{
+						instanceOfContains.Attack = valueOfAttack;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "attack", typeof(global::System.String), attribAttack);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -9830,6 +10129,17 @@ namespace JA.Risk
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "number", propValue);
+	
+				}
+			}
+			// Attack
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfContains.Attack;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "attack", propValue);
 	
 				}
 			}

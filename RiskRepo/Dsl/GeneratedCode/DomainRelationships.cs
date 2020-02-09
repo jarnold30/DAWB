@@ -874,59 +874,59 @@ namespace JA.Risk
 			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, SourcePortDomainRoleId);
 		}
 		#endregion
-		#region Name domain property code
+		#region Attack domain property code
 		
 		/// <summary>
-		/// Name domain property Id.
+		/// Attack domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0xb92f1c8b, 0xaf20, 0x4535, 0x8f, 0x1b, 0xc6, 0xfa, 0x08, 0xeb, 0x4b, 0x57);
+		public static readonly global::System.Guid AttackDomainPropertyId = new global::System.Guid(0xb92f1c8b, 0xaf20, 0x4535, 0x8f, 0x1b, 0xc6, 0xfa, 0x08, 0xeb, 0x4b, 0x57);
 		
 		/// <summary>
-		/// Storage for Name
+		/// Storage for Attack
 		/// </summary>
-		private global::System.String namePropertyStorage = string.Empty;
+		private global::System.String attackPropertyStorage = string.Empty;
 		
 		/// <summary>
-		/// Gets or sets the value of Name domain property.
-		/// Description for JA.Risk.Interaction.Name
+		/// Gets or sets the value of Attack domain property.
+		/// Description for JA.Risk.Interaction.Attack
 		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.Interaction/Name.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.Interaction/Name.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("JA.Risk.Interaction/Attack.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Interaction/Attack.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("b92f1c8b-af20-4535-8f1b-c6fa08eb4b57")]
-		public global::System.String Name
+		public global::System.String Attack
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return namePropertyStorage;
+				return attackPropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				NamePropertyHandler.Instance.SetValue(this, value);
+				AttackPropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the Interaction.Name domain property.
+		/// Value handler for the Interaction.Attack domain property.
 		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<Interaction, global::System.String>
+		internal sealed partial class AttackPropertyHandler : DslModeling::DomainPropertyValueHandler<Interaction, global::System.String>
 		{
-			private NamePropertyHandler() { }
+			private AttackPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the Interaction.Name domain property value handler.
+			/// Gets the singleton instance of the Interaction.Attack domain property value handler.
 			/// </summary>
-			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+			public static readonly AttackPropertyHandler Instance = new AttackPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the Interaction.Name domain property.
+			/// Gets the Id of the Interaction.Attack domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return NameDomainPropertyId;
+					return AttackDomainPropertyId;
 				}
 			}
 			
@@ -938,7 +938,7 @@ namespace JA.Risk
 			public override sealed global::System.String GetValue(Interaction element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.namePropertyStorage;
+				return element.attackPropertyStorage;
 			}
 		
 			/// <summary>
@@ -954,7 +954,7 @@ namespace JA.Risk
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.namePropertyStorage = newValue;
+					element.attackPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -1722,6 +1722,93 @@ namespace JA.Risk
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.numberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Attack domain property code
+		
+		/// <summary>
+		/// Attack domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid AttackDomainPropertyId = new global::System.Guid(0x8a0f87d1, 0x5bde, 0x47c3, 0xa8, 0x14, 0x24, 0x54, 0x78, 0xcf, 0xad, 0x87);
+		
+		/// <summary>
+		/// Storage for Attack
+		/// </summary>
+		private global::System.String attackPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Attack domain property.
+		/// Description for JA.Risk.Contains.Attack
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Contains/Attack.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Contains/Attack.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("8a0f87d1-5bde-47c3-a814-245478cfad87")]
+		public global::System.String Attack
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return attackPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				AttackPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Contains.Attack domain property.
+		/// </summary>
+		internal sealed partial class AttackPropertyHandler : DslModeling::DomainPropertyValueHandler<Contains, global::System.String>
+		{
+			private AttackPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Contains.Attack domain property value handler.
+			/// </summary>
+			public static readonly AttackPropertyHandler Instance = new AttackPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Contains.Attack domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return AttackDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Contains element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.attackPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Contains element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.attackPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}

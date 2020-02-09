@@ -233,6 +233,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: ThreatEventFrequency -->
+        <xsd:attribute name="threatEventFrequency" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -260,6 +262,14 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Number -->
+        <xsd:attribute name="number" type="xsd:string" />
+        <!-- Property: SingleConfidentialityValue -->
+        <xsd:attribute name="singleConfidentialityValue" type="xsd:string" />
+        <!-- Property: SingleIntegrityValue -->
+        <xsd:attribute name="singleIntegrityValue" type="xsd:string" />
+        <!-- Property: SingleAvailabilityValue -->
+        <xsd:attribute name="singleAvailabilityValue" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -287,6 +297,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Number -->
+        <xsd:attribute name="number" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -442,8 +454,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Attack -->
+        <xsd:attribute name="attack" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -566,6 +578,8 @@
         </xsd:attribute>
         <!-- Property: Number -->
         <xsd:attribute name="number" type="xsd:string" />
+        <!-- Property: Attack -->
+        <xsd:attribute name="attack" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

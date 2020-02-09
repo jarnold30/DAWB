@@ -107,8 +107,15 @@ namespace JA.Risk
 			{
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "Type", Container.TypeDomainPropertyId, typeof(Container.TypePropertyHandler)),
-				new DomainMemberInfo(typeof(Interaction), "Name", Interaction.NameDomainPropertyId, typeof(Interaction.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Port), "ThreatEventFrequency", Port.ThreatEventFrequencyDomainPropertyId, typeof(Port.ThreatEventFrequencyPropertyHandler)),
+				new DomainMemberInfo(typeof(Asset), "Number", Asset.NumberDomainPropertyId, typeof(Asset.NumberPropertyHandler)),
+				new DomainMemberInfo(typeof(Asset), "SingleConfidentialityValue", Asset.SingleConfidentialityValueDomainPropertyId, typeof(Asset.SingleConfidentialityValuePropertyHandler)),
+				new DomainMemberInfo(typeof(Asset), "SingleIntegrityValue", Asset.SingleIntegrityValueDomainPropertyId, typeof(Asset.SingleIntegrityValuePropertyHandler)),
+				new DomainMemberInfo(typeof(Asset), "SingleAvailabilityValue", Asset.SingleAvailabilityValueDomainPropertyId, typeof(Asset.SingleAvailabilityValuePropertyHandler)),
+				new DomainMemberInfo(typeof(ThreatAgent), "Number", ThreatAgent.NumberDomainPropertyId, typeof(ThreatAgent.NumberPropertyHandler)),
+				new DomainMemberInfo(typeof(Interaction), "Attack", Interaction.AttackDomainPropertyId, typeof(Interaction.AttackPropertyHandler)),
 				new DomainMemberInfo(typeof(Contains), "Number", Contains.NumberDomainPropertyId, typeof(Contains.NumberPropertyHandler)),
+				new DomainMemberInfo(typeof(Contains), "Attack", Contains.AttackDomainPropertyId, typeof(Contains.AttackPropertyHandler)),
 			};
 		}
 		/// <summary>

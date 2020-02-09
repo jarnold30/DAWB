@@ -381,8 +381,8 @@ namespace JA.Risk
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Interaction.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Interaction.AttackDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Attack").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -398,6 +398,9 @@ namespace JA.Risk
 			{
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Contains.AttackDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Attack").AssociateValueWith(shape.Store, propertyInfo);
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Contains.NumberDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Number").AssociateValueWith(shape.Store, propertyInfo);
@@ -1035,12 +1038,20 @@ namespace JA.Risk
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Container.DomainClassId);
 					}
 				}
-				else if (e.DomainProperty.Id == global::JA.Risk.Interaction.NameDomainPropertyId)
+				else if (e.DomainProperty.Id == global::JA.Risk.Interaction.AttackDomainPropertyId)
 				{
-					DslDiagrams::Decorator decorator = global::JA.Risk.InteractsLink.FindInteractsLinkDecorator("Name");
+					DslDiagrams::Decorator decorator = global::JA.Risk.InteractsLink.FindInteractsLinkDecorator("Attack");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Interaction.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::JA.Risk.Contains.AttackDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::JA.Risk.ContainsLink.FindContainsLinkDecorator("Attack");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::JA.Risk.Contains.DomainClassId);
 					}
 				}
 				else if (e.DomainProperty.Id == global::JA.Risk.Contains.NumberDomainPropertyId)

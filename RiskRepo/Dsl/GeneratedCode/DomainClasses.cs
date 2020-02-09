@@ -722,6 +722,93 @@ namespace JA.Risk
 		{
 		}
 		#endregion
+		#region ThreatEventFrequency domain property code
+		
+		/// <summary>
+		/// ThreatEventFrequency domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ThreatEventFrequencyDomainPropertyId = new global::System.Guid(0x7136598a, 0xa147, 0x4808, 0xbb, 0x6f, 0x6a, 0xb9, 0x62, 0x26, 0xf2, 0xc3);
+		
+		/// <summary>
+		/// Storage for ThreatEventFrequency
+		/// </summary>
+		private global::System.String threatEventFrequencyPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ThreatEventFrequency domain property.
+		/// Description for JA.Risk.Port.Threat Event Frequency
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Port/ThreatEventFrequency.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Port/ThreatEventFrequency.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("7136598a-a147-4808-bb6f-6ab96226f2c3")]
+		public global::System.String ThreatEventFrequency
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return threatEventFrequencyPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ThreatEventFrequencyPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Port.ThreatEventFrequency domain property.
+		/// </summary>
+		internal sealed partial class ThreatEventFrequencyPropertyHandler : DslModeling::DomainPropertyValueHandler<Port, global::System.String>
+		{
+			private ThreatEventFrequencyPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Port.ThreatEventFrequency domain property value handler.
+			/// </summary>
+			public static readonly ThreatEventFrequencyPropertyHandler Instance = new ThreatEventFrequencyPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Port.ThreatEventFrequency domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ThreatEventFrequencyDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Port element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.threatEventFrequencyPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Port element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.threatEventFrequencyPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Container opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Container.
@@ -811,6 +898,354 @@ namespace JA.Risk
 		{
 		}
 		#endregion
+		#region Number domain property code
+		
+		/// <summary>
+		/// Number domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NumberDomainPropertyId = new global::System.Guid(0xa27ca295, 0x7dc9, 0x4f31, 0xbf, 0xfa, 0xd0, 0xea, 0xce, 0x58, 0xd5, 0xbd);
+		
+		/// <summary>
+		/// Storage for Number
+		/// </summary>
+		private global::System.String numberPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Number domain property.
+		/// Description for JA.Risk.Asset.Number
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Asset/Number.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Asset/Number.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a27ca295-7dc9-4f31-bffa-d0eace58d5bd")]
+		public global::System.String Number
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return numberPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NumberPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Asset.Number domain property.
+		/// </summary>
+		internal sealed partial class NumberPropertyHandler : DslModeling::DomainPropertyValueHandler<Asset, global::System.String>
+		{
+			private NumberPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Asset.Number domain property value handler.
+			/// </summary>
+			public static readonly NumberPropertyHandler Instance = new NumberPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Asset.Number domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NumberDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Asset element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.numberPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Asset element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.numberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region SingleConfidentialityValue domain property code
+		
+		/// <summary>
+		/// SingleConfidentialityValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SingleConfidentialityValueDomainPropertyId = new global::System.Guid(0x5ea7bd42, 0x55d8, 0x4e64, 0x9e, 0x6b, 0xb7, 0xb6, 0x7b, 0x05, 0x93, 0x2d);
+		
+		/// <summary>
+		/// Storage for SingleConfidentialityValue
+		/// </summary>
+		private global::System.String singleConfidentialityValuePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of SingleConfidentialityValue domain property.
+		/// Description for JA.Risk.Asset.Single Confidentiality Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Asset/SingleConfidentialityValue.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Asset/SingleConfidentialityValue.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("5ea7bd42-55d8-4e64-9e6b-b7b67b05932d")]
+		public global::System.String SingleConfidentialityValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return singleConfidentialityValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SingleConfidentialityValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Asset.SingleConfidentialityValue domain property.
+		/// </summary>
+		internal sealed partial class SingleConfidentialityValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Asset, global::System.String>
+		{
+			private SingleConfidentialityValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Asset.SingleConfidentialityValue domain property value handler.
+			/// </summary>
+			public static readonly SingleConfidentialityValuePropertyHandler Instance = new SingleConfidentialityValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Asset.SingleConfidentialityValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SingleConfidentialityValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Asset element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.singleConfidentialityValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Asset element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.singleConfidentialityValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region SingleIntegrityValue domain property code
+		
+		/// <summary>
+		/// SingleIntegrityValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SingleIntegrityValueDomainPropertyId = new global::System.Guid(0xdd904d38, 0xee8b, 0x4e65, 0xa6, 0x1e, 0x81, 0xe1, 0x34, 0x00, 0x0f, 0x67);
+		
+		/// <summary>
+		/// Storage for SingleIntegrityValue
+		/// </summary>
+		private global::System.String singleIntegrityValuePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of SingleIntegrityValue domain property.
+		/// Description for JA.Risk.Asset.Single Integrity Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Asset/SingleIntegrityValue.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Asset/SingleIntegrityValue.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("dd904d38-ee8b-4e65-a61e-81e134000f67")]
+		public global::System.String SingleIntegrityValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return singleIntegrityValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SingleIntegrityValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Asset.SingleIntegrityValue domain property.
+		/// </summary>
+		internal sealed partial class SingleIntegrityValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Asset, global::System.String>
+		{
+			private SingleIntegrityValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Asset.SingleIntegrityValue domain property value handler.
+			/// </summary>
+			public static readonly SingleIntegrityValuePropertyHandler Instance = new SingleIntegrityValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Asset.SingleIntegrityValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SingleIntegrityValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Asset element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.singleIntegrityValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Asset element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.singleIntegrityValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region SingleAvailabilityValue domain property code
+		
+		/// <summary>
+		/// SingleAvailabilityValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SingleAvailabilityValueDomainPropertyId = new global::System.Guid(0xe066c9b1, 0x8833, 0x4137, 0x9d, 0x4f, 0x98, 0x36, 0x85, 0x7a, 0x44, 0xa2);
+		
+		/// <summary>
+		/// Storage for SingleAvailabilityValue
+		/// </summary>
+		private global::System.String singleAvailabilityValuePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of SingleAvailabilityValue domain property.
+		/// Description for JA.Risk.Asset.Single Availability Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.Asset/SingleAvailabilityValue.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.Asset/SingleAvailabilityValue.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("e066c9b1-8833-4137-9d4f-9836857a44a2")]
+		public global::System.String SingleAvailabilityValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return singleAvailabilityValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SingleAvailabilityValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Asset.SingleAvailabilityValue domain property.
+		/// </summary>
+		internal sealed partial class SingleAvailabilityValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Asset, global::System.String>
+		{
+			private SingleAvailabilityValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Asset.SingleAvailabilityValue domain property value handler.
+			/// </summary>
+			public static readonly SingleAvailabilityValuePropertyHandler Instance = new SingleAvailabilityValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Asset.SingleAvailabilityValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SingleAvailabilityValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Asset element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.singleAvailabilityValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Asset element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.singleAvailabilityValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Container opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Container.
@@ -870,6 +1305,93 @@ namespace JA.Risk
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Number domain property code
+		
+		/// <summary>
+		/// Number domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NumberDomainPropertyId = new global::System.Guid(0x4dd9846f, 0xa569, 0x4e4a, 0xb6, 0x96, 0xf9, 0xdf, 0xd8, 0xc7, 0x4b, 0x1a);
+		
+		/// <summary>
+		/// Storage for Number
+		/// </summary>
+		private global::System.String numberPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Number domain property.
+		/// Description for JA.Risk.ThreatAgent.Number
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgent/Number.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ThreatAgent/Number.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("4dd9846f-a569-4e4a-b696-f9dfd8c74b1a")]
+		public global::System.String Number
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return numberPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NumberPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ThreatAgent.Number domain property.
+		/// </summary>
+		internal sealed partial class NumberPropertyHandler : DslModeling::DomainPropertyValueHandler<ThreatAgent, global::System.String>
+		{
+			private NumberPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ThreatAgent.Number domain property value handler.
+			/// </summary>
+			public static readonly NumberPropertyHandler Instance = new NumberPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ThreatAgent.Number domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NumberDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ThreatAgent element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.numberPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ThreatAgent element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.numberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region Container opposite domain role accessor
 		/// <summary>

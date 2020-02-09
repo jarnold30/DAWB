@@ -173,6 +173,14 @@
     <value>Port</value>
     <comment>DisplayName for DomainClass &apos;Port&apos;</comment>
   </data>
+  <data name="JA.Risk.Port/ThreatEventFrequency.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Port.Threat Event Frequency</value>
+    <comment>Description for DomainProperty &apos;ThreatEventFrequency&apos; on DomainClass &apos;Port&apos;</comment>
+  </data>
+  <data name="JA.Risk.Port/ThreatEventFrequency.DisplayName" xml:space="preserve">
+    <value>Threat Event Frequency</value>
+    <comment>DisplayName for DomainProperty &apos;ThreatEventFrequency&apos; on DomainClass &apos;Port&apos;</comment>
+  </data>
   <data name="JA.Risk.Asset.Description" xml:space="preserve">
     <value>Description for JA.Risk.Asset</value>
     <comment>Description for DomainClass &apos;Asset&apos;</comment>
@@ -181,6 +189,38 @@
     <value>Asset</value>
     <comment>DisplayName for DomainClass &apos;Asset&apos;</comment>
   </data>
+  <data name="JA.Risk.Asset/Number.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Asset.Number</value>
+    <comment>Description for DomainProperty &apos;Number&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/Number.DisplayName" xml:space="preserve">
+    <value>Number</value>
+    <comment>DisplayName for DomainProperty &apos;Number&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleConfidentialityValue.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Asset.Single Confidentiality Value</value>
+    <comment>Description for DomainProperty &apos;SingleConfidentialityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleConfidentialityValue.DisplayName" xml:space="preserve">
+    <value>Single Confidentiality Value</value>
+    <comment>DisplayName for DomainProperty &apos;SingleConfidentialityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleIntegrityValue.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Asset.Single Integrity Value</value>
+    <comment>Description for DomainProperty &apos;SingleIntegrityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleIntegrityValue.DisplayName" xml:space="preserve">
+    <value>Single Integrity Value</value>
+    <comment>DisplayName for DomainProperty &apos;SingleIntegrityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleAvailabilityValue.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Asset.Single Availability Value</value>
+    <comment>Description for DomainProperty &apos;SingleAvailabilityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
+  <data name="JA.Risk.Asset/SingleAvailabilityValue.DisplayName" xml:space="preserve">
+    <value>Single Availability Value</value>
+    <comment>DisplayName for DomainProperty &apos;SingleAvailabilityValue&apos; on DomainClass &apos;Asset&apos;</comment>
+  </data>
   <data name="JA.Risk.ThreatAgent.Description" xml:space="preserve">
     <value>Description for JA.Risk.ThreatAgent</value>
     <comment>Description for DomainClass &apos;ThreatAgent&apos;</comment>
@@ -188,6 +228,14 @@
   <data name="JA.Risk.ThreatAgent.DisplayName" xml:space="preserve">
     <value>Threat Agent</value>
     <comment>DisplayName for DomainClass &apos;ThreatAgent&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgent/Number.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ThreatAgent.Number</value>
+    <comment>Description for DomainProperty &apos;Number&apos; on DomainClass &apos;ThreatAgent&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgent/Number.DisplayName" xml:space="preserve">
+    <value>Number</value>
+    <comment>DisplayName for DomainProperty &apos;Number&apos; on DomainClass &apos;ThreatAgent&apos;</comment>
   </data>
   <data name="JA.Risk.ContainerHasPorts.Description" xml:space="preserve">
     <value></value>
@@ -293,13 +341,13 @@
     <value>Interaction</value>
     <comment>DisplayName for DomainClass &apos;Interaction&apos;</comment>
   </data>
-  <data name="JA.Risk.Interaction/Name.Description" xml:space="preserve">
-    <value>Description for JA.Risk.Interaction.Name</value>
-    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Interaction&apos;</comment>
+  <data name="JA.Risk.Interaction/Attack.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Interaction.Attack</value>
+    <comment>Description for DomainProperty &apos;Attack&apos; on DomainClass &apos;Interaction&apos;</comment>
   </data>
-  <data name="JA.Risk.Interaction/Name.DisplayName" xml:space="preserve">
-    <value>Name</value>
-    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Interaction&apos;</comment>
+  <data name="JA.Risk.Interaction/Attack.DisplayName" xml:space="preserve">
+    <value>Attack</value>
+    <comment>DisplayName for DomainProperty &apos;Attack&apos; on DomainClass &apos;Interaction&apos;</comment>
   </data>
   <data name="JA.Risk.Interaction/SourcePort.Description" xml:space="preserve">
     <value>Description for JA.Risk.Interaction.SourcePort</value>
@@ -405,6 +453,14 @@
     <value>Number</value>
     <comment>DisplayName for DomainProperty &apos;Number&apos; on DomainClass &apos;Contains&apos;</comment>
   </data>
+  <data name="JA.Risk.Contains/Attack.Description" xml:space="preserve">
+    <value>Description for JA.Risk.Contains.Attack</value>
+    <comment>Description for DomainProperty &apos;Attack&apos; on DomainClass &apos;Contains&apos;</comment>
+  </data>
+  <data name="JA.Risk.Contains/Attack.DisplayName" xml:space="preserve">
+    <value>Attack</value>
+    <comment>DisplayName for DomainProperty &apos;Attack&apos; on DomainClass &apos;Contains&apos;</comment>
+  </data>
   <data name="JA.Risk.Contains/SourceContainer.Description" xml:space="preserve">
     <value>Description for JA.Risk.Contains.SourceContainer</value>
     <comment>Description for DomainRole &apos;SourceContainer&apos; on DomainRelationship &apos;Contains&apos;</comment>
@@ -473,8 +529,8 @@
     <value>Interacts Link</value>
     <comment>DisplayName for DomainClass &apos;InteractsLink&apos;</comment>
   </data>
-  <data name="InteractsLinkNameDefaultText" xml:space="preserve">
-    <value>Name</value>
+  <data name="InteractsLinkAttackDefaultText" xml:space="preserve">
+    <value>Attack</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="JA.Risk.GeneralizationLink.Description" xml:space="preserve">
@@ -495,6 +551,10 @@
   </data>
   <data name="ContainsLinkNumberDefaultText" xml:space="preserve">
     <value>Number</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="ContainsLinkAttackDefaultText" xml:space="preserve">
+    <value>Attack</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="FormatList" xml:space="preserve">

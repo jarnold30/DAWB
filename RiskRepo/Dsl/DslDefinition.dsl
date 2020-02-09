@@ -67,16 +67,52 @@
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="7136598a-a147-4808-bb6f-6ab96226f2c3" Description="Description for JA.Risk.Port.Threat Event Frequency" Name="ThreatEventFrequency" DisplayName="Threat Event Frequency">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="7e7ffb3b-fc14-46ee-a021-eb9022be9768" Description="Description for JA.Risk.Asset" Name="Asset" DisplayName="Asset" Namespace="JA.Risk">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="a27ca295-7dc9-4f31-bffa-d0eace58d5bd" Description="Description for JA.Risk.Asset.Number" Name="Number" DisplayName="Number">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="5ea7bd42-55d8-4e64-9e6b-b7b67b05932d" Description="Description for JA.Risk.Asset.Single Confidentiality Value" Name="SingleConfidentialityValue" DisplayName="Single Confidentiality Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="dd904d38-ee8b-4e65-a61e-81e134000f67" Description="Description for JA.Risk.Asset.Single Integrity Value" Name="SingleIntegrityValue" DisplayName="Single Integrity Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="e066c9b1-8833-4137-9d4f-9836857a44a2" Description="Description for JA.Risk.Asset.Single Availability Value" Name="SingleAvailabilityValue" DisplayName="Single Availability Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="c887e7ce-864d-4c36-a285-170f665ced7b" Description="Description for JA.Risk.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" Namespace="JA.Risk">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="4dd9846f-a569-4e4a-b696-f9dfd8c74b1a" Description="Description for JA.Risk.ThreatAgent.Number" Name="Number" DisplayName="Number">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -131,7 +167,7 @@
     </DomainRelationship>
     <DomainRelationship Id="ddc2e9e0-da0d-41da-b6f1-709345d0737c" Description="Description for JA.Risk.Interaction" Name="Interaction" DisplayName="Interaction" Namespace="JA.Risk" AllowsDuplicates="true">
       <Properties>
-        <DomainProperty Id="b92f1c8b-af20-4535-8f1b-c6fa08eb4b57" Description="Description for JA.Risk.Interaction.Name" Name="Name" DisplayName="Name">
+        <DomainProperty Id="b92f1c8b-af20-4535-8f1b-c6fa08eb4b57" Description="Description for JA.Risk.Interaction.Attack" Name="Attack" DisplayName="Attack">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -187,6 +223,11 @@
     <DomainRelationship Id="48911222-c25b-409b-b5be-86345561a3f1" Description="Description for JA.Risk.Contains" Name="Contains" DisplayName="Contains" Namespace="JA.Risk">
       <Properties>
         <DomainProperty Id="fd9bfec8-ebcd-4cf0-8b64-5e054eb4b237" Description="Description for JA.Risk.Contains.Number" Name="Number" DisplayName="Number">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="8a0f87d1-5bde-47c3-a814-245478cfad87" Description="Description for JA.Risk.Contains.Attack" Name="Attack" DisplayName="Attack">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -247,14 +288,17 @@
   </Shapes>
   <Connectors>
     <Connector Id="df711bf1-2083-4550-a040-755ee2d314ab" Description="" Name="InteractsLink" DisplayName="Interacts Link" Namespace="JA.Risk" FixedTooltipText="Interacts Link" Color="113, 111, 110" Thickness="0.01">
-      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+        <TextDecorator Name="Attack" DisplayName="Attack" DefaultText="Attack" />
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="4d24e955-8568-4b61-bbcb-3292a9f7f276" Description="" Name="GeneralizationLink" DisplayName="Generalization Link" Namespace="JA.Risk" FixedTooltipText="Generalization Link" Color="113, 111, 110" SourceEndStyle="HollowArrow" Thickness="0.01" />
     <Connector Id="b24d3f7b-f24f-488a-92ff-ebe349688eb5" Description="Description for JA.Risk.ContainsLink" Name="ContainsLink" DisplayName="Contains Link" Namespace="JA.Risk" FixedTooltipText="Contains Link" SourceEndStyle="FilledDiamond" TargetEndStyle="FilledArrow">
       <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="Number" DisplayName="Number" DefaultText="Number" />
+      </ConnectorHasDecorators>
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+        <TextDecorator Name="Attack" DisplayName="Attack" DefaultText="Attack" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -305,6 +349,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="targetPort">
             <DomainRelationshipMoniker Name="Interaction" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="threatEventFrequency">
+            <DomainPropertyMoniker Name="Port/ThreatEventFrequency" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ContainerHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerHasPortsMoniker" ElementName="containerHasPorts" MonikerTypeName="ContainerHasPortsMoniker">
@@ -331,16 +378,35 @@
       <XmlClassData TypeName="Interaction" MonikerAttributeName="" SerializeId="true" MonikerElementName="interactionMoniker" ElementName="interaction" MonikerTypeName="InteractionMoniker">
         <DomainRelationshipMoniker Name="Interaction" />
         <ElementData>
-          <XmlPropertyData XmlName="name">
-            <DomainPropertyMoniker Name="Interaction/Name" />
+          <XmlPropertyData XmlName="attack">
+            <DomainPropertyMoniker Name="Interaction/Attack" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Asset" MonikerAttributeName="" SerializeId="true" MonikerElementName="assetMoniker" ElementName="asset" MonikerTypeName="AssetMoniker">
         <DomainClassMoniker Name="Asset" />
+        <ElementData>
+          <XmlPropertyData XmlName="number">
+            <DomainPropertyMoniker Name="Asset/Number" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="singleConfidentialityValue">
+            <DomainPropertyMoniker Name="Asset/SingleConfidentialityValue" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="singleIntegrityValue">
+            <DomainPropertyMoniker Name="Asset/SingleIntegrityValue" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="singleAvailabilityValue">
+            <DomainPropertyMoniker Name="Asset/SingleAvailabilityValue" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ThreatAgent" MonikerAttributeName="" SerializeId="true" MonikerElementName="threatAgentMoniker" ElementName="threatAgent" MonikerTypeName="ThreatAgentMoniker">
         <DomainClassMoniker Name="ThreatAgent" />
+        <ElementData>
+          <XmlPropertyData XmlName="number">
+            <DomainPropertyMoniker Name="ThreatAgent/Number" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ContainerHasAssets" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerHasAssetsMoniker" ElementName="containerHasAssets" MonikerTypeName="ContainerHasAssetsMoniker">
         <DomainRelationshipMoniker Name="ContainerHasAssets" />
@@ -356,6 +422,9 @@
         <ElementData>
           <XmlPropertyData XmlName="number">
             <DomainPropertyMoniker Name="Contains/Number" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="attack">
+            <DomainPropertyMoniker Name="Contains/Attack" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -527,10 +596,10 @@
         <ConnectorMoniker Name="InteractsLink" />
         <DomainRelationshipMoniker Name="Interaction" />
         <DecoratorMap>
-          <TextDecoratorMoniker Name="InteractsLink/Name" />
+          <TextDecoratorMoniker Name="InteractsLink/Attack" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Interaction/Name" />
+              <DomainPropertyMoniker Name="Interaction/Attack" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
@@ -538,6 +607,14 @@
       <ConnectorMap>
         <ConnectorMoniker Name="ContainsLink" />
         <DomainRelationshipMoniker Name="Contains" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ContainsLink/Attack" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Contains/Attack" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <DecoratorMap>
           <TextDecoratorMoniker Name="ContainsLink/Number" />
           <PropertyDisplayed>

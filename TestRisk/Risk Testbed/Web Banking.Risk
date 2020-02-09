@@ -6,7 +6,7 @@
         <ports>
           <port Id="1ff392f6-a72a-4e36-b7a6-758c2e48cf2e" name="Web Browser">
             <targetPort>
-              <interaction Id="75c0ff12-07d4-4f66-9a31-5fd5d394e3b8">
+              <interaction Id="75c0ff12-07d4-4f66-9a31-5fd5d394e3b8" attack="Web Site Interactions">
                 <portMoniker name="/Web Banking/Internet Banking Service/Web Site" />
               </interaction>
             </targetPort>
@@ -30,15 +30,20 @@
             </targetPort>
           </port>
         </ports>
+        <assets>
+          <containerHasAssets Id="e57b769f-4beb-4d1f-b2a9-698f251ba0e1">
+            <asset Id="e3823069-520f-4c99-a8ba-b449ca21adfb" name="Credit Card" number="1" singleConfidentialityValue="10" singleIntegrityValue="1000" singleAvailabilityValue="10" />
+          </containerHasAssets>
+        </assets>
         <threatAgents>
           <containerHasAgents Id="4c7b11bf-a3d3-450f-b09a-17ac59293457">
-            <threatAgent Id="c5997709-017e-4911-bfc0-8d5ff51db509" name="Internet Hacker" />
+            <threatAgent Id="c5997709-017e-4911-bfc0-8d5ff51db509" name="Internet Hacker" number="1000" />
           </containerHasAgents>
         </threatAgents>
       </container>
     </riskModelHasContainers>
     <riskModelHasContainers Id="ad724b2b-83f5-4406-b01f-f163214efe8c">
-      <container Id="e8ca1be5-6e29-4500-adbb-14f3d36e79c5" name="Internet Banking Service">
+      <container Id="e8ca1be5-6e29-4500-adbb-14f3d36e79c5" name="Internet Banking Service" type="IT Service">
         <ports>
           <port Id="58c30e1e-fc95-4d0c-ac1a-75e1b0aab89e" name="Web Site" />
         </ports>

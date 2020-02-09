@@ -103,17 +103,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandSet.tt</DependentUpon>
     </Compile>
-    <None Include="source.extension.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>source.extension.vsixmanifest</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="source.extension.vsixmanifest">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>source.extension.tt</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="GeneratedCode\Constants.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Constants.cs</LastGenOutput>
@@ -254,5 +243,6 @@
       <Link>CodeAnalysisDictionary.xml</Link>
     </CodeAnalysisDictionary>
     <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
+    <None Include="source.extension.vsixmanifest" />
   </ItemGroup>
 </Project>
