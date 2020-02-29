@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ec2f716d-6ad1-40ec-940a-7e2329b3ceb3" name="" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+  <containers>
+    <riskModelHasContainers Id="018915ab-b43a-449c-81c4-623d6cb318c1">
+      <container Id="c0674b10-1915-4257-92f1-cf266c13e654" name="Banking Web Site">
+        <containerPorted>
+          <containerHasContainerPorts Id="269e9a67-91d6-44b5-b496-07de617d81b8">
+            <containerPort Id="35a5ace5-c0dd-43e2-bcf0-139344d74f03" name="WS Client">
+              <targetPort>
+                <interaction Id="55c95edd-6661-4fc0-8646-1f73b0c50f2b" attack="WS">
+                  <containerPortMoniker name="//Banking Service/WS Service" />
+                </interaction>
+              </targetPort>
+            </containerPort>
+          </containerHasContainerPorts>
+          <containerHasContainerPorts Id="7160b6be-bc18-47f6-9cde-14259712195f">
+            <containerPort Id="11740cff-3091-4e5a-ae71-5ac238e2ba5b" name="Web UI" />
+          </containerHasContainerPorts>
+        </containerPorted>
+      </container>
+    </riskModelHasContainers>
+    <riskModelHasContainers Id="2be35870-505c-41a3-89d4-5526e3e268de">
+      <container Id="221431e8-a527-48c4-bc27-e0f93211cc73" name="Banking Service">
+        <assets>
+          <containerReferencesAssets Id="1c98cf2d-ec58-4aa7-b32a-5151f651f2a8">
+            <assetMoniker name="//Bank accounts" />
+          </containerReferencesAssets>
+        </assets>
+        <containerPorted>
+          <containerHasContainerPorts Id="5437f8b6-4e55-48f3-b9c1-031baa6b669c">
+            <containerPort Id="b0fbf5ac-8a48-4254-9ccc-d27489bf3c0b" name="WS Service" />
+          </containerHasContainerPorts>
+        </containerPorted>
+      </container>
+    </riskModelHasContainers>
+    <riskModelHasContainers Id="d229110b-49a3-450f-a3fc-bbd720ce47ec">
+      <container Id="ae5ad47f-30e7-4bdc-9265-f77dd979c13a" name="Corporate Network">
+        <targetContainers>
+          <contains Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" attack="TCP">
+            <containerMoniker name="//Banking Service" />
+          </contains>
+        </targetContainers>
+      </container>
+    </riskModelHasContainers>
+  </containers>
+  <assets>
+    <riskModelHasAssets Id="38615045-d2dd-4818-aa09-d1908171d1d1">
+      <asset Id="9d8ad7e5-8786-40bd-b3cd-cd5b4a33ce15" name="Bank accounts" number="1000000" singleConfidentialityValue="1" singleIntegrityValue="4" singleAvailabilityValue="1" />
+    </riskModelHasAssets>
+  </assets>
+  <threatAgents>
+    <riskModelHasThreatAgents Id="aaf7516b-6a4b-4cef-99e7-b38bbc083dc5">
+      <threatAgent Id="3bdd1553-ec60-41ef-9545-25a68db38c90" name="End User" number="1000000">
+        <agentPorted>
+          <threatAgentHasAgentPorts Id="bc18202b-b260-4caf-bd11-df87537ebecb">
+            <agentPort Id="89d36b38-f09f-4f4e-9ce2-fea4f21fd8df" name="Web Browser">
+              <targetPort>
+                <interaction Id="e12af7e9-b051-4ec2-af5b-bf0d5017556e" attack="http">
+                  <containerPortMoniker name="//Banking Web Site/Web UI" />
+                </interaction>
+              </targetPort>
+            </agentPort>
+          </threatAgentHasAgentPorts>
+        </agentPorted>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+    <riskModelHasThreatAgents Id="3bc71db6-1d9c-4a1e-aee4-bf9bbb706d5e">
+      <threatAgent Id="86093bf8-72e1-4336-ade4-1089a534ae69" name="Internet Hacker" number="10">
+        <agentPorted>
+          <threatAgentHasAgentPorts Id="a14e7623-31a8-4d5a-b2ee-e51afd9db2ea">
+            <agentPort Id="3f9b39eb-3743-414b-8b43-bbcbfa9c12fb" name="Web Browser">
+              <targetPort>
+                <interaction Id="bd053d55-19b1-4401-873d-2b2566500183" attack="http">
+                  <containerPortMoniker name="//Banking Web Site/Web UI" />
+                </interaction>
+              </targetPort>
+            </agentPort>
+          </threatAgentHasAgentPorts>
+        </agentPorted>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+  </threatAgents>
+</riskModel>

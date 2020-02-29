@@ -3666,7 +3666,7 @@ namespace JA.Attack
 			#endregion
 			
 			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
@@ -3698,6 +3698,78 @@ namespace JA.Attack
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory Task instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			Task instanceOfTask = element as Task;
+			global::System.Diagnostics.Debug.Assert(instanceOfTask != null, "Expecting an instance of Task");
+	
+			// Probability
+			if (!serializationContext.Result.Failed)
+			{
+				string attribProbability = AttackSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "probability");
+				if (attribProbability != null)
+				{
+					global::System.String valueOfProbability;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribProbability, out valueOfProbability))
+					{
+						instanceOfTask.Probability = valueOfProbability;
+					}
+					else
+					{	// Invalid property value, ignored.
+						AttackSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "probability", typeof(global::System.String), attribProbability);
+					}
+				}
+			}
+			// Confidence10Percent
+			if (!serializationContext.Result.Failed)
+			{
+				string attribConfidence10Percent = AttackSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "confidence10Percent");
+				if (attribConfidence10Percent != null)
+				{
+					global::System.String valueOfConfidence10Percent;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribConfidence10Percent, out valueOfConfidence10Percent))
+					{
+						instanceOfTask.Confidence10Percent = valueOfConfidence10Percent;
+					}
+					else
+					{	// Invalid property value, ignored.
+						AttackSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "confidence10Percent", typeof(global::System.String), attribConfidence10Percent);
+					}
+				}
+			}
+			// Confidence90Percent
+			if (!serializationContext.Result.Failed)
+			{
+				string attribConfidence90Percent = AttackSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "confidence90Percent");
+				if (attribConfidence90Percent != null)
+				{
+					global::System.String valueOfConfidence90Percent;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribConfidence90Percent, out valueOfConfidence90Percent))
+					{
+						instanceOfTask.Confidence90Percent = valueOfConfidence90Percent;
+					}
+					else
+					{	// Invalid property value, ignored.
+						AttackSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "confidence90Percent", typeof(global::System.String), attribConfidence90Percent);
+					}
+				}
+			}
+		}
 	
 		/// <summary>
 		/// This methods deserializes nested XML elements inside the passed-in element.
@@ -4177,7 +4249,7 @@ namespace JA.Attack
 			// Write out element Id.
 			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
 	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+			WritePropertiesAsAttributes(serializationContext, element, writer);
 	
 			// Write out any extension data if this is the root element
 			if (rootElementSettings != null && !serializationContext.Result.Failed)
@@ -4192,6 +4264,56 @@ namespace JA.Attack
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">Task instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			Task instanceOfTask = element as Task;
+			global::System.Diagnostics.Debug.Assert(instanceOfTask != null, "Expecting an instance of Task");
+	
+			// Probability
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfTask.Probability;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						AttackSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "probability", propValue);
+	
+				}
+			}
+			// Confidence10Percent
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfTask.Confidence10Percent;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						AttackSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "confidence10Percent", propValue);
+	
+				}
+			}
+			// Confidence90Percent
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfTask.Confidence90Percent;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						AttackSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "confidence90Percent", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>

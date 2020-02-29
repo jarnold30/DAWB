@@ -37,11 +37,11 @@ namespace JA.Risk
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
-					"@PortToolboxItem;JA.Risk.Dsl.dll", 
-					"JA.Risk.PortToolboxItem", 
+					"@ContainerPortToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.ContainerPortToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"Port", 
-					"@PortToolboxBitmap;JA.Risk.Dsl.dll", 
+					"ContainerPort", 
+					"@ContainerPortToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
@@ -68,6 +68,38 @@ namespace JA.Risk
 					"@ContainsToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
 					Index = 4)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@AssetToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.AssetToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Asset", 
+					"@AssetToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@ContainsAssetToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.ContainsAssetToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ContainsAsset", 
+					"@ContainsAssetToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@ThreatToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.ThreatToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Threat", 
+					"@ThreatToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 7)]
+	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
+					"@AgentPortToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.AgentPortToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"AgentPort", 
+					"@AgentPortToolboxBitmap;JA.Risk.Dsl.dll", 
+					0xff00ff,
+					Index = 8)]
 	[VSShell::ProvideEditorFactory(typeof(RiskEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RiskEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RiskEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

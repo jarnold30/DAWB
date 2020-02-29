@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskDiagram dslVersion="1.0.0.0" Id="6225450d-6fe0-498e-811b-9af0328f02a3" absoluteBounds="0, 0, 11, 8.5" name="Risk1">
+  <riskModelMoniker name="/" />
+  <nestedChildShapes>
+    <assetShape Id="33846d8c-ddb6-45cc-9de4-259391ff09f6" absoluteBounds="8.125, 5.875, 2.125, 1">
+      <assetMoniker name="//Bank accounts" />
+    </assetShape>
+    <threatAgentShape Id="395ce87f-a428-4d1a-b182-c4f1a7ca7f95" absoluteBounds="0.75, 3.375, 1.5, 1">
+      <threatAgentMoniker name="//End User" />
+      <relativeChildShapes>
+        <agentPortShape Id="d2153279-0184-4fa7-a7ba-3d913895d8f0" absoluteBounds="2.15, 3.8125, 0.2, 0.2">
+          <agentPortMoniker name="//End User/Web Browser" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.45625, 3.6562500000000004, 0.79386389255523682, 0.181884765625" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </agentPortShape>
+      </relativeChildShapes>
+    </threatAgentShape>
+    <threatAgentShape Id="3ec35adb-1f4b-49b4-9609-a2e2046cf67b" absoluteBounds="1.125, 6, 1.5, 1">
+      <threatAgentMoniker name="//Internet Hacker" />
+      <relativeChildShapes>
+        <agentPortShape Id="3ca9a6ef-6d30-4514-98a0-5249d5cbecc2" absoluteBounds="2.525, 6.59375, 0.2, 0.2">
+          <agentPortMoniker name="//Internet Hacker/Web Browser" />
+          <relativeChildShapes />
+        </agentPortShape>
+      </relativeChildShapes>
+    </threatAgentShape>
+    <containerShape Id="a45ea97e-4673-4189-9eea-a6a3f4f15f82" absoluteBounds="5.125, 3.625, 1.5, 1">
+      <containerMoniker name="//Banking Web Site" />
+      <relativeChildShapes>
+        <containerPortShape Id="8906acaa-aa7f-4c05-966c-cb1d261c7b6e" absoluteBounds="6.525, 4.0625, 0.2, 0.2">
+          <containerPortMoniker name="//Banking Web Site/WS Client" />
+          <relativeChildShapes />
+        </containerPortShape>
+        <containerPortShape Id="7b623e06-375a-416d-99fd-ffa69428ec7d" absoluteBounds="5.025, 4.15625, 0.2, 0.2">
+          <containerPortMoniker name="//Banking Web Site/Web UI" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.4, 3.9375, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </containerPortShape>
+      </relativeChildShapes>
+    </containerShape>
+    <containerShape Id="f6ece093-9728-4c6a-87e5-ce3d7f04884b" absoluteBounds="8.5, 3.625, 1.5, 1">
+      <containerMoniker name="//Banking Service" />
+      <relativeChildShapes>
+        <containerPortShape Id="a7264fb1-d88e-4bcb-90ee-1665c5088039" absoluteBounds="8.4, 4.1875, 0.2, 0.2">
+          <containerPortMoniker name="//Banking Service/WS Service" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.55625, 4.4375, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </containerPortShape>
+      </relativeChildShapes>
+    </containerShape>
+    <interactsLink Id="49e812ad-8e31-44c8-bc94-59238c5df81c" edgePoints="[(6.725 : 4.1625); (7.1 : 4.1625); (7.1 : 4.2875); (8.4 : 4.2875)]" fixedFrom="Caller" fixedTo="Caller">
+      <interactionMoniker Id="55c95edd-6661-4fc0-8646-1f73b0c50f2b" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.5, 4, 0.2303263247013092, 0.181884765625" shapeFieldName="Attack" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <containerPortShapeMoniker Id="8906acaa-aa7f-4c05-966c-cb1d261c7b6e" />
+        <containerPortShapeMoniker Id="a7264fb1-d88e-4bcb-90ee-1665c5088039" />
+      </nodes>
+    </interactsLink>
+    <containsAsset Id="f51a3745-7c7a-497c-81b3-af465c545708" edgePoints="[(9.25 : 4.625); (9.25 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <containerReferencesAssetsMoniker Id="1c98cf2d-ec58-4aa7-b32a-5151f651f2a8" />
+      <nodes>
+        <containerShapeMoniker Id="f6ece093-9728-4c6a-87e5-ce3d7f04884b" />
+        <assetShapeMoniker Id="33846d8c-ddb6-45cc-9de4-259391ff09f6" />
+      </nodes>
+    </containsAsset>
+    <interactsLink Id="9f8d7805-4f3c-4716-9322-c7e70cfdd4a5" edgePoints="[(2.35 : 3.9125); (2.725 : 3.9125); (2.725 : 4.25625); (5.025 : 4.25625)]" fixedFrom="Caller" fixedTo="Caller">
+      <interactionMoniker Id="e12af7e9-b051-4ec2-af5b-bf0d5017556e" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.75, 4, 0.2775065004825592, 0.181884765625" shapeFieldName="Attack" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <agentPortShapeMoniker Id="d2153279-0184-4fa7-a7ba-3d913895d8f0" />
+        <containerPortShapeMoniker Id="7b623e06-375a-416d-99fd-ffa69428ec7d" />
+      </nodes>
+    </interactsLink>
+    <interactsLink Id="aa0227ef-0343-44ef-a0e4-b14becbccee9" edgePoints="[(2.725 : 6.69375); (3.1 : 6.69375); (3.1 : 4.25625); (5.025 : 4.25625)]" fixedFrom="Caller" fixedTo="Caller">
+      <interactionMoniker Id="bd053d55-19b1-4401-873d-2b2566500183" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.125, 5.1875, 0.2775065004825592, 0.181884765625" shapeFieldName="Attack" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <agentPortShapeMoniker Id="3ca9a6ef-6d30-4514-98a0-5249d5cbecc2" />
+        <containerPortShapeMoniker Id="7b623e06-375a-416d-99fd-ffa69428ec7d" />
+      </nodes>
+    </interactsLink>
+    <containerShape Id="86f97375-0350-4f10-a381-25b294f4b2cc" absoluteBounds="8.875, 1.25, 1.5, 1">
+      <containerMoniker name="//Corporate Network" />
+    </containerShape>
+    <containsLink Id="c1a09219-7dea-4099-8d0a-87da31f9c13c" edgePoints="[(9.4375 : 2.25); (9.4375 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containsMoniker Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" />
+      <relativeChildShapes />
+      <nodes>
+        <containerShapeMoniker Id="86f97375-0350-4f10-a381-25b294f4b2cc" />
+        <containerShapeMoniker Id="f6ece093-9728-4c6a-87e5-ce3d7f04884b" />
+      </nodes>
+    </containsLink>
+  </nestedChildShapes>
+</riskDiagram>

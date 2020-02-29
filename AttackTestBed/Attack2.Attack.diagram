@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackDiagram dslVersion="1.0.0.0" Id="4a30f936-857a-43b1-b271-895e3f76463b" absoluteBounds="0, 0, 11, 8.5" name="Attack2">
+  <attackGraphMoniker Id="5b819339-44d4-4b98-8b1c-05cb26d1154f" />
+  <nestedChildShapes>
+    <taskShape Id="10bbc50b-90e5-487e-b358-f6a7ae3210ff" absoluteBounds="3, 2.75, 1.5, 1.3593896484374994">
+      <taskMoniker Id="a4a1a1fe-d481-4c7f-af1d-311731e8cb4d" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63605103-1e2e-469f-b794-444ae9c356c0" absoluteBounds="3.015, 3.76, 1.4700000000000002, 0.2493896484375" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </taskShape>
+  </nestedChildShapes>
+</attackDiagram>

@@ -244,7 +244,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass Synchronisation
-	/// Description for JA.Attack.Synchronisation
+	/// The start of doing 2 things in parallel
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.Synchronisation.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.Synchronisation.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -285,7 +285,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass StartPoint
-	/// Description for JA.Attack.StartPoint
+	/// Where a threat agent starts from
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.StartPoint.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.StartPoint.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -326,7 +326,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass EndPoint
-	/// Description for JA.Attack.EndPoint
+	/// Where a threat agent ends up at
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.EndPoint.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.EndPoint.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -367,7 +367,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass MergeBranch
-	/// Description for JA.Attack.MergeBranch
+	/// Merges 2 possible paths
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.MergeBranch.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.MergeBranch.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -408,7 +408,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass Task
-	/// Description for JA.Attack.Task
+	/// Something a threat agent has to do in order to gain a level of access
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.Task.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.Task.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -442,6 +442,267 @@ namespace JA.Attack
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Probability domain property code
+		
+		/// <summary>
+		/// Probability domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ProbabilityDomainPropertyId = new global::System.Guid(0x629d55df, 0x56f9, 0x4b15, 0x9b, 0x36, 0x4c, 0x0f, 0xa0, 0xd7, 0x56, 0x7d);
+		
+		/// <summary>
+		/// Storage for Probability
+		/// </summary>
+		private global::System.String probabilityPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Probability domain property.
+		/// The most likely estimate of the chance of success
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Attack.Task/Probability.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Attack.Task/Probability.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("629d55df-56f9-4b15-9b36-4c0fa0d7567d")]
+		public global::System.String Probability
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return probabilityPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ProbabilityPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Task.Probability domain property.
+		/// </summary>
+		internal sealed partial class ProbabilityPropertyHandler : DslModeling::DomainPropertyValueHandler<Task, global::System.String>
+		{
+			private ProbabilityPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Task.Probability domain property value handler.
+			/// </summary>
+			public static readonly ProbabilityPropertyHandler Instance = new ProbabilityPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Task.Probability domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ProbabilityDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Task element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.probabilityPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Task element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.probabilityPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Confidence10Percent domain property code
+		
+		/// <summary>
+		/// Confidence10Percent domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid Confidence10PercentDomainPropertyId = new global::System.Guid(0xa52ed468, 0x08a9, 0x4442, 0xb7, 0xe9, 0x34, 0x7d, 0xfb, 0x9f, 0x0f, 0xea);
+		
+		/// <summary>
+		/// Storage for Confidence10Percent
+		/// </summary>
+		private global::System.String confidence10PercentPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Confidence10Percent domain property.
+		/// The success likelihood has a 10% chance of being below this figure
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Attack.Task/Confidence10Percent.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Attack.Task/Confidence10Percent.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a52ed468-08a9-4442-b7e9-347dfb9f0fea")]
+		public global::System.String Confidence10Percent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return confidence10PercentPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				Confidence10PercentPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Task.Confidence10Percent domain property.
+		/// </summary>
+		internal sealed partial class Confidence10PercentPropertyHandler : DslModeling::DomainPropertyValueHandler<Task, global::System.String>
+		{
+			private Confidence10PercentPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Task.Confidence10Percent domain property value handler.
+			/// </summary>
+			public static readonly Confidence10PercentPropertyHandler Instance = new Confidence10PercentPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Task.Confidence10Percent domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return Confidence10PercentDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Task element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.confidence10PercentPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Task element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.confidence10PercentPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Confidence90Percent domain property code
+		
+		/// <summary>
+		/// Confidence90Percent domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid Confidence90PercentDomainPropertyId = new global::System.Guid(0x51158d4a, 0xbf1b, 0x4cf5, 0x81, 0xc1, 0xe8, 0x48, 0xbf, 0x78, 0x2c, 0x3d);
+		
+		/// <summary>
+		/// Storage for Confidence90Percent
+		/// </summary>
+		private global::System.String confidence90PercentPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Confidence90Percent domain property.
+		/// The success probability has a 90% chance of being below this value
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Attack.Task/Confidence90Percent.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Attack.Task/Confidence90Percent.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("51158d4a-bf1b-4cf5-81c1-e848bf782c3d")]
+		public global::System.String Confidence90Percent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return confidence90PercentPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				Confidence90PercentPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Task.Confidence90Percent domain property.
+		/// </summary>
+		internal sealed partial class Confidence90PercentPropertyHandler : DslModeling::DomainPropertyValueHandler<Task, global::System.String>
+		{
+			private Confidence90PercentPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Task.Confidence90Percent domain property value handler.
+			/// </summary>
+			public static readonly Confidence90PercentPropertyHandler Instance = new Confidence90PercentPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Task.Confidence90Percent domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return Confidence90PercentDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Task element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.confidence90PercentPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Task element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.confidence90PercentPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region PreConditions opposite domain role accessor
 		
@@ -561,7 +822,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass State
-	/// Description for JA.Attack.State
+	/// A level of access a threat agent can achieve
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.State.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.State.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -763,7 +1024,7 @@ namespace JA.Attack
 		
 		/// <summary>
 		/// Gets or sets the value of Name domain property.
-		/// Description for JA.Attack.NamedElement.Name
+		/// The name of the element
 		/// </summary>
 		[DslDesign::DisplayNameResource("JA.Attack.NamedElement/Name.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("JA.Attack.NamedElement/Name.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -842,7 +1103,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass Condition
-	/// Description for JA.Attack.Condition
+	/// A condition that applies to a threat agent
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.Condition.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.Condition.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -883,7 +1144,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass PreCondition
-	/// Description for JA.Attack.PreCondition
+	/// Something a threat agent needs in order to perform a task
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.PreCondition.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.PreCondition.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
@@ -943,7 +1204,7 @@ namespace JA.Attack
 {
 	/// <summary>
 	/// DomainClass PostCondition
-	/// Description for JA.Attack.PostCondition
+	/// Something the threat agent has when in a state
 	/// </summary>
 	[DslDesign::DisplayNameResource("JA.Attack.PostCondition.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("JA.Attack.PostCondition.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]

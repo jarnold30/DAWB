@@ -345,6 +345,15 @@ namespace JA.Attack
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Attack.NamedElement.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Attack.Task.Confidence10PercentDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Confidence10Percent").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Attack.Task.Confidence90PercentDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Confidence90Percent").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Attack.Task.ProbabilityDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Probability").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		

@@ -142,7 +142,7 @@
     <comment>DisplayName for DomainClass &apos;FlowElement&apos;</comment>
   </data>
   <data name="JA.Attack.Synchronisation.Description" xml:space="preserve">
-    <value>Description for JA.Attack.Synchronisation</value>
+    <value>The start of doing 2 things in parallel</value>
     <comment>Description for DomainClass &apos;Synchronisation&apos;</comment>
   </data>
   <data name="JA.Attack.Synchronisation.DisplayName" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>DisplayName for DomainClass &apos;Synchronisation&apos;</comment>
   </data>
   <data name="JA.Attack.StartPoint.Description" xml:space="preserve">
-    <value>Description for JA.Attack.StartPoint</value>
+    <value>Where a threat agent starts from</value>
     <comment>Description for DomainClass &apos;StartPoint&apos;</comment>
   </data>
   <data name="JA.Attack.StartPoint.DisplayName" xml:space="preserve">
@@ -158,7 +158,7 @@
     <comment>DisplayName for DomainClass &apos;StartPoint&apos;</comment>
   </data>
   <data name="JA.Attack.EndPoint.Description" xml:space="preserve">
-    <value>Description for JA.Attack.EndPoint</value>
+    <value>Where a threat agent ends up at</value>
     <comment>Description for DomainClass &apos;EndPoint&apos;</comment>
   </data>
   <data name="JA.Attack.EndPoint.DisplayName" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>DisplayName for DomainClass &apos;EndPoint&apos;</comment>
   </data>
   <data name="JA.Attack.MergeBranch.Description" xml:space="preserve">
-    <value>Description for JA.Attack.MergeBranch</value>
+    <value>Merges 2 possible paths</value>
     <comment>Description for DomainClass &apos;MergeBranch&apos;</comment>
   </data>
   <data name="JA.Attack.MergeBranch.DisplayName" xml:space="preserve">
@@ -174,15 +174,39 @@
     <comment>DisplayName for DomainClass &apos;MergeBranch&apos;</comment>
   </data>
   <data name="JA.Attack.Task.Description" xml:space="preserve">
-    <value>Description for JA.Attack.Task</value>
+    <value>Something a threat agent has to do in order to gain a level of access</value>
     <comment>Description for DomainClass &apos;Task&apos;</comment>
   </data>
   <data name="JA.Attack.Task.DisplayName" xml:space="preserve">
     <value>Task</value>
     <comment>DisplayName for DomainClass &apos;Task&apos;</comment>
   </data>
+  <data name="JA.Attack.Task/Probability.Description" xml:space="preserve">
+    <value>The most likely estimate of the chance of success</value>
+    <comment>Description for DomainProperty &apos;Probability&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
+  <data name="JA.Attack.Task/Probability.DisplayName" xml:space="preserve">
+    <value>Probability</value>
+    <comment>DisplayName for DomainProperty &apos;Probability&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
+  <data name="JA.Attack.Task/Confidence10Percent.Description" xml:space="preserve">
+    <value>The success likelihood has a 10% chance of being below this figure</value>
+    <comment>Description for DomainProperty &apos;Confidence10Percent&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
+  <data name="JA.Attack.Task/Confidence10Percent.DisplayName" xml:space="preserve">
+    <value>10th Percent Confidence</value>
+    <comment>DisplayName for DomainProperty &apos;Confidence10Percent&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
+  <data name="JA.Attack.Task/Confidence90Percent.Description" xml:space="preserve">
+    <value>The success probability has a 90% chance of being below this value</value>
+    <comment>Description for DomainProperty &apos;Confidence90Percent&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
+  <data name="JA.Attack.Task/Confidence90Percent.DisplayName" xml:space="preserve">
+    <value>90th Percent Confidence</value>
+    <comment>DisplayName for DomainProperty &apos;Confidence90Percent&apos; on DomainClass &apos;Task&apos;</comment>
+  </data>
   <data name="JA.Attack.State.Description" xml:space="preserve">
-    <value>Description for JA.Attack.State</value>
+    <value>A level of access a threat agent can achieve</value>
     <comment>Description for DomainClass &apos;State&apos;</comment>
   </data>
   <data name="JA.Attack.State.DisplayName" xml:space="preserve">
@@ -198,7 +222,7 @@
     <comment>DisplayName for DomainClass &apos;NamedElement&apos;</comment>
   </data>
   <data name="JA.Attack.NamedElement/Name.Description" xml:space="preserve">
-    <value>Description for JA.Attack.NamedElement.Name</value>
+    <value>The name of the element</value>
     <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
   </data>
   <data name="JA.Attack.NamedElement/Name.DisplayName" xml:space="preserve">
@@ -206,7 +230,7 @@
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
   </data>
   <data name="JA.Attack.Condition.Description" xml:space="preserve">
-    <value>Description for JA.Attack.Condition</value>
+    <value>A condition that applies to a threat agent</value>
     <comment>Description for DomainClass &apos;Condition&apos;</comment>
   </data>
   <data name="JA.Attack.Condition.DisplayName" xml:space="preserve">
@@ -214,7 +238,7 @@
     <comment>DisplayName for DomainClass &apos;Condition&apos;</comment>
   </data>
   <data name="JA.Attack.PreCondition.Description" xml:space="preserve">
-    <value>Description for JA.Attack.PreCondition</value>
+    <value>Something a threat agent needs in order to perform a task</value>
     <comment>Description for DomainClass &apos;PreCondition&apos;</comment>
   </data>
   <data name="JA.Attack.PreCondition.DisplayName" xml:space="preserve">
@@ -222,7 +246,7 @@
     <comment>DisplayName for DomainClass &apos;PreCondition&apos;</comment>
   </data>
   <data name="JA.Attack.PostCondition.Description" xml:space="preserve">
-    <value>Description for JA.Attack.PostCondition</value>
+    <value>Something the threat agent has when in a state</value>
     <comment>Description for DomainClass &apos;PostCondition&apos;</comment>
   </data>
   <data name="JA.Attack.PostCondition.DisplayName" xml:space="preserve">
@@ -373,6 +397,18 @@
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="TaskShapeProbabilityDefaultText" xml:space="preserve">
+    <value>Probability</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="TaskShapeConfidence10PercentDefaultText" xml:space="preserve">
+    <value>Confidence10Percent</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="TaskShapeConfidence90PercentDefaultText" xml:space="preserve">
+    <value>Confidence90Percent</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="JA.Attack.StateShape.Description" xml:space="preserve">
     <value>Description for JA.Attack.StateShape</value>
     <comment>Description for DomainClass &apos;StateShape&apos;</comment>
@@ -454,59 +490,59 @@
     <comment>Toolbox item tab name</comment>
   </data>
   <data name="FlowToolToolboxItem" xml:space="preserve">
-    <value>FlowTool</value>
+    <value>Flow</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="FlowToolToolboxTooltip" xml:space="preserve">
-    <value>Flow Tool</value>
+    <value>Creates a flow to show the sequencing of tasks and states</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="TaskToolToolboxItem" xml:space="preserve">
-    <value>TaskTool</value>
+    <value>Task</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="TaskToolToolboxTooltip" xml:space="preserve">
-    <value>Task Tool</value>
+    <value>A task describes something that has to be done to gain access</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="StateToolToolboxItem" xml:space="preserve">
-    <value>StateTool</value>
+    <value>State</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="StateToolToolboxTooltip" xml:space="preserve">
-    <value>State Tool</value>
+    <value>Describes a level of access</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="SyncToolToolboxItem" xml:space="preserve">
-    <value>SyncTool</value>
+    <value>Sync</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="SyncToolToolboxTooltip" xml:space="preserve">
-    <value>Sync Tool</value>
+    <value>Represents the start of parallel options</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="StartToolToolboxItem" xml:space="preserve">
-    <value>StartTool</value>
+    <value>Start</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="StartToolToolboxTooltip" xml:space="preserve">
-    <value>Start Tool</value>
+    <value>Where the threat agent starts from</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="EndToolToolboxItem" xml:space="preserve">
-    <value>EndTool</value>
+    <value>End</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="EndToolToolboxTooltip" xml:space="preserve">
-    <value>End Tool</value>
+    <value>Where the threat agent ends up</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="MergeToolToolboxItem" xml:space="preserve">
-    <value>MergeTool</value>
+    <value>Merge</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="MergeToolToolboxTooltip" xml:space="preserve">
-    <value>Merge Tool</value>
+    <value>Represents where parallel options remerge</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">

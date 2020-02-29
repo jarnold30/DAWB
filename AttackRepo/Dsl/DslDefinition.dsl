@@ -22,30 +22,47 @@
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="2521d3ca-5ac9-478f-9241-2571b828e58e" Description="Description for JA.Attack.Synchronisation" Name="Synchronisation" DisplayName="Synchronisation" Namespace="JA.Attack">
+    <DomainClass Id="2521d3ca-5ac9-478f-9241-2571b828e58e" Description="The start of doing 2 things in parallel" Name="Synchronisation" DisplayName="Synchronisation" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="c15eb944-2543-4423-81ad-63116d429019" Description="Description for JA.Attack.StartPoint" Name="StartPoint" DisplayName="Start Point" Namespace="JA.Attack">
+    <DomainClass Id="c15eb944-2543-4423-81ad-63116d429019" Description="Where a threat agent starts from" Name="StartPoint" DisplayName="Start Point" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="97233ffa-5d78-44c0-a7ec-d47376b93677" Description="Description for JA.Attack.EndPoint" Name="EndPoint" DisplayName="End Point" Namespace="JA.Attack">
+    <DomainClass Id="97233ffa-5d78-44c0-a7ec-d47376b93677" Description="Where a threat agent ends up at" Name="EndPoint" DisplayName="End Point" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="60cdf59d-778f-4acd-b006-0336e39ce8ad" Description="Description for JA.Attack.MergeBranch" Name="MergeBranch" DisplayName="Merge Branch" Namespace="JA.Attack">
+    <DomainClass Id="60cdf59d-778f-4acd-b006-0336e39ce8ad" Description="Merges 2 possible paths" Name="MergeBranch" DisplayName="Merge Branch" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="369f91e0-d2f6-4e86-a7bb-f7d6a3bb6813" Description="Description for JA.Attack.Task" Name="Task" DisplayName="Task" Namespace="JA.Attack">
+    <DomainClass Id="369f91e0-d2f6-4e86-a7bb-f7d6a3bb6813" Description="Something a threat agent has to do in order to gain a level of access" Name="Task" DisplayName="Task" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="629d55df-56f9-4b15-9b36-4c0fa0d7567d" Description="The most likely estimate of the chance of success" Name="Probability" DisplayName="Probability">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="a52ed468-08a9-4442-b7e9-347dfb9f0fea" Description="The success likelihood has a 10% chance of being below this figure" Name="Confidence10Percent" DisplayName="10th Percent Confidence">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="51158d4a-bf1b-4cf5-81c1-e848bf782c3d" Description="The success probability has a 90% chance of being below this value" Name="Confidence90Percent" DisplayName="90th Percent Confidence">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -57,7 +74,7 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="4a83155a-879c-4c77-8289-78da25ff67df" Description="Description for JA.Attack.State" Name="State" DisplayName="State" Namespace="JA.Attack">
+    <DomainClass Id="4a83155a-879c-4c77-8289-78da25ff67df" Description="A level of access a threat agent can achieve" Name="State" DisplayName="State" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="FlowElement" />
       </BaseClass>
@@ -74,24 +91,24 @@
     </DomainClass>
     <DomainClass Id="581fe8a9-3915-4702-8f55-160ce5753588" Description="Description for JA.Attack.NamedElement" Name="NamedElement" DisplayName="Named Element" Namespace="JA.Attack">
       <Properties>
-        <DomainProperty Id="27ee9785-9171-4fbf-8466-f93f355186b0" Description="Description for JA.Attack.NamedElement.Name" Name="Name" DisplayName="Name">
+        <DomainProperty Id="27ee9785-9171-4fbf-8466-f93f355186b0" Description="The name of the element" Name="Name" DisplayName="Name">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="4a7dd5cc-0d82-431a-9081-42695b1b726d" Description="Description for JA.Attack.Condition" Name="Condition" DisplayName="Condition" Namespace="JA.Attack">
+    <DomainClass Id="4a7dd5cc-0d82-431a-9081-42695b1b726d" Description="A condition that applies to a threat agent" Name="Condition" DisplayName="Condition" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="492be2bb-e6ae-43f4-9e53-c142977c963e" Description="Description for JA.Attack.PreCondition" Name="PreCondition" DisplayName="Pre Condition" Namespace="JA.Attack">
+    <DomainClass Id="492be2bb-e6ae-43f4-9e53-c142977c963e" Description="Something a threat agent needs in order to perform a task" Name="PreCondition" DisplayName="Pre Condition" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="Condition" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="13d05d8d-a143-45e7-a8dc-aeb517cc7e8b" Description="Description for JA.Attack.PostCondition" Name="PostCondition" DisplayName="Post Condition" Namespace="JA.Attack">
+    <DomainClass Id="13d05d8d-a143-45e7-a8dc-aeb517cc7e8b" Description="Something the threat agent has when in a state" Name="PostCondition" DisplayName="Post Condition" Namespace="JA.Attack">
       <BaseClass>
         <DomainClassMoniker Name="Condition" />
       </BaseClass>
@@ -188,6 +205,15 @@
       <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
         <ExpandCollapseDecorator Name="ExpandCollapse" DisplayName="Expand/Collapse" />
       </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0.2">
+        <TextDecorator Name="Probability" DisplayName="Probability" DefaultText="Probability" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0.2">
+        <TextDecorator Name="Confidence10Percent" DisplayName="Confidence10 Percent" DefaultText="Confidence10Percent" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0.2">
+        <TextDecorator Name="Confidence90Percent" DisplayName="Confidence90 Percent" DefaultText="Confidence90Percent" />
+      </ShapeHasDecorators>
       <Compartment Name="PreConditions" Title="Pre Conditions" />
     </CompartmentShape>
     <CompartmentShape Id="6f1c327d-c77d-4721-be2b-1a79b5958a37" Description="Description for JA.Attack.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="JA.Attack" FixedTooltipText="State Shape" InitialHeight="1" Geometry="RoundedRectangle">
@@ -256,6 +282,15 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="preConditions">
             <DomainRelationshipMoniker Name="TaskHasPreConditions" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="probability">
+            <DomainPropertyMoniker Name="Task/Probability" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="confidence10Percent">
+            <DomainPropertyMoniker Name="Task/Confidence10Percent" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="confidence90Percent">
+            <DomainPropertyMoniker Name="Task/Confidence90Percent" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="State" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateMoniker" ElementName="state" MonikerTypeName="StateMoniker">
@@ -395,6 +430,30 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="TaskShape/Confidence10Percent" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Task/Confidence10Percent" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="TaskShape/Confidence90Percent" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Task/Confidence90Percent" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="TaskShape/Probability" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Task/Probability" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <CompartmentShapeMoniker Name="TaskShape" />
         <CompartmentMap>
           <CompartmentMoniker Name="TaskShape/PreConditions" />
@@ -486,25 +545,25 @@
       <XmlSerializationBehaviorMoniker Name="AttackSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="Attack">
-      <ConnectionTool Name="FlowTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="FlowTool" Tooltip="Flow Tool" HelpKeyword="FlowTool" SourceCursorIcon="Resources\ConnectorSourceSearch.cur" TargetCursorIcon="Resources\ConnectorTargetSearch.cur">
+      <ConnectionTool Name="FlowTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Flow" Tooltip="Creates a flow to show the sequencing of tasks and states" HelpKeyword="FlowTool" SourceCursorIcon="Resources\ConnectorSourceSearch.cur" TargetCursorIcon="Resources\ConnectorTargetSearch.cur">
         <ConnectionBuilderMoniker Name="Attack/FlowRelationshipBuilder" />
       </ConnectionTool>
-      <ElementTool Name="TaskTool" ToolboxIcon="Resources\TaskTool.bmp" Caption="TaskTool" Tooltip="Task Tool" HelpKeyword="TaskTool">
+      <ElementTool Name="TaskTool" ToolboxIcon="Resources\TaskTool.bmp" Caption="Task" Tooltip="A task describes something that has to be done to gain access" HelpKeyword="TaskTool">
         <DomainClassMoniker Name="Task" />
       </ElementTool>
-      <ElementTool Name="StateTool" ToolboxIcon="Resources\ObjectTool.bmp" Caption="StateTool" Tooltip="State Tool" HelpKeyword="StateTool">
+      <ElementTool Name="StateTool" ToolboxIcon="Resources\ObjectTool.bmp" Caption="State" Tooltip="Describes a level of access" HelpKeyword="StateTool">
         <DomainClassMoniker Name="State" />
       </ElementTool>
-      <ElementTool Name="SyncTool" ToolboxIcon="Resources\SyncBarTool.bmp" Caption="SyncTool" Tooltip="Sync Tool" HelpKeyword="SyncTool">
+      <ElementTool Name="SyncTool" ToolboxIcon="Resources\SyncBarTool.bmp" Caption="Sync" Tooltip="Represents the start of parallel options" HelpKeyword="SyncTool">
         <DomainClassMoniker Name="Synchronisation" />
       </ElementTool>
-      <ElementTool Name="StartTool" ToolboxIcon="Resources\StartTool.bmp" Caption="StartTool" Tooltip="Start Tool" HelpKeyword="StartTool">
+      <ElementTool Name="StartTool" ToolboxIcon="Resources\StartTool.bmp" Caption="Start" Tooltip="Where the threat agent starts from" HelpKeyword="StartTool">
         <DomainClassMoniker Name="StartPoint" />
       </ElementTool>
-      <ElementTool Name="EndTool" ToolboxIcon="Resources\EndTool.bmp" Caption="EndTool" Tooltip="End Tool" HelpKeyword="EndTool">
+      <ElementTool Name="EndTool" ToolboxIcon="Resources\EndTool.bmp" Caption="End" Tooltip="Where the threat agent ends up" HelpKeyword="EndTool">
         <DomainClassMoniker Name="EndPoint" />
       </ElementTool>
-      <ElementTool Name="MergeTool" ToolboxIcon="Resources\MergeBranchTool.bmp" Caption="MergeTool" Tooltip="Merge Tool" HelpKeyword="MergeTool">
+      <ElementTool Name="MergeTool" ToolboxIcon="Resources\MergeBranchTool.bmp" Caption="Merge" Tooltip="Represents where parallel options remerge" HelpKeyword="MergeTool">
         <DomainClassMoniker Name="MergeBranch" />
       </ElementTool>
     </ToolboxTab>

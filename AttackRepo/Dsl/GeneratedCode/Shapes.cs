@@ -171,6 +171,33 @@ namespace JA.Attack
 			field2.DefaultFocusable = true;
 			shapeFields.Add(field2);
 			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Probability");
+			field3.DefaultText = global::JA.Attack.AttackDomainModel.SingletonResourceManager.GetString("TaskShapeProbabilityDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
+			DslDiagrams::TextField field4 = new DslDiagrams::TextField("Confidence10Percent");
+			field4.DefaultText = global::JA.Attack.AttackDomainModel.SingletonResourceManager.GetString("TaskShapeConfidence10PercentDefaultText");
+			field4.DefaultFocusable = true;
+			field4.DefaultAutoSize = true;
+			field4.AnchoringBehavior.MinimumHeightInLines = 1;
+			field4.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field4.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field4);
+			
+			DslDiagrams::TextField field5 = new DslDiagrams::TextField("Confidence90Percent");
+			field5.DefaultText = global::JA.Attack.AttackDomainModel.SingletonResourceManager.GetString("TaskShapeConfidence90PercentDefaultText");
+			field5.DefaultFocusable = true;
+			field5.DefaultAutoSize = true;
+			field5.AnchoringBehavior.MinimumHeightInLines = 1;
+			field5.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field5.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field5);
+			
 		}
 		
 		/// <summary>
@@ -189,6 +216,18 @@ namespace JA.Attack
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ExpandCollapse");
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ExpandCollapseDecorator(this.Store, (DslDiagrams::ToggleButtonField)field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Probability");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, new DslDiagrams::PointD(0, 0.2));
+			decorators.Add(decorator3);
+				
+			DslDiagrams::ShapeField field4 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Confidence10Percent");
+			DslDiagrams::Decorator decorator4 = new DslDiagrams::ShapeDecorator(field4, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, new DslDiagrams::PointD(0, 0.2));
+			decorators.Add(decorator4);
+				
+			DslDiagrams::ShapeField field5 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Confidence90Percent");
+			DslDiagrams::Decorator decorator5 = new DslDiagrams::ShapeDecorator(field5, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, new DslDiagrams::PointD(0, 0.2));
+			decorators.Add(decorator5);
 				
 		}
 		

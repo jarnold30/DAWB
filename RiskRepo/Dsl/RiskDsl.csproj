@@ -77,11 +77,6 @@
     <None Include="..\Key.snk">
       <Link>Key.snk</Link>
     </None>
-    <None Include="GeneratedCode\RiskToProlog.pl">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RiskToProlog.tt</DependentUpon>
-    </None>
     <None Include="GeneratedCode\SerializationHelper.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
@@ -164,10 +159,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GeneratedCode\RiskToProlog.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RiskToProlog.pl</LastGenOutput>
-    </Content>
+    <Content Include="Resources\AgentPort.bmp" />
+    <Content Include="Resources\ContainerPort.bmp" />
+    <Content Include="Resources\ContainsAsset.bmp" />
     <Content Include="Resources\ContainsTool.bmp" />
     <Content Include="Resources\Contains.bmp" />
     <Content Include="Resources\Port.bmp" />

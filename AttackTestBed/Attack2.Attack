@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5b819339-44d4-4b98-8b1c-05cb26d1154f" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <task Id="a4a1a1fe-d481-4c7f-af1d-311731e8cb4d" />
+  </elements>
+</attackGraph>

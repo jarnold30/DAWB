@@ -111,6 +111,9 @@
   <!-- Synchronisation -->
   <xsd:element name="synchronisation" type="Synchronisation" substitutionGroup="flowElement" />
   <xsd:complexType name="Synchronisation">
+    <xsd:annotation>
+      <xsd:documentation>The start of doing 2 things in parallel</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <!-- Id -->
@@ -138,6 +141,9 @@
   <!-- StartPoint -->
   <xsd:element name="startPoint" type="StartPoint" substitutionGroup="flowElement" />
   <xsd:complexType name="StartPoint">
+    <xsd:annotation>
+      <xsd:documentation>Where a threat agent starts from</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <!-- Id -->
@@ -165,6 +171,9 @@
   <!-- EndPoint -->
   <xsd:element name="endPoint" type="EndPoint" substitutionGroup="flowElement" />
   <xsd:complexType name="EndPoint">
+    <xsd:annotation>
+      <xsd:documentation>Where a threat agent ends up at</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <!-- Id -->
@@ -192,6 +201,9 @@
   <!-- MergeBranch -->
   <xsd:element name="mergeBranch" type="MergeBranch" substitutionGroup="flowElement" />
   <xsd:complexType name="MergeBranch">
+    <xsd:annotation>
+      <xsd:documentation>Merges 2 possible paths</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <!-- Id -->
@@ -219,6 +231,9 @@
   <!-- Task -->
   <xsd:element name="task" type="Task" substitutionGroup="flowElement" />
   <xsd:complexType name="Task">
+    <xsd:annotation>
+      <xsd:documentation>Something a threat agent has to do in order to gain a level of access</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -244,6 +259,24 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Probability -->
+        <xsd:attribute name="probability" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>The most likely estimate of the chance of success</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Confidence10Percent -->
+        <xsd:attribute name="confidence10Percent" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>The success likelihood has a 10% chance of being below this figure</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Confidence90Percent -->
+        <xsd:attribute name="confidence90Percent" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>The success probability has a 90% chance of being below this value</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -263,6 +296,9 @@
   <!-- State -->
   <xsd:element name="state" type="State" substitutionGroup="flowElement" />
   <xsd:complexType name="State">
+    <xsd:annotation>
+      <xsd:documentation>A level of access a threat agent can achieve</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="FlowElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -316,7 +352,11 @@
           </xsd:annotation>
         </xsd:attribute>
         <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>The name of the element</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -341,6 +381,9 @@
   <!-- Condition -->
   <xsd:element name="condition" type="Condition" substitutionGroup="namedElement" />
   <xsd:complexType name="Condition">
+    <xsd:annotation>
+      <xsd:documentation>A condition that applies to a threat agent</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="NamedElement">
         <!-- Id -->
@@ -368,6 +411,9 @@
   <!-- PreCondition -->
   <xsd:element name="preCondition" type="PreCondition" substitutionGroup="condition" />
   <xsd:complexType name="PreCondition">
+    <xsd:annotation>
+      <xsd:documentation>Something a threat agent needs in order to perform a task</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="Condition">
         <!-- Id -->
@@ -395,6 +441,9 @@
   <!-- PostCondition -->
   <xsd:element name="postCondition" type="PostCondition" substitutionGroup="condition" />
   <xsd:complexType name="PostCondition">
+    <xsd:annotation>
+      <xsd:documentation>Something the threat agent has when in a state</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="Condition">
         <!-- Id -->
