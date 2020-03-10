@@ -1950,7 +1950,7 @@ namespace JA.Risk
 		/// </summary>
 		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AgentPorted", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AgentPorts", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("54eff892-a618-4042-a30e-6b6a25952c81")]
 		public virtual ThreatAgent ThreatAgent
 		{
@@ -2018,13 +2018,13 @@ namespace JA.Risk
 		}
 				
 		#endregion
-		#region Static methods to access AgentPorted of a ThreatAgent
+		#region Static methods to access AgentPorts of a ThreatAgent
 		/// <summary>
-		/// Gets a list of AgentPorted.
+		/// Gets a list of AgentPorts.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<AgentPort> GetAgentPorted(ThreatAgent element)
+		public static DslModeling::LinkedElementCollection<AgentPort> GetAgentPorts(ThreatAgent element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<AgentPort>, AgentPort>(element, ThreatAgentDomainRoleId);
 		}
@@ -2035,7 +2035,7 @@ namespace JA.Risk
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasAgentPorts> GetLinksToAgentPorted ( global::JA.Risk.ThreatAgent threatAgentInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasAgentPorts> GetLinksToAgentPorts ( global::JA.Risk.ThreatAgent threatAgentInstance )
 		{
 			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasAgentPorts>(threatAgentInstance, global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId);
 		}
@@ -2189,7 +2189,7 @@ namespace JA.Risk
 		/// </summary>
 		[DslDesign::DisplayNameResource("JA.Risk.ContainerHasContainerPorts/Container.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("JA.Risk.ContainerHasContainerPorts/Container.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ContainerPorted", PropertyDisplayNameKey="JA.Risk.ContainerHasContainerPorts/Container.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ContainerPorts", PropertyDisplayNameKey="JA.Risk.ContainerHasContainerPorts/Container.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("ff938bef-865c-48ef-bf31-3fa1e6a6eede")]
 		public virtual Container Container
 		{
@@ -2257,13 +2257,13 @@ namespace JA.Risk
 		}
 				
 		#endregion
-		#region Static methods to access ContainerPorted of a Container
+		#region Static methods to access ContainerPorts of a Container
 		/// <summary>
-		/// Gets a list of ContainerPorted.
+		/// Gets a list of ContainerPorts.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ContainerPort> GetContainerPorted(Container element)
+		public static DslModeling::LinkedElementCollection<ContainerPort> GetContainerPorts(Container element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<ContainerPort>, ContainerPort>(element, ContainerDomainRoleId);
 		}
@@ -2274,7 +2274,7 @@ namespace JA.Risk
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ContainerHasContainerPorts> GetLinksToContainerPorted ( global::JA.Risk.Container containerInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ContainerHasContainerPorts> GetLinksToContainerPorts ( global::JA.Risk.Container containerInstance )
 		{
 			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ContainerHasContainerPorts>(containerInstance, global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId);
 		}

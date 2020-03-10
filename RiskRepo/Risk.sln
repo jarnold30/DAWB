@@ -8,6 +8,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskDslPackage", "DslPackage\RiskDslPackage.csproj", "{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskToProlog", "RiskToProlog\RiskToProlog.csproj", "{CFF229EF-95DB-4155-A526-80D3A53EE304}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76FD8C02-9D0E-40DD-AB94-FF12EA69E391} = {76FD8C02-9D0E-40DD-AB94-FF12EA69E391}
+		{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62} = {C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

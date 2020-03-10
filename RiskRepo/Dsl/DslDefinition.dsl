@@ -58,7 +58,7 @@
             <DomainClassMoniker Name="ContainerPort" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ContainerHasContainerPorts.ContainerPorted</DomainPath>
+            <DomainPath>ContainerHasContainerPorts.ContainerPorts</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -112,7 +112,7 @@
             <DomainClassMoniker Name="AgentPort" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ThreatAgentHasAgentPorts.AgentPorted</DomainPath>
+            <DomainPath>ThreatAgentHasAgentPorts.AgentPorts</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -262,7 +262,7 @@
     </DomainRelationship>
     <DomainRelationship Id="d87498d4-8eb6-482f-bd76-f9a3e10b7424" Description="Description for JA.Risk.ThreatAgentHasAgentPorts" Name="ThreatAgentHasAgentPorts" DisplayName="Threat Agent Has Agent Ports" Namespace="JA.Risk" IsEmbedding="true">
       <Source>
-        <DomainRole Id="54eff892-a618-4042-a30e-6b6a25952c81" Description="Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" PropertyName="AgentPorted" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Agent Ported">
+        <DomainRole Id="54eff892-a618-4042-a30e-6b6a25952c81" Description="Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" PropertyName="AgentPorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Agent Ports">
           <RolePlayer>
             <DomainClassMoniker Name="ThreatAgent" />
           </RolePlayer>
@@ -278,7 +278,7 @@
     </DomainRelationship>
     <DomainRelationship Id="e416e821-fdff-4f58-b5bb-cd7642f5f878" Description="Description for JA.Risk.ContainerHasContainerPorts" Name="ContainerHasContainerPorts" DisplayName="Container Has Container Ports" Namespace="JA.Risk" IsEmbedding="true">
       <Source>
-        <DomainRole Id="ff938bef-865c-48ef-bf31-3fa1e6a6eede" Description="Description for JA.Risk.ContainerHasContainerPorts.Container" Name="Container" DisplayName="Container" PropertyName="ContainerPorted" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Container Ported">
+        <DomainRole Id="ff938bef-865c-48ef-bf31-3fa1e6a6eede" Description="Description for JA.Risk.ContainerHasContainerPorts.Container" Name="Container" DisplayName="Container" PropertyName="ContainerPorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Container Ports">
           <RolePlayer>
             <DomainClassMoniker Name="Container" />
           </RolePlayer>
@@ -420,7 +420,7 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="assets">
             <DomainRelationshipMoniker Name="ContainerReferencesAssets" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="containerPorted">
+          <XmlRelationshipData UseFullForm="true" RoleElementName="containerPorts">
             <DomainRelationshipMoniker Name="ContainerHasContainerPorts" />
           </XmlRelationshipData>
         </ElementData>
@@ -482,7 +482,7 @@
           <XmlPropertyData XmlName="number">
             <DomainPropertyMoniker Name="ThreatAgent/Number" />
           </XmlPropertyData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="agentPorted">
+          <XmlRelationshipData UseFullForm="true" RoleElementName="agentPorts">
             <DomainRelationshipMoniker Name="ThreatAgentHasAgentPorts" />
           </XmlRelationshipData>
         </ElementData>

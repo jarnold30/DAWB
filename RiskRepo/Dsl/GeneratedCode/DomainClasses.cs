@@ -587,13 +587,13 @@ namespace JA.Risk
 			}
 		}
 		#endregion
-		#region ContainerPorted opposite domain role accessor
+		#region ContainerPorts opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of ContainerPorted.
+		/// Gets a list of ContainerPorts.
 		/// Description for JA.Risk.ContainerHasContainerPorts.Container
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ContainerPort> ContainerPorted
+		public virtual DslModeling::LinkedElementCollection<ContainerPort> ContainerPorts
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -654,8 +654,8 @@ namespace JA.Risk
 			global::JA.Risk.ContainerPort sourceContainerPort1 = sourceElement as global::JA.Risk.ContainerPort;
 			if (sourceContainerPort1 != null)
 			{
-				// Create link for path ContainerHasContainerPorts.ContainerPorted
-				this.ContainerPorted.Add(sourceContainerPort1);
+				// Create link for path ContainerHasContainerPorts.ContainerPorts
+				this.ContainerPorts.Add(sourceContainerPort1);
 
 				return;
 			}
@@ -685,7 +685,7 @@ namespace JA.Risk
 			global::JA.Risk.ContainerPort sourceContainerPort1 = sourceElement as global::JA.Risk.ContainerPort;
 			if (sourceContainerPort1 != null)
 			{
-				// Delete link for path ContainerHasContainerPorts.ContainerPorted
+				// Delete link for path ContainerHasContainerPorts.ContainerPorts
 				
 				foreach (DslModeling::ElementLink link in global::JA.Risk.ContainerHasContainerPorts.GetLinks((global::JA.Risk.Container)this, sourceContainerPort1))
 				{
@@ -1330,13 +1330,13 @@ namespace JA.Risk
 			}
 		}
 		#endregion
-		#region AgentPorted opposite domain role accessor
+		#region AgentPorts opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of AgentPorted.
+		/// Gets a list of AgentPorts.
 		/// Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<AgentPort> AgentPorted
+		public virtual DslModeling::LinkedElementCollection<AgentPort> AgentPorts
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -1397,8 +1397,8 @@ namespace JA.Risk
 			global::JA.Risk.AgentPort sourceAgentPort1 = sourceElement as global::JA.Risk.AgentPort;
 			if (sourceAgentPort1 != null)
 			{
-				// Create link for path ThreatAgentHasAgentPorts.AgentPorted
-				this.AgentPorted.Add(sourceAgentPort1);
+				// Create link for path ThreatAgentHasAgentPorts.AgentPorts
+				this.AgentPorts.Add(sourceAgentPort1);
 
 				return;
 			}
@@ -1428,7 +1428,7 @@ namespace JA.Risk
 			global::JA.Risk.AgentPort sourceAgentPort1 = sourceElement as global::JA.Risk.AgentPort;
 			if (sourceAgentPort1 != null)
 			{
-				// Delete link for path ThreatAgentHasAgentPorts.AgentPorted
+				// Delete link for path ThreatAgentHasAgentPorts.AgentPorts
 				
 				foreach (DslModeling::ElementLink link in global::JA.Risk.ThreatAgentHasAgentPorts.GetLinks((global::JA.Risk.ThreatAgent)this, sourceAgentPort1))
 				{

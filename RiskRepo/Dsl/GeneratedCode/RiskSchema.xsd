@@ -181,7 +181,7 @@
             </xsd:complexType>
           </xsd:element>
           <!-- Relationship: ContainerHasContainerPorts -->
-          <xsd:element name="containerPorted" minOccurs="0" maxOccurs="1">
+          <xsd:element name="containerPorts" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>Instances of ContainerHasContainerPorts</xsd:documentation>
             </xsd:annotation>
@@ -332,7 +332,7 @@
       <xsd:extension base="NamedElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
           <!-- Relationship: ThreatAgentHasAgentPorts -->
-          <xsd:element name="agentPorted" minOccurs="0" maxOccurs="1">
+          <xsd:element name="agentPorts" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>Instances of ThreatAgentHasAgentPorts</xsd:documentation>
             </xsd:annotation>

@@ -12,7 +12,7 @@
           <agentPortMoniker name="//End User/Web Browser" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.45625, 3.6562500000000004, 0.79386389255523682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.4437499999999996, 3.65625, 0.79386389255523682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </agentPortShape>
       </relativeChildShapes>
@@ -37,7 +37,7 @@
           <containerPortMoniker name="//Banking Web Site/Web UI" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.4, 3.9375, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.2000000000000011, 3.9375, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
@@ -49,7 +49,7 @@
           <containerPortMoniker name="//Banking Service/WS Service" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.55625, 4.4375, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.3562500000000011, 4.4375, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
@@ -97,7 +97,7 @@
     <containerShape Id="86f97375-0350-4f10-a381-25b294f4b2cc" absoluteBounds="8.875, 1.25, 1.5, 1">
       <containerMoniker name="//Corporate Network" />
     </containerShape>
-    <containsLink Id="c1a09219-7dea-4099-8d0a-87da31f9c13c" edgePoints="[(9.4375 : 2.25); (9.4375 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <containsLink Id="c1a09219-7dea-4099-8d0a-87da31f9c13c" edgePoints="[(9.4375 : 2.25); (9.4375 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <containsMoniker Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" />
       <relativeChildShapes />
       <nodes>

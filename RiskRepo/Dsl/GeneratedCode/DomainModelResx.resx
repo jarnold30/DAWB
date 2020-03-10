@@ -510,7 +510,7 @@
     <comment>DisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
   </data>
   <data name="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.PropertyDisplayName" xml:space="preserve">
-    <value>Agent Ported</value>
+    <value>Agent Ports</value>
     <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
   </data>
   <data name="JA.Risk.ThreatAgentHasAgentPorts/AgentPort.Description" xml:space="preserve">
@@ -542,7 +542,7 @@
     <comment>DisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
   </data>
   <data name="JA.Risk.ContainerHasContainerPorts/Container.PropertyDisplayName" xml:space="preserve">
-    <value>Container Ported</value>
+    <value>Container Ports</value>
     <comment>PropertyDisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
   </data>
   <data name="JA.Risk.ContainerHasContainerPorts/ContainerPort.Description" xml:space="preserve">

@@ -1,6 +1,6 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
 <#@ output extension=".pl" #>
-<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='Web Banking.Risk'" #>
+<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='C:\Users\johna\Source\repos2\TestRisk\Risk Testbed\Web Banking 2.Risk'" #>
 
 This text will be output directly.
 

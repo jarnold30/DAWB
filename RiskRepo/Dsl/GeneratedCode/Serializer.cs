@@ -1654,16 +1654,16 @@ namespace JA.Risk
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </assets>
 						}
 						break;
-					case "containerPorted":	// Relationship "ContainerHasContainerPorts"
+					case "containerPorts":	// Relationship "ContainerHasContainerPorts"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
 						}
 						else
 						{
-							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <containerPorted>
+							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <containerPorts>
 							ReadContainerHasContainerPortsInstances(serializationContext, element, reader);
-							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </containerPorted>
+							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </containerPorts>
 						}
 						break;
 					default:
@@ -1844,7 +1844,7 @@ namespace JA.Risk
 					if (newContainerPortOfContainerHasContainerPorts != null)
 					{
 						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(ContainerHasContainerPorts));
-						element.ContainerPorted.Add(newContainerPortOfContainerHasContainerPorts);
+						element.ContainerPorts.Add(newContainerPortOfContainerHasContainerPorts);
 						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newContainerPortOfContainerHasContainerPorts.GetDomainClass().Id);	
 						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newContainerPortOfContainerHasContainerPorts.GetDomainClass().Name + "!");
 						targetSerializer.Read(serializationContext, newContainerPortOfContainerHasContainerPorts, reader);
@@ -2353,10 +2353,10 @@ namespace JA.Risk
 			}
 	
 			// ContainerHasContainerPorts
-			global::System.Collections.ObjectModel.ReadOnlyCollection<ContainerHasContainerPorts> allContainerHasContainerPortsInstances = ContainerHasContainerPorts.GetLinksToContainerPorted(element);
+			global::System.Collections.ObjectModel.ReadOnlyCollection<ContainerHasContainerPorts> allContainerHasContainerPortsInstances = ContainerHasContainerPorts.GetLinksToContainerPorts(element);
 			if (!serializationContext.Result.Failed && allContainerHasContainerPortsInstances.Count > 0)
 			{
-				writer.WriteStartElement("containerPorted");
+				writer.WriteStartElement("containerPorts");
 				foreach (ContainerHasContainerPorts eachContainerHasContainerPortsInstance in allContainerHasContainerPortsInstances)
 				{
 					if (serializationContext.Result.Failed)
@@ -3993,7 +3993,7 @@ namespace JA.Risk
 		{
 			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				if (string.Compare(reader.LocalName, "agentPorted", global::System.StringComparison.CurrentCulture) == 0)
+				if (string.Compare(reader.LocalName, "agentPorts", global::System.StringComparison.CurrentCulture) == 0)
 				{
 					if (reader.IsEmptyElement)
 					{	// No instance of this relationship, just skip
@@ -4001,9 +4001,9 @@ namespace JA.Risk
 					}
 					else
 					{
-						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <agentPorted>
+						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <agentPorts>
 						ReadThreatAgentHasAgentPortsInstances(serializationContext, element, reader);
-						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </agentPorted>
+						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </agentPorts>
 					}
 				}
 			}
@@ -4042,7 +4042,7 @@ namespace JA.Risk
 					if (newAgentPortOfThreatAgentHasAgentPorts != null)
 					{
 						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(ThreatAgentHasAgentPorts));
-						element.AgentPorted.Add(newAgentPortOfThreatAgentHasAgentPorts);
+						element.AgentPorts.Add(newAgentPortOfThreatAgentHasAgentPorts);
 						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newAgentPortOfThreatAgentHasAgentPorts.GetDomainClass().Id);	
 						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newAgentPortOfThreatAgentHasAgentPorts.GetDomainClass().Name + "!");
 						targetSerializer.Read(serializationContext, newAgentPortOfThreatAgentHasAgentPorts, reader);
@@ -4486,10 +4486,10 @@ namespace JA.Risk
 		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, ThreatAgent element, global::System.Xml.XmlWriter writer)
 		{
 			// ThreatAgentHasAgentPorts
-			global::System.Collections.ObjectModel.ReadOnlyCollection<ThreatAgentHasAgentPorts> allThreatAgentHasAgentPortsInstances = ThreatAgentHasAgentPorts.GetLinksToAgentPorted(element);
+			global::System.Collections.ObjectModel.ReadOnlyCollection<ThreatAgentHasAgentPorts> allThreatAgentHasAgentPortsInstances = ThreatAgentHasAgentPorts.GetLinksToAgentPorts(element);
 			if (!serializationContext.Result.Failed && allThreatAgentHasAgentPortsInstances.Count > 0)
 			{
-				writer.WriteStartElement("agentPorted");
+				writer.WriteStartElement("agentPorts");
 				foreach (ThreatAgentHasAgentPorts eachThreatAgentHasAgentPortsInstance in allThreatAgentHasAgentPortsInstances)
 				{
 					if (serializationContext.Result.Failed)
