@@ -98,6 +98,88 @@ namespace JA.Risk
 			}
 		}
 		#endregion
+		#region Compartment support
+		/// <summary>
+		/// Whether compartment items change events are subscribed to.
+		/// </summary>
+		private bool subscribedCompartmentItemsEvents;
+		
+		/// <summary>
+		/// Subscribe to events fired when compartment items changes.
+		/// </summary>
+		public void SubscribeCompartmentItemsEvents()
+		{
+			if (!subscribedCompartmentItemsEvents && this.Store != null)
+			{
+				subscribedCompartmentItemsEvents = true;
+				this.Store.EventManagerDirectory.ElementAdded.Add(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Add(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Add(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+			}
+		}
+		
+		/// <summary>
+		/// Unsubscribe to events fired when compartment items changes.
+		/// </summary>
+		public void UnsubscribeCompartmentItemsEvents()
+		{
+			if (subscribedCompartmentItemsEvents)
+			{
+				this.Store.EventManagerDirectory.ElementAdded.Remove(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Remove(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Remove(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+				subscribedCompartmentItemsEvents = false;
+			}
+		}
+		
+		#region Event handlers
+		/// <summary>
+		/// Event for element added.
+		/// </summary>
+		private void CompartmentItemAdded(object sender, DslModeling::ElementAddedEventArgs e)
+		{
+			// If in Undo, Redo or Rollback the compartment item rules are not run so we must refresh the compartment list at this point if required
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemAddRule.ElementAdded(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element deleted.
+		/// </summary>
+		private void CompartmentItemDeleted(object sender, DslModeling::ElementDeletedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemDeleteRule.ElementDeleted(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element property changed.
+		/// </summary>
+		private void CompartmentItemPropertyChanged(object sender, DslModeling::ElementPropertyChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemChangeRule.ElementPropertyChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerChanged(object sender, DslModeling::RolePlayerChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ElementLink.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerChangeRule.RolePlayerChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player order changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerOrderChanged(object sender, DslModeling::RolePlayerOrderChangedEventArgs e)
+		{
+			bool repaintOnly = !e.Link.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerPositionChangeRule.RolePlayerPositionChanged(e, repaintOnly);
+		}
+		#endregion
+		#endregion
 		#region Shape mapping
 		/// <summary>
 		/// Called during view fixup to ask the parent whether a shape should be created for the given child element.
@@ -221,15 +303,15 @@ namespace JA.Risk
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::JA.Risk.ThreatAgent)
-			{
-				global::JA.Risk.ThreatAgentShape newShape = new global::JA.Risk.ThreatAgentShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::JA.Risk.Container)
 			{
 				global::JA.Risk.ContainerShape newShape = new global::JA.Risk.ContainerShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::JA.Risk.ThreatAgent)
+			{
+				global::JA.Risk.ThreatAgentCompartmentShape newShape = new global::JA.Risk.ThreatAgentCompartmentShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -265,10 +347,10 @@ namespace JA.Risk
 		{
 			base.InitializeShapeFields(shapeFields);
 			global::JA.Risk.AssetShape.DecoratorsInitialized += AssetShapeDecoratorMap.OnDecoratorsInitialized;
-			global::JA.Risk.ThreatAgentShape.DecoratorsInitialized += ThreatAgentShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.ContainerShape.DecoratorsInitialized += ContainerShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.ContainerPortShape.DecoratorsInitialized += ContainerPortShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.AgentPortShape.DecoratorsInitialized += AgentPortShapeDecoratorMap.OnDecoratorsInitialized;
+			global::JA.Risk.ThreatAgentCompartmentShape.DecoratorsInitialized += ThreatAgentCompartmentShapeDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.InteractsLink.DecoratorsInitialized += InteractsLinkDecoratorMap.OnDecoratorsInitialized;
 			global::JA.Risk.ContainsLink.DecoratorsInitialized += ContainsLinkDecoratorMap.OnDecoratorsInitialized;
 		}
@@ -300,27 +382,6 @@ namespace JA.Risk
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.Asset.NumberDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Number").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for ThreatAgentShape.
-		/// </summary>
-		internal static partial class ThreatAgentShapeDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for ThreatAgentShape.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.ThreatAgent.NumberDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Number").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.NamedElement.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -381,6 +442,27 @@ namespace JA.Risk
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.NamedElement.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ThreatAgentCompartmentShape.
+		/// </summary>
+		internal static partial class ThreatAgentCompartmentShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ThreatAgentCompartmentShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.NamedElement.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::JA.Risk.ThreatAgent.NumberDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Number").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -566,6 +648,7 @@ namespace JA.Risk
 						this.containsAssetConnectAction.Dispose();
 						this.containsAssetConnectAction = null;
 					}
+					this.UnsubscribeCompartmentItemsEvents();
 				}
 			}
 			finally
@@ -622,8 +705,8 @@ namespace JA.Risk
 		[DslModeling::RuleOn(typeof(global::JA.Risk.ContainerPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.AgentPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Asset), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgent), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Container), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgent), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Generalization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Interaction), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::JA.Risk.Contains), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
@@ -655,13 +738,13 @@ namespace JA.Risk
 				{
 					parentElement = GetParentForAsset((global::JA.Risk.Asset)childElement);
 				} else
-				if(childElement is global::JA.Risk.ThreatAgent)
-				{
-					parentElement = GetParentForThreatAgent((global::JA.Risk.ThreatAgent)childElement);
-				} else
 				if(childElement is global::JA.Risk.Container)
 				{
 					parentElement = GetParentForContainer((global::JA.Risk.Container)childElement);
+				} else
+				if(childElement is global::JA.Risk.ThreatAgent)
+				{
+					parentElement = GetParentForThreatAgent((global::JA.Risk.ThreatAgent)childElement);
 				} else
 				{
 					parentElement = null;
@@ -673,13 +756,6 @@ namespace JA.Risk
 				}
 			}
 			public static global::JA.Risk.RiskModel GetParentForAsset( global::JA.Risk.Asset root )
-			{
-				// Segments 0 and 1
-				global::JA.Risk.RiskModel result = root.RiskModel;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::JA.Risk.RiskModel GetParentForThreatAgent( global::JA.Risk.ThreatAgent root )
 			{
 				// Segments 0 and 1
 				global::JA.Risk.RiskModel result = root.RiskModel;
@@ -704,6 +780,13 @@ namespace JA.Risk
 			{
 				// Segments 0 and 1
 				global::JA.Risk.ThreatAgent result = root.ThreatAgent;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::JA.Risk.RiskModel GetParentForThreatAgent( global::JA.Risk.ThreatAgent root )
+			{
+				// Segments 0 and 1
+				global::JA.Risk.RiskModel result = root.RiskModel;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -792,6 +875,218 @@ namespace JA.Risk
 			}
 		}
 		
+		/// <summary>
+		/// Rule to update compartments when an item is added to the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgentHasConditions), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
+		{
+			/// <summary>
+			/// Called when an element is added. 
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementAdded(DslModeling::ElementAddedEventArgs e)
+			{
+				ElementAdded(e, false);
+			}
+	
+			internal static void ElementAdded(DslModeling::ElementAddedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if (e.ModelElement.IsDeleted)
+					return;
+				if(e.ModelElement is global::JA.Risk.ThreatAgentHasConditions)
+				{
+					global::System.Collections.IEnumerable elements = GetThreatAgentForThreatAgentCompartmentShapeConditionsFromLastLink((global::JA.Risk.ThreatAgentHasConditions)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+				}
+			}
+			
+			#region static DomainPath traversal methods to get the list of compartments to update
+			internal static global::System.Collections.ICollection GetThreatAgentForThreatAgentCompartmentShapeConditionsFromLastLink(global::JA.Risk.ThreatAgentHasConditions root)
+			{
+				// Segment 0
+				global::JA.Risk.ThreatAgent result = root.ThreatAgent;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetThreatAgentForThreatAgentCompartmentShapeConditions(global::JA.Risk.Condition root)
+			{
+				// Segments 1 and 0
+				global::JA.Risk.ThreatAgent result = root.ThreatAgent;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			#endregion
+	
+			#region helper method to update compartments 
+			/// <summary>
+			/// Updates the compartments for the shapes associated to the given list of model elements
+			/// </summary>
+			/// <param name="elements">List of model elements</param>
+			/// <param name="shapeType">The type of shape that needs updating</param>
+			/// <param name="compartmentName">The name of the compartment to update</param>
+			/// <param name="repaintOnly">If true, the method will only invalidate the shape for a repaint, without re-initializing the shape.</param>
+			internal static void UpdateCompartments(global::System.Collections.IEnumerable elements, global::System.Type shapeType, string compartmentName, bool repaintOnly)
+			{
+				foreach (DslModeling::ModelElement element in elements)
+				{
+					DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+					foreach (DslDiagrams::PresentationElement pel in pels)
+					{
+						DslDiagrams::CompartmentShape compartmentShape = pel as DslDiagrams::CompartmentShape;
+						if (compartmentShape != null && shapeType.IsAssignableFrom(compartmentShape.GetType()))
+						{
+							if (repaintOnly)
+							{
+								compartmentShape.Invalidate();
+							}
+							else
+							{
+								foreach(DslDiagrams::CompartmentMapping mapping in compartmentShape.GetCompartmentMappings())
+								{
+									if(mapping.CompartmentId==compartmentName)
+									{
+										mapping.InitializeCompartmentShape(compartmentShape);
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#endregion
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when an items is removed from the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgentHasConditions), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
+		{
+			/// <summary>
+			/// Called when an element is deleted
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementDeleted(DslModeling::ElementDeletedEventArgs e)
+			{
+				ElementDeleted(e, false);
+			}
+			
+			internal static void ElementDeleted(DslModeling::ElementDeletedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::JA.Risk.ThreatAgentHasConditions)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditionsFromLastLink((global::JA.Risk.ThreatAgentHasConditions)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when the property on an item being displayed changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::JA.Risk.Condition), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
+		{
+			/// <summary>
+			/// Called when an element is changed
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e)
+			{
+				ElementPropertyChanged(e, false);
+			}
+			
+			internal static void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::JA.Risk.Condition && e.DomainProperty.Id == global::JA.Risk.Condition.NameDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditions((global::JA.Risk.Condition)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when a roleplayer change happens
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgentHasConditions), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
+		{
+			/// <summary>
+			/// Called when the roleplayer on a link changes.
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e)
+			{
+				RolePlayerChanged(e, false);
+			}
+			
+			internal static void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::JA.Risk.ThreatAgentHasConditions).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditionsFromLastLink((global::JA.Risk.Condition)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::JA.Risk.ThreatAgentCompartmentShape compartmentShape = pel as global::JA.Risk.ThreatAgentCompartmentShape;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditionsFromLastLink((global::JA.Risk.ThreatAgentHasConditions)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditions((global::JA.Risk.Condition)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Rule to update compartments when the order of items in the list changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::JA.Risk.ThreatAgentHasConditions), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
+		{
+			/// <summary>
+			/// Called when the order of a roleplayer in a relationship changes
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e)
+			{
+				RolePlayerPositionChanged(e, false);
+			}
+			
+			internal static void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::JA.Risk.ThreatAgentHasConditions).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetThreatAgentForThreatAgentCompartmentShapeConditions((global::JA.Risk.Condition)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::JA.Risk.ThreatAgentCompartmentShape), "Conditions", repaintOnly);
+					}
+				}
+			}
+		}
 	
 		/// <summary>
 		/// A rule which fires when data mapped to outer text decorators has changed,

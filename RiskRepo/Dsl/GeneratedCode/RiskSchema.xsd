@@ -346,6 +346,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: ThreatAgentHasConditions -->
+          <xsd:element name="conditions" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ThreatAgentHasConditions</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="threatAgentHasConditions" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ThreatAgentHasConditions needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -431,6 +446,36 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="PortMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Condition -->
+  <xsd:element name="condition" type="Condition" substitutionGroup="namedElement" />
+  <xsd:complexType name="Condition">
+    <xsd:annotation>
+      <xsd:documentation>This represents a condition a threat agent has before connecting to a system.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Condition Moniker -->
+  <xsd:element name="conditionMoniker" type="ConditionMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ConditionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Condition instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -789,6 +834,46 @@
   <xsd:complexType name="ContainerHasContainerPortsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for ContainerHasContainerPorts instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ThreatAgentHasConditions -->
+  <xsd:element name="threatAgentHasConditions" type="ThreatAgentHasConditions" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ThreatAgentHasConditions">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Condition -->
+          <xsd:element ref="condition" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ThreatAgentHasConditions Moniker -->
+  <xsd:element name="threatAgentHasConditionsMoniker" type="ThreatAgentHasConditionsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ThreatAgentHasConditionsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ThreatAgentHasConditions instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

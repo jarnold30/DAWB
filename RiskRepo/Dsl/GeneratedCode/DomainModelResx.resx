@@ -245,6 +245,14 @@
     <value>Container Port</value>
     <comment>DisplayName for DomainClass &apos;ContainerPort&apos;</comment>
   </data>
+  <data name="JA.Risk.Condition.Description" xml:space="preserve">
+    <value>This represents a condition a threat agent has before connecting to a system.</value>
+    <comment>Description for DomainClass &apos;Condition&apos;</comment>
+  </data>
+  <data name="JA.Risk.Condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainClass &apos;Condition&apos;</comment>
+  </data>
   <data name="JA.Risk.RiskModelHasContainers.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;RiskModelHasContainers&apos;</comment>
@@ -557,6 +565,38 @@
     <value>Container</value>
     <comment>PropertyDisplayName for DomainRole &apos;ContainerPort&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
   </data>
+  <data name="JA.Risk.ThreatAgentHasConditions.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ThreatAgentHasConditions</value>
+    <comment>Description for DomainClass &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions.DisplayName" xml:space="preserve">
+    <value>Threat Agent Has Conditions</value>
+    <comment>DisplayName for DomainClass &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent</value>
+    <comment>Description for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.DisplayName" xml:space="preserve">
+    <value>Threat Agent</value>
+    <comment>DisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.PropertyDisplayName" xml:space="preserve">
+    <value>Conditions</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/Condition.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ThreatAgentHasConditions.Condition</value>
+    <comment>Description for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/Condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentHasConditions/Condition.PropertyDisplayName" xml:space="preserve">
+    <value>Threat Agent</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  </data>
   <data name="JA.Risk.ContainerPortShape.Description" xml:space="preserve">
     <value>Description for JA.Risk.ContainerPortShape</value>
     <comment>Description for DomainClass &apos;ContainerPortShape&apos;</comment>
@@ -638,6 +678,26 @@
     <comment>DisplayName for DomainClass &apos;AgentPortShape&apos;</comment>
   </data>
   <data name="AgentPortShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentCompartmentShape.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ThreatAgentCompartmentShape</value>
+    <comment>Description for DomainClass &apos;ThreatAgentCompartmentShape&apos;</comment>
+  </data>
+  <data name="JA.Risk.ThreatAgentCompartmentShape.DisplayName" xml:space="preserve">
+    <value>Threat Agent Compartment Shape</value>
+    <comment>DisplayName for DomainClass &apos;ThreatAgentCompartmentShape&apos;</comment>
+  </data>
+  <data name="ThreatAgentCompartmentShapeConditionsTitle" xml:space="preserve">
+    <value></value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="ThreatAgentCompartmentShapeNumberDefaultText" xml:space="preserve">
+    <value>Number</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="ThreatAgentCompartmentShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
@@ -911,6 +971,10 @@ A DomainClass can be serialized as a moniker only if
     <comment>Icon decorator default image</comment>
   </data>
   <data name="ThreatAgentShapeThreatIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Agent.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="ThreatAgentCompartmentShapeThreatIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\Agent.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>

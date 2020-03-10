@@ -1,17 +1,63 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
 <#@ output extension=".pl" #>
 <#@ Risk processor="RiskDirectiveProcessor" requires="FileName='C:\Users\johna\Source\repos2\TestRisk\Risk Testbed\Web Banking 2.Risk'" #>
-
-This text will be output directly.
-
-This is the name of the model: <#= this.RiskModel.Name #>
-
-Here is a list of elements in the model:
-<#
-  // When you change the DSL Definition, some of the code below may not work.
-  foreach (NamedElement element in this.RiskModel.Elements)
-  {#>
-<#= element.Name #>
-<#
-  }
+%!
+% Risk model: <#= this.RiskModel.Name #>
+%
+% Here is a list of containers in the model:
+<# foreach (Container container in this.RiskModel.Containers) { #>
+container( '<#= container.Name #>' ).
+<# if ( container.Type != null && container.Type.Length >0 ) { #>
+containerType( '<#= container.Name #>', '<#= container.Type #>' ).
+<# } #>
+<# foreach (ContainerPort port in container.ContainerPorts) { #>
+containerHasPort( '<#= container.Name #>', '<#= port.Name #>' ).
+<# System.Collections.ObjectModel.ReadOnlyCollection<Interaction> interactions = Interaction.GetLinksToSourcePort( port );
+foreach (Interaction interaction in interactions) { #>
+interaction( '<#= port.Name #>', '<#= interaction.TargetPort.Name #>', '<#= interaction.Attack #>' ).
+<# } #>
+<# } #>
+<# foreach (Asset asset in container.Assets) { #>
+containerHasAssets( '<#= container.Name #>', '<#= asset.Name #>' ).
+<# } #>
+<# foreach (Container contained in container.TargetContainers) { 
+	Contains contains = Contains.GetLink(container, contained);
 #>
+containerHasContainer( '<#= container.Name #>', '<#= contained.Name #>', '<#= contains.Attack #>', '<#= contains.Number #>' ).
+<# } #>
+<# foreach (Container subclass in container.Subclasses) { #>
+containerHasSubclasses( '<#= container.Name #>', '<#= subclass.Name #>' ).
+<# } #>
+<# } #>
+
+% Here is a list of assets in the model:
+<# foreach (Asset asset in this.RiskModel.Assets) {#>
+asset( '<#= asset.Name #>' ).
+<# if ( asset.Number != null && asset.Number.Length >0 ) { #>
+assetNumber( '<#= asset.Name #>', '<#= asset.Number #>' ).
+<# } #>
+<# if ( asset.SingleConfidentialityValue != null && asset.SingleConfidentialityValue.Length >0 ) { #>
+assetSingleConfidentialityValue( '<#= asset.Name #>', '<#= asset.SingleConfidentialityValue #>' ).
+<# } #>
+<# if ( asset.SingleIntegrityValue != null && asset.SingleIntegrityValue.Length >0 ) { #>
+assetSingleIntegrityValue( '<#= asset.Name #>', '<#= asset.SingleIntegrityValue #>' ).
+<# } #>
+<# if ( asset.SingleAvailabilityValue != null && asset.SingleAvailabilityValue.Length >0 ) { #>
+assetSingleAvailabilityValue( '<#= asset.Name #>', '<#= asset.SingleAvailabilityValue #>' ).
+<# } #>
+<# } #>
+
+% Here is a list of threat agents in the model:
+<# foreach (ThreatAgent agent in this.RiskModel.ThreatAgents) {#>
+threatAgent( '<#= agent.Name #>' ).
+<# if ( agent.Number != null && agent.Number.Length >0 ) { #>
+agentNumber( '<#= agent.Name #>', '<#= agent.Number #>' ).
+<# } #>
+<# foreach (AgentPort port in agent.AgentPorts) { #>
+agentHasPort( '<#= agent.Name #>', '<#= port.Name #>' ).
+<# System.Collections.ObjectModel.ReadOnlyCollection<Interaction> interactions = Interaction.GetLinksToSourcePort( port );
+foreach (Interaction interaction in interactions) { #>
+interaction( '<#= port.Name #>', '<#= interaction.TargetPort.Name #>', '<#= interaction.Attack #>' ).
+<# } #>
+<# } #>
+<# } #>

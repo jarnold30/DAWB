@@ -1345,6 +1345,21 @@ namespace JA.Risk
 			}
 		}
 		#endregion
+		#region Conditions opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Conditions.
+		/// Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Condition> Conditions
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Condition>, Condition>(global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -1366,6 +1381,11 @@ namespace JA.Risk
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.AgentPort.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Condition.DomainClassId)) 
 				{
 					return true;
 				}
@@ -1402,6 +1422,15 @@ namespace JA.Risk
 
 				return;
 			}
+				
+			global::JA.Risk.Condition sourceCondition2 = sourceElement as global::JA.Risk.Condition;
+			if (sourceCondition2 != null)
+			{
+				// Create link for path ThreatAgentHasConditions.Conditions
+				this.Conditions.Add(sourceCondition2);
+
+				return;
+			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -1434,6 +1463,20 @@ namespace JA.Risk
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId, global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::JA.Risk.Condition sourceCondition2 = sourceElement as global::JA.Risk.Condition;
+			if (sourceCondition2 != null)
+			{
+				// Delete link for path ThreatAgentHasConditions.Conditions
+				
+				foreach (DslModeling::ElementLink link in global::JA.Risk.ThreatAgentHasConditions.GetLinks((global::JA.Risk.ThreatAgent)this, sourceCondition2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId);
 				}
 
 				return;
@@ -1559,6 +1602,66 @@ namespace JA.Risk
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainClass Condition
+	/// This represents a condition a threat agent has before connecting to a system.
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.Condition.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.Condition.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("2f960aff-ba36-48d5-8b9e-7cd173502a86")]
+	public partial class Condition : NamedElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Condition domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2f960aff, 0xba36, 0x48d5, 0x8b, 0x9e, 0x7c, 0xd1, 0x73, 0x50, 0x2a, 0x86);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Condition(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Condition(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ThreatAgent opposite domain role accessor
+		/// <summary>
+		/// Gets or sets ThreatAgent.
+		/// Description for JA.Risk.ThreatAgentHasConditions.Condition
+		/// </summary>
+		public virtual ThreatAgent ThreatAgent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId) as ThreatAgent;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId, value);
 			}
 		}
 		#endregion

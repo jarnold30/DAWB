@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="c8c96252-ab8f-4284-84ea-defc13ac854b" Version="1.0.0.0" Language="en-US" Publisher="JA" />
         <DisplayName>Risk</DisplayName>
-        <Description>Description for JA.Risk.Risk</Description>
+        <Description xml:space="preserve">Risk allows organisations to model the connectivity and access they have to their systems, and hence to estimate the risks they are subject to.</Description>
     </Metadata>
     <Installation InstalledByMsi="false">
         <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Community" />
