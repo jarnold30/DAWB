@@ -1,0 +1,6 @@
+﻿[$RootKey$\TextTemplating]
+[$RootKey$\TextTemplating\DirectiveProcessors]
+[$RootKey$\TextTemplating\DirectiveProcessors\AttackDirectiveProcessor]
+@="Generates a prolog file that represents a Attack file"
+"Class"="JA.Attack.AttackDirectiveProcessor"
+"CodeBase"="C:\Users\johna\source\repos2\AttackRepo\Dsl\bin\Debug\JA.Attack.Dsl.dll"

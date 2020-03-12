@@ -1,0 +1,27 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
+<#@ output extension=".pl" #>
+<#@ Attack processor="AttackDirectiveProcessor" requires="FileName='C:\Users\johna\Source\repos2\AttackTestBed\Attack1.Attack'" #>
+%!
+% Attack model: <#= this.AttackGraph.Name #>
+%
+% Here is a list of elements in the model:
+<# foreach (FlowElement elem in this.AttackGraph.Elements) { #>
+<# if ( elem is Synchronisation ) { #>
+synch( '<#= elem.Name #>' ).
+<# } #>
+<# if ( elem is StartPoint ) { #>
+start( '<#= elem.Name #>' ).
+<# } #>
+<# if ( elem is EndPoint ) { #>
+end( '<#= elem.Name #>' ).
+<# } #>
+<# if ( elem is MergeBranch ) { #>
+merge( '<#= elem.Name #>' ).
+<# } #>
+<# if ( elem is Task ) { #>
+task( '<#= elem.Name #>' ).
+<# } #>
+<# if ( elem is State ) { #>
+state( '<#= elem.Name #>' ).
+<# } #>
+<# } #>

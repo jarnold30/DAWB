@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackDsl", "Dsl\AttackDsl.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackDslPackage", "DslPackage\AttackDslPackage.csproj", "{FB73D5CF-12A0-4879-8976-28ADEE8E6A7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackToProlog", "AttackToProlog\AttackToProlog.csproj", "{26562633-CF42-4A22-932B-E676D3879EB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB73D5CF-12A0-4879-8976-28ADEE8E6A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB73D5CF-12A0-4879-8976-28ADEE8E6A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB73D5CF-12A0-4879-8976-28ADEE8E6A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26562633-CF42-4A22-932B-E676D3879EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26562633-CF42-4A22-932B-E676D3879EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26562633-CF42-4A22-932B-E676D3879EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26562633-CF42-4A22-932B-E676D3879EB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

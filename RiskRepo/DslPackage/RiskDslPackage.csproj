@@ -243,6 +243,9 @@
       <Link>CodeAnalysisDictionary.xml</Link>
     </CodeAnalysisDictionary>
     <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
+    <Content Include="RiskTT.pkgdef">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="source.extension.vsixmanifest" />
   </ItemGroup>
 </Project>
