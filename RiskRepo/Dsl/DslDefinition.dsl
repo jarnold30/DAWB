@@ -926,7 +926,7 @@
         <DomainClassMoniker Name="AgentPort" />
       </ElementTool>
     </ToolboxTab>
-    <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
+    <Validation UsesMenu="true" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="RiskDiagram" />
   </Designer>
   <Explorer ExplorerGuid="621bc91e-8a2f-48e2-a800-b9305ff98891" Title="">

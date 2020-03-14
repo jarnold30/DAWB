@@ -35,6 +35,14 @@ namespace JA.Risk
 	/// </summary>
 	internal abstract partial class RiskDocDataBase : DslShell::ModelingDocData
 	{
+
+		#region Constraint ValidationController
+		/// <summary>
+		/// The controller for all validation that goes on in the package.
+		/// </summary>
+		private DslShell::VsValidationController validationController;
+		private DslShell::ErrorListObserver errorListObserver;
+		#endregion
 		/// <summary>
 		/// Document lock holder registered for the subordinate .diagram file.
 		/// </summary>
@@ -235,6 +243,38 @@ namespace JA.Risk
 
 		#endregion // ExtensionLocator
 
+		/// <summary>
+		/// The controller for all validation that goes on in the package.
+		/// </summary>
+		public DslShell::VsValidationController ValidationController
+		{
+			get
+			{
+				if (this.validationController == null)
+				{
+					this.validationController = this.CreateValidationController();
+					this.SetValidationExtensionRegistrar(this.validationController);
+					this.errorListObserver = new DslShell::ErrorListObserver(this.ServiceProvider);
+
+					// register the observer so we can show the error/warning/msg in the VS output window.
+					this.validationController.AddObserver(this.errorListObserver);
+				}
+				return this.validationController;
+			}
+		}
+
+		/// <summary>
+		/// Factory method to create a VSValidationController.
+		/// </summary>
+		protected virtual DslShell::VsValidationController CreateValidationController()
+		{
+			return new DslShell::VsValidationController(this.ServiceProvider, typeof(RiskExplorerToolWindow));
+		}
+		/// <summary>
+		/// Add ValidationExtensionRegistrar to the ValidationController and handle related MEF Initialization operations
+		/// </summary>
+		/// <param name="validationController"></param>
+		partial void SetValidationExtensionRegistrar(DslValidation::ValidationController validationController);
 
 		/// <summary>
 		/// When the doc data is closed, make sure we reset the valiation messages 
@@ -245,6 +285,18 @@ namespace JA.Risk
 		{
 			try
 			{
+				if (this.validationController != null)
+				{
+					this.validationController.ClearMessages();
+					// un-register our observer with the controller.
+					this.validationController.RemoveObserver(this.errorListObserver);
+					this.validationController = null;
+					if ( this.errorListObserver != null )
+					{
+						this.errorListObserver.Dispose();
+						this.errorListObserver = null;
+					}
+				}
 				if (this.diagramDocumentLockHolder != null)
 				{
 					this.diagramDocumentLockHolder.Dispose();

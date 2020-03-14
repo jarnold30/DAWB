@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ec2f716d-6ad1-40ec-940a-7e2329b3ceb3" name="" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ec2f716d-6ad1-40ec-940a-7e2329b3ceb3" name="Web Banking" xmlns="http://schemas.microsoft.com/dsltools/Risk">
   <containers>
     <riskModelHasContainers Id="018915ab-b43a-449c-81c4-623d6cb318c1">
       <container Id="c0674b10-1915-4257-92f1-cf266c13e654" name="Banking Web Site" type="Service">
@@ -8,7 +8,7 @@
             <containerPort Id="35a5ace5-c0dd-43e2-bcf0-139344d74f03" name="WS Client">
               <targetPort>
                 <interaction Id="55c95edd-6661-4fc0-8646-1f73b0c50f2b" attack="WS">
-                  <containerPortMoniker name="//Banking Service/WS Service" />
+                  <containerPortMoniker name="/Web Banking/Banking Service/WS Service" />
                 </interaction>
               </targetPort>
             </containerPort>
@@ -23,7 +23,7 @@
       <container Id="221431e8-a527-48c4-bc27-e0f93211cc73" name="Banking Service" type="Service">
         <assets>
           <containerReferencesAssets Id="1c98cf2d-ec58-4aa7-b32a-5151f651f2a8">
-            <assetMoniker name="//Bank accounts" />
+            <assetMoniker name="/Web Banking/Bank accounts" />
           </containerReferencesAssets>
         </assets>
         <containerPorts>
@@ -37,7 +37,7 @@
       <container Id="ae5ad47f-30e7-4bdc-9265-f77dd979c13a" name="Corporate Network" type="Network">
         <targetContainers>
           <contains Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" attack="TCP">
-            <containerMoniker name="//Banking Service" />
+            <containerMoniker name="/Web Banking/Banking Service" />
           </contains>
         </targetContainers>
       </container>
@@ -45,7 +45,7 @@
     <riskModelHasContainers Id="b6b704c8-534a-4c36-8ed0-8f6668a4bc86">
       <container Id="a30330bf-f754-4276-87b6-735c157a9f25" name="Web Site" type="Service">
         <subclasses>
-          <containerMoniker name="//Banking Web Site" />
+          <containerMoniker name="/Web Banking/Banking Web Site" />
         </subclasses>
       </container>
     </riskModelHasContainers>
@@ -60,10 +60,10 @@
       <threatAgent Id="86093bf8-72e1-4336-ade4-1089a534ae69" name="Internet Hacker" number="10">
         <agentPorts>
           <threatAgentHasAgentPorts Id="a14e7623-31a8-4d5a-b2ee-e51afd9db2ea">
-            <agentPort Id="3f9b39eb-3743-414b-8b43-bbcbfa9c12fb" name="Web Browser">
+            <agentPort Id="3f9b39eb-3743-414b-8b43-bbcbfa9c12fb" name="Web Browser2">
               <targetPort>
                 <interaction Id="bd053d55-19b1-4401-873d-2b2566500183" attack="http">
-                  <containerPortMoniker name="//Banking Web Site/Web UI" />
+                  <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
                 </interaction>
               </targetPort>
             </agentPort>
@@ -75,10 +75,10 @@
       <threatAgent Id="81989836-c9a5-4317-9354-8d8a13ac55ce" name="Fred" number="1">
         <agentPorts>
           <threatAgentHasAgentPorts Id="9c910d61-1814-4751-8366-8a47a1d79331">
-            <agentPort Id="1f0a36b4-2728-4f4d-bd11-228247a602d4" name="Web Browser">
+            <agentPort Id="1f0a36b4-2728-4f4d-bd11-228247a602d4" name="Web Browser1">
               <targetPort>
                 <interaction Id="812cc568-5f15-44a3-a6be-1225e33e9c6d" attack="http">
-                  <containerPortMoniker name="//Banking Web Site/Web UI" />
+                  <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
                 </interaction>
               </targetPort>
             </agentPort>

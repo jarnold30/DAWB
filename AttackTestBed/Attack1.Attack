@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4a119e63-5b10-4ad1-9252-f3568a6b07ab" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4a119e63-5b10-4ad1-9252-f3568a6b07ab" name="http" xmlns="http://schemas.microsoft.com/dsltools/Attack">
   <elements>
     <task Id="85882718-f2b4-4b38-95e0-3b8543a43103" name="login" probability=".5" confidence10Percent=".1" confidence90Percent=".9">
       <targetFlowElements>
@@ -13,14 +13,14 @@
         </taskHasPreConditions>
       </preConditions>
     </task>
-    <startPoint Id="1377e6bd-3082-4e15-a064-af087beeee75">
+    <startPoint Id="1377e6bd-3082-4e15-a064-af087beeee75" name="Start">
       <targetFlowElements>
         <flowRelationship Id="876bd07c-8105-4990-a450-7e3cd36723d1">
           <taskMoniker Id="85882718-f2b4-4b38-95e0-3b8543a43103" />
         </flowRelationship>
       </targetFlowElements>
     </startPoint>
-    <endPoint Id="8069c957-fe0c-48d1-b96d-d8aeb46c2847" />
+    <endPoint Id="8069c957-fe0c-48d1-b96d-d8aeb46c2847" name="End" />
     <state Id="c19fa108-1ba9-454d-b589-6f9d7a623f18" name="logged in">
       <targetFlowElements>
         <flowRelationship Id="74c9d353-9394-4ff0-8b73-f181434a643e">

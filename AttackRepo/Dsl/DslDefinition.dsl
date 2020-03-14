@@ -567,7 +567,7 @@
         <DomainClassMoniker Name="MergeBranch" />
       </ElementTool>
     </ToolboxTab>
-    <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
+    <Validation UsesMenu="true" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="AttackDiagram" />
   </Designer>
   <Explorer ExplorerGuid="08d6a4e5-ca5e-44d8-9fb3-5f2bcffce0f1" Title="Attack Explorer">

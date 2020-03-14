@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <riskDiagram dslVersion="1.0.0.0" Id="6225450d-6fe0-498e-811b-9af0328f02a3" absoluteBounds="0, 0, 11, 8.5" name="Risk1">
-  <riskModelMoniker name="/" />
+  <riskModelMoniker name="/Web Banking" />
   <nestedChildShapes>
     <assetShape Id="33846d8c-ddb6-45cc-9de4-259391ff09f6" absoluteBounds="8.125, 5.875, 2.125, 1">
-      <assetMoniker name="//Bank accounts" />
+      <assetMoniker name="/Web Banking/Bank accounts" />
     </assetShape>
     <threatAgentShape Id="3ec35adb-1f4b-49b4-9609-a2e2046cf67b" absoluteBounds="1.125, 6, 1.5, 1">
-      <threatAgentMoniker name="//Internet Hacker" />
+      <threatAgentMoniker name="/Web Banking/Internet Hacker" />
       <relativeChildShapes>
         <agentPortShape Id="3ca9a6ef-6d30-4514-98a0-5249d5cbecc2" absoluteBounds="2.525, 6.59375, 0.2, 0.2">
-          <agentPortMoniker name="//Internet Hacker/Web Browser" />
+          <agentPortMoniker name="/Web Banking/Internet Hacker/Web Browser2" />
           <relativeChildShapes />
         </agentPortShape>
       </relativeChildShapes>
     </threatAgentShape>
     <containerShape Id="a45ea97e-4673-4189-9eea-a6a3f4f15f82" absoluteBounds="5.125, 3.625, 1.5, 1">
-      <containerMoniker name="//Banking Web Site" />
+      <containerMoniker name="/Web Banking/Banking Web Site" />
       <relativeChildShapes>
         <containerPortShape Id="8906acaa-aa7f-4c05-966c-cb1d261c7b6e" absoluteBounds="6.525, 4.0625, 0.2, 0.2">
-          <containerPortMoniker name="//Banking Web Site/WS Client" />
+          <containerPortMoniker name="/Web Banking/Banking Web Site/WS Client" />
           <relativeChildShapes />
         </containerPortShape>
         <containerPortShape Id="7b623e06-375a-416d-99fd-ffa69428ec7d" absoluteBounds="5.025, 4.15625, 0.2, 0.2">
-          <containerPortMoniker name="//Banking Web Site/Web UI" />
+          <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.8000000000000025, 3.9375000000000009, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.7000000000000028, 3.9375000000000009, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
     </containerShape>
     <containerShape Id="f6ece093-9728-4c6a-87e5-ce3d7f04884b" absoluteBounds="8.5, 3.625, 1.5, 1">
-      <containerMoniker name="//Banking Service" />
+      <containerMoniker name="/Web Banking/Banking Service" />
       <relativeChildShapes>
         <containerPortShape Id="a7264fb1-d88e-4bcb-90ee-1665c5088039" absoluteBounds="8.4, 4.1875, 0.2, 0.2">
-          <containerPortMoniker name="//Banking Service/WS Service" />
+          <containerPortMoniker name="/Web Banking/Banking Service/WS Service" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.9562500000000025, 4.4374999999999991, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.8562500000000028, 4.4374999999999991, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
@@ -72,7 +72,7 @@
       </nodes>
     </interactsLink>
     <containerShape Id="86f97375-0350-4f10-a381-25b294f4b2cc" absoluteBounds="8.875, 1.25, 1.5, 1">
-      <containerMoniker name="//Corporate Network" />
+      <containerMoniker name="/Web Banking/Corporate Network" />
     </containerShape>
     <containsLink Id="c1a09219-7dea-4099-8d0a-87da31f9c13c" edgePoints="[(9.4375 : 2.25); (9.4375 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <containsMoniker Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" />
@@ -83,13 +83,13 @@
       </nodes>
     </containsLink>
     <threatAgentCompartmentShape Id="6c96bf88-fe5c-41ed-b7ad-2aa775c446b0" absoluteBounds="1.125, 1.75, 1.5, 1.5516910807291668">
-      <threatAgentMoniker name="//Fred" />
+      <threatAgentMoniker name="/Web Banking/Fred" />
       <relativeChildShapes>
         <agentPortShape Id="4a0a5439-1bf5-434b-b268-029ca830d5b7" absoluteBounds="2.525, 2.25, 0.2, 0.2">
-          <agentPortMoniker name="//Fred/Web Browser" />
+          <agentPortMoniker name="/Web Banking/Fred/Web Browser1" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.775, 2.0625, 0.79386389255523682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.7340515136718748, 2.0625, 0.86326086521148682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </agentPortShape>
       </relativeChildShapes>
@@ -109,7 +109,7 @@
       </nodes>
     </interactsLink>
     <containerShape Id="234a7445-ecc4-4dda-89ca-332218fbc3c2" absoluteBounds="5.5, 1.25, 1.5, 1">
-      <containerMoniker name="//Web Site" />
+      <containerMoniker name="/Web Banking/Web Site" />
     </containerShape>
     <generalizationLink Id="d9711a3b-00ff-428c-bb69-c79f1bcd8824" edgePoints="[(6.0625 : 2.25); (6.0625 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="d3f5f36b-85f6-467b-9d59-c9a432c5d0ef">
       <nodes>

@@ -1,27 +1,47 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
 <#@ output extension=".pl" #>
-<#@ Attack processor="AttackDirectiveProcessor" requires="FileName='C:\Users\johna\Source\repos2\AttackTestBed\Attack1.Attack'" #>
+<#@ Attack processor="AttackDirectiveProcessor" requires="FileName='C:\Users\johna\OneDrive\Documents\DAWB\DAWB\AttackTestBed\Attack1.Attack';validation='menu'" #>
 %!
 % Attack model: <#= this.AttackGraph.Name #>
 %
 % Here is a list of elements in the model:
 <# foreach (FlowElement elem in this.AttackGraph.Elements) { #>
 <# if ( elem is Synchronisation ) { #>
-synch( '<#= elem.Name #>' ).
+synch( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
 <# } #>
 <# if ( elem is StartPoint ) { #>
-start( '<#= elem.Name #>' ).
+start( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
 <# } #>
 <# if ( elem is EndPoint ) { #>
-end( '<#= elem.Name #>' ).
+end( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
 <# } #>
 <# if ( elem is MergeBranch ) { #>
-merge( '<#= elem.Name #>' ).
+merge( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
 <# } #>
 <# if ( elem is Task ) { #>
-task( '<#= elem.Name #>' ).
+task( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
+<# Task task = (Task) elem; 
+if ( task.Probability != null && task.Probability.Length>0 ) { #>
+taskProbability( '<#= this.AttackGraph.Name #>.<#= task.Name #>', '<#= task.Probability #>' ).
+<# } #>
+<# if ( task.Confidence10Percent != null && task.Confidence10Percent.Length>0 ) { #>
+taskConfidence10Percent( '<#= this.AttackGraph.Name #>.<#= task.Name #>', '<#= task.Confidence10Percent #>' ).
+<# } #>
+<# if ( task.Confidence90Percent != null && task.Confidence90Percent.Length>0 ) { #>
+taskConfidence90Percent( '<#= this.AttackGraph.Name #>.<#= task.Name #>', '<#= task.Confidence90Percent #>' ).
+<# } #>
+<# foreach (PreCondition cond in task.PreConditions) { #>
+taskHasPreConditions( '<#= this.AttackGraph.Name #>.<#= task.Name #>', '<#= this.AttackGraph.Name #>.<#= cond.Name #>' ).
+<# } #>
 <# } #>
 <# if ( elem is State ) { #>
-state( '<#= elem.Name #>' ).
+state( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
+<# State state = (State) elem; foreach (PostCondition cond in state.PostConditions) { #>
+stateHasPostConditions( '<#= this.AttackGraph.Name #>.<#= state.Name #>', '<#= this.AttackGraph.Name #>.<#= cond.Name #>' ).
+<# } #>
+<# } #>
+<# System.Collections.ObjectModel.ReadOnlyCollection<FlowRelationship> flows = FlowRelationship.GetLinksToSourceFlowElements( elem );
+foreach (FlowRelationship flow in flows) { #>
+flow( '<#= this.AttackGraph.Name #>.<#= flow.SourceFlowElement.Name #>', '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).
 <# } #>
 <# } #>

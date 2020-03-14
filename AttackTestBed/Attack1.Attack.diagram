@@ -20,21 +20,21 @@
         <elementListCompartment Id="cf7b3ed9-9ebb-4b67-b286-a6e00d159698" absoluteBounds="10.39, 5.135, 1.4700000000000002, 0.2493896484375" name="PostConditions" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </stateShape>
-    <flowConnector Id="b3828b5a-43c2-4d9f-95dc-3088e8211c02" edgePoints="[(3.73613642901182 : 1.84727285802364); (3.73613642901182 : 4.77584554036458); (5.25 : 4.77584554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <flowConnector Id="b3828b5a-43c2-4d9f-95dc-3088e8211c02" edgePoints="[(3.73613642901182 : 1.84727285802364); (3.73613642901182 : 4.77584554036458); (5.25 : 4.77584554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <flowRelationshipMoniker Id="876bd07c-8105-4990-a450-7e3cd36723d1" />
       <nodes>
         <startShapeMoniker Id="5d6f6029-e881-411e-8772-375b34c8eb08" />
         <taskShapeMoniker Id="308aac45-b1ee-4f72-b775-22ebac0a71b5" />
       </nodes>
     </flowConnector>
-    <flowConnector Id="1a4965b9-ba8e-4f24-ae93-25480ab254ba" edgePoints="[(6.75 : 4.80469482421875); (10.375 : 4.80469482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <flowConnector Id="1a4965b9-ba8e-4f24-ae93-25480ab254ba" edgePoints="[(6.75 : 4.80469482421875); (10.375 : 4.80469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <flowRelationshipMoniker Id="ec7a2a9d-d646-4ad8-a2ce-ae108ac1c9af" />
       <nodes>
         <taskShapeMoniker Id="308aac45-b1ee-4f72-b775-22ebac0a71b5" />
         <stateShapeMoniker Id="e868a2cb-c04c-4a5b-a45f-15d435383f06" />
       </nodes>
     </flowConnector>
-    <flowConnector Id="f38618b0-36a3-4deb-8a96-4ef065bd4701" edgePoints="[(11.125 : 4.125); (11.125 : 1.61113642901182); (13 : 1.61113642901182)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <flowConnector Id="f38618b0-36a3-4deb-8a96-4ef065bd4701" edgePoints="[(11.125 : 4.125); (11.125 : 1.61113642901182); (13 : 1.61113642901182)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <flowRelationshipMoniker Id="74c9d353-9394-4ff0-8b73-f181434a643e" />
       <nodes>
         <stateShapeMoniker Id="e868a2cb-c04c-4a5b-a45f-15d435383f06" />
