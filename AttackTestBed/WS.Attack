@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="16c1693c-e1ff-45e9-bd3c-cf90ef7437cd" name="WS" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <startPoint Id="a08d3911-b596-454e-a51b-34fb3e60dd65" name="Start">
+      <targetFlowElements>
+        <flowRelationship Id="4d53cbe7-1fc4-4740-b336-2871a48374f8">
+          <taskMoniker Id="1a3b55b1-7f1f-400f-964e-6fe492fb87a5" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <task Id="1a3b55b1-7f1f-400f-964e-6fe492fb87a5" name="application logon">
+      <targetFlowElements>
+        <flowRelationship Id="5269d46f-3191-42fa-a826-cfd1ae32977b">
+          <stateMoniker Id="c8914841-f283-40f0-a755-2ef3d5283e59" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="597a2ff9-ec7e-4537-8472-5d3002b54745">
+          <preCondition Id="26a15b84-a18a-46ec-acb8-01527f89e57a" name="application credentials" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="c8914841-f283-40f0-a755-2ef3d5283e59" name="application session">
+      <postConditions>
+        <stateHasPostConditions Id="7ffa087d-2f74-409b-a211-0fd684893d0c">
+          <postCondition Id="4c53a9b3-297d-4ea6-ad72-0188fa4f2340" name="control over accounts" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+  </elements>
+</attackGraph>

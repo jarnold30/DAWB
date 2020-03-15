@@ -49,6 +49,15 @@
         </subclasses>
       </container>
     </riskModelHasContainers>
+    <riskModelHasContainers Id="612a7c45-b8f7-4fc1-bf63-8589f2dde70a">
+      <container Id="17a2d5b9-e3c6-4b69-be19-010fa8d03f58" name="Banking Service1" type="Service">
+        <containerPorts>
+          <containerHasContainerPorts Id="419dbf2e-e4ac-47d4-8869-74a22eb30528">
+            <containerPort Id="7cb5cc1a-78aa-4b27-8800-a6375e91df59" name="WS Service1" />
+          </containerHasContainerPorts>
+        </containerPorts>
+      </container>
+    </riskModelHasContainers>
   </containers>
   <assets>
     <riskModelHasAssets Id="38615045-d2dd-4818-aa09-d1908171d1d1">

@@ -25,7 +25,7 @@
           <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.7000000000000028, 3.9375000000000009, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.4, 3.96875, 0.4628702700138092, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
@@ -37,7 +37,7 @@
           <containerPortMoniker name="/Web Banking/Banking Service/WS Service" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.8562500000000028, 4.4374999999999991, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.6562500000000036, 4.4375, 0.66569006443023682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </containerPortShape>
       </relativeChildShapes>
@@ -89,7 +89,7 @@
           <agentPortMoniker name="/Web Banking/Fred/Web Browser1" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.7340515136718748, 2.0625, 0.86326086521148682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.7215515136718746, 2.0625, 0.86326086521148682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </agentPortShape>
       </relativeChildShapes>
@@ -101,7 +101,7 @@
       <interactionMoniker Id="812cc568-5f15-44a3-a6be-1225e33e9c6d" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.375, 2.4375, 0.2775065004825592, 0.181884765625" shapeFieldName="Attack" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.5625, 3.9375, 0.2775065004825592, 0.181884765625" shapeFieldName="Attack" />
       </moveableDecoratorHostShapes>
       <nodes>
         <agentPortShapeMoniker Id="4a0a5439-1bf5-434b-b268-029ca830d5b7" />
@@ -117,5 +117,14 @@
         <containerShapeMoniker Id="a45ea97e-4673-4189-9eea-a6a3f4f15f82" />
       </nodes>
     </generalizationLink>
+    <containerShape Id="4858d967-5f5c-4192-b9e0-41859e2d1858" absoluteBounds="3.125, 0.5, 1.5, 1.125">
+      <containerMoniker name="/Web Banking/Banking Service1" />
+      <relativeChildShapes>
+        <containerPortShape Id="3a698bf2-9ca8-498f-9ed0-25b2b2259944" absoluteBounds="3.025, 1.15625, 0.2, 0.2">
+          <containerPortMoniker name="/Web Banking/Banking Service1/WS Service1" />
+          <relativeChildShapes />
+        </containerPortShape>
+      </relativeChildShapes>
+    </containerShape>
   </nestedChildShapes>
 </riskDiagram>

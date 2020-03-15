@@ -51,8 +51,16 @@
     <None Include="Attack1.Attack.diagram">
       <DependentUpon>Attack1.Attack</DependentUpon>
     </None>
+    <None Include="http.Attack" />
+    <None Include="http.Attack.diagram">
+      <DependentUpon>http.Attack</DependentUpon>
+    </None>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="WS.Attack" />
+    <None Include="WS.Attack.diagram">
+      <DependentUpon>WS.Attack</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
