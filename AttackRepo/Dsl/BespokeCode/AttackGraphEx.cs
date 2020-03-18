@@ -31,6 +31,9 @@ namespace JA.Attack
 			{
 				names.Add(Name, this);
 			}
+
+			int starts = 0;
+
 			foreach (FlowElement c in Elements)
 			{
 				if (c.Name == null || c.Name.Length == 0)
@@ -47,6 +50,9 @@ namespace JA.Attack
 				{
 					names.Add(c.Name, c);
 				}
+
+				if (c is StartPoint) starts++;
+				
 				if (c is Task)
 				{
 					Task t = (Task)c;
@@ -87,6 +93,26 @@ namespace JA.Attack
 						}
 					}
 				}
+
+				System.Collections.ObjectModel.ReadOnlyCollection<FlowRelationship> flows = FlowRelationship.GetLinksToSourceFlowElements(c);
+				foreach (FlowRelationship flow in flows)
+				{ 
+					if ( flow.SourceFlowElement is EndPoint )
+					{
+						context.LogError("Flow cannot start on an End Point", "FlowEnd", flow);
+					} else if (c is StartPoint )
+					{
+						context.LogError("Flow cannot end on a Start Point", "FlowStart", flow);
+					} else if (c.GetType() == flow.SourceFlowElement.GetType() )
+					{
+						context.LogError("Cannot link 2 objects of the same type", "FlowSame", flow);
+					}
+				} 
+			}
+
+			if (starts != 1 )
+			{
+				context.LogError("There must be exactly one StartPoint in an Attack Graph", "Starts");
 			}
 		}
 	}

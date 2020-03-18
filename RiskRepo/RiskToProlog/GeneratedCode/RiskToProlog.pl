@@ -19,6 +19,9 @@ containerHasContainer( 'Web Banking.Corporate Network', 'Web Banking.Banking Ser
 container( 'Web Banking.Web Site' ).
 containerType( 'Web Banking.Web Site', 'Service' ).
 containerHasSubclasses( 'Web Banking.Web Site', 'Web Banking.Banking Web Site' ).
+container( 'Web Banking.Banking Service1' ).
+containerType( 'Web Banking.Banking Service1', 'Service' ).
+containerHasPort( 'Web Banking.Banking Service1', 'Web Banking.WS Service1' ).
 
 % Here is a list of assets in the model:
 asset( 'Web Banking.Bank accounts' ).
