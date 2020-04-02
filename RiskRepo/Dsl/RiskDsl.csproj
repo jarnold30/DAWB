@@ -81,6 +81,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
+    <Compile Include="Bespoke Code\ThreatAgentEx.cs" />
     <Compile Include="Bespoke Code\RiskModelEx.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">
       <AutoGen>True</AutoGen>
@@ -165,6 +166,7 @@
     <Content Include="Resources\ContainsAsset.bmp" />
     <Content Include="Resources\ContainsTool.bmp" />
     <Content Include="Resources\Contains.bmp" />
+    <Content Include="Resources\LegitimateAccess.bmp" />
     <Content Include="Resources\Port.bmp" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>

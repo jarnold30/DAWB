@@ -3,4 +3,4 @@
 [$RootKey$\TextTemplating\DirectiveProcessors\RiskDirectiveProcessor]
 @="Generates a prolog file that represents a Risk file"
 "Class"="JA.Risk.RiskDirectiveProcessor"
-"CodeBase"="C:\Users\johna\OneDrive\Documents\DAWB\DAWB\RiskRepo\DslPackage\bin\Debug\JA.Risk.Dsl.dll"
+"CodeBase"="JA.Risk.Dsl.dll"

@@ -37,11 +37,11 @@ namespace JA.Risk
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
-					"@ContainerPortToolboxItem;JA.Risk.Dsl.dll", 
-					"JA.Risk.ContainerPortToolboxItem", 
+					"@PortToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.PortToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ContainerPort", 
-					"@ContainerPortToolboxBitmap;JA.Risk.Dsl.dll", 
+					"Port", 
+					"@PortToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
@@ -93,11 +93,11 @@ namespace JA.Risk
 					0xff00ff,
 					Index = 7)]
 	[VSShell::ProvideStaticToolboxItem("JA.Risk.RiskToolboxTab",
-					"@AgentPortToolboxItem;JA.Risk.Dsl.dll", 
-					"JA.Risk.AgentPortToolboxItem", 
+					"@LegitimateAccessToolboxItem;JA.Risk.Dsl.dll", 
+					"JA.Risk.LegitimateAccessToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"AgentPort", 
-					"@AgentPortToolboxBitmap;JA.Risk.Dsl.dll", 
+					"LegitimateAccess", 
+					"@LegitimateAccessToolboxBitmap;JA.Risk.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
 	[VSShell::ProvideEditorFactory(typeof(RiskEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]

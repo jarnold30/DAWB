@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="48dcae87-12df-4b20-9fd0-2ca4d6d5ebc8" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <startPoint Id="3d62981a-689a-4c29-bb4b-295ce16077b6">
+      <targetFlowElements>
+        <flowRelationship Id="b87d0535-a824-4374-b4b7-6041a6187839">
+          <taskMoniker Id="c1520085-4737-42d5-8f2c-4350dc22bb36" />
+        </flowRelationship>
+        <flowRelationship Id="58c3a05e-ab57-4303-9cf2-a6f9282ae7cc">
+          <taskMoniker Id="da9a5a86-4310-4ba2-9f7c-2aeec0dfd368" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <state Id="4e9c5568-a8a4-468b-879b-73f7c3b2aba0" name="IP connectivity" />
+    <task Id="c1520085-4737-42d5-8f2c-4350dc22bb36" name="Connect">
+      <targetFlowElements>
+        <flowRelationship Id="5409e8b0-910c-4b86-8310-22632dd172e7">
+          <stateMoniker Id="4e9c5568-a8a4-468b-879b-73f7c3b2aba0" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="e3b291f2-2259-48eb-b209-4bb989df8642">
+          <preCondition Id="c84058d9-d04c-468c-bd0e-5ccae87600b4" name="IP Access.network connectivity" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="d49bb65d-f0f3-45c3-b65b-2c71aea51728" name="ssh session as root">
+      <postConditions>
+        <stateHasPostConditions Id="e9c1247c-c5d4-43b1-a0b3-1e061dee0394">
+          <postCondition Id="3c425703-e6f2-4660-ad8b-1ebead6f78a9" name="control over accounts" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+    <task Id="da9a5a86-4310-4ba2-9f7c-2aeec0dfd368" name="remote login as root">
+      <targetFlowElements>
+        <flowRelationship Id="d2c4f90e-f841-4042-bfc8-f805d687287b">
+          <stateMoniker Id="d49bb65d-f0f3-45c3-b65b-2c71aea51728" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="ad4dc3d1-2f5b-4671-8da9-7afbc2051577">
+          <preCondition Id="6a70e4c0-d750-4046-bc33-8992d0522d9f" name="root password" />
+        </taskHasPreConditions>
+        <taskHasPreConditions Id="ae51ea51-604e-4973-a569-07c0d2229ab0">
+          <preCondition Id="d972d3ab-7992-4ecb-ac19-0b8a74b6499d" name="IP Access.network connectivity" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+  </elements>
+</attackGraph>

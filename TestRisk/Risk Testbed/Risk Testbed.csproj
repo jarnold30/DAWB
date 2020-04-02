@@ -47,14 +47,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Risk1.Risk" />
+    <None Include="Risk1.Risk.diagram">
+      <DependentUpon>Risk1.Risk</DependentUpon>
+    </None>
     <None Include="RiskToProlog.pl">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RiskToProlog.tt</DependentUpon>
     </None>
-    <None Include="Web Banking 2.Risk" />
-    <None Include="Web Banking 2.Risk.diagram">
-      <DependentUpon>Web Banking 2.Risk</DependentUpon>
+    <None Include="Web Banking old.Risk.old" />
+    <None Include="Web Banking old.Risk.diagram">
+      <DependentUpon>Web Banking old.Risk.old</DependentUpon>
     </None>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>

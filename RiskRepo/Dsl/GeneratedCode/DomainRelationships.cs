@@ -1865,511 +1865,33 @@ namespace JA.Risk
 namespace JA.Risk
 {
 	/// <summary>
-	/// DomainRelationship ThreatAgentHasAgentPorts
-	/// Description for JA.Risk.ThreatAgentHasAgentPorts
+	/// DomainRelationship ObjectWithConditionsHasConditions
+	/// Description for JA.Risk.ObjectWithConditionsHasConditions
 	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasAgentPorts.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasAgentPorts.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("JA.Risk.ObjectWithConditionsHasConditions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ObjectWithConditionsHasConditions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("d87498d4-8eb6-482f-bd76-f9a3e10b7424")]
-	public partial class ThreatAgentHasAgentPorts : DslModeling::ElementLink
+	[DslModeling::DomainObjectId("e0e13669-9581-486b-96d0-1128b63d1816")]
+	public partial class ObjectWithConditionsHasConditions : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ThreatAgentHasAgentPorts domain class Id.
+		/// ObjectWithConditionsHasConditions domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd87498d4, 0x8eb6, 0x482f, 0xbd, 0x76, 0xf9, 0xa3, 0xe1, 0x0b, 0x74, 0x24);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe0e13669, 0x9581, 0x486b, 0x96, 0xd0, 0x11, 0x28, 0xb6, 0x3d, 0x18, 0x16);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ThreatAgentHasAgentPorts link in the same Partition as the given ThreatAgent
+		/// Creates a ObjectWithConditionsHasConditions link in the same Partition as the given ObjectWithConditions
 		/// </summary>
-		/// <param name="source">ThreatAgent to use as the source of the relationship.</param>
-		/// <param name="target">AgentPort to use as the target of the relationship.</param>
-		public ThreatAgentHasAgentPorts(ThreatAgent source, AgentPort target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId, source), new DslModeling::RoleAssignment(ThreatAgentHasAgentPorts.AgentPortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ThreatAgentHasAgentPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ThreatAgentHasAgentPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ThreatAgentHasAgentPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ThreatAgentHasAgentPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ThreatAgent domain role code
-		
-		/// <summary>
-		/// ThreatAgent domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ThreatAgentDomainRoleId = new global::System.Guid(0x54eff892, 0xa618, 0x4042, 0xa3, 0x0e, 0x6b, 0x6a, 0x25, 0x95, 0x2c, 0x81);
-		
-		/// <summary>
-		/// DomainRole ThreatAgent
-		/// Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent
-		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AgentPorts", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("54eff892-a618-4042-a30e-6b6a25952c81")]
-		public virtual ThreatAgent ThreatAgent
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ThreatAgent)DslModeling::DomainRoleInfo.GetRolePlayer(this, ThreatAgentDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ThreatAgentDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ThreatAgent of a AgentPort
-		/// <summary>
-		/// Gets ThreatAgent.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ThreatAgent GetThreatAgent(AgentPort element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, AgentPortDomainRoleId) as ThreatAgent;
-		}
-		
-		/// <summary>
-		/// Sets ThreatAgent.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetThreatAgent(AgentPort element, ThreatAgent newThreatAgent)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, AgentPortDomainRoleId, newThreatAgent);
-		}
-		#endregion
-		#region AgentPort domain role code
-		
-		/// <summary>
-		/// AgentPort domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid AgentPortDomainRoleId = new global::System.Guid(0xd051b622, 0x9a7c, 0x485d, 0x82, 0x09, 0x25, 0xc2, 0x33, 0xa0, 0x2d, 0xf2);
-		
-		/// <summary>
-		/// DomainRole AgentPort
-		/// Description for JA.Risk.ThreatAgentHasAgentPorts.AgentPort
-		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasAgentPorts/AgentPort.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasAgentPorts/AgentPort.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ThreatAgent", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasAgentPorts/AgentPort.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("d051b622-9a7c-485d-8209-25c233a02df2")]
-		public virtual AgentPort AgentPort
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (AgentPort)DslModeling::DomainRoleInfo.GetRolePlayer(this, AgentPortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, AgentPortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access AgentPorts of a ThreatAgent
-		/// <summary>
-		/// Gets a list of AgentPorts.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<AgentPort> GetAgentPorts(ThreatAgent element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<AgentPort>, AgentPort>(element, ThreatAgentDomainRoleId);
-		}
-		#endregion
-		#region ThreatAgent link accessor
-		/// <summary>
-		/// Get the list of ThreatAgentHasAgentPorts links to a ThreatAgent.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasAgentPorts> GetLinksToAgentPorts ( global::JA.Risk.ThreatAgent threatAgentInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasAgentPorts>(threatAgentInstance, global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId);
-		}
-		#endregion
-		#region AgentPort link accessor
-		/// <summary>
-		/// Get the ThreatAgentHasAgentPorts link to a AgentPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ThreatAgentHasAgentPorts GetLinkToThreatAgent (global::JA.Risk.AgentPort agentPortInstance)
-		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasAgentPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasAgentPorts>(agentPortInstance, global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of AgentPort not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ThreatAgentHasAgentPorts instance accessors
-		
-		/// <summary>
-		/// Get any ThreatAgentHasAgentPorts links between a given ThreatAgent and a AgentPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasAgentPorts> GetLinks( global::JA.Risk.ThreatAgent source, global::JA.Risk.AgentPort target )
-		{
-			global::System.Collections.Generic.List<global::JA.Risk.ThreatAgentHasAgentPorts> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.ThreatAgentHasAgentPorts>();
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasAgentPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasAgentPorts>(source, global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId);
-			foreach ( global::JA.Risk.ThreatAgentHasAgentPorts link in links )
-			{
-				if ( target.Equals(link.AgentPort) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ThreatAgentHasAgentPorts link between a given ThreatAgentand a AgentPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ThreatAgentHasAgentPorts GetLink( global::JA.Risk.ThreatAgent source, global::JA.Risk.AgentPort target )
-		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasAgentPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasAgentPorts>(source, global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId);
-			foreach ( global::JA.Risk.ThreatAgentHasAgentPorts link in links )
-			{
-				if ( target.Equals(link.AgentPort) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainRelationship ContainerHasContainerPorts
-	/// Description for JA.Risk.ContainerHasContainerPorts
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ContainerHasContainerPorts.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ContainerHasContainerPorts.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("e416e821-fdff-4f58-b5bb-cd7642f5f878")]
-	public partial class ContainerHasContainerPorts : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ContainerHasContainerPorts domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe416e821, 0xfdff, 0x4f58, 0xb5, 0xbb, 0xcd, 0x76, 0x42, 0xf5, 0xf8, 0x78);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ContainerHasContainerPorts link in the same Partition as the given Container
-		/// </summary>
-		/// <param name="source">Container to use as the source of the relationship.</param>
-		/// <param name="target">ContainerPort to use as the target of the relationship.</param>
-		public ContainerHasContainerPorts(Container source, ContainerPort target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ContainerHasContainerPorts.ContainerDomainRoleId, source), new DslModeling::RoleAssignment(ContainerHasContainerPorts.ContainerPortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ContainerHasContainerPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ContainerHasContainerPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ContainerHasContainerPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ContainerHasContainerPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Container domain role code
-		
-		/// <summary>
-		/// Container domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ContainerDomainRoleId = new global::System.Guid(0xff938bef, 0x865c, 0x48ef, 0xbf, 0x31, 0x3f, 0xa1, 0xe6, 0xa6, 0xee, 0xde);
-		
-		/// <summary>
-		/// DomainRole Container
-		/// Description for JA.Risk.ContainerHasContainerPorts.Container
-		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ContainerHasContainerPorts/Container.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ContainerHasContainerPorts/Container.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ContainerPorts", PropertyDisplayNameKey="JA.Risk.ContainerHasContainerPorts/Container.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("ff938bef-865c-48ef-bf31-3fa1e6a6eede")]
-		public virtual Container Container
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (Container)DslModeling::DomainRoleInfo.GetRolePlayer(this, ContainerDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ContainerDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Container of a ContainerPort
-		/// <summary>
-		/// Gets Container.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static Container GetContainer(ContainerPort element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ContainerPortDomainRoleId) as Container;
-		}
-		
-		/// <summary>
-		/// Sets Container.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetContainer(ContainerPort element, Container newContainer)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ContainerPortDomainRoleId, newContainer);
-		}
-		#endregion
-		#region ContainerPort domain role code
-		
-		/// <summary>
-		/// ContainerPort domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ContainerPortDomainRoleId = new global::System.Guid(0x03eedc20, 0xe58b, 0x4899, 0x9a, 0x0e, 0xfd, 0xea, 0xd8, 0x4a, 0xe9, 0x57);
-		
-		/// <summary>
-		/// DomainRole ContainerPort
-		/// Description for JA.Risk.ContainerHasContainerPorts.ContainerPort
-		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ContainerHasContainerPorts/ContainerPort.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ContainerHasContainerPorts/ContainerPort.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Container", PropertyDisplayNameKey="JA.Risk.ContainerHasContainerPorts/ContainerPort.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("03eedc20-e58b-4899-9a0e-fdead84ae957")]
-		public virtual ContainerPort ContainerPort
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ContainerPort)DslModeling::DomainRoleInfo.GetRolePlayer(this, ContainerPortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ContainerPortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ContainerPorts of a Container
-		/// <summary>
-		/// Gets a list of ContainerPorts.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ContainerPort> GetContainerPorts(Container element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ContainerPort>, ContainerPort>(element, ContainerDomainRoleId);
-		}
-		#endregion
-		#region Container link accessor
-		/// <summary>
-		/// Get the list of ContainerHasContainerPorts links to a Container.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ContainerHasContainerPorts> GetLinksToContainerPorts ( global::JA.Risk.Container containerInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ContainerHasContainerPorts>(containerInstance, global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId);
-		}
-		#endregion
-		#region ContainerPort link accessor
-		/// <summary>
-		/// Get the ContainerHasContainerPorts link to a ContainerPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ContainerHasContainerPorts GetLinkToContainer (global::JA.Risk.ContainerPort containerPortInstance)
-		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ContainerHasContainerPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ContainerHasContainerPorts>(containerPortInstance, global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ContainerPort not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ContainerHasContainerPorts instance accessors
-		
-		/// <summary>
-		/// Get any ContainerHasContainerPorts links between a given Container and a ContainerPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ContainerHasContainerPorts> GetLinks( global::JA.Risk.Container source, global::JA.Risk.ContainerPort target )
-		{
-			global::System.Collections.Generic.List<global::JA.Risk.ContainerHasContainerPorts> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.ContainerHasContainerPorts>();
-			global::System.Collections.Generic.IList<global::JA.Risk.ContainerHasContainerPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ContainerHasContainerPorts>(source, global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId);
-			foreach ( global::JA.Risk.ContainerHasContainerPorts link in links )
-			{
-				if ( target.Equals(link.ContainerPort) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ContainerHasContainerPorts link between a given Containerand a ContainerPort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ContainerHasContainerPorts GetLink( global::JA.Risk.Container source, global::JA.Risk.ContainerPort target )
-		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ContainerHasContainerPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ContainerHasContainerPorts>(source, global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId);
-			foreach ( global::JA.Risk.ContainerHasContainerPorts link in links )
-			{
-				if ( target.Equals(link.ContainerPort) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainRelationship ThreatAgentHasConditions
-	/// Description for JA.Risk.ThreatAgentHasConditions
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasConditions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasConditions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("3a1401b6-27e8-41f2-a3e6-698269931040")]
-	public partial class ThreatAgentHasConditions : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ThreatAgentHasConditions domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3a1401b6, 0x27e8, 0x41f2, 0xa3, 0xe6, 0x69, 0x82, 0x69, 0x93, 0x10, 0x40);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ThreatAgentHasConditions link in the same Partition as the given ThreatAgent
-		/// </summary>
-		/// <param name="source">ThreatAgent to use as the source of the relationship.</param>
+		/// <param name="source">ObjectWithConditions to use as the source of the relationship.</param>
 		/// <param name="target">Condition to use as the target of the relationship.</param>
-		public ThreatAgentHasConditions(ThreatAgent source, Condition target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ThreatAgentHasConditions.ThreatAgentDomainRoleId, source), new DslModeling::RoleAssignment(ThreatAgentHasConditions.ConditionDomainRoleId, target)}, null)
+		public ObjectWithConditionsHasConditions(ObjectWithConditions source, Condition target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId, source), new DslModeling::RoleAssignment(ObjectWithConditionsHasConditions.ConditionDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -2378,7 +1900,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ThreatAgentHasConditions(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ObjectWithConditionsHasConditions(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -2389,7 +1911,7 @@ namespace JA.Risk
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ThreatAgentHasConditions(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ObjectWithConditionsHasConditions(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -2399,7 +1921,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ThreatAgentHasConditions(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ObjectWithConditionsHasConditions(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -2410,60 +1932,60 @@ namespace JA.Risk
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ThreatAgentHasConditions(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ObjectWithConditionsHasConditions(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region ThreatAgent domain role code
+		#region ObjectWithConditions domain role code
 		
 		/// <summary>
-		/// ThreatAgent domain role Id.
+		/// ObjectWithConditions domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ThreatAgentDomainRoleId = new global::System.Guid(0x3d1aa82a, 0xd5a0, 0x4a05, 0x9c, 0x0c, 0x34, 0x83, 0xde, 0x28, 0x5d, 0xf3);
+		public static readonly global::System.Guid ObjectWithConditionsDomainRoleId = new global::System.Guid(0xc1f7da96, 0x5e17, 0x495b, 0x85, 0xa4, 0x64, 0x8f, 0x84, 0x3f, 0x8f, 0xd6);
 		
 		/// <summary>
-		/// DomainRole ThreatAgent
-		/// Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent
+		/// DomainRole ObjectWithConditions
+		/// Description for JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditions
 		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasConditions/ThreatAgent.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasConditions/ThreatAgent.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Conditions", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasConditions/ThreatAgent.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("3d1aa82a-d5a0-4a05-9c0c-3483de285df3")]
-		public virtual ThreatAgent ThreatAgent
+		[DslDesign::DisplayNameResource("JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Conditions", PropertyDisplayNameKey="JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("c1f7da96-5e17-495b-85a4-648f843f8fd6")]
+		public virtual ObjectWithConditions ObjectWithConditions
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ThreatAgent)DslModeling::DomainRoleInfo.GetRolePlayer(this, ThreatAgentDomainRoleId);
+				return (ObjectWithConditions)DslModeling::DomainRoleInfo.GetRolePlayer(this, ObjectWithConditionsDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ThreatAgentDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ObjectWithConditionsDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access ThreatAgent of a Condition
+		#region Static methods to access ObjectWithConditions of a Condition
 		/// <summary>
-		/// Gets ThreatAgent.
+		/// Gets ObjectWithConditions.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ThreatAgent GetThreatAgent(Condition element)
+		public static ObjectWithConditions GetObjectWithConditions(Condition element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ConditionDomainRoleId) as ThreatAgent;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ConditionDomainRoleId) as ObjectWithConditions;
 		}
 		
 		/// <summary>
-		/// Sets ThreatAgent.
+		/// Sets ObjectWithConditions.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetThreatAgent(Condition element, ThreatAgent newThreatAgent)
+		public static void SetObjectWithConditions(Condition element, ObjectWithConditions newObjectWithConditions)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ConditionDomainRoleId, newThreatAgent);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ConditionDomainRoleId, newObjectWithConditions);
 		}
 		#endregion
 		#region Condition domain role code
@@ -2471,16 +1993,16 @@ namespace JA.Risk
 		/// <summary>
 		/// Condition domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ConditionDomainRoleId = new global::System.Guid(0x6c38587d, 0xbeee, 0x4152, 0x8f, 0xc2, 0xd9, 0xd7, 0x53, 0xeb, 0x41, 0x7a);
+		public static readonly global::System.Guid ConditionDomainRoleId = new global::System.Guid(0x68bcc33f, 0xdf0e, 0x4bfd, 0x9f, 0xf6, 0x5c, 0xf3, 0x6a, 0xf7, 0xcc, 0x55);
 		
 		/// <summary>
 		/// DomainRole Condition
-		/// Description for JA.Risk.ThreatAgentHasConditions.Condition
+		/// Description for JA.Risk.ObjectWithConditionsHasConditions.Condition
 		/// </summary>
-		[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentHasConditions/Condition.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("JA.Risk.ThreatAgentHasConditions/Condition.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ThreatAgent", PropertyDisplayNameKey="JA.Risk.ThreatAgentHasConditions/Condition.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("6c38587d-beee-4152-8fc2-d9d753eb417a")]
+		[DslDesign::DisplayNameResource("JA.Risk.ObjectWithConditionsHasConditions/Condition.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ObjectWithConditionsHasConditions/Condition.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ObjectWithConditions", PropertyDisplayNameKey="JA.Risk.ObjectWithConditionsHasConditions/Condition.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("68bcc33f-df0e-4bfd-9ff6-5cf36af7cc55")]
 		public virtual Condition Condition
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -2496,37 +2018,37 @@ namespace JA.Risk
 		}
 				
 		#endregion
-		#region Static methods to access Conditions of a ThreatAgent
+		#region Static methods to access Conditions of a ObjectWithConditions
 		/// <summary>
 		/// Gets a list of Conditions.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Condition> GetConditions(ThreatAgent element)
+		public static DslModeling::LinkedElementCollection<Condition> GetConditions(ObjectWithConditions element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Condition>, Condition>(element, ThreatAgentDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Condition>, Condition>(element, ObjectWithConditionsDomainRoleId);
 		}
 		#endregion
-		#region ThreatAgent link accessor
+		#region ObjectWithConditions link accessor
 		/// <summary>
-		/// Get the list of ThreatAgentHasConditions links to a ThreatAgent.
+		/// Get the list of ObjectWithConditionsHasConditions links to a ObjectWithConditions.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasConditions> GetLinksToConditions ( global::JA.Risk.ThreatAgent threatAgentInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ObjectWithConditionsHasConditions> GetLinksToConditions ( global::JA.Risk.ObjectWithConditions objectWithConditionsInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasConditions>(threatAgentInstance, global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectWithConditionsHasConditions>(objectWithConditionsInstance, global::JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId);
 		}
 		#endregion
 		#region Condition link accessor
 		/// <summary>
-		/// Get the ThreatAgentHasConditions link to a Condition.
+		/// Get the ObjectWithConditionsHasConditions link to a Condition.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ThreatAgentHasConditions GetLinkToThreatAgent (global::JA.Risk.Condition conditionInstance)
+		public static global::JA.Risk.ObjectWithConditionsHasConditions GetLinkToObjectWithConditions (global::JA.Risk.Condition conditionInstance)
 		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasConditions>(conditionInstance, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId);
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectWithConditionsHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectWithConditionsHasConditions>(conditionInstance, global::JA.Risk.ObjectWithConditionsHasConditions.ConditionDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Condition not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -2538,18 +2060,18 @@ namespace JA.Risk
 			}
 		}
 		#endregion
-		#region ThreatAgentHasConditions instance accessors
+		#region ObjectWithConditionsHasConditions instance accessors
 		
 		/// <summary>
-		/// Get any ThreatAgentHasConditions links between a given ThreatAgent and a Condition.
+		/// Get any ObjectWithConditionsHasConditions links between a given ObjectWithConditions and a Condition.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ThreatAgentHasConditions> GetLinks( global::JA.Risk.ThreatAgent source, global::JA.Risk.Condition target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ObjectWithConditionsHasConditions> GetLinks( global::JA.Risk.ObjectWithConditions source, global::JA.Risk.Condition target )
 		{
-			global::System.Collections.Generic.List<global::JA.Risk.ThreatAgentHasConditions> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.ThreatAgentHasConditions>();
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasConditions>(source, global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId);
-			foreach ( global::JA.Risk.ThreatAgentHasConditions link in links )
+			global::System.Collections.Generic.List<global::JA.Risk.ObjectWithConditionsHasConditions> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.ObjectWithConditionsHasConditions>();
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectWithConditionsHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectWithConditionsHasConditions>(source, global::JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId);
+			foreach ( global::JA.Risk.ObjectWithConditionsHasConditions link in links )
 			{
 				if ( target.Equals(link.Condition) )
 				{
@@ -2559,16 +2081,563 @@ namespace JA.Risk
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ThreatAgentHasConditions link between a given ThreatAgentand a Condition.
+		/// Get the one ObjectWithConditionsHasConditions link between a given ObjectWithConditionsand a Condition.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::JA.Risk.ThreatAgentHasConditions GetLink( global::JA.Risk.ThreatAgent source, global::JA.Risk.Condition target )
+		public static global::JA.Risk.ObjectWithConditionsHasConditions GetLink( global::JA.Risk.ObjectWithConditions source, global::JA.Risk.Condition target )
 		{
-			global::System.Collections.Generic.IList<global::JA.Risk.ThreatAgentHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ThreatAgentHasConditions>(source, global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId);
-			foreach ( global::JA.Risk.ThreatAgentHasConditions link in links )
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectWithConditionsHasConditions> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectWithConditionsHasConditions>(source, global::JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId);
+			foreach ( global::JA.Risk.ObjectWithConditionsHasConditions link in links )
 			{
 				if ( target.Equals(link.Condition) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainRelationship ObjectHasPorts
+	/// Description for JA.Risk.ObjectHasPorts
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.ObjectHasPorts.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ObjectHasPorts.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("9587eb6a-097f-4a44-8c8e-1e3679ae73c7")]
+	public partial class ObjectHasPorts : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ObjectHasPorts domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9587eb6a, 0x097f, 0x4a44, 0x8c, 0x8e, 0x1e, 0x36, 0x79, 0xae, 0x73, 0xc7);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ObjectHasPorts link in the same Partition as the given ObjectWithPorts
+		/// </summary>
+		/// <param name="source">ObjectWithPorts to use as the source of the relationship.</param>
+		/// <param name="target">Port to use as the target of the relationship.</param>
+		public ObjectHasPorts(ObjectWithPorts source, Port target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ObjectHasPorts.ObjectWithPortsDomainRoleId, source), new DslModeling::RoleAssignment(ObjectHasPorts.PortDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ObjectHasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ObjectHasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ObjectHasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ObjectHasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ObjectWithPorts domain role code
+		
+		/// <summary>
+		/// ObjectWithPorts domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ObjectWithPortsDomainRoleId = new global::System.Guid(0x839f0806, 0x1251, 0x4a2f, 0xac, 0xf7, 0x14, 0x43, 0x4b, 0x27, 0x67, 0xeb);
+		
+		/// <summary>
+		/// DomainRole ObjectWithPorts
+		/// Description for JA.Risk.ObjectHasPorts.ObjectWithPorts
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.ObjectHasPorts/ObjectWithPorts.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ObjectHasPorts/ObjectWithPorts.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="JA.Risk.ObjectHasPorts/ObjectWithPorts.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("839f0806-1251-4a2f-acf7-14434b2767eb")]
+		public virtual ObjectWithPorts ObjectWithPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ObjectWithPorts)DslModeling::DomainRoleInfo.GetRolePlayer(this, ObjectWithPortsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ObjectWithPortsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ObjectWithPorts of a Port
+		/// <summary>
+		/// Gets ObjectWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static ObjectWithPorts GetObjectWithPorts(Port element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as ObjectWithPorts;
+		}
+		
+		/// <summary>
+		/// Sets ObjectWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetObjectWithPorts(Port element, ObjectWithPorts newObjectWithPorts)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newObjectWithPorts);
+		}
+		#endregion
+		#region Port domain role code
+		
+		/// <summary>
+		/// Port domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x6b2d09b4, 0x469d, 0x4103, 0xa1, 0x73, 0xc6, 0x1c, 0x89, 0x48, 0xa0, 0xb9);
+		
+		/// <summary>
+		/// DomainRole Port
+		/// Description for JA.Risk.ObjectHasPorts.Port
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.ObjectHasPorts/Port.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ObjectHasPorts/Port.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ObjectWithPorts", PropertyDisplayNameKey="JA.Risk.ObjectHasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("6b2d09b4-469d-4103-a173-c61c8948a0b9")]
+		public virtual Port Port
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Port)DslModeling::DomainRoleInfo.GetRolePlayer(this, PortDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, PortDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Ports of a ObjectWithPorts
+		/// <summary>
+		/// Gets a list of Ports.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Port> GetPorts(ObjectWithPorts element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, ObjectWithPortsDomainRoleId);
+		}
+		#endregion
+		#region ObjectWithPorts link accessor
+		/// <summary>
+		/// Get the list of ObjectHasPorts links to a ObjectWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ObjectHasPorts> GetLinksToPorts ( global::JA.Risk.ObjectWithPorts objectWithPortsInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectHasPorts>(objectWithPortsInstance, global::JA.Risk.ObjectHasPorts.ObjectWithPortsDomainRoleId);
+		}
+		#endregion
+		#region Port link accessor
+		/// <summary>
+		/// Get the ObjectHasPorts link to a Port.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::JA.Risk.ObjectHasPorts GetLinkToObjectWithPorts (global::JA.Risk.Port portInstance)
+		{
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectHasPorts>(portInstance, global::JA.Risk.ObjectHasPorts.PortDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Port not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ObjectHasPorts instance accessors
+		
+		/// <summary>
+		/// Get any ObjectHasPorts links between a given ObjectWithPorts and a Port.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.ObjectHasPorts> GetLinks( global::JA.Risk.ObjectWithPorts source, global::JA.Risk.Port target )
+		{
+			global::System.Collections.Generic.List<global::JA.Risk.ObjectHasPorts> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.ObjectHasPorts>();
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectHasPorts>(source, global::JA.Risk.ObjectHasPorts.ObjectWithPortsDomainRoleId);
+			foreach ( global::JA.Risk.ObjectHasPorts link in links )
+			{
+				if ( target.Equals(link.Port) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ObjectHasPorts link between a given ObjectWithPortsand a Port.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::JA.Risk.ObjectHasPorts GetLink( global::JA.Risk.ObjectWithPorts source, global::JA.Risk.Port target )
+		{
+			global::System.Collections.Generic.IList<global::JA.Risk.ObjectHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.ObjectHasPorts>(source, global::JA.Risk.ObjectHasPorts.ObjectWithPortsDomainRoleId);
+			foreach ( global::JA.Risk.ObjectHasPorts link in links )
+			{
+				if ( target.Equals(link.Port) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainRelationship LegitimateAccess
+	/// Description for JA.Risk.LegitimateAccess
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.LegitimateAccess.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.LegitimateAccess.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("0390b473-a13d-48c0-a29c-e28c6e325e0a")]
+	public partial class LegitimateAccess : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// LegitimateAccess domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x0390b473, 0xa13d, 0x48c0, 0xa2, 0x9c, 0xe2, 0x8c, 0x6e, 0x32, 0x5e, 0x0a);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a LegitimateAccess link in the same Partition as the given ThreatAgent
+		/// </summary>
+		/// <param name="source">ThreatAgent to use as the source of the relationship.</param>
+		/// <param name="target">Asset to use as the target of the relationship.</param>
+		public LegitimateAccess(ThreatAgent source, Asset target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(LegitimateAccess.ThreatAgentDomainRoleId, source), new DslModeling::RoleAssignment(LegitimateAccess.AssetDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public LegitimateAccess(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public LegitimateAccess(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public LegitimateAccess(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public LegitimateAccess(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ThreatAgent domain role code
+		
+		/// <summary>
+		/// ThreatAgent domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ThreatAgentDomainRoleId = new global::System.Guid(0x0f93b3e0, 0xd4c8, 0x4327, 0x92, 0x95, 0xb6, 0x94, 0x8f, 0xff, 0x93, 0x20);
+		
+		/// <summary>
+		/// DomainRole ThreatAgent
+		/// Description for JA.Risk.LegitimateAccess.ThreatAgent
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.LegitimateAccess/ThreatAgent.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.LegitimateAccess/ThreatAgent.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Assets", PropertyDisplayNameKey="JA.Risk.LegitimateAccess/ThreatAgent.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("0f93b3e0-d4c8-4327-9295-b6948fff9320")]
+		public virtual ThreatAgent ThreatAgent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ThreatAgent)DslModeling::DomainRoleInfo.GetRolePlayer(this, ThreatAgentDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ThreatAgentDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ThreatAgents of a Asset
+		/// <summary>
+		/// Gets a list of ThreatAgents.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ThreatAgent> GetThreatAgents(Asset element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ThreatAgent>, ThreatAgent>(element, AssetDomainRoleId);
+		}
+		#endregion
+		#region Asset domain role code
+		
+		/// <summary>
+		/// Asset domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AssetDomainRoleId = new global::System.Guid(0x70f92599, 0x8f6d, 0x4820, 0x92, 0x17, 0xe3, 0xeb, 0x96, 0x02, 0x65, 0xf7);
+		
+		/// <summary>
+		/// DomainRole Asset
+		/// Description for JA.Risk.LegitimateAccess.Asset
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.LegitimateAccess/Asset.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.LegitimateAccess/Asset.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ThreatAgents", PropertyDisplayNameKey="JA.Risk.LegitimateAccess/Asset.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("70f92599-8f6d-4820-9217-e3eb960265f7")]
+		public virtual Asset Asset
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Asset)DslModeling::DomainRoleInfo.GetRolePlayer(this, AssetDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AssetDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Assets of a ThreatAgent
+		/// <summary>
+		/// Gets a list of Assets.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Asset> GetAssets(ThreatAgent element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Asset>, Asset>(element, ThreatAgentDomainRoleId);
+		}
+		#endregion
+		#region Conditions domain property code
+		
+		/// <summary>
+		/// Conditions domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ConditionsDomainPropertyId = new global::System.Guid(0x1ef66e36, 0x51e4, 0x4f33, 0xab, 0xd4, 0xb4, 0xc1, 0xf6, 0xe9, 0x21, 0xae);
+		
+		/// <summary>
+		/// Storage for Conditions
+		/// </summary>
+		private global::System.String conditionsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Conditions domain property.
+		/// The conditions on an asset that a threat agent may legitimately access,
+		/// separated by commas
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.LegitimateAccess/Conditions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.LegitimateAccess/Conditions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1ef66e36-51e4-4f33-abd4-b4c1f6e921ae")]
+		public global::System.String Conditions
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ConditionsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the LegitimateAccess.Conditions domain property.
+		/// </summary>
+		internal sealed partial class ConditionsPropertyHandler : DslModeling::DomainPropertyValueHandler<LegitimateAccess, global::System.String>
+		{
+			private ConditionsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the LegitimateAccess.Conditions domain property value handler.
+			/// </summary>
+			public static readonly ConditionsPropertyHandler Instance = new ConditionsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the LegitimateAccess.Conditions domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ConditionsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(LegitimateAccess element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(LegitimateAccess element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ThreatAgent link accessor
+		/// <summary>
+		/// Get the list of LegitimateAccess links to a ThreatAgent.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.LegitimateAccess> GetLinksToAssets ( global::JA.Risk.ThreatAgent threatAgentInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.LegitimateAccess>(threatAgentInstance, global::JA.Risk.LegitimateAccess.ThreatAgentDomainRoleId);
+		}
+		#endregion
+		#region Asset link accessor
+		/// <summary>
+		/// Get the list of LegitimateAccess links to a Asset.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.LegitimateAccess> GetLinksToThreatAgents ( global::JA.Risk.Asset assetInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.LegitimateAccess>(assetInstance, global::JA.Risk.LegitimateAccess.AssetDomainRoleId);
+		}
+		#endregion
+		#region LegitimateAccess instance accessors
+		
+		/// <summary>
+		/// Get any LegitimateAccess links between a given ThreatAgent and a Asset.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::JA.Risk.LegitimateAccess> GetLinks( global::JA.Risk.ThreatAgent source, global::JA.Risk.Asset target )
+		{
+			global::System.Collections.Generic.List<global::JA.Risk.LegitimateAccess> outLinks = new global::System.Collections.Generic.List<global::JA.Risk.LegitimateAccess>();
+			global::System.Collections.Generic.IList<global::JA.Risk.LegitimateAccess> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.LegitimateAccess>(source, global::JA.Risk.LegitimateAccess.ThreatAgentDomainRoleId);
+			foreach ( global::JA.Risk.LegitimateAccess link in links )
+			{
+				if ( target.Equals(link.Asset) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one LegitimateAccess link between a given ThreatAgentand a Asset.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::JA.Risk.LegitimateAccess GetLink( global::JA.Risk.ThreatAgent source, global::JA.Risk.Asset target )
+		{
+			global::System.Collections.Generic.IList<global::JA.Risk.LegitimateAccess> links = DslModeling::DomainRoleInfo.GetElementLinks<global::JA.Risk.LegitimateAccess>(source, global::JA.Risk.LegitimateAccess.ThreatAgentDomainRoleId);
+			foreach ( global::JA.Risk.LegitimateAccess link in links )
+			{
+				if ( target.Equals(link.Asset) )
 				{
 					return link;
 				}

@@ -73,9 +73,9 @@ namespace JA.Risk
 				typeof(Port),
 				typeof(Asset),
 				typeof(ThreatAgent),
-				typeof(AgentPort),
-				typeof(ContainerPort),
 				typeof(Condition),
+				typeof(ObjectWithConditions),
+				typeof(ObjectWithPorts),
 				typeof(RiskModelHasContainers),
 				typeof(Generalization),
 				typeof(Interaction),
@@ -83,20 +83,19 @@ namespace JA.Risk
 				typeof(ContainerReferencesAssets),
 				typeof(RiskModelHasAssets),
 				typeof(RiskModelHasThreatAgents),
-				typeof(ThreatAgentHasAgentPorts),
-				typeof(ContainerHasContainerPorts),
-				typeof(ThreatAgentHasConditions),
+				typeof(ObjectWithConditionsHasConditions),
+				typeof(ObjectHasPorts),
+				typeof(LegitimateAccess),
 				typeof(RiskDiagram),
 				typeof(InteractsLink),
 				typeof(GeneralizationLink),
 				typeof(ContainsLink),
 				typeof(ContainsAsset),
-				typeof(ContainerShape),
-				typeof(AssetShape),
-				typeof(ThreatAgentShape),
+				typeof(LegitimateAccessConnector),
 				typeof(ThreatAgentCompartmentShape),
-				typeof(ContainerPortShape),
-				typeof(AgentPortShape),
+				typeof(ContainerCompartmentShape),
+				typeof(AssetCompartmentShape),
+				typeof(PortShape),
 				typeof(global::JA.Risk.FixUpDiagram),
 				typeof(global::JA.Risk.DecoratorPropertyChanged),
 				typeof(global::JA.Risk.ConnectorRolePlayerChanged),
@@ -117,6 +116,7 @@ namespace JA.Risk
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(NamedElement), "Notes", NamedElement.NotesDomainPropertyId, typeof(NamedElement.NotesPropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "Type", Container.TypeDomainPropertyId, typeof(Container.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(Asset), "Number", Asset.NumberDomainPropertyId, typeof(Asset.NumberPropertyHandler)),
 				new DomainMemberInfo(typeof(Asset), "SingleConfidentialityValue", Asset.SingleConfidentialityValueDomainPropertyId, typeof(Asset.SingleConfidentialityValuePropertyHandler)),
@@ -126,6 +126,7 @@ namespace JA.Risk
 				new DomainMemberInfo(typeof(Interaction), "Attack", Interaction.AttackDomainPropertyId, typeof(Interaction.AttackPropertyHandler)),
 				new DomainMemberInfo(typeof(Contains), "Number", Contains.NumberDomainPropertyId, typeof(Contains.NumberPropertyHandler)),
 				new DomainMemberInfo(typeof(Contains), "Attack", Contains.AttackDomainPropertyId, typeof(Contains.AttackPropertyHandler)),
+				new DomainMemberInfo(typeof(LegitimateAccess), "Conditions", LegitimateAccess.ConditionsDomainPropertyId, typeof(LegitimateAccess.ConditionsPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -150,12 +151,12 @@ namespace JA.Risk
 				new DomainRolePlayerInfo(typeof(RiskModelHasAssets), "Asset", RiskModelHasAssets.AssetDomainRoleId),
 				new DomainRolePlayerInfo(typeof(RiskModelHasThreatAgents), "RiskModel", RiskModelHasThreatAgents.RiskModelDomainRoleId),
 				new DomainRolePlayerInfo(typeof(RiskModelHasThreatAgents), "ThreatAgent", RiskModelHasThreatAgents.ThreatAgentDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ThreatAgentHasAgentPorts), "ThreatAgent", ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ThreatAgentHasAgentPorts), "AgentPort", ThreatAgentHasAgentPorts.AgentPortDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ContainerHasContainerPorts), "Container", ContainerHasContainerPorts.ContainerDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ContainerHasContainerPorts), "ContainerPort", ContainerHasContainerPorts.ContainerPortDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ThreatAgentHasConditions), "ThreatAgent", ThreatAgentHasConditions.ThreatAgentDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ThreatAgentHasConditions), "Condition", ThreatAgentHasConditions.ConditionDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ObjectWithConditionsHasConditions), "ObjectWithConditions", ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ObjectWithConditionsHasConditions), "Condition", ObjectWithConditionsHasConditions.ConditionDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ObjectHasPorts), "ObjectWithPorts", ObjectHasPorts.ObjectWithPortsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ObjectHasPorts), "Port", ObjectHasPorts.PortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(LegitimateAccess), "ThreatAgent", LegitimateAccess.ThreatAgentDomainRoleId),
+				new DomainRolePlayerInfo(typeof(LegitimateAccess), "Asset", LegitimateAccess.AssetDomainRoleId),
 			};
 		}
 		#endregion
@@ -177,25 +178,23 @@ namespace JA.Risk
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(20);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(19);
 				createElementMap.Add(typeof(RiskModel), 0);
 				createElementMap.Add(typeof(Container), 1);
-				createElementMap.Add(typeof(Asset), 2);
-				createElementMap.Add(typeof(ThreatAgent), 3);
-				createElementMap.Add(typeof(AgentPort), 4);
-				createElementMap.Add(typeof(ContainerPort), 5);
-				createElementMap.Add(typeof(Condition), 6);
-				createElementMap.Add(typeof(RiskDiagram), 7);
-				createElementMap.Add(typeof(InteractsLink), 8);
-				createElementMap.Add(typeof(GeneralizationLink), 9);
-				createElementMap.Add(typeof(ContainsLink), 10);
-				createElementMap.Add(typeof(ContainsAsset), 11);
-				createElementMap.Add(typeof(ContainerShape), 12);
-				createElementMap.Add(typeof(AssetShape), 13);
-				createElementMap.Add(typeof(ThreatAgentShape), 14);
-				createElementMap.Add(typeof(ThreatAgentCompartmentShape), 15);
-				createElementMap.Add(typeof(ContainerPortShape), 16);
-				createElementMap.Add(typeof(AgentPortShape), 17);
+				createElementMap.Add(typeof(Port), 2);
+				createElementMap.Add(typeof(Asset), 3);
+				createElementMap.Add(typeof(ThreatAgent), 4);
+				createElementMap.Add(typeof(Condition), 5);
+				createElementMap.Add(typeof(RiskDiagram), 6);
+				createElementMap.Add(typeof(InteractsLink), 7);
+				createElementMap.Add(typeof(GeneralizationLink), 8);
+				createElementMap.Add(typeof(ContainsLink), 9);
+				createElementMap.Add(typeof(ContainsAsset), 10);
+				createElementMap.Add(typeof(LegitimateAccessConnector), 11);
+				createElementMap.Add(typeof(ThreatAgentCompartmentShape), 12);
+				createElementMap.Add(typeof(ContainerCompartmentShape), 13);
+				createElementMap.Add(typeof(AssetCompartmentShape), 14);
+				createElementMap.Add(typeof(PortShape), 15);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -211,22 +210,20 @@ namespace JA.Risk
 			{
 				case 0: return new RiskModel(partition, propertyAssignments);
 				case 1: return new Container(partition, propertyAssignments);
-				case 2: return new Asset(partition, propertyAssignments);
-				case 3: return new ThreatAgent(partition, propertyAssignments);
-				case 4: return new AgentPort(partition, propertyAssignments);
-				case 5: return new ContainerPort(partition, propertyAssignments);
-				case 6: return new Condition(partition, propertyAssignments);
-				case 7: return new RiskDiagram(partition, propertyAssignments);
-				case 8: return new InteractsLink(partition, propertyAssignments);
-				case 9: return new GeneralizationLink(partition, propertyAssignments);
-				case 10: return new ContainsLink(partition, propertyAssignments);
-				case 11: return new ContainsAsset(partition, propertyAssignments);
-				case 12: return new ContainerShape(partition, propertyAssignments);
-				case 13: return new AssetShape(partition, propertyAssignments);
-				case 14: return new ThreatAgentShape(partition, propertyAssignments);
-				case 15: return new ThreatAgentCompartmentShape(partition, propertyAssignments);
-				case 16: return new ContainerPortShape(partition, propertyAssignments);
-				case 17: return new AgentPortShape(partition, propertyAssignments);
+				case 2: return new Port(partition, propertyAssignments);
+				case 3: return new Asset(partition, propertyAssignments);
+				case 4: return new ThreatAgent(partition, propertyAssignments);
+				case 5: return new Condition(partition, propertyAssignments);
+				case 6: return new RiskDiagram(partition, propertyAssignments);
+				case 7: return new InteractsLink(partition, propertyAssignments);
+				case 8: return new GeneralizationLink(partition, propertyAssignments);
+				case 9: return new ContainsLink(partition, propertyAssignments);
+				case 10: return new ContainsAsset(partition, propertyAssignments);
+				case 11: return new LegitimateAccessConnector(partition, propertyAssignments);
+				case 12: return new ThreatAgentCompartmentShape(partition, propertyAssignments);
+				case 13: return new ContainerCompartmentShape(partition, propertyAssignments);
+				case 14: return new AssetCompartmentShape(partition, propertyAssignments);
+				case 15: return new PortShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -257,9 +254,9 @@ namespace JA.Risk
 				createElementLinkMap.Add(typeof(ContainerReferencesAssets), 4);
 				createElementLinkMap.Add(typeof(RiskModelHasAssets), 5);
 				createElementLinkMap.Add(typeof(RiskModelHasThreatAgents), 6);
-				createElementLinkMap.Add(typeof(ThreatAgentHasAgentPorts), 7);
-				createElementLinkMap.Add(typeof(ContainerHasContainerPorts), 8);
-				createElementLinkMap.Add(typeof(ThreatAgentHasConditions), 9);
+				createElementLinkMap.Add(typeof(ObjectWithConditionsHasConditions), 7);
+				createElementLinkMap.Add(typeof(ObjectHasPorts), 8);
+				createElementLinkMap.Add(typeof(LegitimateAccess), 9);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -281,9 +278,9 @@ namespace JA.Risk
 				case 4: return new ContainerReferencesAssets(partition, roleAssignments, propertyAssignments);
 				case 5: return new RiskModelHasAssets(partition, roleAssignments, propertyAssignments);
 				case 6: return new RiskModelHasThreatAgents(partition, roleAssignments, propertyAssignments);
-				case 7: return new ThreatAgentHasAgentPorts(partition, roleAssignments, propertyAssignments);
-				case 8: return new ContainerHasContainerPorts(partition, roleAssignments, propertyAssignments);
-				case 9: return new ThreatAgentHasConditions(partition, roleAssignments, propertyAssignments);
+				case 7: return new ObjectWithConditionsHasConditions(partition, roleAssignments, propertyAssignments);
+				case 8: return new ObjectHasPorts(partition, roleAssignments, propertyAssignments);
+				case 9: return new LegitimateAccess(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -467,9 +464,8 @@ namespace JA.Risk
 			DomainRoles.Add(global::JA.Risk.RiskModelHasContainers.ContainerDomainRoleId, true);
 			DomainRoles.Add(global::JA.Risk.RiskModelHasAssets.AssetDomainRoleId, true);
 			DomainRoles.Add(global::JA.Risk.RiskModelHasThreatAgents.ThreatAgentDomainRoleId, true);
-			DomainRoles.Add(global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId, true);
-			DomainRoles.Add(global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId, true);
-			DomainRoles.Add(global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId, true);
+			DomainRoles.Add(global::JA.Risk.ObjectWithConditionsHasConditions.ConditionDomainRoleId, true);
+			DomainRoles.Add(global::JA.Risk.ObjectHasPorts.PortDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

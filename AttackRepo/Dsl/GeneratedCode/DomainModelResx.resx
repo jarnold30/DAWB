@@ -229,6 +229,14 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
   </data>
+  <data name="JA.Attack.NamedElement/Notes.Description" xml:space="preserve">
+    <value>Description for JA.Attack.NamedElement.Notes</value>
+    <comment>Description for DomainProperty &apos;Notes&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="JA.Attack.NamedElement/Notes.DisplayName" xml:space="preserve">
+    <value>Notes</value>
+    <comment>DisplayName for DomainProperty &apos;Notes&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
   <data name="JA.Attack.Condition.Description" xml:space="preserve">
     <value>A condition that applies to a threat agent</value>
     <comment>Description for DomainClass &apos;Condition&apos;</comment>
@@ -691,7 +699,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="StateExplorerImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ObjectTool.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\StateTool.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="SynchronisationExplorerImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
@@ -735,7 +743,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="StateToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ObjectTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\StateTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="SyncToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

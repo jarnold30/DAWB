@@ -8,6 +8,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="78080aa1-dda9-4129-99a0-5febe9b4a462" Description="Description for JA.Risk.NamedElement.Notes" Name="Notes" DisplayName="Notes">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="cdf6b92a-2285-4333-b19a-bac91ff13cfa" Description="" Name="RiskModel" DisplayName="Risk Model" Namespace="JA.Risk">
@@ -43,7 +48,7 @@
     </DomainClass>
     <DomainClass Id="05a5c5ec-ce41-469f-b478-e541d5aadb08" Description="Represents part of a system being studied: a building, computer, network etc" Name="Container" DisplayName="Container" Namespace="JA.Risk">
       <BaseClass>
-        <DomainClassMoniker Name="NamedElement" />
+        <DomainClassMoniker Name="ObjectWithPorts" />
       </BaseClass>
       <Properties>
         <DomainProperty Id="8721f980-ccc6-4115-a1be-4e85ae475501" Description="The type of the container" Name="Type" DisplayName="Type">
@@ -52,25 +57,15 @@
           </Type>
         </DomainProperty>
       </Properties>
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="ContainerPort" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>ContainerHasContainerPorts.ContainerPorts</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="70a78dd6-9b1b-452e-bd17-314df32f61fa" Description="Description for JA.Risk.Port" Name="Port" DisplayName="Port" InheritanceModifier="Abstract" Namespace="JA.Risk">
+    <DomainClass Id="70a78dd6-9b1b-452e-bd17-314df32f61fa" Description="Description for JA.Risk.Port" Name="Port" DisplayName="Port" Namespace="JA.Risk">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="7e7ffb3b-fc14-46ee-a021-eb9022be9768" Description="Represents something of value" Name="Asset" DisplayName="Asset" Namespace="JA.Risk">
       <BaseClass>
-        <DomainClassMoniker Name="NamedElement" />
+        <DomainClassMoniker Name="ObjectWithConditions" />
       </BaseClass>
       <Properties>
         <DomainProperty Id="a27ca295-7dc9-4f31-bffa-d0eace58d5bd" Description="The number of instances of this asset" Name="Number" DisplayName="Number">
@@ -97,7 +92,7 @@
     </DomainClass>
     <DomainClass Id="c887e7ce-864d-4c36-a285-170f665ced7b" Description="Represents something active, a user, attacker or external event" Name="ThreatAgent" DisplayName="Threat Agent" Namespace="JA.Risk">
       <BaseClass>
-        <DomainClassMoniker Name="NamedElement" />
+        <DomainClassMoniker Name="ObjectWithPorts" />
       </BaseClass>
       <Properties>
         <DomainProperty Id="4dd9846f-a569-4e4a-b696-f9dfd8c74b1a" Description="The number of instances of this threat" Name="Number" DisplayName="Number">
@@ -106,39 +101,41 @@
           </Type>
         </DomainProperty>
       </Properties>
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="AgentPort" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>ThreatAgentHasAgentPorts.AgentPorts</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="Condition" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>ThreatAgentHasConditions.Conditions</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="ca862a24-a9b8-4e15-97ee-754e7412d3de" Description="Represents a threat agent's ability to interact with something" Name="AgentPort" DisplayName="Agent Port" Namespace="JA.Risk">
-      <BaseClass>
-        <DomainClassMoniker Name="Port" />
-      </BaseClass>
-    </DomainClass>
-    <DomainClass Id="4f81a1fa-50bf-4f3a-9a57-66ca5c6128b7" Description="Represents a container's ability to interact with something" Name="ContainerPort" DisplayName="Container Port" Namespace="JA.Risk">
-      <BaseClass>
-        <DomainClassMoniker Name="Port" />
-      </BaseClass>
     </DomainClass>
     <DomainClass Id="2f960aff-ba36-48d5-8b9e-7cd173502a86" Description="This represents a condition a threat agent has before connecting to a system." Name="Condition" DisplayName="Condition" Namespace="JA.Risk">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+    </DomainClass>
+    <DomainClass Id="17d58e3b-39ed-425b-94e9-764f3aa76897" Description="Description for JA.Risk.ObjectWithConditions" Name="ObjectWithConditions" DisplayName="Object With Conditions" InheritanceModifier="Abstract" Namespace="JA.Risk">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Condition" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ObjectWithConditionsHasConditions.Conditions</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="e0fa9b66-207b-4be2-a424-d26097841440" Description="Description for JA.Risk.ObjectWithPorts" Name="ObjectWithPorts" DisplayName="Object With Ports" InheritanceModifier="Abstract" Namespace="JA.Risk">
+      <BaseClass>
+        <DomainClassMoniker Name="ObjectWithConditions" />
+      </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Port" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ObjectHasPorts.Ports</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -273,50 +270,57 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="d87498d4-8eb6-482f-bd76-f9a3e10b7424" Description="Description for JA.Risk.ThreatAgentHasAgentPorts" Name="ThreatAgentHasAgentPorts" DisplayName="Threat Agent Has Agent Ports" Namespace="JA.Risk" IsEmbedding="true">
+    <DomainRelationship Id="e0e13669-9581-486b-96d0-1128b63d1816" Description="Description for JA.Risk.ObjectWithConditionsHasConditions" Name="ObjectWithConditionsHasConditions" DisplayName="Object With Conditions Has Conditions" Namespace="JA.Risk" IsEmbedding="true">
       <Source>
-        <DomainRole Id="54eff892-a618-4042-a30e-6b6a25952c81" Description="Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" PropertyName="AgentPorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Agent Ports">
+        <DomainRole Id="c1f7da96-5e17-495b-85a4-648f843f8fd6" Description="Description for JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditions" Name="ObjectWithConditions" DisplayName="Object With Conditions" PropertyName="Conditions" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Conditions">
           <RolePlayer>
-            <DomainClassMoniker Name="ThreatAgent" />
+            <DomainClassMoniker Name="ObjectWithConditions" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="d051b622-9a7c-485d-8209-25c233a02df2" Description="Description for JA.Risk.ThreatAgentHasAgentPorts.AgentPort" Name="AgentPort" DisplayName="Agent Port" PropertyName="ThreatAgent" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Threat Agent">
-          <RolePlayer>
-            <DomainClassMoniker Name="AgentPort" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="e416e821-fdff-4f58-b5bb-cd7642f5f878" Description="Description for JA.Risk.ContainerHasContainerPorts" Name="ContainerHasContainerPorts" DisplayName="Container Has Container Ports" Namespace="JA.Risk" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="ff938bef-865c-48ef-bf31-3fa1e6a6eede" Description="Description for JA.Risk.ContainerHasContainerPorts.Container" Name="Container" DisplayName="Container" PropertyName="ContainerPorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Container Ports">
-          <RolePlayer>
-            <DomainClassMoniker Name="Container" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="03eedc20-e58b-4899-9a0e-fdead84ae957" Description="Description for JA.Risk.ContainerHasContainerPorts.ContainerPort" Name="ContainerPort" DisplayName="Container Port" PropertyName="Container" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Container">
-          <RolePlayer>
-            <DomainClassMoniker Name="ContainerPort" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="3a1401b6-27e8-41f2-a3e6-698269931040" Description="Description for JA.Risk.ThreatAgentHasConditions" Name="ThreatAgentHasConditions" DisplayName="Threat Agent Has Conditions" Namespace="JA.Risk" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="3d1aa82a-d5a0-4a05-9c0c-3483de285df3" Description="Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" PropertyName="Conditions" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Conditions">
-          <RolePlayer>
-            <DomainClassMoniker Name="ThreatAgent" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="6c38587d-beee-4152-8fc2-d9d753eb417a" Description="Description for JA.Risk.ThreatAgentHasConditions.Condition" Name="Condition" DisplayName="Condition" PropertyName="ThreatAgent" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Threat Agent">
+        <DomainRole Id="68bcc33f-df0e-4bfd-9ff6-5cf36af7cc55" Description="Description for JA.Risk.ObjectWithConditionsHasConditions.Condition" Name="Condition" DisplayName="Condition" PropertyName="ObjectWithConditions" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Object With Conditions">
           <RolePlayer>
             <DomainClassMoniker Name="Condition" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="9587eb6a-097f-4a44-8c8e-1e3679ae73c7" Description="Description for JA.Risk.ObjectHasPorts" Name="ObjectHasPorts" DisplayName="Object Has Ports" Namespace="JA.Risk" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="839f0806-1251-4a2f-acf7-14434b2767eb" Description="Description for JA.Risk.ObjectHasPorts.ObjectWithPorts" Name="ObjectWithPorts" DisplayName="Object With Ports" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="ObjectWithPorts" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="6b2d09b4-469d-4103-a173-c61c8948a0b9" Description="Description for JA.Risk.ObjectHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="ObjectWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Object With Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="Port" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="0390b473-a13d-48c0-a29c-e28c6e325e0a" Description="Description for JA.Risk.LegitimateAccess" Name="LegitimateAccess" DisplayName="Legitimate Access" Namespace="JA.Risk">
+      <Properties>
+        <DomainProperty Id="1ef66e36-51e4-4f33-abd4-b4c1f6e921ae" Description="The conditions on an asset that a threat agent may legitimately access, separated by commas" Name="Conditions" DisplayName="Conditions">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <Source>
+        <DomainRole Id="0f93b3e0-d4c8-4327-9295-b6948fff9320" Description="Description for JA.Risk.LegitimateAccess.ThreatAgent" Name="ThreatAgent" DisplayName="Threat Agent" PropertyName="Assets" PropertyDisplayName="Assets">
+          <RolePlayer>
+            <DomainClassMoniker Name="ThreatAgent" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="70f92599-8f6d-4820-9217-e3eb960265f7" Description="Description for JA.Risk.LegitimateAccess.Asset" Name="Asset" DisplayName="Asset" PropertyName="ThreatAgents" PropertyDisplayName="Threat Agents">
+          <RolePlayer>
+            <DomainClassMoniker Name="Asset" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -340,54 +344,7 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <Port Id="80884b27-f893-48e5-a1b9-e46bb91cb9f8" Description="Description for JA.Risk.ContainerPortShape" Name="ContainerPortShape" DisplayName="Container Port Shape" Namespace="JA.Risk" FixedTooltipText="Container Port Shape" InitialWidth="0.2" InitialHeight="0.2" FillGradientMode="None" Geometry="Rectangle">
-      <ShapeHasDecorators Position="OuterMiddleLeft" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-    </Port>
-    <GeometryShape Id="19b7c854-6e42-434d-a5d9-d548f5836e16" Description="Description for JA.Risk.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="JA.Risk" FixedTooltipText="Container Shape" FillColor="Khaki" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerMiddleLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Type" DisplayName="Type" DefaultText="Type" FontStyle="Italic" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="ContainerIcon" DisplayName="Container Icon" DefaultIcon="Resources\Container.bmp" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="7ffcdbec-165c-4a8d-9101-57983f5b2442" Description="Description for JA.Risk.AssetShape" Name="AssetShape" DisplayName="Asset Shape" Namespace="JA.Risk" FixedTooltipText="Asset Shape" FillColor="PeachPuff" InitialHeight="1" FillGradientMode="None" Geometry="RoundedRectangle">
-      <ShapeHasDecorators Position="InnerMiddleLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Number" DisplayName="Number of instances of this asset" DefaultText="1" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="ConfidentialityValue" DisplayName="Confidentiality Value" DefaultText="0" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="IntegrityValue" DisplayName="Integrity Value" DefaultText="0" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="AvailabilityValue" DisplayName="Availability Value" DefaultText="0" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="AssetIcon" DisplayName="Asset Icon" DefaultIcon="Resources\Assets.bmp" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="dae726c6-ecc0-4dda-ba67-58215ce38201" Description="Description for JA.Risk.ThreatAgentShape" Name="ThreatAgentShape" DisplayName="Threat Agent Shape" Namespace="JA.Risk" FixedTooltipText="Threat Agent Shape" FillColor="LightCoral" InitialHeight="1" FillGradientMode="None" Geometry="RoundedRectangle">
-      <ShapeHasDecorators Position="InnerMiddleLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Number" DisplayName="Number of instances" DefaultText="1" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="ThreatIcon" DisplayName="Threat Icon" DefaultIcon="Resources\Agent.bmp" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <Port Id="8b3a0f5b-7ee4-428f-b77b-ca4c88337933" Description="Description for JA.Risk.AgentPortShape" Name="AgentPortShape" DisplayName="Agent Port Shape" Namespace="JA.Risk" FixedTooltipText="Agent Port Shape" InitialWidth="0.2" InitialHeight="0.2" FillGradientMode="None" Geometry="Rectangle">
+    <Port Id="8b3a0f5b-7ee4-428f-b77b-ca4c88337933" Description="Description for JA.Risk.PortShape" Name="PortShape" DisplayName="Port Shape" Namespace="JA.Risk" FixedTooltipText="Port Shape" InitialWidth="0.2" InitialHeight="0.2" FillGradientMode="None" Geometry="Rectangle">
       <ShapeHasDecorators Position="OuterMiddleLeft" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
@@ -403,6 +360,30 @@
         <IconDecorator Name="ThreatIcon" DisplayName="Threat Icon" DefaultIcon="Resources\Agent.bmp" />
       </ShapeHasDecorators>
       <Compartment FillColor="IndianRed" TitleFillColor="LightCoral" Name="Conditions" />
+    </CompartmentShape>
+    <CompartmentShape Id="d7b9547a-0986-42fd-b433-d385fc91f6b6" Description="Description for JA.Risk.ContainerCompartmentShape" Name="ContainerCompartmentShape" DisplayName="Container Compartment Shape" Namespace="JA.Risk" FixedTooltipText="Container Compartment Shape" FillColor="Moccasin" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Type" DisplayName="Type" DefaultText="Type" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="ContainerIcon" DisplayName="Container Icon" DefaultIcon="Resources\Container.bmp" />
+      </ShapeHasDecorators>
+      <Compartment Name="Conditions" />
+    </CompartmentShape>
+    <CompartmentShape Id="88af3876-19b3-4b7d-8157-a393a49b9223" Description="Description for JA.Risk.AssetCompartmentShape" Name="AssetCompartmentShape" DisplayName="Asset Compartment Shape" Namespace="JA.Risk" FixedTooltipText="Asset Compartment Shape" FillColor="SandyBrown" InitialHeight="1" FillGradientMode="None" Geometry="RoundedRectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Number" DisplayName="Number" DefaultText="Number" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="AssetIcon" DisplayName="Asset Icon" DefaultIcon="Resources\Assets.bmp" />
+      </ShapeHasDecorators>
+      <Compartment Name="Conditions" />
     </CompartmentShape>
   </Shapes>
   <Connectors>
@@ -421,6 +402,11 @@
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="b26f6584-d13d-4a74-bc7d-af4b11d83100" Description="Description for JA.Risk.ContainsAsset" Name="ContainsAsset" DisplayName="Contains Asset" Namespace="JA.Risk" FixedTooltipText="Contains Asset" />
+    <Connector Id="90a4d4ab-fdda-4dcf-850a-479a7fbfbd84" Description="Shows the assets a threat agent may legitimately access" Name="LegitimateAccessConnector" DisplayName="Legitimate Access Connector" Namespace="JA.Risk" FixedTooltipText="Legitimate Access Connector" Color="DarkGreen" TargetEndStyle="FilledArrow">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="Conditions" DisplayName="Conditions" DefaultText="Conditions" />
+      </ConnectorHasDecorators>
+    </Connector>
   </Connectors>
   <XmlSerializationBehavior Name="ComponentsSerializationBehavior" Namespace="JA.Risk">
     <ClassData>
@@ -429,6 +415,9 @@
         <ElementData>
           <XmlPropertyData XmlName="name" IsMonikerKey="true">
             <DomainPropertyMoniker Name="NamedElement/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="notes">
+            <DomainPropertyMoniker Name="NamedElement/Notes" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -461,9 +450,6 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="assets">
             <DomainRelationshipMoniker Name="ContainerReferencesAssets" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="containerPorts">
-            <DomainRelationshipMoniker Name="ContainerHasContainerPorts" />
-          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Port" MonikerAttributeName="" SerializeId="true" MonikerElementName="portMoniker" ElementName="port" MonikerTypeName="PortMoniker">
@@ -488,9 +474,6 @@
       </XmlClassData>
       <XmlClassData TypeName="RiskDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="riskDiagramMoniker" ElementName="riskDiagram" MonikerTypeName="RiskDiagramMoniker">
         <DiagramMoniker Name="RiskDiagram" />
-      </XmlClassData>
-      <XmlClassData TypeName="ContainerPortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerPortShapeMoniker" ElementName="containerPortShape" MonikerTypeName="ContainerPortShapeMoniker">
-        <PortMoniker Name="ContainerPortShape" />
       </XmlClassData>
       <XmlClassData TypeName="Interaction" MonikerAttributeName="" SerializeId="true" MonikerElementName="interactionMoniker" ElementName="interaction" MonikerTypeName="InteractionMoniker">
         <DomainRelationshipMoniker Name="Interaction" />
@@ -523,11 +506,8 @@
           <XmlPropertyData XmlName="number">
             <DomainPropertyMoniker Name="ThreatAgent/Number" />
           </XmlPropertyData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="agentPorts">
-            <DomainRelationshipMoniker Name="ThreatAgentHasAgentPorts" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="conditions">
-            <DomainRelationshipMoniker Name="ThreatAgentHasConditions" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="assets">
+            <DomainRelationshipMoniker Name="LegitimateAccess" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -548,15 +528,6 @@
       <XmlClassData TypeName="ContainerReferencesAssets" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerReferencesAssetsMoniker" ElementName="containerReferencesAssets" MonikerTypeName="ContainerReferencesAssetsMoniker">
         <DomainRelationshipMoniker Name="ContainerReferencesAssets" />
       </XmlClassData>
-      <XmlClassData TypeName="ContainerShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerShapeMoniker" ElementName="containerShape" MonikerTypeName="ContainerShapeMoniker">
-        <GeometryShapeMoniker Name="ContainerShape" />
-      </XmlClassData>
-      <XmlClassData TypeName="AssetShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="assetShapeMoniker" ElementName="assetShape" MonikerTypeName="AssetShapeMoniker">
-        <GeometryShapeMoniker Name="AssetShape" />
-      </XmlClassData>
-      <XmlClassData TypeName="ThreatAgentShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="threatAgentShapeMoniker" ElementName="threatAgentShape" MonikerTypeName="ThreatAgentShapeMoniker">
-        <GeometryShapeMoniker Name="ThreatAgentShape" />
-      </XmlClassData>
       <XmlClassData TypeName="ContainsAsset" MonikerAttributeName="" SerializeId="true" MonikerElementName="containsAssetMoniker" ElementName="containsAsset" MonikerTypeName="ContainsAssetMoniker">
         <ConnectorMoniker Name="ContainsAsset" />
       </XmlClassData>
@@ -566,20 +537,8 @@
       <XmlClassData TypeName="RiskModelHasThreatAgents" MonikerAttributeName="" SerializeId="true" MonikerElementName="riskModelHasThreatAgentsMoniker" ElementName="riskModelHasThreatAgents" MonikerTypeName="RiskModelHasThreatAgentsMoniker">
         <DomainRelationshipMoniker Name="RiskModelHasThreatAgents" />
       </XmlClassData>
-      <XmlClassData TypeName="AgentPort" MonikerAttributeName="" SerializeId="true" MonikerElementName="agentPortMoniker" ElementName="agentPort" MonikerTypeName="AgentPortMoniker">
-        <DomainClassMoniker Name="AgentPort" />
-      </XmlClassData>
-      <XmlClassData TypeName="ContainerPort" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerPortMoniker" ElementName="containerPort" MonikerTypeName="ContainerPortMoniker">
-        <DomainClassMoniker Name="ContainerPort" />
-      </XmlClassData>
-      <XmlClassData TypeName="ThreatAgentHasAgentPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="threatAgentHasAgentPortsMoniker" ElementName="threatAgentHasAgentPorts" MonikerTypeName="ThreatAgentHasAgentPortsMoniker">
-        <DomainRelationshipMoniker Name="ThreatAgentHasAgentPorts" />
-      </XmlClassData>
-      <XmlClassData TypeName="ContainerHasContainerPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerHasContainerPortsMoniker" ElementName="containerHasContainerPorts" MonikerTypeName="ContainerHasContainerPortsMoniker">
-        <DomainRelationshipMoniker Name="ContainerHasContainerPorts" />
-      </XmlClassData>
-      <XmlClassData TypeName="AgentPortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="agentPortShapeMoniker" ElementName="agentPortShape" MonikerTypeName="AgentPortShapeMoniker">
-        <PortMoniker Name="AgentPortShape" />
+      <XmlClassData TypeName="PortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="portShapeMoniker" ElementName="portShape" MonikerTypeName="PortShapeMoniker">
+        <PortMoniker Name="PortShape" />
       </XmlClassData>
       <XmlClassData TypeName="Condition" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionMoniker" ElementName="condition" MonikerTypeName="ConditionMoniker">
         <DomainClassMoniker Name="Condition" />
@@ -587,8 +546,44 @@
       <XmlClassData TypeName="ThreatAgentCompartmentShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="threatAgentCompartmentShapeMoniker" ElementName="threatAgentCompartmentShape" MonikerTypeName="ThreatAgentCompartmentShapeMoniker">
         <CompartmentShapeMoniker Name="ThreatAgentCompartmentShape" />
       </XmlClassData>
-      <XmlClassData TypeName="ThreatAgentHasConditions" MonikerAttributeName="" SerializeId="true" MonikerElementName="threatAgentHasConditionsMoniker" ElementName="threatAgentHasConditions" MonikerTypeName="ThreatAgentHasConditionsMoniker">
-        <DomainRelationshipMoniker Name="ThreatAgentHasConditions" />
+      <XmlClassData TypeName="ObjectWithConditions" MonikerAttributeName="" SerializeId="true" MonikerElementName="objectWithConditionsMoniker" ElementName="objectWithConditions" MonikerTypeName="ObjectWithConditionsMoniker">
+        <DomainClassMoniker Name="ObjectWithConditions" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="conditions">
+            <DomainRelationshipMoniker Name="ObjectWithConditionsHasConditions" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ObjectWithConditionsHasConditions" MonikerAttributeName="" SerializeId="true" MonikerElementName="objectWithConditionsHasConditionsMoniker" ElementName="objectWithConditionsHasConditions" MonikerTypeName="ObjectWithConditionsHasConditionsMoniker">
+        <DomainRelationshipMoniker Name="ObjectWithConditionsHasConditions" />
+      </XmlClassData>
+      <XmlClassData TypeName="ContainerCompartmentShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerCompartmentShapeMoniker" ElementName="containerCompartmentShape" MonikerTypeName="ContainerCompartmentShapeMoniker">
+        <CompartmentShapeMoniker Name="ContainerCompartmentShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="AssetCompartmentShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="assetCompartmentShapeMoniker" ElementName="assetCompartmentShape" MonikerTypeName="AssetCompartmentShapeMoniker">
+        <CompartmentShapeMoniker Name="AssetCompartmentShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="ObjectWithPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="objectWithPortsMoniker" ElementName="objectWithPorts" MonikerTypeName="ObjectWithPortsMoniker">
+        <DomainClassMoniker Name="ObjectWithPorts" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
+            <DomainRelationshipMoniker Name="ObjectHasPorts" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ObjectHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="objectHasPortsMoniker" ElementName="objectHasPorts" MonikerTypeName="ObjectHasPortsMoniker">
+        <DomainRelationshipMoniker Name="ObjectHasPorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="LegitimateAccess" MonikerAttributeName="" SerializeId="true" MonikerElementName="legitimateAccessMoniker" ElementName="legitimateAccess" MonikerTypeName="LegitimateAccessMoniker">
+        <DomainRelationshipMoniker Name="LegitimateAccess" />
+        <ElementData>
+          <XmlPropertyData XmlName="conditions">
+            <DomainPropertyMoniker Name="LegitimateAccess/Conditions" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="LegitimateAccessConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="legitimateAccessConnectorMoniker" ElementName="legitimateAccessConnector" MonikerTypeName="LegitimateAccessConnectorMoniker">
+        <ConnectorMoniker Name="LegitimateAccessConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -698,120 +693,31 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="LegitimateAccessBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="LegitimateAccess" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="ThreatAgent" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Asset" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="84dfe933-9d52-41cd-982f-ca14293a514d" Description="" Name="RiskDiagram" DisplayName="Risk Diagram" Namespace="JA.Risk">
     <Class>
       <DomainClassMoniker Name="RiskModel" />
     </Class>
     <ShapeMaps>
-      <ShapeMap>
-        <DomainClassMoniker Name="Asset" />
-        <ParentElementPath>
-          <DomainPath>RiskModelHasAssets.RiskModel/!RiskModel</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssetShape/AvailabilityValue" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Asset/SingleAvailabilityValue" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssetShape/ConfidentialityValue" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Asset/SingleConfidentialityValue" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssetShape/IntegrityValue" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Asset/SingleIntegrityValue" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssetShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssetShape/Number" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Asset/Number" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="AssetShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="Container" />
-        <ParentElementPath>
-          <DomainPath>RiskModelHasContainers.RiskModel/!RiskModel</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ContainerShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ContainerShape/Type" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Container/Type" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="ContainerShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="ContainerPort" />
-        <ParentElementPath>
-          <DomainPath>ContainerHasContainerPorts.Container/!Container</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ContainerPortShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <PortMoniker Name="ContainerPortShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="AgentPort" />
-        <ParentElementPath>
-          <DomainPath>ThreatAgentHasAgentPorts.ThreatAgent/!ThreatAgent</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ContainerPortShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AgentPortShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <PortMoniker Name="AgentPortShape" />
-      </ShapeMap>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="ThreatAgent" />
         <ParentElementPath>
@@ -837,7 +743,7 @@
         <CompartmentMap>
           <CompartmentMoniker Name="ThreatAgentCompartmentShape/Conditions" />
           <ElementsDisplayed>
-            <DomainPath>ThreatAgentHasConditions.Conditions/!Condition</DomainPath>
+            <DomainPath>ObjectWithConditionsHasConditions.Conditions/!Condition</DomainPath>
           </ElementsDisplayed>
           <PropertyDisplayed>
             <PropertyPath>
@@ -846,6 +752,89 @@
           </PropertyDisplayed>
         </CompartmentMap>
       </CompartmentShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="Asset" />
+        <ParentElementPath>
+          <DomainPath>RiskModelHasAssets.RiskModel/!RiskModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AssetCompartmentShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AssetCompartmentShape/Number" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Asset/Number" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <CompartmentShapeMoniker Name="AssetCompartmentShape" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="AssetCompartmentShape/Conditions" />
+          <ElementsDisplayed>
+            <DomainPath>ObjectWithConditionsHasConditions.Conditions/!Condition</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="Container" />
+        <ParentElementPath>
+          <DomainPath>RiskModelHasContainers.RiskModel/!RiskModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ContainerCompartmentShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ContainerCompartmentShape/Type" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Container/Type" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <CompartmentShapeMoniker Name="ContainerCompartmentShape" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="ContainerCompartmentShape/Conditions" />
+          <ElementsDisplayed>
+            <DomainPath>ObjectWithConditionsHasConditions.Conditions/!Condition</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Port" />
+        <ParentElementPath>
+          <DomainPath>ObjectHasPorts.ObjectWithPorts/!ObjectWithPorts</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="PortShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <PortMoniker Name="PortShape" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -888,6 +877,18 @@
         <ConnectorMoniker Name="ContainsAsset" />
         <DomainRelationshipMoniker Name="ContainerReferencesAssets" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="LegitimateAccessConnector" />
+        <DomainRelationshipMoniker Name="LegitimateAccess" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="LegitimateAccessConnector/Conditions" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="LegitimateAccess/Conditions" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="Risk" EditorGuid="d6887f99-099d-47fe-b69e-c00b0697ca75">
@@ -901,8 +902,8 @@
       <ElementTool Name="Container" ToolboxIcon="Resources\Container.bmp" Caption="Container" Tooltip="Represents part of a system being studied: a building, computer, network etc" HelpKeyword="CreateContainerF1Keyword">
         <DomainClassMoniker Name="Container" />
       </ElementTool>
-      <ElementTool Name="ContainerPort" ToolboxIcon="Resources\ContainerPort.bmp" Caption="ContainerPort" Tooltip="Represents a container's ability to interact with something" HelpKeyword="ContainerPort">
-        <DomainClassMoniker Name="ContainerPort" />
+      <ElementTool Name="Port" ToolboxIcon="Resources\ContainerPort.bmp" Caption="Port" Tooltip="Represents the ability to interact with something" HelpKeyword="Port">
+        <DomainClassMoniker Name="Port" />
       </ElementTool>
       <ConnectionTool Name="Generalization" ToolboxIcon="resources\GeneralizationTool.bmp" Caption="Generalization" Tooltip="Connect a Container to a base Container." HelpKeyword="ConnectGeneralizationF1Keyword" ReversesDirection="true">
         <ConnectionBuilderMoniker Name="Risk/GeneralizationBuilder" />
@@ -922,9 +923,9 @@
       <ElementTool Name="Threat" ToolboxIcon="Resources\Agent.bmp" Caption="Threat Agent" Tooltip="Represents something active, a user, attacker or external event" HelpKeyword="Threat">
         <DomainClassMoniker Name="ThreatAgent" />
       </ElementTool>
-      <ElementTool Name="AgentPort" ToolboxIcon="Resources\AgentPort.bmp" Caption="Threat Agent Port" Tooltip="Represents a threat agent's ability to interact with something" HelpKeyword="AgentPort">
-        <DomainClassMoniker Name="AgentPort" />
-      </ElementTool>
+      <ConnectionTool Name="LegitimateAccess" ToolboxIcon="Resources\LegitimateAccess.bmp" Caption="LegitimateAccess" Tooltip="Legitimate Access" HelpKeyword="LegitimateAccess">
+        <ConnectionBuilderMoniker Name="Risk/LegitimateAccessBuilder" />
+      </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="true" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="RiskDiagram" />

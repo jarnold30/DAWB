@@ -357,6 +357,8 @@
             <xsd:documentation>The name of the element</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Notes -->
+        <xsd:attribute name="notes" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

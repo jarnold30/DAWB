@@ -36,10 +36,15 @@
     <riskModelHasContainers Id="d229110b-49a3-450f-a3fc-bbd720ce47ec">
       <container Id="ae5ad47f-30e7-4bdc-9265-f77dd979c13a" name="Corporate Network" type="Network">
         <targetContainers>
-          <contains Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" attack="TCP">
+          <contains Id="a0a205b5-bfd5-43b5-af80-5140f8806aa6" attack="IP Network Member">
             <containerMoniker name="/Web Banking/Banking Service" />
           </contains>
         </targetContainers>
+        <containerPorts>
+          <containerHasContainerPorts Id="346d4ddd-0de6-4973-9f5a-58fcf7de61e4">
+            <containerPort Id="3cc66c98-5c97-4f7b-9944-c0a3c2d19ed6" name="IP Access" />
+          </containerHasContainerPorts>
+        </containerPorts>
       </container>
     </riskModelHasContainers>
     <riskModelHasContainers Id="b6b704c8-534a-4c36-8ed0-8f6668a4bc86">
@@ -49,39 +54,15 @@
         </subclasses>
       </container>
     </riskModelHasContainers>
-    <riskModelHasContainers Id="612a7c45-b8f7-4fc1-bf63-8589f2dde70a">
-      <container Id="17a2d5b9-e3c6-4b69-be19-010fa8d03f58" name="Banking Service1" type="Service">
-        <containerPorts>
-          <containerHasContainerPorts Id="419dbf2e-e4ac-47d4-8869-74a22eb30528">
-            <containerPort Id="7cb5cc1a-78aa-4b27-8800-a6375e91df59" name="WS Service1" />
-          </containerHasContainerPorts>
-        </containerPorts>
-      </container>
-    </riskModelHasContainers>
   </containers>
   <assets>
     <riskModelHasAssets Id="38615045-d2dd-4818-aa09-d1908171d1d1">
-      <asset Id="9d8ad7e5-8786-40bd-b3cd-cd5b4a33ce15" name="Bank accounts" number="1000000" singleConfidentialityValue="1" singleIntegrityValue="4" singleAvailabilityValue="1" />
+      <asset Id="9d8ad7e5-8786-40bd-b3cd-cd5b4a33ce15" name="Bank accounts" number="1000000" singleConfidentialityValue="500" singleIntegrityValue="10000" singleAvailabilityValue="100" />
     </riskModelHasAssets>
   </assets>
   <threatAgents>
-    <riskModelHasThreatAgents Id="3bc71db6-1d9c-4a1e-aee4-bf9bbb706d5e">
-      <threatAgent Id="86093bf8-72e1-4336-ade4-1089a534ae69" name="Internet Hacker" number="10">
-        <agentPorts>
-          <threatAgentHasAgentPorts Id="a14e7623-31a8-4d5a-b2ee-e51afd9db2ea">
-            <agentPort Id="3f9b39eb-3743-414b-8b43-bbcbfa9c12fb" name="Web Browser2">
-              <targetPort>
-                <interaction Id="bd053d55-19b1-4401-873d-2b2566500183" attack="http">
-                  <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
-                </interaction>
-              </targetPort>
-            </agentPort>
-          </threatAgentHasAgentPorts>
-        </agentPorts>
-      </threatAgent>
-    </riskModelHasThreatAgents>
     <riskModelHasThreatAgents Id="82622acb-af8d-4219-abc9-8ccc9fb0b1b4">
-      <threatAgent Id="81989836-c9a5-4317-9354-8d8a13ac55ce" name="Fred" number="1">
+      <threatAgent Id="81989836-c9a5-4317-9354-8d8a13ac55ce" name="Customer" number="1000000">
         <agentPorts>
           <threatAgentHasAgentPorts Id="9c910d61-1814-4751-8366-8a47a1d79331">
             <agentPort Id="1f0a36b4-2728-4f4d-bd11-228247a602d4" name="Web Browser1">
@@ -93,11 +74,36 @@
             </agentPort>
           </threatAgentHasAgentPorts>
         </agentPorts>
-        <conditions>
-          <threatAgentHasConditions Id="641f76da-aaca-4e30-bb9e-e0b022223151">
-            <condition Id="53de2974-4d73-47f8-940e-e4c142e1ae6f" name="password" />
-          </threatAgentHasConditions>
-        </conditions>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+    <riskModelHasThreatAgents Id="d70b0ea4-05fc-4f4a-a136-613199b3d14c">
+      <threatAgent Id="2161eb2b-e82f-488d-ac54-750bdf20e189" name="Internet Hacker" number="1000">
+        <agentPorts>
+          <threatAgentHasAgentPorts Id="fcaf65b6-dca4-4c25-b38a-db23640a46f0">
+            <agentPort Id="f87014e6-73a8-4404-8559-e73dc4308bf0" name="Web Browser 2">
+              <targetPort>
+                <interaction Id="066ca8cc-b854-48ea-bb65-ed9c9b4bfc68" attack="http">
+                  <containerPortMoniker name="/Web Banking/Banking Web Site/Web UI" />
+                </interaction>
+              </targetPort>
+            </agentPort>
+          </threatAgentHasAgentPorts>
+        </agentPorts>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+    <riskModelHasThreatAgents Id="8e62de6b-dd6a-4f40-91cc-8211ae8ee8bd">
+      <threatAgent Id="bf04a3a9-5912-41c2-92d3-2c6b06b3503a" name="Bank Network Engineer" number="10">
+        <agentPorts>
+          <threatAgentHasAgentPorts Id="e27b56cb-6539-49a8-a38e-676b760f9a15">
+            <agentPort Id="992881cb-1db0-4052-b24f-a0a1b579c42e" name="Network Port">
+              <targetPort>
+                <interaction Id="91831d2c-f320-44db-a163-425d14e23e0e" attack="IP">
+                  <containerPortMoniker name="/Web Banking/Corporate Network/IP Access" />
+                </interaction>
+              </targetPort>
+            </agentPort>
+          </threatAgentHasAgentPorts>
+        </agentPorts>
       </threatAgent>
     </riskModelHasThreatAgents>
   </threatAgents>

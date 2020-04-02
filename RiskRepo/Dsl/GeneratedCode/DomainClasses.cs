@@ -127,6 +127,93 @@ namespace JA.Risk
 		}
 		
 		#endregion
+		#region Notes domain property code
+		
+		/// <summary>
+		/// Notes domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NotesDomainPropertyId = new global::System.Guid(0x78080aa1, 0xdda9, 0x4129, 0x99, 0xa0, 0x5f, 0xeb, 0xe9, 0xb4, 0xa4, 0x62);
+		
+		/// <summary>
+		/// Storage for Notes
+		/// </summary>
+		private global::System.String notesPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Notes domain property.
+		/// Description for JA.Risk.NamedElement.Notes
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.NamedElement/Notes.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.NamedElement/Notes.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("78080aa1-dda9-4129-99a0-5febe9b4a462")]
+		public global::System.String Notes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return notesPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NotesPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the NamedElement.Notes domain property.
+		/// </summary>
+		internal sealed partial class NotesPropertyHandler : DslModeling::DomainPropertyValueHandler<NamedElement, global::System.String>
+		{
+			private NotesPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the NamedElement.Notes domain property value handler.
+			/// </summary>
+			public static readonly NotesPropertyHandler Instance = new NotesPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the NamedElement.Notes domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NotesDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(NamedElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.notesPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(NamedElement element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.notesPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace JA.Risk
@@ -236,12 +323,12 @@ namespace JA.Risk
 					return true;
 				}
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Asset.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.ThreatAgent.DomainClassId)) 
 				{
 					return true;
 				}
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.ThreatAgent.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Asset.DomainClassId)) 
 				{
 					return true;
 				}
@@ -279,20 +366,20 @@ namespace JA.Risk
 				return;
 			}
 				
-			global::JA.Risk.Asset sourceAsset2 = sourceElement as global::JA.Risk.Asset;
-			if (sourceAsset2 != null)
+			global::JA.Risk.ThreatAgent sourceThreatAgent2 = sourceElement as global::JA.Risk.ThreatAgent;
+			if (sourceThreatAgent2 != null)
 			{
-				// Create link for path RiskModelHasAssets.Assets
-				this.Assets.Add(sourceAsset2);
+				// Create link for path RiskModelHasThreatAgents.ThreatAgents
+				this.ThreatAgents.Add(sourceThreatAgent2);
 
 				return;
 			}
 				
-			global::JA.Risk.ThreatAgent sourceThreatAgent3 = sourceElement as global::JA.Risk.ThreatAgent;
-			if (sourceThreatAgent3 != null)
+			global::JA.Risk.Asset sourceAsset3 = sourceElement as global::JA.Risk.Asset;
+			if (sourceAsset3 != null)
 			{
-				// Create link for path RiskModelHasThreatAgents.ThreatAgents
-				this.ThreatAgents.Add(sourceThreatAgent3);
+				// Create link for path RiskModelHasAssets.Assets
+				this.Assets.Add(sourceAsset3);
 
 				return;
 			}
@@ -333,29 +420,29 @@ namespace JA.Risk
 				return;
 			}
 				
-			global::JA.Risk.Asset sourceAsset2 = sourceElement as global::JA.Risk.Asset;
-			if (sourceAsset2 != null)
+			global::JA.Risk.ThreatAgent sourceThreatAgent2 = sourceElement as global::JA.Risk.ThreatAgent;
+			if (sourceThreatAgent2 != null)
 			{
-				// Delete link for path RiskModelHasAssets.Assets
+				// Delete link for path RiskModelHasThreatAgents.ThreatAgents
 				
-				foreach (DslModeling::ElementLink link in global::JA.Risk.RiskModelHasAssets.GetLinks((global::JA.Risk.RiskModel)this, sourceAsset2))
+				foreach (DslModeling::ElementLink link in global::JA.Risk.RiskModelHasThreatAgents.GetLinks((global::JA.Risk.RiskModel)this, sourceThreatAgent2))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::JA.Risk.RiskModelHasAssets.RiskModelDomainRoleId, global::JA.Risk.RiskModelHasAssets.AssetDomainRoleId);
+					link.Delete(global::JA.Risk.RiskModelHasThreatAgents.RiskModelDomainRoleId, global::JA.Risk.RiskModelHasThreatAgents.ThreatAgentDomainRoleId);
 				}
 
 				return;
 			}
 				
-			global::JA.Risk.ThreatAgent sourceThreatAgent3 = sourceElement as global::JA.Risk.ThreatAgent;
-			if (sourceThreatAgent3 != null)
+			global::JA.Risk.Asset sourceAsset3 = sourceElement as global::JA.Risk.Asset;
+			if (sourceAsset3 != null)
 			{
-				// Delete link for path RiskModelHasThreatAgents.ThreatAgents
+				// Delete link for path RiskModelHasAssets.Assets
 				
-				foreach (DslModeling::ElementLink link in global::JA.Risk.RiskModelHasThreatAgents.GetLinks((global::JA.Risk.RiskModel)this, sourceThreatAgent3))
+				foreach (DslModeling::ElementLink link in global::JA.Risk.RiskModelHasAssets.GetLinks((global::JA.Risk.RiskModel)this, sourceAsset3))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::JA.Risk.RiskModelHasThreatAgents.RiskModelDomainRoleId, global::JA.Risk.RiskModelHasThreatAgents.ThreatAgentDomainRoleId);
+					link.Delete(global::JA.Risk.RiskModelHasAssets.RiskModelDomainRoleId, global::JA.Risk.RiskModelHasAssets.AssetDomainRoleId);
 				}
 
 				return;
@@ -377,7 +464,7 @@ namespace JA.Risk
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("05a5c5ec-ce41-469f-b478-e541d5aadb08")]
-	public partial class Container : NamedElement
+	public partial class Container : ObjectWithPorts
 	{
 		#region Constructors, domain class Id
 	
@@ -587,118 +674,6 @@ namespace JA.Risk
 			}
 		}
 		#endregion
-		#region ContainerPorts opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of ContainerPorts.
-		/// Description for JA.Risk.ContainerHasContainerPorts.Container
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ContainerPort> ContainerPorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ContainerPort>, ContainerPort>(global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.ContainerPort.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::JA.Risk.ContainerPort sourceContainerPort1 = sourceElement as global::JA.Risk.ContainerPort;
-			if (sourceContainerPort1 != null)
-			{
-				// Create link for path ContainerHasContainerPorts.ContainerPorts
-				this.ContainerPorts.Add(sourceContainerPort1);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::JA.Risk.ContainerPort sourceContainerPort1 = sourceElement as global::JA.Risk.ContainerPort;
-			if (sourceContainerPort1 != null)
-			{
-				// Delete link for path ContainerHasContainerPorts.ContainerPorts
-				
-				foreach (DslModeling::ElementLink link in global::JA.Risk.ContainerHasContainerPorts.GetLinks((global::JA.Risk.Container)this, sourceContainerPort1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::JA.Risk.ContainerHasContainerPorts.ContainerDomainRoleId, global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
 	}
 }
 namespace JA.Risk
@@ -712,7 +687,7 @@ namespace JA.Risk
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("70a78dd6-9b1b-452e-bd17-314df32f61fa")]
-	public abstract partial class Port : NamedElement
+	public partial class Port : NamedElement
 	{
 		#region Constructors, domain class Id
 	
@@ -721,11 +696,21 @@ namespace JA.Risk
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x70a78dd6, 0x9b1b, 0x452e, 0xbd, 0x17, 0x31, 0x4d, 0xf3, 0x2f, 0x61, 0xfa);
 		/// <summary>
-		/// Constructor.
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Port(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		protected Port(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+		public Port(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -760,6 +745,25 @@ namespace JA.Risk
 			}
 		}
 		#endregion
+		#region ObjectWithPorts opposite domain role accessor
+		/// <summary>
+		/// Gets or sets ObjectWithPorts.
+		/// Description for JA.Risk.ObjectHasPorts.Port
+		/// </summary>
+		public virtual ObjectWithPorts ObjectWithPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ObjectHasPorts.PortDomainRoleId) as ObjectWithPorts;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ObjectHasPorts.PortDomainRoleId, value);
+			}
+		}
+		#endregion
 	}
 }
 namespace JA.Risk
@@ -773,7 +777,7 @@ namespace JA.Risk
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("7e7ffb3b-fc14-46ee-a021-eb9022be9768")]
-	public partial class Asset : NamedElement
+	public partial class Asset : ObjectWithConditions
 	{
 		#region Constructors, domain class Id
 	
@@ -1183,6 +1187,21 @@ namespace JA.Risk
 			}
 		}
 		#endregion
+		#region ThreatAgents opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ThreatAgents.
+		/// Description for JA.Risk.LegitimateAccess.Asset
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ThreatAgent> ThreatAgents
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ThreatAgent>, ThreatAgent>(global::JA.Risk.LegitimateAccess.AssetDomainRoleId);
+			}
+		}
+		#endregion
 	}
 }
 namespace JA.Risk
@@ -1196,7 +1215,7 @@ namespace JA.Risk
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("c887e7ce-864d-4c36-a285-170f665ced7b")]
-	public partial class ThreatAgent : NamedElement
+	public partial class ThreatAgent : ObjectWithPorts
 	{
 		#region Constructors, domain class Id
 	
@@ -1330,278 +1349,18 @@ namespace JA.Risk
 			}
 		}
 		#endregion
-		#region AgentPorts opposite domain role accessor
+		#region Assets opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of AgentPorts.
-		/// Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent
+		/// Gets a list of Assets.
+		/// Description for JA.Risk.LegitimateAccess.ThreatAgent
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<AgentPort> AgentPorts
+		public virtual DslModeling::LinkedElementCollection<Asset> Assets
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<AgentPort>, AgentPort>(global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId);
-			}
-		}
-		#endregion
-		#region Conditions opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Conditions.
-		/// Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Condition> Conditions
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Condition>, Condition>(global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.AgentPort.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Condition.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::JA.Risk.AgentPort sourceAgentPort1 = sourceElement as global::JA.Risk.AgentPort;
-			if (sourceAgentPort1 != null)
-			{
-				// Create link for path ThreatAgentHasAgentPorts.AgentPorts
-				this.AgentPorts.Add(sourceAgentPort1);
-
-				return;
-			}
-				
-			global::JA.Risk.Condition sourceCondition2 = sourceElement as global::JA.Risk.Condition;
-			if (sourceCondition2 != null)
-			{
-				// Create link for path ThreatAgentHasConditions.Conditions
-				this.Conditions.Add(sourceCondition2);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::JA.Risk.AgentPort sourceAgentPort1 = sourceElement as global::JA.Risk.AgentPort;
-			if (sourceAgentPort1 != null)
-			{
-				// Delete link for path ThreatAgentHasAgentPorts.AgentPorts
-				
-				foreach (DslModeling::ElementLink link in global::JA.Risk.ThreatAgentHasAgentPorts.GetLinks((global::JA.Risk.ThreatAgent)this, sourceAgentPort1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::JA.Risk.ThreatAgentHasAgentPorts.ThreatAgentDomainRoleId, global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId);
-				}
-
-				return;
-			}
-				
-			global::JA.Risk.Condition sourceCondition2 = sourceElement as global::JA.Risk.Condition;
-			if (sourceCondition2 != null)
-			{
-				// Delete link for path ThreatAgentHasConditions.Conditions
-				
-				foreach (DslModeling::ElementLink link in global::JA.Risk.ThreatAgentHasConditions.GetLinks((global::JA.Risk.ThreatAgent)this, sourceCondition2))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::JA.Risk.ThreatAgentHasConditions.ThreatAgentDomainRoleId, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass AgentPort
-	/// Represents a threat agent's ability to interact with something
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.AgentPort.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.AgentPort.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("ca862a24-a9b8-4e15-97ee-754e7412d3de")]
-	public partial class AgentPort : Port
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// AgentPort domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xca862a24, 0xa9b8, 0x4e15, 0x97, 0xee, 0x75, 0x4e, 0x74, 0x12, 0xd3, 0xde);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AgentPort(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AgentPort(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ThreatAgent opposite domain role accessor
-		/// <summary>
-		/// Gets or sets ThreatAgent.
-		/// Description for JA.Risk.ThreatAgentHasAgentPorts.AgentPort
-		/// </summary>
-		public virtual ThreatAgent ThreatAgent
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId) as ThreatAgent;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ThreatAgentHasAgentPorts.AgentPortDomainRoleId, value);
-			}
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass ContainerPort
-	/// Represents a container's ability to interact with something
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ContainerPort.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ContainerPort.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("4f81a1fa-50bf-4f3a-9a57-66ca5c6128b7")]
-	public partial class ContainerPort : Port
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ContainerPort domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4f81a1fa, 0x50bf, 0x4f3a, 0x9a, 0x57, 0x66, 0xca, 0x5c, 0x61, 0x28, 0xb7);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerPort(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerPort(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Container opposite domain role accessor
-		/// <summary>
-		/// Gets or sets Container.
-		/// Description for JA.Risk.ContainerHasContainerPorts.ContainerPort
-		/// </summary>
-		public virtual Container Container
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId) as Container;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ContainerHasContainerPorts.ContainerPortDomainRoleId, value);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Asset>, Asset>(global::JA.Risk.LegitimateAccess.ThreatAgentDomainRoleId);
 			}
 		}
 		#endregion
@@ -1646,23 +1405,309 @@ namespace JA.Risk
 		{
 		}
 		#endregion
-		#region ThreatAgent opposite domain role accessor
+		#region ObjectWithConditions opposite domain role accessor
 		/// <summary>
-		/// Gets or sets ThreatAgent.
-		/// Description for JA.Risk.ThreatAgentHasConditions.Condition
+		/// Gets or sets ObjectWithConditions.
+		/// Description for JA.Risk.ObjectWithConditionsHasConditions.Condition
 		/// </summary>
-		public virtual ThreatAgent ThreatAgent
+		public virtual ObjectWithConditions ObjectWithConditions
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId) as ThreatAgent;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::JA.Risk.ObjectWithConditionsHasConditions.ConditionDomainRoleId) as ObjectWithConditions;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ThreatAgentHasConditions.ConditionDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::JA.Risk.ObjectWithConditionsHasConditions.ConditionDomainRoleId, value);
 			}
+		}
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainClass ObjectWithConditions
+	/// Description for JA.Risk.ObjectWithConditions
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.ObjectWithConditions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ObjectWithConditions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("17d58e3b-39ed-425b-94e9-764f3aa76897")]
+	public abstract partial class ObjectWithConditions : NamedElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ObjectWithConditions domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x17d58e3b, 0x39ed, 0x425b, 0x94, 0xe9, 0x76, 0x4f, 0x3a, 0xa7, 0x68, 0x97);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected ObjectWithConditions(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Conditions opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Conditions.
+		/// Description for JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditions
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Condition> Conditions
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Condition>, Condition>(global::JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Condition.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::JA.Risk.Condition sourceCondition1 = sourceElement as global::JA.Risk.Condition;
+			if (sourceCondition1 != null)
+			{
+				// Create link for path ObjectWithConditionsHasConditions.Conditions
+				this.Conditions.Add(sourceCondition1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::JA.Risk.Condition sourceCondition1 = sourceElement as global::JA.Risk.Condition;
+			if (sourceCondition1 != null)
+			{
+				// Delete link for path ObjectWithConditionsHasConditions.Conditions
+				
+				foreach (DslModeling::ElementLink link in global::JA.Risk.ObjectWithConditionsHasConditions.GetLinks((global::JA.Risk.ObjectWithConditions)this, sourceCondition1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditionsDomainRoleId, global::JA.Risk.ObjectWithConditionsHasConditions.ConditionDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainClass ObjectWithPorts
+	/// Description for JA.Risk.ObjectWithPorts
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.ObjectWithPorts.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ObjectWithPorts.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("e0fa9b66-207b-4be2-a424-d26097841440")]
+	public abstract partial class ObjectWithPorts : ObjectWithConditions
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ObjectWithPorts domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe0fa9b66, 0x207b, 0x4be2, 0xa4, 0x24, 0xd2, 0x60, 0x97, 0x84, 0x14, 0x40);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected ObjectWithPorts(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ports opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Ports.
+		/// Description for JA.Risk.ObjectHasPorts.ObjectWithPorts
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Port> Ports
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::JA.Risk.ObjectHasPorts.ObjectWithPortsDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::JA.Risk.Port.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::JA.Risk.Port sourcePort1 = sourceElement as global::JA.Risk.Port;
+			if (sourcePort1 != null)
+			{
+				// Create link for path ObjectHasPorts.Ports
+				this.Ports.Add(sourcePort1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::JA.Risk.Port sourcePort1 = sourceElement as global::JA.Risk.Port;
+			if (sourcePort1 != null)
+			{
+				// Delete link for path ObjectHasPorts.Ports
+				
+				foreach (DslModeling::ElementLink link in global::JA.Risk.ObjectHasPorts.GetLinks((global::JA.Risk.ObjectWithPorts)this, sourcePort1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::JA.Risk.ObjectHasPorts.ObjectWithPortsDomainRoleId, global::JA.Risk.ObjectHasPorts.PortDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
 		}
 		#endregion
 	}

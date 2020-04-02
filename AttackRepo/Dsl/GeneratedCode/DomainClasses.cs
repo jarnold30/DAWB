@@ -1097,6 +1097,93 @@ namespace JA.Attack
 		}
 		
 		#endregion
+		#region Notes domain property code
+		
+		/// <summary>
+		/// Notes domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NotesDomainPropertyId = new global::System.Guid(0xa9ae49f3, 0x7765, 0x4183, 0x89, 0xbe, 0x7a, 0xa3, 0x2b, 0x1c, 0xa0, 0xd0);
+		
+		/// <summary>
+		/// Storage for Notes
+		/// </summary>
+		private global::System.String notesPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Notes domain property.
+		/// Description for JA.Attack.NamedElement.Notes
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Attack.NamedElement/Notes.DisplayName", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Attack.NamedElement/Notes.Description", typeof(global::JA.Attack.AttackDomainModel), "JA.Attack.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a9ae49f3-7765-4183-89be-7aa32b1ca0d0")]
+		public global::System.String Notes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return notesPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NotesPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the NamedElement.Notes domain property.
+		/// </summary>
+		internal sealed partial class NotesPropertyHandler : DslModeling::DomainPropertyValueHandler<NamedElement, global::System.String>
+		{
+			private NotesPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the NamedElement.Notes domain property value handler.
+			/// </summary>
+			public static readonly NotesPropertyHandler Instance = new NotesPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the NamedElement.Notes domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NotesDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(NamedElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.notesPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(NamedElement element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.notesPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace JA.Attack

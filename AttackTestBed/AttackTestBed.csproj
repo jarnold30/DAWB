@@ -47,13 +47,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Attack1.Attack" />
-    <None Include="Attack1.Attack.diagram">
-      <DependentUpon>Attack1.Attack</DependentUpon>
-    </None>
     <None Include="http.Attack" />
     <None Include="http.Attack.diagram">
       <DependentUpon>http.Attack</DependentUpon>
+    </None>
+    <None Include="IP Network Member.Attack" />
+    <None Include="IP Network Member.Attack.diagram">
+      <DependentUpon>IP Network Member.Attack</DependentUpon>
+    </None>
+    <None Include="IP.Attack" />
+    <None Include="IP.Attack.diagram">
+      <DependentUpon>IP.Attack</DependentUpon>
     </None>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>

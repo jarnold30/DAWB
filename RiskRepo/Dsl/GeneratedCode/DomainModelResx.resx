@@ -141,6 +141,14 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
   </data>
+  <data name="JA.Risk.NamedElement/Notes.Description" xml:space="preserve">
+    <value>Description for JA.Risk.NamedElement.Notes</value>
+    <comment>Description for DomainProperty &apos;Notes&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="JA.Risk.NamedElement/Notes.DisplayName" xml:space="preserve">
+    <value>Notes</value>
+    <comment>DisplayName for DomainProperty &apos;Notes&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
   <data name="JA.Risk.RiskModel.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;RiskModel&apos;</comment>
@@ -229,22 +237,6 @@
     <value>Number</value>
     <comment>DisplayName for DomainProperty &apos;Number&apos; on DomainClass &apos;ThreatAgent&apos;</comment>
   </data>
-  <data name="JA.Risk.AgentPort.Description" xml:space="preserve">
-    <value>Represents a threat agent&apos;s ability to interact with something</value>
-    <comment>Description for DomainClass &apos;AgentPort&apos;</comment>
-  </data>
-  <data name="JA.Risk.AgentPort.DisplayName" xml:space="preserve">
-    <value>Agent Port</value>
-    <comment>DisplayName for DomainClass &apos;AgentPort&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerPort.Description" xml:space="preserve">
-    <value>Represents a container&apos;s ability to interact with something</value>
-    <comment>Description for DomainClass &apos;ContainerPort&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerPort.DisplayName" xml:space="preserve">
-    <value>Container Port</value>
-    <comment>DisplayName for DomainClass &apos;ContainerPort&apos;</comment>
-  </data>
   <data name="JA.Risk.Condition.Description" xml:space="preserve">
     <value>This represents a condition a threat agent has before connecting to a system.</value>
     <comment>Description for DomainClass &apos;Condition&apos;</comment>
@@ -252,6 +244,22 @@
   <data name="JA.Risk.Condition.DisplayName" xml:space="preserve">
     <value>Condition</value>
     <comment>DisplayName for DomainClass &apos;Condition&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectWithConditions.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectWithConditions</value>
+    <comment>Description for DomainClass &apos;ObjectWithConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectWithConditions.DisplayName" xml:space="preserve">
+    <value>Object With Conditions</value>
+    <comment>DisplayName for DomainClass &apos;ObjectWithConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectWithPorts.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectWithPorts</value>
+    <comment>Description for DomainClass &apos;ObjectWithPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectWithPorts.DisplayName" xml:space="preserve">
+    <value>Object With Ports</value>
+    <comment>DisplayName for DomainClass &apos;ObjectWithPorts&apos;</comment>
   </data>
   <data name="JA.Risk.RiskModelHasContainers.Description" xml:space="preserve">
     <value></value>
@@ -501,183 +509,119 @@
     <value>Risk Model</value>
     <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;RiskModelHasThreatAgents&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasAgentPorts</value>
-    <comment>Description for DomainClass &apos;ThreatAgentHasAgentPorts&apos;</comment>
+  <data name="JA.Risk.ObjectWithConditionsHasConditions.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectWithConditionsHasConditions</value>
+    <comment>Description for DomainClass &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts.DisplayName" xml:space="preserve">
-    <value>Threat Agent Has Agent Ports</value>
-    <comment>DisplayName for DomainClass &apos;ThreatAgentHasAgentPorts&apos;</comment>
+  <data name="JA.Risk.ObjectWithConditionsHasConditions.DisplayName" xml:space="preserve">
+    <value>Object With Conditions Has Conditions</value>
+    <comment>DisplayName for DomainClass &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasAgentPorts.ThreatAgent</value>
-    <comment>Description for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectWithConditionsHasConditions.ObjectWithConditions</value>
+    <comment>Description for DomainRole &apos;ObjectWithConditions&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.DisplayName" xml:space="preserve">
-    <value>Threat Agent</value>
-    <comment>DisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.DisplayName" xml:space="preserve">
+    <value>Object With Conditions</value>
+    <comment>DisplayName for DomainRole &apos;ObjectWithConditions&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/ThreatAgent.PropertyDisplayName" xml:space="preserve">
-    <value>Agent Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/AgentPort.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasAgentPorts.AgentPort</value>
-    <comment>Description for DomainRole &apos;AgentPort&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/AgentPort.DisplayName" xml:space="preserve">
-    <value>Agent Port</value>
-    <comment>DisplayName for DomainRole &apos;AgentPort&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasAgentPorts/AgentPort.PropertyDisplayName" xml:space="preserve">
-    <value>Threat Agent</value>
-    <comment>PropertyDisplayName for DomainRole &apos;AgentPort&apos; on DomainRelationship &apos;ThreatAgentHasAgentPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ContainerHasContainerPorts</value>
-    <comment>Description for DomainClass &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts.DisplayName" xml:space="preserve">
-    <value>Container Has Container Ports</value>
-    <comment>DisplayName for DomainClass &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/Container.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ContainerHasContainerPorts.Container</value>
-    <comment>Description for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/Container.DisplayName" xml:space="preserve">
-    <value>Container</value>
-    <comment>DisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/Container.PropertyDisplayName" xml:space="preserve">
-    <value>Container Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/ContainerPort.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ContainerHasContainerPorts.ContainerPort</value>
-    <comment>Description for DomainRole &apos;ContainerPort&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/ContainerPort.DisplayName" xml:space="preserve">
-    <value>Container Port</value>
-    <comment>DisplayName for DomainRole &apos;ContainerPort&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ContainerHasContainerPorts/ContainerPort.PropertyDisplayName" xml:space="preserve">
-    <value>Container</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ContainerPort&apos; on DomainRelationship &apos;ContainerHasContainerPorts&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasConditions.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasConditions</value>
-    <comment>Description for DomainClass &apos;ThreatAgentHasConditions&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasConditions.DisplayName" xml:space="preserve">
-    <value>Threat Agent Has Conditions</value>
-    <comment>DisplayName for DomainClass &apos;ThreatAgentHasConditions&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasConditions.ThreatAgent</value>
-    <comment>Description for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.DisplayName" xml:space="preserve">
-    <value>Threat Agent</value>
-    <comment>DisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/ThreatAgent.PropertyDisplayName" xml:space="preserve">
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/ObjectWithConditions.PropertyDisplayName" xml:space="preserve">
     <value>Conditions</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;ObjectWithConditions&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/Condition.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentHasConditions.Condition</value>
-    <comment>Description for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/Condition.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectWithConditionsHasConditions.Condition</value>
+    <comment>Description for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/Condition.DisplayName" xml:space="preserve">
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/Condition.DisplayName" xml:space="preserve">
     <value>Condition</value>
-    <comment>DisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
   </data>
-  <data name="JA.Risk.ThreatAgentHasConditions/Condition.PropertyDisplayName" xml:space="preserve">
+  <data name="JA.Risk.ObjectWithConditionsHasConditions/Condition.PropertyDisplayName" xml:space="preserve">
+    <value>Object With Conditions</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ObjectWithConditionsHasConditions&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectHasPorts</value>
+    <comment>Description for DomainClass &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts.DisplayName" xml:space="preserve">
+    <value>Object Has Ports</value>
+    <comment>DisplayName for DomainClass &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/ObjectWithPorts.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectHasPorts.ObjectWithPorts</value>
+    <comment>Description for DomainRole &apos;ObjectWithPorts&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/ObjectWithPorts.DisplayName" xml:space="preserve">
+    <value>Object With Ports</value>
+    <comment>DisplayName for DomainRole &apos;ObjectWithPorts&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/ObjectWithPorts.PropertyDisplayName" xml:space="preserve">
+    <value>Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ObjectWithPorts&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/Port.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ObjectHasPorts.Port</value>
+    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/Port.DisplayName" xml:space="preserve">
+    <value>Port</value>
+    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectHasPorts/Port.PropertyDisplayName" xml:space="preserve">
+    <value>Object With Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ObjectHasPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess.Description" xml:space="preserve">
+    <value>Description for JA.Risk.LegitimateAccess</value>
+    <comment>Description for DomainClass &apos;LegitimateAccess&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess.DisplayName" xml:space="preserve">
+    <value>Legitimate Access</value>
+    <comment>DisplayName for DomainClass &apos;LegitimateAccess&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess/Conditions.Description" xml:space="preserve">
+    <value>The conditions on an asset that a threat agent may legitimately access, separated by commas</value>
+    <comment>Description for DomainProperty &apos;Conditions&apos; on DomainClass &apos;LegitimateAccess&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess/Conditions.DisplayName" xml:space="preserve">
+    <value>Conditions</value>
+    <comment>DisplayName for DomainProperty &apos;Conditions&apos; on DomainClass &apos;LegitimateAccess&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess/ThreatAgent.Description" xml:space="preserve">
+    <value>Description for JA.Risk.LegitimateAccess.ThreatAgent</value>
+    <comment>Description for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccess/ThreatAgent.DisplayName" xml:space="preserve">
     <value>Threat Agent</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Condition&apos; on DomainRelationship &apos;ThreatAgentHasConditions&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
   </data>
-  <data name="JA.Risk.ContainerPortShape.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ContainerPortShape</value>
-    <comment>Description for DomainClass &apos;ContainerPortShape&apos;</comment>
+  <data name="JA.Risk.LegitimateAccess/ThreatAgent.PropertyDisplayName" xml:space="preserve">
+    <value>Assets</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ThreatAgent&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
   </data>
-  <data name="JA.Risk.ContainerPortShape.DisplayName" xml:space="preserve">
-    <value>Container Port Shape</value>
-    <comment>DisplayName for DomainClass &apos;ContainerPortShape&apos;</comment>
+  <data name="JA.Risk.LegitimateAccess/Asset.Description" xml:space="preserve">
+    <value>Description for JA.Risk.LegitimateAccess.Asset</value>
+    <comment>Description for DomainRole &apos;Asset&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
   </data>
-  <data name="ContainerPortShapeNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
+  <data name="JA.Risk.LegitimateAccess/Asset.DisplayName" xml:space="preserve">
+    <value>Asset</value>
+    <comment>DisplayName for DomainRole &apos;Asset&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
   </data>
-  <data name="JA.Risk.ContainerShape.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ContainerShape</value>
-    <comment>Description for DomainClass &apos;ContainerShape&apos;</comment>
+  <data name="JA.Risk.LegitimateAccess/Asset.PropertyDisplayName" xml:space="preserve">
+    <value>Threat Agents</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Asset&apos; on DomainRelationship &apos;LegitimateAccess&apos;</comment>
   </data>
-  <data name="JA.Risk.ContainerShape.DisplayName" xml:space="preserve">
-    <value>Container Shape</value>
-    <comment>DisplayName for DomainClass &apos;ContainerShape&apos;</comment>
+  <data name="JA.Risk.PortShape.Description" xml:space="preserve">
+    <value>Description for JA.Risk.PortShape</value>
+    <comment>Description for DomainClass &apos;PortShape&apos;</comment>
   </data>
-  <data name="ContainerShapeTypeDefaultText" xml:space="preserve">
-    <value>Type</value>
-    <comment>Text decorator default text</comment>
+  <data name="JA.Risk.PortShape.DisplayName" xml:space="preserve">
+    <value>Port Shape</value>
+    <comment>DisplayName for DomainClass &apos;PortShape&apos;</comment>
   </data>
-  <data name="ContainerShapeNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="JA.Risk.AssetShape.Description" xml:space="preserve">
-    <value>Description for JA.Risk.AssetShape</value>
-    <comment>Description for DomainClass &apos;AssetShape&apos;</comment>
-  </data>
-  <data name="JA.Risk.AssetShape.DisplayName" xml:space="preserve">
-    <value>Asset Shape</value>
-    <comment>DisplayName for DomainClass &apos;AssetShape&apos;</comment>
-  </data>
-  <data name="AssetShapeNumberDefaultText" xml:space="preserve">
-    <value>1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="AssetShapeConfidentialityValueDefaultText" xml:space="preserve">
-    <value>0</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="AssetShapeIntegrityValueDefaultText" xml:space="preserve">
-    <value>0</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="AssetShapeAvailabilityValueDefaultText" xml:space="preserve">
-    <value>0</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="AssetShapeNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentShape.Description" xml:space="preserve">
-    <value>Description for JA.Risk.ThreatAgentShape</value>
-    <comment>Description for DomainClass &apos;ThreatAgentShape&apos;</comment>
-  </data>
-  <data name="JA.Risk.ThreatAgentShape.DisplayName" xml:space="preserve">
-    <value>Threat Agent Shape</value>
-    <comment>DisplayName for DomainClass &apos;ThreatAgentShape&apos;</comment>
-  </data>
-  <data name="ThreatAgentShapeNumberDefaultText" xml:space="preserve">
-    <value>1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="ThreatAgentShapeNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="JA.Risk.AgentPortShape.Description" xml:space="preserve">
-    <value>Description for JA.Risk.AgentPortShape</value>
-    <comment>Description for DomainClass &apos;AgentPortShape&apos;</comment>
-  </data>
-  <data name="JA.Risk.AgentPortShape.DisplayName" xml:space="preserve">
-    <value>Agent Port Shape</value>
-    <comment>DisplayName for DomainClass &apos;AgentPortShape&apos;</comment>
-  </data>
-  <data name="AgentPortShapeNameDefaultText" xml:space="preserve">
+  <data name="PortShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
@@ -699,6 +643,46 @@
   </data>
   <data name="ThreatAgentCompartmentShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="JA.Risk.ContainerCompartmentShape.Description" xml:space="preserve">
+    <value>Description for JA.Risk.ContainerCompartmentShape</value>
+    <comment>Description for DomainClass &apos;ContainerCompartmentShape&apos;</comment>
+  </data>
+  <data name="JA.Risk.ContainerCompartmentShape.DisplayName" xml:space="preserve">
+    <value>Container Compartment Shape</value>
+    <comment>DisplayName for DomainClass &apos;ContainerCompartmentShape&apos;</comment>
+  </data>
+  <data name="ContainerCompartmentShapeConditionsTitle" xml:space="preserve">
+    <value></value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="ContainerCompartmentShapeTypeDefaultText" xml:space="preserve">
+    <value>Type</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="ContainerCompartmentShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="JA.Risk.AssetCompartmentShape.Description" xml:space="preserve">
+    <value>Description for JA.Risk.AssetCompartmentShape</value>
+    <comment>Description for DomainClass &apos;AssetCompartmentShape&apos;</comment>
+  </data>
+  <data name="JA.Risk.AssetCompartmentShape.DisplayName" xml:space="preserve">
+    <value>Asset Compartment Shape</value>
+    <comment>DisplayName for DomainClass &apos;AssetCompartmentShape&apos;</comment>
+  </data>
+  <data name="AssetCompartmentShapeConditionsTitle" xml:space="preserve">
+    <value></value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="AssetCompartmentShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AssetCompartmentShapeNumberDefaultText" xml:space="preserve">
+    <value>Number</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="JA.Risk.InteractsLink.Description" xml:space="preserve">
@@ -745,6 +729,18 @@
     <value>Contains Asset</value>
     <comment>DisplayName for DomainClass &apos;ContainsAsset&apos;</comment>
   </data>
+  <data name="JA.Risk.LegitimateAccessConnector.Description" xml:space="preserve">
+    <value>Shows the assets a threat agent may legitimately access</value>
+    <comment>Description for DomainClass &apos;LegitimateAccessConnector&apos;</comment>
+  </data>
+  <data name="JA.Risk.LegitimateAccessConnector.DisplayName" xml:space="preserve">
+    <value>Legitimate Access Connector</value>
+    <comment>DisplayName for DomainClass &apos;LegitimateAccessConnector&apos;</comment>
+  </data>
+  <data name="LegitimateAccessConnectorConditionsDefaultText" xml:space="preserve">
+    <value>Conditions</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="FormatList" xml:space="preserve">
     <value>Risk (*.Risk)|*.Risk</value>
     <comment>A list of file format specifiers for the Save dialog box</comment>
@@ -773,12 +769,12 @@
     <value>Represents part of a system being studied: a building, computer, network etc</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ContainerPortToolboxItem" xml:space="preserve">
-    <value>ContainerPort</value>
+  <data name="PortToolboxItem" xml:space="preserve">
+    <value>Port</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ContainerPortToolboxTooltip" xml:space="preserve">
-    <value>Represents a container&apos;s ability to interact with something</value>
+  <data name="PortToolboxTooltip" xml:space="preserve">
+    <value>Represents the ability to interact with something</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="GeneralizationToolboxItem" xml:space="preserve">
@@ -829,12 +825,12 @@
     <value>Represents something active, a user, attacker or external event</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="AgentPortToolboxItem" xml:space="preserve">
-    <value>Threat Agent Port</value>
+  <data name="LegitimateAccessToolboxItem" xml:space="preserve">
+    <value>LegitimateAccess</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="AgentPortToolboxTooltip" xml:space="preserve">
-    <value>Represents a threat agent&apos;s ability to interact with something</value>
+  <data name="LegitimateAccessToolboxTooltip" xml:space="preserve">
+    <value>Legitimate Access</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -962,20 +958,16 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ContainerShapeContainerIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="ThreatAgentCompartmentShapeThreatIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Agent.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="ContainerCompartmentShapeContainerIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\Container.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="AssetShapeAssetIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="AssetCompartmentShapeAssetIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\Assets.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Icon decorator default image</comment>
-  </data>
-  <data name="ThreatAgentShapeThreatIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Agent.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Icon decorator default image</comment>
-  </data>
-  <data name="ThreatAgentCompartmentShapeThreatIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Agent.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
   <data name="AssetExplorerImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
@@ -1002,7 +994,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\Container.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ContainerPortToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="PortToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ContainerPort.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
@@ -1030,8 +1022,8 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\Agent.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="AgentPortToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\AgentPort.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LegitimateAccessToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\LegitimateAccess.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

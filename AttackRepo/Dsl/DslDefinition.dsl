@@ -96,6 +96,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="a9ae49f3-7765-4183-89be-7aa32b1ca0d0" Description="Description for JA.Attack.NamedElement.Notes" Name="Notes" DisplayName="Notes">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="4a7dd5cc-0d82-431a-9081-42695b1b726d" Description="A condition that applies to a threat agent" Name="Condition" DisplayName="Condition" Namespace="JA.Attack">
@@ -198,7 +203,7 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <CompartmentShape Id="647106f4-fe3c-4b7d-b26f-0e65fdc3c4fb" Description="Description for JA.Attack.TaskShape" Name="TaskShape" DisplayName="Task Shape" Namespace="JA.Attack" FixedTooltipText="Task Shape" InitialHeight="1" Geometry="Rectangle">
+    <CompartmentShape Id="647106f4-fe3c-4b7d-b26f-0e65fdc3c4fb" Description="Description for JA.Attack.TaskShape" Name="TaskShape" DisplayName="Task Shape" Namespace="JA.Attack" FixedTooltipText="Task Shape" FillColor="OliveDrab" InitialHeight="1" FillGradientMode="None" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
@@ -216,7 +221,7 @@
       </ShapeHasDecorators>
       <Compartment Name="PreConditions" Title="Pre Conditions" />
     </CompartmentShape>
-    <CompartmentShape Id="6f1c327d-c77d-4721-be2b-1a79b5958a37" Description="Description for JA.Attack.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="JA.Attack" FixedTooltipText="State Shape" InitialHeight="1" Geometry="RoundedRectangle">
+    <CompartmentShape Id="6f1c327d-c77d-4721-be2b-1a79b5958a37" Description="Description for JA.Attack.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="JA.Attack" FixedTooltipText="State Shape" FillColor="DarkKhaki" InitialHeight="1" FillGradientMode="None" Geometry="RoundedRectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
@@ -307,6 +312,9 @@
           <XmlPropertyData XmlName="name">
             <DomainPropertyMoniker Name="NamedElement/Name" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="notes">
+            <DomainPropertyMoniker Name="NamedElement/Notes" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Condition" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionMoniker" ElementName="condition" MonikerTypeName="ConditionMoniker">
@@ -354,7 +362,7 @@
           <DomainClassMoniker Name="Task" />
         </Class>
       </ExplorerNodeSettings>
-      <ExplorerNodeSettings IconToDisplay="Resources\ObjectTool.bmp" ShowsDomainClass="true">
+      <ExplorerNodeSettings IconToDisplay="Resources\StateTool.bmp" ShowsDomainClass="true">
         <Class>
           <DomainClassMoniker Name="State" />
         </Class>
@@ -551,7 +559,7 @@
       <ElementTool Name="TaskTool" ToolboxIcon="Resources\TaskTool.bmp" Caption="Task" Tooltip="A task describes something that has to be done to gain access" HelpKeyword="TaskTool">
         <DomainClassMoniker Name="Task" />
       </ElementTool>
-      <ElementTool Name="StateTool" ToolboxIcon="Resources\ObjectTool.bmp" Caption="State" Tooltip="Describes a level of access" HelpKeyword="StateTool">
+      <ElementTool Name="StateTool" ToolboxIcon="Resources\StateTool.bmp" Caption="State" Tooltip="Describes a level of access" HelpKeyword="StateTool">
         <DomainClassMoniker Name="State" />
       </ElementTool>
       <ElementTool Name="SyncTool" ToolboxIcon="Resources\SyncBarTool.bmp" Caption="Sync" Tooltip="Represents the start of parallel options" HelpKeyword="SyncTool">

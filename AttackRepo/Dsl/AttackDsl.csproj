@@ -162,12 +162,12 @@
   <ItemGroup>
     <Content Include="Resources\FlowTool.bmp" />
     <Content Include="Resources\MergeBranchTool.bmp" />
-    <Content Include="Resources\ObjectTool.bmp" />
+    <Content Include="Resources\TaskTool.bmp" />
     <Content Include="Resources\Postcondition.bmp" />
     <Content Include="Resources\Precondition.bmp" />
     <Content Include="Resources\StartTool.bmp" />
     <Content Include="Resources\SyncBarTool.bmp" />
-    <Content Include="Resources\TaskTool.bmp" />
+    <Content Include="Resources\StateTool.bmp" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>

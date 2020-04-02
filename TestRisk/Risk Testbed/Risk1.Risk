@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ab4bad05-95ff-4e34-9042-268e4bebd70c" name="Web Banking" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+  <assets>
+    <riskModelHasAssets Id="e7966256-39d4-4e95-81fc-d0825e04fc17">
+      <asset Id="922820f9-b4fb-40cd-bc12-ec7e6a88e4d7" name="Bank Accounts" />
+    </riskModelHasAssets>
+  </assets>
+</riskModel>

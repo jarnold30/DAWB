@@ -14,1034 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace JA.Risk
 {
 	/// <summary>
-	/// DomainClass ContainerPortShape
-	/// Description for JA.Risk.ContainerPortShape
+	/// DomainClass PortShape
+	/// Description for JA.Risk.PortShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ContainerPortShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ContainerPortShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("80884b27-f893-48e5-a1b9-e46bb91cb9f8")]
-	public partial class ContainerPortShape : DslDiagrams::Port
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with ContainerPortShape.
-		/// </summary>
-		public static DslDiagrams::Decorator FindContainerPortShapeDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		
-		/// <summary>
-		/// Shape instance initialization.
-		/// </summary>
-		public override void OnInitialize()
-		{
-			base.OnInitialize();
-			
-			// Create host shapes for outer decorators.
-			foreach(DslDiagrams::Decorator decorator in this.Decorators)
-			{
-				if(decorator.RequiresHost)
-				{
-					decorator.ConfigureHostShape(this);
-				}
-			}
-			
-		}
-		#endregion
-		#region Shape size
-		
-		/// <summary>
-		/// Default size for this shape.
-		/// </summary>
-		public override DslDiagrams::SizeD DefaultSize
-		{
-			get
-			{
-				return new DslDiagrams::SizeD(0.2, 0.2);
-			}
-		}
-		#endregion
-		#region Shape styles
-		/// <summary>
-		/// Indicates whether this shape displays a background gradient.
-		/// </summary>
-		public override bool HasBackgroundGradient
-		{
-			get
-			{
-				return false;
-			}
-		}
-		#endregion
-		#region Decorators
-		/// <summary>
-		/// Initialize the collection of shape fields associated with this shape type.
-		/// </summary>
-		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
-		{
-			base.InitializeShapeFields(shapeFields);
-		}
-		
-		/// <summary>
-		/// Initialize the collection of decorators associated with this shape type.  This method also
-		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
-		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
-		/// </summary>
-		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
-		{
-			base.InitializeDecorators(shapeFields, decorators);
-			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerPortShapeNameDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterMiddleLeft, DslDiagrams::PointD.Empty, true);
-			decorators.Add(decorator1);
-				
-		}
-		
-		/// <summary>
-		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
-		/// after the shape has been associated with the model element.
-		/// </summary>
-		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
-		{
-			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
-			
-			if(iteration == 0)
-			{
-				foreach(DslDiagrams::Decorator decorator in this.Decorators)
-				{
-					if(decorator.RequiresHost)
-					{
-						decorator.RepositionHostShape(decorator.GetHostShape(this));
-					}
-				}
-			}
-		}
-		#endregion
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ContainerPortShape domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x80884b27, 0xf893, 0x48e5, 0xa1, 0xb9, 0xe4, 0x6b, 0xb9, 0x1c, 0xb9, 0xf8);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerPortShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerPortShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass ContainerShape
-	/// Description for JA.Risk.ContainerShape
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ContainerShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ContainerShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("19b7c854-6e42-434d-a5d9-d548f5836e16")]
-	public partial class ContainerShape : DslDiagrams::NodeShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with ContainerShape.
-		/// </summary>
-		public static DslDiagrams::Decorator FindContainerShapeDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		
-		/// <summary>
-		/// Shape instance initialization.
-		/// </summary>
-		public override void OnInitialize()
-		{
-			base.OnInitialize();
-			
-			// Create host shapes for outer decorators.
-			foreach(DslDiagrams::Decorator decorator in this.Decorators)
-			{
-				if(decorator.RequiresHost)
-				{
-					decorator.ConfigureHostShape(this);
-				}
-			}
-			
-		}
-		#endregion
-		#region Shape size
-		
-		/// <summary>
-		/// Default size for this shape.
-		/// </summary>
-		public override DslDiagrams::SizeD DefaultSize
-		{
-			get
-			{
-				return new DslDiagrams::SizeD(1.5, 1);
-			}
-		}
-		#endregion
-		#region Shape styles
-		/// <summary>
-		/// Initializes style set resources for this shape type
-		/// </summary>
-		/// <param name="classStyleSet">The style set for this shape class</param>
-		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
-		{
-			base.InitializeResources(classStyleSet);
-			
-			// Fill brush settings for this shape.
-			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Khaki);
-			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
-		
-			// Custom font styles
-			DslDiagrams::FontSettings fontSettings;
-			fontSettings = new DslDiagrams::FontSettings();
-			fontSettings.Style =  global::System.Drawing.FontStyle.Italic ;
-			fontSettings.Size = 8/72.0F;
-			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextItalic8"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
-			fontSettings = new DslDiagrams::FontSettings();
-			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
-			fontSettings.Size = 8/72.0F;
-			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold8"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
-		}
-		
-		/// <summary>
-		/// Indicates whether this shape displays a background gradient.
-		/// </summary>
-		public override bool HasBackgroundGradient
-		{
-			get
-			{
-				return false;
-			}
-		}
-		#endregion
-		#region Decorators
-		/// <summary>
-		/// Initialize the collection of shape fields associated with this shape type.
-		/// </summary>
-		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
-		{
-			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Type");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerShapeTypeDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextItalic8");			
-			shapeFields.Add(field1);
-			
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("Name");
-			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerShapeNameDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold8");			
-			shapeFields.Add(field2);
-			
-			DslDiagrams::ImageField field3 = new DslDiagrams::ImageField("ContainerIcon");
-			field3.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("ContainerShapeContainerIconDefaultImage"));
-			shapeFields.Add(field3);
-			
-		}
-		
-		/// <summary>
-		/// Initialize the collection of decorators associated with this shape type.  This method also
-		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
-		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
-		/// </summary>
-		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
-		{
-			base.InitializeDecorators(shapeFields, decorators);
-			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Type");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerMiddleLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator1);
-				
-			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator2);
-				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ContainerIcon");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator3);
-				
-		}
-		
-		/// <summary>
-		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
-		/// after the shape has been associated with the model element.
-		/// </summary>
-		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
-		{
-			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
-			
-			if(iteration == 0)
-			{
-				foreach(DslDiagrams::Decorator decorator in this.Decorators)
-				{
-					if(decorator.RequiresHost)
-					{
-						decorator.RepositionHostShape(decorator.GetHostShape(this));
-					}
-				}
-			}
-		}
-		#endregion
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ContainerShape domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x19b7c854, 0x6e42, 0x434d, 0xa5, 0xd9, 0xd5, 0x48, 0xf5, 0x83, 0x6e, 0x16);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ContainerShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass AssetShape
-	/// Description for JA.Risk.AssetShape
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.AssetShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.AssetShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("7ffcdbec-165c-4a8d-9101-57983f5b2442")]
-	public partial class AssetShape : DslDiagrams::NodeShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with AssetShape.
-		/// </summary>
-		public static DslDiagrams::Decorator FindAssetShapeDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		
-		/// <summary>
-		/// Shape instance initialization.
-		/// </summary>
-		public override void OnInitialize()
-		{
-			base.OnInitialize();
-			
-			// Create host shapes for outer decorators.
-			foreach(DslDiagrams::Decorator decorator in this.Decorators)
-			{
-				if(decorator.RequiresHost)
-				{
-					decorator.ConfigureHostShape(this);
-				}
-			}
-			
-		}
-		#endregion
-		#region Shape size
-		
-		/// <summary>
-		/// Default size for this shape.
-		/// </summary>
-		public override DslDiagrams::SizeD DefaultSize
-		{
-			get
-			{
-				return new DslDiagrams::SizeD(1.5, 1);
-			}
-		}
-		#endregion
-		#region Shape styles
-		/// <summary>
-		/// Initializes style set resources for this shape type
-		/// </summary>
-		/// <param name="classStyleSet">The style set for this shape class</param>
-		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
-		{
-			base.InitializeResources(classStyleSet);
-			
-			// Fill brush settings for this shape.
-			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.PeachPuff);
-			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
-		
-			// Custom font styles
-			DslDiagrams::FontSettings fontSettings;
-			fontSettings = new DslDiagrams::FontSettings();
-			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
-			fontSettings.Size = 8/72.0F;
-			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold8"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
-		}
-		
-		/// <summary>
-		/// Indicates whether this shape displays a background gradient.
-		/// </summary>
-		public override bool HasBackgroundGradient
-		{
-			get
-			{
-				return false;
-			}
-		}
-		/// <summary>
-		/// Specifies the geometry used by this shape
-		/// </summary>
-		public override DslDiagrams::ShapeGeometry ShapeGeometry
-		{
-			get
-			{
-				return DslDiagrams::ShapeGeometries.RoundedRectangle;
-			}
-		}
-		#endregion
-		#region Decorators
-		/// <summary>
-		/// Initialize the collection of shape fields associated with this shape type.
-		/// </summary>
-		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
-		{
-			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Number");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetShapeNumberDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field1);
-			
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("ConfidentialityValue");
-			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetShapeConfidentialityValueDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field2);
-			
-			DslDiagrams::TextField field3 = new DslDiagrams::TextField("IntegrityValue");
-			field3.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetShapeIntegrityValueDefaultText");
-			field3.DefaultFocusable = true;
-			field3.DefaultAutoSize = true;
-			field3.AnchoringBehavior.MinimumHeightInLines = 1;
-			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field3);
-			
-			DslDiagrams::TextField field4 = new DslDiagrams::TextField("AvailabilityValue");
-			field4.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetShapeAvailabilityValueDefaultText");
-			field4.DefaultFocusable = true;
-			field4.DefaultAutoSize = true;
-			field4.AnchoringBehavior.MinimumHeightInLines = 1;
-			field4.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field4.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field4);
-			
-			DslDiagrams::TextField field5 = new DslDiagrams::TextField("Name");
-			field5.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetShapeNameDefaultText");
-			field5.DefaultFocusable = true;
-			field5.DefaultAutoSize = true;
-			field5.AnchoringBehavior.MinimumHeightInLines = 1;
-			field5.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field5.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			field5.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold8");			
-			shapeFields.Add(field5);
-			
-			DslDiagrams::ImageField field6 = new DslDiagrams::ImageField("AssetIcon");
-			field6.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("AssetShapeAssetIconDefaultImage"));
-			shapeFields.Add(field6);
-			
-		}
-		
-		/// <summary>
-		/// Initialize the collection of decorators associated with this shape type.  This method also
-		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
-		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
-		/// </summary>
-		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
-		{
-			base.InitializeDecorators(shapeFields, decorators);
-			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Number");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerMiddleLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator1);
-				
-			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ConfidentialityValue");
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator2);
-				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IntegrityValue");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerBottomCenter, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator3);
-				
-			DslDiagrams::ShapeField field4 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "AvailabilityValue");
-			DslDiagrams::Decorator decorator4 = new DslDiagrams::ShapeDecorator(field4, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator4);
-				
-			DslDiagrams::ShapeField field5 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator5 = new DslDiagrams::ShapeDecorator(field5, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator5);
-				
-			DslDiagrams::ShapeField field6 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "AssetIcon");
-			DslDiagrams::Decorator decorator6 = new DslDiagrams::ShapeDecorator(field6, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator6);
-				
-		}
-		
-		/// <summary>
-		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
-		/// after the shape has been associated with the model element.
-		/// </summary>
-		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
-		{
-			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
-			
-			if(iteration == 0)
-			{
-				foreach(DslDiagrams::Decorator decorator in this.Decorators)
-				{
-					if(decorator.RequiresHost)
-					{
-						decorator.RepositionHostShape(decorator.GetHostShape(this));
-					}
-				}
-			}
-		}
-		#endregion
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// AssetShape domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7ffcdbec, 0x165c, 0x4a8d, 0x91, 0x01, 0x57, 0x98, 0x3f, 0x5b, 0x24, 0x42);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AssetShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AssetShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass ThreatAgentShape
-	/// Description for JA.Risk.ThreatAgentShape
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.ThreatAgentShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.ThreatAgentShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("dae726c6-ecc0-4dda-ba67-58215ce38201")]
-	public partial class ThreatAgentShape : DslDiagrams::NodeShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with ThreatAgentShape.
-		/// </summary>
-		public static DslDiagrams::Decorator FindThreatAgentShapeDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		
-		/// <summary>
-		/// Shape instance initialization.
-		/// </summary>
-		public override void OnInitialize()
-		{
-			base.OnInitialize();
-			
-			// Create host shapes for outer decorators.
-			foreach(DslDiagrams::Decorator decorator in this.Decorators)
-			{
-				if(decorator.RequiresHost)
-				{
-					decorator.ConfigureHostShape(this);
-				}
-			}
-			
-		}
-		#endregion
-		#region Shape size
-		
-		/// <summary>
-		/// Default size for this shape.
-		/// </summary>
-		public override DslDiagrams::SizeD DefaultSize
-		{
-			get
-			{
-				return new DslDiagrams::SizeD(1.5, 1);
-			}
-		}
-		#endregion
-		#region Shape styles
-		/// <summary>
-		/// Initializes style set resources for this shape type
-		/// </summary>
-		/// <param name="classStyleSet">The style set for this shape class</param>
-		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
-		{
-			base.InitializeResources(classStyleSet);
-			
-			// Fill brush settings for this shape.
-			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightCoral);
-			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
-		
-		}
-		
-		/// <summary>
-		/// Indicates whether this shape displays a background gradient.
-		/// </summary>
-		public override bool HasBackgroundGradient
-		{
-			get
-			{
-				return false;
-			}
-		}
-		/// <summary>
-		/// Specifies the geometry used by this shape
-		/// </summary>
-		public override DslDiagrams::ShapeGeometry ShapeGeometry
-		{
-			get
-			{
-				return DslDiagrams::ShapeGeometries.RoundedRectangle;
-			}
-		}
-		#endregion
-		#region Decorators
-		/// <summary>
-		/// Initialize the collection of shape fields associated with this shape type.
-		/// </summary>
-		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
-		{
-			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Number");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ThreatAgentShapeNumberDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field1);
-			
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("Name");
-			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ThreatAgentShapeNameDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field2);
-			
-			DslDiagrams::ImageField field3 = new DslDiagrams::ImageField("ThreatIcon");
-			field3.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("ThreatAgentShapeThreatIconDefaultImage"));
-			shapeFields.Add(field3);
-			
-		}
-		
-		/// <summary>
-		/// Initialize the collection of decorators associated with this shape type.  This method also
-		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
-		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
-		/// </summary>
-		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
-		{
-			base.InitializeDecorators(shapeFields, decorators);
-			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Number");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerMiddleLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator1);
-				
-			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator2);
-				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ThreatIcon");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator3);
-				
-		}
-		
-		/// <summary>
-		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
-		/// after the shape has been associated with the model element.
-		/// </summary>
-		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
-		{
-			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
-			
-			if(iteration == 0)
-			{
-				foreach(DslDiagrams::Decorator decorator in this.Decorators)
-				{
-					if(decorator.RequiresHost)
-					{
-						decorator.RepositionHostShape(decorator.GetHostShape(this));
-					}
-				}
-			}
-		}
-		#endregion
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ThreatAgentShape domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdae726c6, 0xecc0, 0x4dda, 0xba, 0x67, 0x58, 0x21, 0x5c, 0xe3, 0x82, 0x01);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ThreatAgentShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ThreatAgentShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace JA.Risk
-{
-	/// <summary>
-	/// DomainClass AgentPortShape
-	/// Description for JA.Risk.AgentPortShape
-	/// </summary>
-	[DslDesign::DisplayNameResource("JA.Risk.AgentPortShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("JA.Risk.AgentPortShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("JA.Risk.PortShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.PortShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("8b3a0f5b-7ee4-428f-b77b-ca4c88337933")]
-	public partial class AgentPortShape : DslDiagrams::Port
+	public partial class PortShape : DslDiagrams::Port
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -1106,9 +87,9 @@ namespace JA.Risk
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with AgentPortShape.
+		/// Finds a decorator associated with PortShape.
 		/// </summary>
-		public static DslDiagrams::Decorator FindAgentPortShapeDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindPortShapeDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -1177,7 +158,7 @@ namespace JA.Risk
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
-			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AgentPortShapeNameDefaultText");
+			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("PortShapeNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -1211,7 +192,7 @@ namespace JA.Risk
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// AgentPortShape domain class Id.
+		/// PortShape domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8b3a0f5b, 0x7ee4, 0x428f, 0xb7, 0x7b, 0xca, 0x4c, 0x88, 0x33, 0x79, 0x33);
 		/// <summary>
@@ -1219,7 +200,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AgentPortShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public PortShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1229,7 +210,7 @@ namespace JA.Risk
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AgentPortShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public PortShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1592,7 +573,7 @@ namespace JA.Risk
 			#region DomainPath traversal methods to get the list of elements to display in a compartment.
 			internal static global::System.Collections.IList GetElementsFromThreatAgentForConditions(DslModeling::ModelElement rootElement)
 			{
-				global::JA.Risk.ThreatAgent root = (global::JA.Risk.ThreatAgent)rootElement;
+				global::JA.Risk.ObjectWithConditions root = (global::JA.Risk.ObjectWithConditions)rootElement;
 					// Segments 0 and 1
 					DslModeling::LinkedElementCollection<global::JA.Risk.Condition> result = root.Conditions;
 				return result;
@@ -1622,6 +603,766 @@ namespace JA.Risk
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public ThreatAgentCompartmentShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainClass ContainerCompartmentShape
+	/// Description for JA.Risk.ContainerCompartmentShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.ContainerCompartmentShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.ContainerCompartmentShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("d7b9547a-0986-42fd-b433-d385fc91f6b6")]
+	public partial class ContainerCompartmentShape : DslDiagrams::CompartmentShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with ContainerCompartmentShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindContainerCompartmentShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Fill brush settings for this shape.
+			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Moccasin);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
+		
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return false;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Type");
+			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerCompartmentShapeTypeDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("Name");
+			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerCompartmentShapeNameDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field2);
+			
+			DslDiagrams::ImageField field3 = new DslDiagrams::ImageField("ContainerIcon");
+			field3.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("ContainerCompartmentShapeContainerIconDefaultImage"));
+			shapeFields.Add(field3);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Type");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ContainerIcon");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region CompartmentShape code
+		/// <summary>
+		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
+		/// </summary>
+		public override bool IsSingleCompartmentHeaderVisible
+		{
+			get { return true; }
+		}
+		
+		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
+		
+		/// <summary>
+		/// Gets an array of CompartmentDescription for all compartments shown on this shape
+		/// (including compartments defined on base shapes).
+		/// </summary>
+		/// <returns></returns>
+		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
+		{
+			if(compartmentDescriptions == null)
+			{
+				// Initialize the array of compartment descriptions if we haven't done so already. 
+				// First we get any compartment descriptions in base shapes, and add on any compartments
+				// that are defined on this shape. 
+				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
+				
+				int localCompartmentsOffset = 0;
+				if(baseCompartmentDescriptions!=null)
+				{
+					localCompartmentsOffset = baseCompartmentDescriptions.Length;
+				}
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				
+				if(baseCompartmentDescriptions!=null)
+				{
+					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
+				}
+				{
+					string title = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("ContainerCompartmentShapeConditionsTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Conditions", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
+				}
+			}
+			
+			return ContainerCompartmentShape.compartmentDescriptions;
+		}
+		
+		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
+		
+		/// <summary>
+		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
+		/// (including compartment maps defined on base shapes). 
+		/// </summary>
+		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
+		/// <returns></returns>
+		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
+		{
+			if(melType==null) throw new global::System.ArgumentNullException("melType");
+			
+			if(compartmentMappings==null)
+			{
+				// Initialize the table of compartment mappings if we haven't done so already. 
+				// The table contains an array of CompartmentMapping for every Type that this
+				// shape can be mapped to. 
+				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::JA.Risk.Container));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Conditions", 
+																				global::JA.Risk.NamedElement.NameDomainPropertyId, 
+																				global::JA.Risk.Condition.DomainClassId, 
+																				GetElementsFromContainerForConditions,
+																				null,
+																				null,
+																				null);
+					compartmentMappings.Add(typeof(global::JA.Risk.Container), mappings);
+				}
+			}
+			
+			// See if we can find the mapping being requested directly in the table. 
+			DslDiagrams::CompartmentMapping[] returnValue;
+			if(compartmentMappings.TryGetValue(melType, out returnValue))
+			{
+				return returnValue;
+			}
+			
+			// If not, loop through the types in the table, and find the 'most derived' base
+			// class of melType. 
+			global::System.Type selectedMappedType = null;
+			foreach(global::System.Type mappedType in compartmentMappings.Keys)
+			{
+				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
+				{
+					selectedMappedType = mappedType;
+				}
+			}
+			if(selectedMappedType!=null)
+			{
+				return compartmentMappings[selectedMappedType];
+			}
+			return new DslDiagrams::CompartmentMapping[] {};
+		}
+		
+			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromContainerForConditions(DslModeling::ModelElement rootElement)
+			{
+				global::JA.Risk.ObjectWithConditions root = (global::JA.Risk.ObjectWithConditions)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::JA.Risk.Condition> result = root.Conditions;
+				return result;
+			}
+			#endregion
+		
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ContainerCompartmentShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd7b9547a, 0x0986, 0x42fd, 0xb4, 0x33, 0xd3, 0x85, 0xfc, 0x91, 0xf6, 0xb6);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ContainerCompartmentShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ContainerCompartmentShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace JA.Risk
+{
+	/// <summary>
+	/// DomainClass AssetCompartmentShape
+	/// Description for JA.Risk.AssetCompartmentShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("JA.Risk.AssetCompartmentShape.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("JA.Risk.AssetCompartmentShape.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::JA.Risk.RiskDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("88af3876-19b3-4b7d-8157-a393a49b9223")]
+	public partial class AssetCompartmentShape : DslDiagrams::CompartmentShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with AssetCompartmentShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindAssetCompartmentShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Fill brush settings for this shape.
+			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.SandyBrown);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
+		
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return false;
+			}
+		}
+		/// <summary>
+		/// Specifies the geometry used by this shape
+		/// </summary>
+		public override DslDiagrams::ShapeGeometry ShapeGeometry
+		{
+			get
+			{
+				return DslDiagrams::ShapeGeometries.RoundedRectangle;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetCompartmentShapeNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("Number");
+			field2.DefaultText = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetCompartmentShapeNumberDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field2);
+			
+			DslDiagrams::ImageField field3 = new DslDiagrams::ImageField("AssetIcon");
+			field3.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetObject("AssetCompartmentShapeAssetIconDefaultImage"));
+			shapeFields.Add(field3);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Number");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "AssetIcon");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region CompartmentShape code
+		/// <summary>
+		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
+		/// </summary>
+		public override bool IsSingleCompartmentHeaderVisible
+		{
+			get { return true; }
+		}
+		
+		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
+		
+		/// <summary>
+		/// Gets an array of CompartmentDescription for all compartments shown on this shape
+		/// (including compartments defined on base shapes).
+		/// </summary>
+		/// <returns></returns>
+		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
+		{
+			if(compartmentDescriptions == null)
+			{
+				// Initialize the array of compartment descriptions if we haven't done so already. 
+				// First we get any compartment descriptions in base shapes, and add on any compartments
+				// that are defined on this shape. 
+				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
+				
+				int localCompartmentsOffset = 0;
+				if(baseCompartmentDescriptions!=null)
+				{
+					localCompartmentsOffset = baseCompartmentDescriptions.Length;
+				}
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				
+				if(baseCompartmentDescriptions!=null)
+				{
+					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
+				}
+				{
+					string title = global::JA.Risk.RiskDomainModel.SingletonResourceManager.GetString("AssetCompartmentShapeConditionsTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Conditions", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
+				}
+			}
+			
+			return AssetCompartmentShape.compartmentDescriptions;
+		}
+		
+		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
+		
+		/// <summary>
+		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
+		/// (including compartment maps defined on base shapes). 
+		/// </summary>
+		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
+		/// <returns></returns>
+		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
+		{
+			if(melType==null) throw new global::System.ArgumentNullException("melType");
+			
+			if(compartmentMappings==null)
+			{
+				// Initialize the table of compartment mappings if we haven't done so already. 
+				// The table contains an array of CompartmentMapping for every Type that this
+				// shape can be mapped to. 
+				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::JA.Risk.Asset));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Conditions", 
+																				global::JA.Risk.NamedElement.NameDomainPropertyId, 
+																				global::JA.Risk.Condition.DomainClassId, 
+																				GetElementsFromAssetForConditions,
+																				null,
+																				null,
+																				null);
+					compartmentMappings.Add(typeof(global::JA.Risk.Asset), mappings);
+				}
+			}
+			
+			// See if we can find the mapping being requested directly in the table. 
+			DslDiagrams::CompartmentMapping[] returnValue;
+			if(compartmentMappings.TryGetValue(melType, out returnValue))
+			{
+				return returnValue;
+			}
+			
+			// If not, loop through the types in the table, and find the 'most derived' base
+			// class of melType. 
+			global::System.Type selectedMappedType = null;
+			foreach(global::System.Type mappedType in compartmentMappings.Keys)
+			{
+				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
+				{
+					selectedMappedType = mappedType;
+				}
+			}
+			if(selectedMappedType!=null)
+			{
+				return compartmentMappings[selectedMappedType];
+			}
+			return new DslDiagrams::CompartmentMapping[] {};
+		}
+		
+			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromAssetForConditions(DslModeling::ModelElement rootElement)
+			{
+				global::JA.Risk.ObjectWithConditions root = (global::JA.Risk.ObjectWithConditions)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::JA.Risk.Condition> result = root.Conditions;
+				return result;
+			}
+			#endregion
+		
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AssetCompartmentShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x88af3876, 0x19b3, 0x4b7d, 0x81, 0x57, 0xa3, 0x93, 0xa4, 0x9b, 0x92, 0x23);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AssetCompartmentShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AssetCompartmentShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

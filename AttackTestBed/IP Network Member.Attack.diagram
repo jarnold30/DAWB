@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackDiagram dslVersion="1.0.0.0" Id="1ffb7d73-b46c-4f25-aaa2-1be6b5e970e4" absoluteBounds="0, 0, 11, 8.5" name="IP Network Member">
+  <attackGraphMoniker Id="48dcae87-12df-4b20-9fd0-2ca4d6d5ebc8" />
+  <nestedChildShapes>
+    <startShape Id="a56f869c-41fb-4ab1-b5bd-1144fb4db153" absoluteBounds="1, 0.75, 0.22227285802364349, 0.22227285802364349">
+      <startPointMoniker Id="3d62981a-689a-4c29-bb4b-295ce16077b6" />
+    </startShape>
+    <stateShape Id="6ff5fd40-078a-44ac-b748-bc6e79bf873c" absoluteBounds="5.125, 0.625, 1.5, 1.3593896484374999">
+      <stateMoniker Id="4e9c5568-a8a4-468b-879b-73f7c3b2aba0" />
+      <nestedChildShapes>
+        <elementListCompartment Id="659e07cd-93b8-4e08-9794-2a5e4730f0d8" absoluteBounds="5.1400000000000006, 1.635, 1.4700000000000002, 0.2493896484375" name="PostConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <taskShape Id="efa8f0e7-79c9-4700-be63-a8daee72cf03" absoluteBounds="1.75, 0.5, 2, 1.5516910807291668">
+      <taskMoniker Id="c1520085-4737-42d5-8f2c-4350dc22bb36" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d52bdc49-29d4-4392-92f7-b9c484661ce1" absoluteBounds="1.765, 1.51, 1.9700000000000002, 0.44169108072916674" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </taskShape>
+    <flowConnector Id="4bdfe60c-0c77-453a-b859-ec5601afb62b" edgePoints="[(1.22227285802364 : 0.861136429011822); (1.75 : 0.861136429011822)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowRelationshipMoniker Id="b87d0535-a824-4374-b4b7-6041a6187839" />
+      <nodes>
+        <startShapeMoniker Id="a56f869c-41fb-4ab1-b5bd-1144fb4db153" />
+        <taskShapeMoniker Id="efa8f0e7-79c9-4700-be63-a8daee72cf03" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="c23f63d7-ee18-4235-a71c-84f0415d9cf2" edgePoints="[(3.75 : 1.30469482421875); (5.125 : 1.30469482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowRelationshipMoniker Id="5409e8b0-910c-4b86-8310-22632dd172e7" />
+      <nodes>
+        <taskShapeMoniker Id="efa8f0e7-79c9-4700-be63-a8daee72cf03" />
+        <stateShapeMoniker Id="6ff5fd40-078a-44ac-b748-bc6e79bf873c" />
+      </nodes>
+    </flowConnector>
+    <stateShape Id="78c8007c-7dcf-4cf7-8d6c-667d2676463c" absoluteBounds="5.125, 3, 1.5, 1.5516910807291664">
+      <stateMoniker Id="d49bb65d-f0f3-45c3-b65b-2c71aea51728" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fb235b1-92ea-4fb5-a533-5d2923ea21cb" absoluteBounds="5.14, 4.01, 1.4700000000000002, 0.44169108072916663" name="PostConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <taskShape Id="f0ec189c-d374-482a-a607-86a3fc0cd1bb" absoluteBounds="1.75, 3, 2.25, 1.7439925130208325">
+      <taskMoniker Id="da9a5a86-4310-4ba2-9f7c-2aeec0dfd368" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86c19b4a-178a-42b8-8dec-1ee6d307bb32" absoluteBounds="1.765, 4.01, 2.2199999999999998, 0.63399251302083326" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </taskShape>
+    <flowConnector Id="d074b24e-3416-402b-9dc5-be4f1afed003" edgePoints="[(1.11113642901182 : 0.972272858023643); (1.11113642901182 : 3.87199625651042); (1.75 : 3.87199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowRelationshipMoniker Id="58c3a05e-ab57-4303-9cf2-a6f9282ae7cc" />
+      <nodes>
+        <startShapeMoniker Id="a56f869c-41fb-4ab1-b5bd-1144fb4db153" />
+        <taskShapeMoniker Id="f0ec189c-d374-482a-a607-86a3fc0cd1bb" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="2a9c87e9-eeef-4435-9b65-f81b41bf0e94" edgePoints="[(4 : 3.77584554036458); (5.125 : 3.77584554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowRelationshipMoniker Id="d2c4f90e-f841-4042-bfc8-f805d687287b" />
+      <nodes>
+        <taskShapeMoniker Id="f0ec189c-d374-482a-a607-86a3fc0cd1bb" />
+        <stateShapeMoniker Id="78c8007c-7dcf-4cf7-8d6c-667d2676463c" />
+      </nodes>
+    </flowConnector>
+  </nestedChildShapes>
+</attackDiagram>

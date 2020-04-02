@@ -43,7 +43,7 @@ namespace JA.Risk
 				{
 					names.Add(c.Name, c);
 				}
-				foreach (Port p in c.ContainerPorts)
+				foreach (Port p in c.Ports)
 				{
 					if (p.Name == null || p.Name.Length == 0)
 					{
@@ -78,7 +78,7 @@ namespace JA.Risk
 				{
 					names.Add(c.Name, c);
 				}
-				foreach (Port p in c.AgentPorts)
+				foreach (Port p in c.Ports)
 				{
 					if (p.Name == null || p.Name.Length == 0)
 					{
@@ -130,6 +130,14 @@ namespace JA.Risk
 				{
 					names.Add(c.Name, c);
 				}
+			}
+		}
+
+		public void ActivateModel()
+		{
+			foreach ( ThreatAgent t in ThreatAgents)
+			{
+				t.Activate(null);
 			}
 		}
 	}

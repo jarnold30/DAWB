@@ -63,6 +63,10 @@ namespace JA.Risk
 		/// Toolbox item filter string used to identify ContainsAsset connector tool.
 		/// </summary>
 		public const string ContainsAssetFilterString = "ContainsAsset.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify LegitimateAccess connector tool.
+		/// </summary>
+		public const string LegitimateAccessFilterString = "LegitimateAccess.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -175,18 +179,18 @@ namespace JA.Risk
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "JA.Risk.ContainerPortToolboxItem":
-					// Add ContainerPort shape tool.
+				case "JA.Risk.PortToolboxItem":
+					// Add Port shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"JA.Risk.ContainerPortToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"JA.Risk.PortToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						2, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("ContainerPortToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ContainerPortToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("PortToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("PortToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"ContainerPort", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("ContainerPortToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::JA.Risk.ContainerPort.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						"Port", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("PortToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::JA.Risk.Port.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
@@ -295,20 +299,22 @@ namespace JA.Risk
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "JA.Risk.AgentPortToolboxItem":
-					// Add AgentPort shape tool.
+				case "JA.Risk.LegitimateAccessToolboxItem":
+
+					// Add LegitimateAccess connector tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"JA.Risk.AgentPortToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"JA.Risk.LegitimateAccessToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						9, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("AgentPortToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AgentPortToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("LegitimateAccessToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("LegitimateAccessToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"JA.Risk.RiskToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("RiskToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"AgentPort", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("AgentPortToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::JA.Risk.AgentPort.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						"LegitimateAccess", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("LegitimateAccessToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(LegitimateAccessFilterString)
 						});
 					break;
 				default:

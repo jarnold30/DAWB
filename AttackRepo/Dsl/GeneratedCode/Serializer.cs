@@ -5301,6 +5301,23 @@ namespace JA.Attack
 					}
 				}
 			}
+			// Notes
+			if (!serializationContext.Result.Failed)
+			{
+				string attribNotes = AttackSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "notes");
+				if (attribNotes != null)
+				{
+					global::System.String valueOfNotes;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribNotes, out valueOfNotes))
+					{
+						instanceOfNamedElement.Notes = valueOfNotes;
+					}
+					else
+					{	// Invalid property value, ignored.
+						AttackSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "notes", typeof(global::System.String), attribNotes);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -5734,6 +5751,17 @@ namespace JA.Attack
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						AttackSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+	
+				}
+			}
+			// Notes
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfNamedElement.Notes;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						AttackSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "notes", propValue);
 	
 				}
 			}

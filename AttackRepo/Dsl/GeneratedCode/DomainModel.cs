@@ -113,6 +113,7 @@ namespace JA.Attack
 				new DomainMemberInfo(typeof(Task), "Confidence10Percent", Task.Confidence10PercentDomainPropertyId, typeof(Task.Confidence10PercentPropertyHandler)),
 				new DomainMemberInfo(typeof(Task), "Confidence90Percent", Task.Confidence90PercentDomainPropertyId, typeof(Task.Confidence90PercentPropertyHandler)),
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(NamedElement), "Notes", NamedElement.NotesDomainPropertyId, typeof(NamedElement.NotesPropertyHandler)),
 			};
 		}
 		/// <summary>
