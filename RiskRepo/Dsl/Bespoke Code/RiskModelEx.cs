@@ -133,7 +133,7 @@ namespace JA.Risk
 			}
 		}
 
-		public void ActivateModel()
+		public void Activate()
 		{
 			foreach ( ThreatAgent t in ThreatAgents)
 			{

@@ -10,39 +10,86 @@ namespace JA.Attack
 	// represents a single state/state link via an optional task
 	public class Adjacency
 	{
-		public GraphElem next { get; set; }
+		// the name of the next state in the graph
+		public string next { get; set; }
 
+		// the task to be performed to get to the next state
 		// null indicates a direct link with no task
 		public Task task { get; set; }
 
-		public Adjacency(GraphElem _next, Task _task)
+		public Adjacency(string _next, Task _task)
 		{
 			next = _next;
 			task = _task;
 		}
 	}
 
-	// an element of a graph with successors
-	public class GraphElem
-	{
-		private List<Adjacency> _nexts;
-		private FlowElement _elem;
-
-		public GraphElem(FlowElement f)
-		{
-			_nexts = new List<Adjacency>();
-			_elem = f;
-		}
-
-		public void AddNext(GraphElem g, Task t)
-		{
-			_nexts.Add(new Adjacency(g, t));
-		}
-	}
-
+	
 	// a full attack graph in easy-to-follow form
 	public class GraphSyntax
 	{
+		// this is just a list of the FlowElements in the graph, for ease of access by name
+		private Dictionary<string, FlowElement> _catalog;
+
+		// a list of states with adjacencies, indexed by name
+		private Dictionary<string, List<Adjacency>> _graph;
+
+		// constructor, sets up the internal lists
+		public GraphSyntax()
+		{
+			_graph = new Dictionary<string, List<Adjacency>>();
+			_catalog = new Dictionary<string, FlowElement>();
+		}
+
+		// sets up a graph from an atach graph
+		public void Initialise(AttackGraph ag)
+		{
+			// look at each flow element
+			foreach ( FlowElement c in ag.Elements)
+			{
+				// a flow starts at a state.  Start and State are states
+				if ( c is StartPoint || c is State )
+				{
+					_catalog.Add(c.Name, c);
+
+					List<Adjacency> la = new List<Adjacency>();
+
+					// look at all the flows starting at the element
+					foreach (FlowRelationship flow in FlowRelationship.GetLinksToTargetFlowElements(c))
+					{
+						FlowElement nextE = flow.SourceFlowElement;
+						if ( nextE is Task)
+						{
+							// the next element is a task, find out where it goes to
+							var nextFlow = FlowRelationship.GetLinksToTargetFlowElements(nextE);
+							if (nextFlow.Count != 1)
+							{
+								// should never happen - there should only be one flow out from a task
+								throw new System.Exception("TaskFlows: Task must have exactly one out flow");
+							}
+							var nextState = nextFlow[0].SourceFlowElement;
+							if ( !(nextState is State) && !(nextState is EndPoint)) {
+								// next state must be a state or an end point
+								throw new System.Exception("TaskFlows2: Flow from a task most go to a state or an end point");
+							}
+
+							la.Add(new Adjacency(nextState.Name, (Task) nextE));
+						} else
+						{
+							la.Add(new Adjacency(nextE.Name, null));
+						}
+					}
+
+					_graph.Add(c.Name, la);
+
+				} else if ( c is EndPoint )
+				{
+					// an End has no adjacencies
+					_catalog.Add(c.Name, c);
+					_graph.Add(c.Name, null);
+				}
+			}
+		}
 	}
 
 	/// <summary>
