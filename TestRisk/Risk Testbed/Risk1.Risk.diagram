@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<riskDiagram dslVersion="1.0.0.0" Id="d44fb6ea-a648-4f8e-b67c-f96a15fc43ac" absoluteBounds="0, 0, 11, 8.5" name="Risk1">
-  <riskModelMoniker name="/Web Banking" />
-  <nestedChildShapes>
-    <assetShape Id="9dc93119-55db-4d54-b116-12f36fb8281a" absoluteBounds="7.75, 5, 1.5, 1">
-      <assetMoniker name="/Web Banking/Bank Accounts" />
-    </assetShape>
-  </nestedChildShapes>
-</riskDiagram>

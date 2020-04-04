@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="38f9b74b-f1a1-4771-b68e-c450b46a3365" name="Bank Account" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+  <containers>
+    <riskModelHasContainers Id="1c2e9bef-6383-458a-ace7-7c52db56aa23">
+      <container Id="9e68a621-0715-4d2e-816c-3d74f143be0f" name="Web App">
+        <conditions>
+          <objectWithConditionsHasConditions Id="0d84806f-d2ca-4634-9742-e52361d17488">
+            <condition Id="242624d9-4f6e-49b4-80c7-fc088f7ef26b" name="DB password" />
+          </objectWithConditionsHasConditions>
+        </conditions>
+        <ports>
+          <objectHasPorts Id="f7f5385d-70ee-4ecc-ac6d-17b01b466010">
+            <port Id="5ba2b78a-322e-4687-8b27-21be856a6ba3" name="Port1">
+              <targetPort>
+                <interaction Id="d20a3e85-8ec1-487f-9194-afbf5aa4090a" attack="jdbc">
+                  <portMoniker name="/Bank Account/DB Service/DB" />
+                </interaction>
+              </targetPort>
+            </port>
+          </objectHasPorts>
+          <objectHasPorts Id="b0884d96-f606-4db4-8da1-dffb92956d9d">
+            <port Id="fb96582c-ef7c-4833-ba8b-631d46d6eb82" name="Customer UI" />
+          </objectHasPorts>
+          <objectHasPorts Id="80d0cc78-c902-4c67-a1a3-87da4d33c902">
+            <port Id="0705444a-720e-46fc-97fc-28e356a49f1e" name="Auditor UI" />
+          </objectHasPorts>
+        </ports>
+      </container>
+    </riskModelHasContainers>
+    <riskModelHasContainers Id="84e3943b-9dd7-45f0-a5d0-7a85ffa8b681">
+      <container Id="b36c3f34-7414-4a04-b6e0-774b5854b757" name="DB Service">
+        <ports>
+          <objectHasPorts Id="088bc9eb-5cdf-47d6-92b7-f7a4666d5c62">
+            <port Id="ce36a305-90be-48a0-bfbe-4aaf02990346" name="DB" />
+          </objectHasPorts>
+        </ports>
+        <assets>
+          <containerReferencesAssets Id="dafd944a-c758-46c3-96a7-e92a5d262e2d">
+            <assetMoniker name="/Bank Account/Bank Accounts" />
+          </containerReferencesAssets>
+        </assets>
+      </container>
+    </riskModelHasContainers>
+  </containers>
+  <assets>
+    <riskModelHasAssets Id="5fe966b5-0388-4642-9b58-a6d8da70b155">
+      <asset Id="33d6de16-b675-499c-b8ce-f7afe0bcced7" name="Bank Accounts" number="1000000">
+        <conditions>
+          <objectWithConditionsHasConditions Id="96fa24c8-877d-407f-a6b6-e7d1b4c66709">
+            <condition Id="8060aace-2929-4272-ae3c-a6128c36982b" name="access to own account" />
+          </objectWithConditionsHasConditions>
+          <objectWithConditionsHasConditions Id="c52858e2-a97d-4806-bd09-a4c0c8af4b6d">
+            <condition Id="1beadbc2-45f6-481d-b536-92cfa5bc3a0c" name="RO access to all accounts" />
+          </objectWithConditionsHasConditions>
+          <objectWithConditionsHasConditions Id="d9b29f23-7f0a-43b8-aebc-4f97afdbeb0d">
+            <condition Id="5266e28e-4fdd-4579-aa2c-3809e39250ce" name="RW access to all acounts" />
+          </objectWithConditionsHasConditions>
+        </conditions>
+      </asset>
+    </riskModelHasAssets>
+  </assets>
+  <threatAgents>
+    <riskModelHasThreatAgents Id="b06205ae-2009-4257-a09a-bff02c05bec4">
+      <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer">
+        <ports>
+          <objectHasPorts Id="49812879-7ff0-43dc-aa80-8b6f07703a48">
+            <port Id="69280083-379e-4bf0-a494-98a3aec44b79" name="Browser">
+              <targetPort>
+                <interaction Id="530ee7dc-891e-4602-a87a-dcaaf28de4cf" attack="http">
+                  <portMoniker name="/Bank Account/Web App/Customer UI" />
+                </interaction>
+              </targetPort>
+            </port>
+          </objectHasPorts>
+        </ports>
+        <assets>
+          <legitimateAccess Id="79cb5c14-0d23-497b-b0fd-642427304958" conditions="access to own account">
+            <assetMoniker name="/Bank Account/Bank Accounts" />
+          </legitimateAccess>
+        </assets>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+    <riskModelHasThreatAgents Id="b7d5ee8c-e214-4837-bd35-d299e74764e9">
+      <threatAgent Id="1cb2c577-4e40-4cf7-9a3d-28373e2d2497" name="ThreatAgent1">
+        <conditions>
+          <objectWithConditionsHasConditions Id="539fef1c-3e0e-48ed-bcfa-38e6cae55b3f">
+            <condition Id="5dfe2ffa-9405-483f-ae6c-153f4ef00122" name="Auditor password" />
+          </objectWithConditionsHasConditions>
+        </conditions>
+        <ports>
+          <objectHasPorts Id="5ce31de2-d9c4-4f6b-98a6-1cb193b72838">
+            <port Id="e8b802cf-f84c-4d96-92b2-116ee3d8758c" name="Fat client">
+              <targetPort>
+                <interaction Id="ad07b240-5c79-4520-bb29-52938ba10aec" attack="http">
+                  <portMoniker name="/Bank Account/Web App/Auditor UI" />
+                </interaction>
+              </targetPort>
+            </port>
+          </objectHasPorts>
+        </ports>
+        <assets>
+          <legitimateAccess Id="3ece7178-a6a2-4a86-b2c5-942a7af59436" conditions="RO access to all accounts">
+            <assetMoniker name="/Bank Account/Bank Accounts" />
+          </legitimateAccess>
+        </assets>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+    <riskModelHasThreatAgents Id="8add0473-a2f4-470e-8ef5-f08cced1828d">
+      <threatAgent Id="4624d0ef-9a98-4323-860e-a5c7d582ce59" name="Hacker">
+        <ports>
+          <objectHasPorts Id="86773453-76c9-4c16-bb79-90b7dbb23b53">
+            <port Id="371d8c33-d0c3-4e6c-8cc4-fb8884ac58e7" name="Browser">
+              <targetPort>
+                <interaction Id="417f53ea-9338-49de-a571-8058bd7b7fce" attack="http">
+                  <portMoniker name="/Bank Account/Web App/Customer UI" />
+                </interaction>
+                <interaction Id="e5ad4372-af67-4917-a622-e2a3b6444920" attack="http">
+                  <portMoniker name="/Bank Account/Web App/Auditor UI" />
+                </interaction>
+              </targetPort>
+            </port>
+          </objectHasPorts>
+        </ports>
+      </threatAgent>
+    </riskModelHasThreatAgents>
+  </threatAgents>
+</riskModel>

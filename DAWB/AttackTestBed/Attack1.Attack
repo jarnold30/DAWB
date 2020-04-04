@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d267a7b9-ec33-4061-87b8-9f94980290e5" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <startPoint Id="5afa0283-0c31-4341-b031-983343ff118c">
+      <targetFlowElements>
+        <flowRelationship Id="2374d70d-7427-4b6c-98f3-a79b6708322e">
+          <taskMoniker Id="7afa0128-d77c-41e5-a135-2867e661fa6f" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <task Id="7afa0128-d77c-41e5-a135-2867e661fa6f" />
+    <state Id="4ffc0cc3-8f2c-4505-9376-a2604e1f5267" />
+  </elements>
+</attackGraph>

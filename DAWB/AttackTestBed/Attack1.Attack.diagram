@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackDiagram dslVersion="1.0.0.0" Id="7eba45a2-1fa7-4e05-877f-7008e507a318" absoluteBounds="0, 0, 11, 8.5" name="Attack1">
+  <attackGraphMoniker Id="d267a7b9-ec33-4061-87b8-9f94980290e5" />
+  <nestedChildShapes>
+    <startShape Id="f1a50b37-bb19-4d93-8c40-7dbffbf326c8" absoluteBounds="0.875, 1.25, 0.22227285802364349, 0.22227285802364349">
+      <startPointMoniker Id="5afa0283-0c31-4341-b031-983343ff118c" />
+    </startShape>
+    <taskShape Id="6ded73de-5082-4865-b03b-f7b847dde272" absoluteBounds="2.625, 1.125, 1.5, 1.3593896484374999">
+      <taskMoniker Id="7afa0128-d77c-41e5-a135-2867e661fa6f" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83c19499-14ab-4858-9548-97e9a5a42ae6" absoluteBounds="2.64, 2.135, 1.4700000000000002, 0.2493896484375" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </taskShape>
+    <stateShape Id="038951d6-6e82-418c-95f3-ae4451f990b6" absoluteBounds="6, 1.25, 1.5, 1.3593896484374999">
+      <stateMoniker Id="4ffc0cc3-8f2c-4505-9376-a2604e1f5267" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fda3e80c-74d4-4f69-b098-81ffb980f83a" absoluteBounds="6.015, 2.26, 1.4700000000000002, 0.2493896484375" name="PostConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <flowConnector Id="54b5ac22-c802-4335-affa-574c43daf7bf" edgePoints="[(1.09727285802364 : 1.36113642901182); (2.625 : 1.36113642901182)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowRelationshipMoniker Id="2374d70d-7427-4b6c-98f3-a79b6708322e" />
+      <nodes>
+        <startShapeMoniker Id="f1a50b37-bb19-4d93-8c40-7dbffbf326c8" />
+        <taskShapeMoniker Id="6ded73de-5082-4865-b03b-f7b847dde272" />
+      </nodes>
+    </flowConnector>
+  </nestedChildShapes>
+</attackDiagram>
