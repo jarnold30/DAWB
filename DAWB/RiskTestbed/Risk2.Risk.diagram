@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskDiagram dslVersion="1.0.0.0" Id="356d878f-178e-4fab-862d-4d9fd06df253" absoluteBounds="0, 0, 11, 8.5" name="Risk2">
+  <riskModelMoniker name="/Risk2" />
+  <nestedChildShapes>
+    <containerCompartmentShape Id="0652515a-ffbe-4085-b427-400a332ae761" absoluteBounds="5.125, 1.625, 1.5, 1.3593896484374999">
+      <containerMoniker name="/Risk2/Container1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1482c59f-267a-49a1-b522-83920dfaa621" absoluteBounds="5.14, 2.635, 1.4700000000000002, 0.2493896484375" name="Conditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </containerCompartmentShape>
+  </nestedChildShapes>
+</riskDiagram>

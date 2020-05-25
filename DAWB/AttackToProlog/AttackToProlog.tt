@@ -1,6 +1,6 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
 <#@ output extension=".pl" #>
-<#@ Attack processor="AttackDirectiveProcessor" requires="FileName='C:\Users\johna\OneDrive\Documents\DAWB\DAWB\AttackTestBed\Attack1.Attack';validation='menu'" #>
+<#@ Attack processor="AttackDirectiveProcessor" requires="FileName='ZZZZZZZZZZ';validation='menu'" #>
 %!
 % Attack model: <#= this.AttackGraph.Name #>
 %

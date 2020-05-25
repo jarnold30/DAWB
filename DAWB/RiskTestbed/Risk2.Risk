@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9dd829bf-3261-42ae-9185-74185e04bfd8" name="Risk2" xmlns="http://schemas.microsoft.com/dsltools/Risk">
+  <containers>
+    <riskModelHasContainers Id="ff1b143c-c2af-4ebf-8b3b-b0e80f47525e">
+      <container Id="fd057a71-aec4-4dc6-affa-393d5f819163" name="Container1" />
+    </riskModelHasContainers>
+  </containers>
+</riskModel>

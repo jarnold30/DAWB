@@ -123,6 +123,7 @@ namespace JA.Risk
 				new DomainMemberInfo(typeof(Asset), "SingleIntegrityValue", Asset.SingleIntegrityValueDomainPropertyId, typeof(Asset.SingleIntegrityValuePropertyHandler)),
 				new DomainMemberInfo(typeof(Asset), "SingleAvailabilityValue", Asset.SingleAvailabilityValueDomainPropertyId, typeof(Asset.SingleAvailabilityValuePropertyHandler)),
 				new DomainMemberInfo(typeof(ThreatAgent), "Number", ThreatAgent.NumberDomainPropertyId, typeof(ThreatAgent.NumberPropertyHandler)),
+				new DomainMemberInfo(typeof(ObjectWithPorts), "InternalFunctions", ObjectWithPorts.InternalFunctionsDomainPropertyId, typeof(ObjectWithPorts.InternalFunctionsPropertyHandler)),
 				new DomainMemberInfo(typeof(Interaction), "Attack", Interaction.AttackDomainPropertyId, typeof(Interaction.AttackPropertyHandler)),
 				new DomainMemberInfo(typeof(Contains), "Number", Contains.NumberDomainPropertyId, typeof(Contains.NumberPropertyHandler)),
 				new DomainMemberInfo(typeof(Contains), "Attack", Contains.AttackDomainPropertyId, typeof(Contains.AttackPropertyHandler)),

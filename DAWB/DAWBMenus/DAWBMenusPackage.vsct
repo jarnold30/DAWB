@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidDAWBMenusPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Menus>
+      <Menu guid="guidDAWBMenusPackageCmdSet" id="GeneratePrologMenu" priority="0x700" type="Menu">
+        <Parent guid="guidSHLMainMenu"
+                id="IDG_VS_MM_TOOLSADDINS" />
+        <CommandFlag>AlwaysCreate</CommandFlag>
+        <Strings>
+          <ButtonText>Generate Prolog Menu</ButtonText>
+          <CommandName>Generate Prolog Menu</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <Groups>
+      <Group guid="guidDAWBMenusPackageCmdSet" id="DAWBMenuGroup" priority="0x0600">
+        <Parent guid="guidDAWBMenusPackageCmdSet" id="GeneratePrologMenu"/>
+      </Group>
+    </Groups>
+    
+    <Buttons>
+      <Button guid="guidDAWBMenusPackageCmdSet" id="GeneratePrologButton" priority="0x0100" type="Button">
+        <Parent guid="guidDAWBMenusPackageCmdSet" id="DAWBMenuGroup" />
+        <Strings>
+          <CommandName>Generate Prolog Button</CommandName>
+          <ButtonText>Generate Prolog Button</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidDAWBMenusPackage" value="{5b511185-eac1-49f2-a49d-c89e07676c0d}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidDAWBMenusPackageCmdSet" value="{9dafb27e-80e2-409f-a55d-13c1e1711cbe}">
+      <IDSymbol name="DAWBMenuGroup" value="0x1020" />
+      <IDSymbol name="GeneratePrologMenu" value="0x1021" />
+      <IDSymbol name="GeneratePrologButton" value="0x1022" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

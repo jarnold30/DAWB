@@ -5947,6 +5947,44 @@ namespace JA.Risk
 		}
 	
 		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory ObjectWithPorts instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			ObjectWithPorts instanceOfObjectWithPorts = element as ObjectWithPorts;
+			global::System.Diagnostics.Debug.Assert(instanceOfObjectWithPorts != null, "Expecting an instance of ObjectWithPorts");
+	
+			// InternalFunctions
+			if (!serializationContext.Result.Failed)
+			{
+				string attribInternalFunctions = RiskSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "internalFunctions");
+				if (attribInternalFunctions != null)
+				{
+					global::System.String valueOfInternalFunctions;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribInternalFunctions, out valueOfInternalFunctions))
+					{
+						instanceOfObjectWithPorts.InternalFunctions = valueOfInternalFunctions;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "internalFunctions", typeof(global::System.String), attribInternalFunctions);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
 		/// This methods deserializes nested XML elements inside the passed-in element.
 		/// </summary>
 		/// <remarks>
@@ -6323,6 +6361,34 @@ namespace JA.Risk
 		public override void Write(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::RootElementSettings rootElementSettings)
 		{
 			throw new global::System.NotSupportedException();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">ObjectWithPorts instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			ObjectWithPorts instanceOfObjectWithPorts = element as ObjectWithPorts;
+			global::System.Diagnostics.Debug.Assert(instanceOfObjectWithPorts != null, "Expecting an instance of ObjectWithPorts");
+	
+			// InternalFunctions
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfObjectWithPorts.InternalFunctions;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RiskSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "internalFunctions", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>

@@ -1603,6 +1603,94 @@ namespace JA.Risk
 		{
 		}
 		#endregion
+		#region InternalFunctions domain property code
+		
+		/// <summary>
+		/// InternalFunctions domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid InternalFunctionsDomainPropertyId = new global::System.Guid(0xcd227b9c, 0xef08, 0x487c, 0x82, 0xc9, 0x3d, 0x81, 0x46, 0x58, 0x20, 0x54);
+		
+		/// <summary>
+		/// Storage for InternalFunctions
+		/// </summary>
+		private global::System.String internalFunctionsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of InternalFunctions domain property.
+		/// This describes the internal functions provided by the container or threat agent,
+		/// i.e. how access on one port converts to access on another one.
+		/// </summary>
+		[DslDesign::DisplayNameResource("JA.Risk.ObjectWithPorts/InternalFunctions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("JA.Risk.ObjectWithPorts/InternalFunctions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("cd227b9c-ef08-487c-82c9-3d8146582054")]
+		public global::System.String InternalFunctions
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return internalFunctionsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				InternalFunctionsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ObjectWithPorts.InternalFunctions domain property.
+		/// </summary>
+		internal sealed partial class InternalFunctionsPropertyHandler : DslModeling::DomainPropertyValueHandler<ObjectWithPorts, global::System.String>
+		{
+			private InternalFunctionsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ObjectWithPorts.InternalFunctions domain property value handler.
+			/// </summary>
+			public static readonly InternalFunctionsPropertyHandler Instance = new InternalFunctionsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ObjectWithPorts.InternalFunctions domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return InternalFunctionsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ObjectWithPorts element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.internalFunctionsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ObjectWithPorts element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.internalFunctionsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Ports opposite domain role accessor
 		
 		/// <summary>

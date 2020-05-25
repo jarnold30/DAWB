@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\RiskDslPackage\MefExtension\ValidationExtensionRegistrar.cs">
+      <Link>ValidationExtensionRegistrar.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,10 +64,10 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GeneratedCode\RiskToProlog.tt">
+    <None Include="GeneratedCode\RiskToProlog.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RiskToProlog.pl</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

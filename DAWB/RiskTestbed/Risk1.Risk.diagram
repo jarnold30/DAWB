@@ -13,14 +13,14 @@
           <portMoniker name="/Bank Account/Web App/Customer UI" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.0927917629480373, 3.5312499999999991, 0.74888098239898682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.9927917629480376, 3.5312499999999991, 0.74888098239898682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </portShape>
         <portShape Id="ff890602-0625-4e90-a432-b2f2269a955a" absoluteBounds="5.25, 4.2016910807291659, 0.2, 0.2">
           <portMoniker name="/Bank Account/Web App/Auditor UI" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.4375, 4.3891910807291659, 0.62638342380523682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.4375, 4.4033821614583317, 0.62638342380523682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </portShape>
       </relativeChildShapes>
@@ -35,7 +35,7 @@
           <portMoniker name="/Bank Account/DB Service/DB" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.5750000000000011, 3.7187499999999996, 0.2057291567325592, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.4750000000000014, 3.7187499999999996, 0.2057291567325592, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </portShape>
       </relativeChildShapes>
@@ -47,7 +47,7 @@
       <threatAgentMoniker name="/Bank Account/Customer" />
       <relativeChildShapes>
         <portShape Id="24bee431-4562-42f7-a9db-44146214c0ab" absoluteBounds="1.9, 1.28125, 0.2, 0.2">
-          <portMoniker name="/Bank Account/Customer/Browser" />
+          <portMoniker name="/Bank Account/Customer/cBrowser" />
           <relativeChildShapes />
         </portShape>
       </relativeChildShapes>
@@ -87,7 +87,7 @@
         <assetCompartmentShapeMoniker Id="cd6d086e-d0d3-48c7-9472-8ff7e10d5357" />
       </nodes>
     </containsAsset>
-    <legitimateAccessConnector Id="c3a0f854-e32f-43c3-aa2d-3bf36d3198ff" edgePoints="[(2 : 0.878125); (9.25 : 0.878125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <legitimateAccessConnector Id="c3a0f854-e32f-43c3-aa2d-3bf36d3198ff" edgePoints="[(2 : 0.878125); (9.25 : 0.878125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <legitimateAccessMoniker Id="79cb5c14-0d23-497b-b0fd-642427304958" />
       <relativeChildShapes />
       <nodes>
@@ -102,7 +102,7 @@
           <portMoniker name="/Bank Account/ThreatAgent1/Fat client" />
           <relativeChildShapes />
           <moveableDecoratorHostShapes>
-            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.34375, 5.65, 0.55460608005523682, 0.181884765625" shapeFieldName="Name" />
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.34375, 5.5500000000000007, 0.55460608005523682, 0.181884765625" shapeFieldName="Name" />
           </moveableDecoratorHostShapes>
         </portShape>
       </relativeChildShapes>
@@ -130,7 +130,7 @@
       <threatAgentMoniker name="/Bank Account/Hacker" />
       <relativeChildShapes>
         <portShape Id="5144ff40-70f5-4fb0-b57e-cef8be4ee9c0" absoluteBounds="1.9, 4.9375, 0.2, 0.2">
-          <portMoniker name="/Bank Account/Hacker/Browser" />
+          <portMoniker name="/Bank Account/Hacker/hBrowser" />
           <relativeChildShapes />
         </portShape>
       </relativeChildShapes>

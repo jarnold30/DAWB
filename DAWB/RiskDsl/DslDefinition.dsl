@@ -126,6 +126,14 @@
       <BaseClass>
         <DomainClassMoniker Name="ObjectWithConditions" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="cd227b9c-ef08-487c-82c9-3d8146582054" Description="This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one." Name="InternalFunctions" DisplayName="Internal Functions">
+          <Notes>This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one.</Notes>
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -569,6 +577,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
             <DomainRelationshipMoniker Name="ObjectHasPorts" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="internalFunctions">
+            <DomainPropertyMoniker Name="ObjectWithPorts/InternalFunctions" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ObjectHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="objectHasPortsMoniker" ElementName="objectHasPorts" MonikerTypeName="ObjectHasPortsMoniker">

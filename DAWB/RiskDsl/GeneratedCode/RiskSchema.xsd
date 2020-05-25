@@ -464,6 +464,12 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: InternalFunctions -->
+        <xsd:attribute name="internalFunctions" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

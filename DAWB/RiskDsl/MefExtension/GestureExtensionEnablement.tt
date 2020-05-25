@@ -1,0 +1,2 @@
+﻿<#@ Dsl processor="DslDirectiveProcessor" requires="fileName='..\..\RiskDsl\DslDefinition.dsl'" #>
+<#@ include file="Dsl\GestureExtensionEnablement.tt" #>

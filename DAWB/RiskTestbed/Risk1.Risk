@@ -64,7 +64,7 @@
       <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer">
         <ports>
           <objectHasPorts Id="49812879-7ff0-43dc-aa80-8b6f07703a48">
-            <port Id="69280083-379e-4bf0-a494-98a3aec44b79" name="Browser">
+            <port Id="69280083-379e-4bf0-a494-98a3aec44b79" name="cBrowser">
               <targetPort>
                 <interaction Id="530ee7dc-891e-4602-a87a-dcaaf28de4cf" attack="http">
                   <portMoniker name="/Bank Account/Web App/Customer UI" />
@@ -109,7 +109,7 @@
       <threatAgent Id="4624d0ef-9a98-4323-860e-a5c7d582ce59" name="Hacker">
         <ports>
           <objectHasPorts Id="86773453-76c9-4c16-bb79-90b7dbb23b53">
-            <port Id="371d8c33-d0c3-4e6c-8cc4-fb8884ac58e7" name="Browser">
+            <port Id="371d8c33-d0c3-4e6c-8cc4-fb8884ac58e7" name="hBrowser">
               <targetPort>
                 <interaction Id="417f53ea-9338-49de-a571-8058bd7b7fce" attack="http">
                   <portMoniker name="/Bank Account/Web App/Customer UI" />

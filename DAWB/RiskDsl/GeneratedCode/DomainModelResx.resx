@@ -281,6 +281,14 @@
     <value>Object With Ports</value>
     <comment>DisplayName for DomainClass &apos;ObjectWithPorts&apos;</comment>
   </data>
+  <data name="JA.Risk.ObjectWithPorts/InternalFunctions.Description" xml:space="preserve">
+    <value>This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one.</value>
+    <comment>Description for DomainProperty &apos;InternalFunctions&apos; on DomainClass &apos;ObjectWithPorts&apos;</comment>
+  </data>
+  <data name="JA.Risk.ObjectWithPorts/InternalFunctions.DisplayName" xml:space="preserve">
+    <value>Internal Functions</value>
+    <comment>DisplayName for DomainProperty &apos;InternalFunctions&apos; on DomainClass &apos;ObjectWithPorts&apos;</comment>
+  </data>
   <data name="JA.Risk.RiskModelHasContainers.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;RiskModelHasContainers&apos;</comment>

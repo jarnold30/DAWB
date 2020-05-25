@@ -1,8 +1,10 @@
-﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
-<#@ output extension=".pl" #>
-<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='C:\Users\johna\OneDrive\Documents\DAWB\DAWB\TestRisk\Risk Testbed\Web Banking 2.Risk';validation='menu'" #>
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" hostspecific="true" #>
+<#@ output extension=".pl" #> 
+<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='ZZZZZZZZZZ';Validation='menu'" #>
 %!
 % Risk model: <#= this.RiskModel.Name #>
+% InputFile: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "InputFile") #>
+% FileName: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "FileName") #>
 %
 % Here is a list of containers in the model:
 <# foreach (Container container in this.RiskModel.Containers) { #>
@@ -10,7 +12,7 @@ container( '<#= this.RiskModel.Name #>.<#= container.Name #>' ).
 <# if ( container.Type != null && container.Type.Length >0 ) { #>
 containerType( '<#= this.RiskModel.Name #>.<#= container.Name #>', '<#= container.Type #>' ).
 <# } #>
-<# foreach (ContainerPort port in container.ContainerPorts) { #>
+<# foreach (Port port in container.Ports) { #>
 containerHasPort( '<#= this.RiskModel.Name #>.<#= container.Name #>', '<#= this.RiskModel.Name #>.<#= port.Name #>' ).
 <# System.Collections.ObjectModel.ReadOnlyCollection<Interaction> interactions = Interaction.GetLinksToSourcePort( port );
 foreach (Interaction interaction in interactions) { #>
@@ -53,7 +55,7 @@ threatAgent( '<#= this.RiskModel.Name #>.<#= agent.Name #>' ).
 <# if ( agent.Number != null && agent.Number.Length >0 ) { #>
 agentNumber( '<#= this.RiskModel.Name #>.<#= agent.Name #>', '<#= agent.Number #>' ).
 <# } #>
-<# foreach (AgentPort port in agent.AgentPorts) { #>
+<# foreach (Port port in agent.Ports) { #>
 agentHasPort( '<#= this.RiskModel.Name #>.<#= agent.Name #>', '<#= this.RiskModel.Name #>.<#= port.Name #>' ).
 <# foreach (Condition cond in agent.Conditions) { #>
 agentHasCondition( '<#= this.RiskModel.Name #>.<#= agent.Name #>', '<#= this.RiskModel.Name #>.<#= cond.Name #>' ).

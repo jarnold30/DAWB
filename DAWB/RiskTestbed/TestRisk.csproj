@@ -51,10 +51,10 @@
     <None Include="Risk1.Risk.diagram">
       <DependentUpon>Risk1.Risk</DependentUpon>
     </None>
-    <None Include="RiskToProlog.pl">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RiskToProlog.tt</DependentUpon>
+    <None Include="Risk2.pl" />
+    <None Include="Risk2.Risk" />
+    <None Include="Risk2.Risk.diagram">
+      <DependentUpon>Risk2.Risk</DependentUpon>
     </None>
     <None Include="Web Banking old.Risk.old" />
     <None Include="Web Banking old.Risk.diagram">
@@ -67,12 +67,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1057" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="RiskToProlog.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RiskToProlog.pl</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

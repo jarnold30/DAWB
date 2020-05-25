@@ -61,10 +61,10 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.4.1059" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AttackToProlog.tt">
+    <None Include="AttackToProlog.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AttackToProlog.pl</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
