@@ -1,10 +1,10 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" debug="true" #>
 <#@ output extension=".pl" #>
 <#@ Attack processor="AttackDirectiveProcessor" requires="FileName='ZZZZZZZZZZ';validation='menu'" #>
-%!
-% Attack model: <#= this.AttackGraph.Name #>
-%
-% Here is a list of elements in the model:
+%%
+%% Attack model: <#= this.AttackGraph.Name #>
+%%
+%% Here is a list of elements in the model:
 <# foreach (FlowElement elem in this.AttackGraph.Elements) { #>
 <# if ( elem is Synchronisation ) { #>
 synch( '<#= this.AttackGraph.Name #>.<#= elem.Name #>' ).

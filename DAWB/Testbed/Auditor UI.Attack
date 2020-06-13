@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="81dc43fb-5159-4acf-92b6-0c1b40f98aaf" name="Auditor UI" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <startPoint Id="59639f49-7cb0-4053-976b-e4932d35416f" name="Start">
+      <targetFlowElements>
+        <flowRelationship Id="0360ee85-68d3-4d6d-b686-f87dea586c76">
+          <taskMoniker Id="9aeffb0a-dcc4-43e8-ad24-5c88c2b368b6" />
+        </flowRelationship>
+        <flowRelationship Id="cbc8fcde-8c0e-4b22-a73c-b11c98a9c6e8">
+          <taskMoniker Id="887a0c53-e14b-4a02-8097-ab11e3b6d936" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <task Id="9aeffb0a-dcc4-43e8-ad24-5c88c2b368b6" name="Login">
+      <targetFlowElements>
+        <flowRelationship Id="1c5a1faa-3112-4956-8d72-a01a6644f479">
+          <stateMoniker Id="4a7a1765-48e5-4d33-8aad-c1a6be671120" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="b97c6d73-5d38-48be-853e-b717b1a8a635">
+          <preCondition Id="caf984ef-1bb8-4832-9199-7059ab33bf6c" name="Auditor Password" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="4a7a1765-48e5-4d33-8aad-c1a6be671120" name="Logged In">
+      <postConditions>
+        <stateHasPostConditions Id="1ca26e3f-91ad-4c85-b32f-0acfad14f610">
+          <postCondition Id="c7f24fc0-18e5-49b3-8053-0f65c07377ca" name="Auditor Access" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+    <task Id="887a0c53-e14b-4a02-8097-ab11e3b6d936" name="Buffer Overflow Attack">
+      <targetFlowElements>
+        <flowRelationship Id="9424b3f6-54e9-4f82-acc2-dd764acddfb6">
+          <stateMoniker Id="4a7a1765-48e5-4d33-8aad-c1a6be671120" />
+        </flowRelationship>
+      </targetFlowElements>
+    </task>
+  </elements>
+</attackGraph>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5421c46c-ca84-40e2-9da5-e2394d9a344e" name="DB" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <startPoint Id="0c1f591f-eefd-4b97-b609-eaa9687942e2" name="Start">
+      <targetFlowElements>
+        <flowRelationship Id="3aef6777-f49e-46d7-bbe6-3fe9fc169ec7">
+          <taskMoniker Id="c323ca54-e1ed-4973-835c-e83fe27bf82f" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <task Id="c323ca54-e1ed-4973-835c-e83fe27bf82f" name="App Login">
+      <targetFlowElements>
+        <flowRelationship Id="8e4e6423-84fa-4306-818c-65d11e7e5e67">
+          <stateMoniker Id="6a0d1392-c466-44db-bee1-d02c54a51ae0" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="269a6ea8-2d36-4009-ac60-ad899295f5d5">
+          <preCondition Id="bdb27c41-0139-4944-a187-720cf2fdf983" name="DB Password" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="6a0d1392-c466-44db-bee1-d02c54a51ae0" name="Logged In">
+      <postConditions>
+        <stateHasPostConditions Id="17f2fa93-3cb6-40c5-b4ac-5e5c1d096e42">
+          <postCondition Id="1fe889d8-e25e-4c8f-830f-e5bab8ea38a1" name="*" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+  </elements>
+</attackGraph>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackDiagram dslVersion="1.0.0.0" Id="d9371bc6-fb24-4311-a36c-f5411495f8e3" absoluteBounds="0, 0, 11, 8.5" name="DB">
+  <attackGraphMoniker Id="5421c46c-ca84-40e2-9da5-e2394d9a344e" />
+  <nestedChildShapes>
+    <startShape Id="bab92c5a-4ef4-40be-a770-c2a9156b513a" absoluteBounds="1.125, 1, 0.22227285802364349, 0.22227285802364349">
+      <startPointMoniker Id="0c1f591f-eefd-4b97-b609-eaa9687942e2" />
+    </startShape>
+    <taskShape Id="89ddbfed-687a-45eb-84ec-71c52bed8283" absoluteBounds="2.375, 0.625, 1.5, 1.5516910807291668">
+      <taskMoniker Id="c323ca54-e1ed-4973-835c-e83fe27bf82f" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7d47039-c112-4b47-afb6-57c5d7a4ba1a" absoluteBounds="2.39, 1.6349999999999998, 1.4700000000000002, 0.44169108072916663" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </taskShape>
+    <stateShape Id="312a0310-dd17-4b48-bdf0-ec0e0cf10923" absoluteBounds="5.125, 0.625, 1.5, 1.5516910807291668">
+      <stateMoniker Id="6a0d1392-c466-44db-bee1-d02c54a51ae0" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7006e3ef-1578-4d6c-8b43-bdb66825ee77" absoluteBounds="5.14, 1.635, 1.4700000000000002, 0.44169108072916663" name="PostConditions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <flowConnector Id="ef2a8f5d-dd44-45ad-82dd-e970107c2c4e" edgePoints="[(1.34727285802364 : 1.11113642901182); (2.375 : 1.11113642901182)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <flowRelationshipMoniker Id="3aef6777-f49e-46d7-bbe6-3fe9fc169ec7" />
+      <nodes>
+        <startShapeMoniker Id="bab92c5a-4ef4-40be-a770-c2a9156b513a" />
+        <taskShapeMoniker Id="89ddbfed-687a-45eb-84ec-71c52bed8283" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="2cbf326c-b270-45e7-95de-6892866a075b" edgePoints="[(3.875 : 1.40084554036458); (5.125 : 1.40084554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <flowRelationshipMoniker Id="8e4e6423-84fa-4306-818c-65d11e7e5e67" />
+      <nodes>
+        <taskShapeMoniker Id="89ddbfed-687a-45eb-84ec-71c52bed8283" />
+        <stateShapeMoniker Id="312a0310-dd17-4b48-bdf0-ec0e0cf10923" />
+      </nodes>
+    </flowConnector>
+  </nestedChildShapes>
+</attackDiagram>

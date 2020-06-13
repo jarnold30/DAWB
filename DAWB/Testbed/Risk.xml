@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <!-- Associate Risk item type with .Risk files -->
+  <ItemType Name="Risk" DisplayName="Risk Diagram" />
+  <ContentType Name="Risk Content" ItemType="Risk" DisplayName="Risk Diagram" />
+  <FileExtension Name=".Risk" ContentType="Risk Content" />
+</ProjectSchemaDefinitions>

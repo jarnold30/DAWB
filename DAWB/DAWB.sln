@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskDsl", "RiskDsl\RiskDsl.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskDslPackage", "RiskDslPackage\RiskDslPackage.csproj", "{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRisk", "RiskTestbed\TestRisk.csproj", "{9E12641D-E067-4320-AE55-85BCAF7146F2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskToProlog", "RiskToProlog\RiskToProlog.csproj", "{CFF229EF-95DB-4155-A526-80D3A53EE304}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAWBHost", "DAWBHost\DAWBHost.csproj", "{A997BC77-3CAD-4A52-87DB-8903B6121F34}"
@@ -26,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenProlog", "GenProlog\GenProlog.csproj", "{A973963F-0DA4-485B-9F8C-B3567210E67B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAWBMenus", "DAWBMenus\DAWBMenus.csproj", "{125851AC-27D2-459A-95D9-2631AE657510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAWBProject", "DAWBProject\Dev10\Src\CSharp\DAWBProject.csproj", "{327218DC-7524-4FBC-95EE-36FB933F67B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBed", "Testbed\TestBed.csproj", "{9E12641D-E067-4320-AE55-85BCAF7146F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,9 +61,6 @@ Global
 		{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C30DA7DB-2CBB-44FA-99FB-43587AAF4E62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CFF229EF-95DB-4155-A526-80D3A53EE304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFF229EF-95DB-4155-A526-80D3A53EE304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFF229EF-95DB-4155-A526-80D3A53EE304}.Release|Any CPU.Build.0 = Release|Any CPU
@@ -77,6 +76,14 @@ Global
 		{125851AC-27D2-459A-95D9-2631AE657510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{125851AC-27D2-459A-95D9-2631AE657510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{125851AC-27D2-459A-95D9-2631AE657510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E12641D-E067-4320-AE55-85BCAF7146F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

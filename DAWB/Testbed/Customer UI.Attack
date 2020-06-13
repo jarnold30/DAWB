@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ea2d19e0-7e0e-4e0e-8e2c-83098b8bacb5" name="CustomerUI" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+  <elements>
+    <endPoint Id="cf57c388-09df-4fd5-9f82-1f1c27a5c5c8" name="end" />
+    <startPoint Id="fd7e19bc-a077-40f4-b157-72da1d800a3d" name="start">
+      <targetFlowElements>
+        <flowRelationship Id="72bcb1ef-de7e-4efb-b7f3-e3eb7da2d818">
+          <taskMoniker Id="39e98d21-edef-413f-bc0f-e393c721beff" />
+        </flowRelationship>
+        <flowRelationship Id="722351d2-c002-429e-ad25-5098c9845043">
+          <taskMoniker Id="eacceede-3e43-4bd0-aa9b-d16aba1f6656" />
+        </flowRelationship>
+      </targetFlowElements>
+    </startPoint>
+    <task Id="39e98d21-edef-413f-bc0f-e393c721beff" name="register">
+      <targetFlowElements>
+        <flowRelationship Id="bf6813d2-461c-4e62-aeb7-38f456aade7e">
+          <stateMoniker Id="1a769942-58be-4d05-872a-0b19cb43f1ab" />
+        </flowRelationship>
+      </targetFlowElements>
+    </task>
+    <state Id="1a769942-58be-4d05-872a-0b19cb43f1ab" name="registered">
+      <targetFlowElements>
+        <flowRelationship Id="7867d84e-2f45-4f63-8d8d-648e853f5ed5">
+          <taskMoniker Id="b1712265-3621-4280-8cd8-005a82232562" />
+        </flowRelationship>
+      </targetFlowElements>
+      <postConditions>
+        <stateHasPostConditions Id="4d23a4e3-e73c-4533-9171-06ce97cf80ee">
+          <postCondition Id="743cc929-d4bc-44a2-804c-aef4e0e9dfa9" name="password1" />
+        </stateHasPostConditions>
+        <stateHasPostConditions Id="aeb70bb3-6617-4c23-b3f3-5a657fe5f3dd">
+          <postCondition Id="11013a30-6ec6-43fc-8fb2-fb54b374f3f5" name="userID" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+    <task Id="b1712265-3621-4280-8cd8-005a82232562" name="login">
+      <targetFlowElements>
+        <flowRelationship Id="dfab1b2b-09f0-4a45-9a43-3e083cc90ea7">
+          <stateMoniker Id="aca900ce-508e-4e4f-9bdd-5e354d666eff" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="e0e938f1-77c7-4475-b027-5e654f5df22d">
+          <preCondition Id="8f7d01de-7183-4119-97ba-70964a0d0949" name="password" />
+        </taskHasPreConditions>
+        <taskHasPreConditions Id="597b0991-dfb6-4ce5-85a0-5f6899b69579">
+          <preCondition Id="50490f37-d835-4e45-83f8-1f1d8e42dff5" name="UserID" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="aca900ce-508e-4e4f-9bdd-5e354d666eff" name="logged in">
+      <targetFlowElements>
+        <flowRelationship Id="8f06699c-1270-46a9-b9d8-ddc22a4379e4">
+          <taskMoniker Id="6d8eccac-08b9-417d-bf29-c8c26a258d45" />
+        </flowRelationship>
+      </targetFlowElements>
+      <postConditions>
+        <stateHasPostConditions Id="ab52c269-db0e-4fd7-a5be-098ed0c42bba">
+          <postCondition Id="65b26a8a-f796-47e2-a742-122d22f51be9" name="access to own account" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+    <task Id="6d8eccac-08b9-417d-bf29-c8c26a258d45" name="logout">
+      <targetFlowElements>
+        <flowRelationship Id="574cdbe7-41e6-4c26-8c53-6811b7a8131d">
+          <endPointMoniker Id="cf57c388-09df-4fd5-9f82-1f1c27a5c5c8" />
+        </flowRelationship>
+      </targetFlowElements>
+    </task>
+    <task Id="eacceede-3e43-4bd0-aa9b-d16aba1f6656" name="sql injection">
+      <targetFlowElements>
+        <flowRelationship Id="eef76917-65ed-47b6-9f21-47faea027b4b">
+          <stateMoniker Id="db694417-77b8-4572-bf60-5faf5fc709f2" />
+        </flowRelationship>
+      </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="857f1bc2-bb66-4639-8408-85cfbbff9ed9">
+          <preCondition Id="be3bd5c3-9c4b-42fd-a712-bafc996c8670" name="PT skill" />
+        </taskHasPreConditions>
+      </preConditions>
+    </task>
+    <state Id="db694417-77b8-4572-bf60-5faf5fc709f2" name="complete control">
+      <postConditions>
+        <stateHasPostConditions Id="2367bf74-1f63-4f1a-af8b-cfc2b6b708c6">
+          <postCondition Id="e22f3b9c-2537-4ded-9918-25ee954a5749" name="RW access to all accounts" />
+        </stateHasPostConditions>
+      </postConditions>
+    </state>
+  </elements>
+</attackGraph>

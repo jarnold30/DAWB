@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="RiskGenProlog;AttackGenProlog" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Risk Include="*.Risk" />
+    <Attack Include="*.Attack" />
+    <Prolog Include="*.pl" />
+  </ItemGroup>
+
+  <Target Name="RiskGenProlog" Inputs="@(Risk)" Outputs="@(Risk -> '%(filename).pl')">
+    <Message Importance="High" Text="Generating Prolog" />
+    <Exec Command=
+          "C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\GenProlog\bin\Debug\GenProlog.exe &quot;@(Risk)&quot;" />
+  </Target>
+  <Target Name="AttackGenProlog" Inputs="@(Attack)" Outputs="@(Attack -> '%(filename).pl')">
+    <Message Importance="High" Text="Generating Prolog" />
+    <Exec Command=
+          "C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\GenProlog\bin\Debug\GenProlog.exe &quot;@(Attack)&quot;" />
+  </Target>
+  <Target Name="Clean">
+    <Delete Files="@(Prolog)" />
+  </Target>
+</Project>

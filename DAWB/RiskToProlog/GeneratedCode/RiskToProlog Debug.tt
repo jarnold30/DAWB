@@ -1,12 +1,12 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" hostspecific="true" #>
 <#@ output extension=".pl" #> 
-<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='ZZZZZZZZZZ';Validation='menu'" #>
-%%
-%% Risk model: <#= this.RiskModel.Name #>
-%% InputFile: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "InputFile") #>
-%% FileName: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "FileName") #>
-%%
-%% Here is a list of containers in the model:
+<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\Testbed\Risk1.Risk';Validation='menu'" #>
+%!
+% Risk model: <#= this.RiskModel.Name #>
+% InputFile: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "InputFile") #>
+% FileName: <#= this.Host.ResolveParameterValue("Risk", "RiskDirectiveProcessor", "FileName") #>
+%
+% Here is a list of containers in the model:
 <# foreach (Container container in this.RiskModel.Containers) { #>
 container( '<#= this.RiskModel.Name #>.<#= container.Name #>' ).
 <# if ( container.Type != null && container.Type.Length >0 ) { #>

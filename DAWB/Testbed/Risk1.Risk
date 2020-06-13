@@ -2,7 +2,7 @@
 <riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="38f9b74b-f1a1-4771-b68e-c450b46a3365" name="Bank Account" xmlns="http://schemas.microsoft.com/dsltools/Risk">
   <containers>
     <riskModelHasContainers Id="1c2e9bef-6383-458a-ace7-7c52db56aa23">
-      <container Id="9e68a621-0715-4d2e-816c-3d74f143be0f" name="Web App">
+      <container Id="9e68a621-0715-4d2e-816c-3d74f143be0f" name="Web App" internalFunctions="1">
         <conditions>
           <objectWithConditionsHasConditions Id="0d84806f-d2ca-4634-9742-e52361d17488">
             <condition Id="242624d9-4f6e-49b4-80c7-fc088f7ef26b" name="DB password" />
@@ -10,7 +10,7 @@
         </conditions>
         <ports>
           <objectHasPorts Id="f7f5385d-70ee-4ecc-ac6d-17b01b466010">
-            <port Id="5ba2b78a-322e-4687-8b27-21be856a6ba3" name="Port1">
+            <port Id="5ba2b78a-322e-4687-8b27-21be856a6ba3" name="DB Client">
               <targetPort>
                 <interaction Id="d20a3e85-8ec1-487f-9194-afbf5aa4090a" attack="jdbc">
                   <portMoniker name="/Bank Account/DB Service/DB" />
@@ -61,7 +61,7 @@
   </assets>
   <threatAgents>
     <riskModelHasThreatAgents Id="b06205ae-2009-4257-a09a-bff02c05bec4">
-      <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer">
+      <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer" internalFunctions="2">
         <ports>
           <objectHasPorts Id="49812879-7ff0-43dc-aa80-8b6f07703a48">
             <port Id="69280083-379e-4bf0-a494-98a3aec44b79" name="cBrowser">
@@ -81,7 +81,7 @@
       </threatAgent>
     </riskModelHasThreatAgents>
     <riskModelHasThreatAgents Id="b7d5ee8c-e214-4837-bd35-d299e74764e9">
-      <threatAgent Id="1cb2c577-4e40-4cf7-9a3d-28373e2d2497" name="ThreatAgent1">
+      <threatAgent Id="1cb2c577-4e40-4cf7-9a3d-28373e2d2497" name="Auditor">
         <conditions>
           <objectWithConditionsHasConditions Id="539fef1c-3e0e-48ed-bcfa-38e6cae55b3f">
             <condition Id="5dfe2ffa-9405-483f-ae6c-153f4ef00122" name="Auditor password" />
@@ -91,7 +91,7 @@
           <objectHasPorts Id="5ce31de2-d9c4-4f6b-98a6-1cb193b72838">
             <port Id="e8b802cf-f84c-4d96-92b2-116ee3d8758c" name="Fat client">
               <targetPort>
-                <interaction Id="ad07b240-5c79-4520-bb29-52938ba10aec" attack="http">
+                <interaction Id="ad07b240-5c79-4520-bb29-52938ba10aec" attack="WS API">
                   <portMoniker name="/Bank Account/Web App/Auditor UI" />
                 </interaction>
               </targetPort>
@@ -114,7 +114,7 @@
                 <interaction Id="417f53ea-9338-49de-a571-8058bd7b7fce" attack="http">
                   <portMoniker name="/Bank Account/Web App/Customer UI" />
                 </interaction>
-                <interaction Id="e5ad4372-af67-4917-a622-e2a3b6444920" attack="http">
+                <interaction Id="e5ad4372-af67-4917-a622-e2a3b6444920" attack="WS API">
                   <portMoniker name="/Bank Account/Web App/Auditor UI" />
                 </interaction>
               </targetPort>
