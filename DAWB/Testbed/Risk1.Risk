@@ -107,6 +107,17 @@
     </riskModelHasThreatAgents>
     <riskModelHasThreatAgents Id="8add0473-a2f4-470e-8ef5-f08cced1828d">
       <threatAgent Id="4624d0ef-9a98-4323-860e-a5c7d582ce59" name="Hacker">
+        <conditions>
+          <objectWithConditionsHasConditions Id="48942e15-3d89-4efc-920d-14e8d9c4fca8">
+            <condition Id="fbc862b1-a2ac-4aca-9205-1c65b8597ccb" name="Cost(1000)" />
+          </objectWithConditionsHasConditions>
+          <objectWithConditionsHasConditions Id="476aae55-cc1b-45de-be30-35dd405db14a">
+            <condition Id="26fb28bc-1207-4f90-9af3-4e5e83c6de7e" name="Can Find 0days" />
+          </objectWithConditionsHasConditions>
+          <objectWithConditionsHasConditions Id="17d11cc5-8211-4b6d-892a-5fd09d82b768">
+            <condition Id="f98a9e75-764c-4020-85cd-746021917b27" name="PT Skill" />
+          </objectWithConditionsHasConditions>
+        </conditions>
         <ports>
           <objectHasPorts Id="86773453-76c9-4c16-bb79-90b7dbb23b53">
             <port Id="371d8c33-d0c3-4e6c-8cc4-fb8884ac58e7" name="hBrowser">

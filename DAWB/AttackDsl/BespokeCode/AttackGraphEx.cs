@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace JA.Attack
 {
-	// represents a single state/state link via an optional task
+/*	// represents a single state/state link via an optional task
 	public class Adjacency
 	{
 		// the name of the next state in the graph
@@ -93,7 +93,7 @@ namespace JA.Attack
 
 		public void Activate() { }
 	}
-
+*/
 	/// <summary>
 	/// DomainClass AttackGraph
 	/// </summary>
@@ -113,7 +113,7 @@ namespace JA.Attack
 			}
 			else if (names.ContainsKey(Name))
 			{
-				context.LogError(string.Format("Objects {0} share a name", Name),
+				context.LogError(string.Format("Objects AttackGraph {0} share a name", Name),
 					"NameNotUnique", this);
 			}
 			else
@@ -135,7 +135,7 @@ namespace JA.Attack
 				}
 				else if (names.ContainsKey(c.Name))
 				{
-					context.LogError(string.Format("Objects {0} share a name", c.Name),
+					context.LogError(string.Format("Objects {0} FlowElement share a name", c.Name),
 						"NameNotUnique", c);
 				}
 				else
@@ -158,15 +158,15 @@ namespace JA.Attack
 							context.LogError(string.Format("Object of type {0} does not have a name", p.GetType()),
 									"NameBlank", p);
 						}
-						else if (names.ContainsKey(p.Name))
+						/* else if (names.ContainsKey(p.Name))
 						{
-							context.LogError(string.Format("Objects {0} share a name", p.Name),
+							context.LogError(string.Format("Objects {0} Task condition share a name", p.Name),
 								"NameNotUnique", p);
-						}
+						} 
 						else
 						{
 							names.Add(p.Name, p);
-						}
+						}*/
 					}
 				} else if (c is State) { 
 					State s = (State)c;
@@ -179,15 +179,15 @@ namespace JA.Attack
 							context.LogError(string.Format("Object of type {0} does not have a name", p.GetType()),
 									"NameBlank", p);
 						}
-						else if (names.ContainsKey(p.Name))
+						/* else if (names.ContainsKey(p.Name))
 						{
-							context.LogError(string.Format("Objects {0} share a name", p.Name),
+							context.LogError(string.Format("Objects {0} state condition share a name", p.Name),
 								"NameNotUnique", p);
-						}
+						} 
 						else
 						{
 							names.Add(p.Name, p);
-						}
+						}*/
 					}
 					// we don't yet support syncs or merges, so warn the user
 				} else if (c is Synchronisation)

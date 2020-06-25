@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ea2d19e0-7e0e-4e0e-8e2c-83098b8bacb5" name="CustomerUI" xmlns="http://schemas.microsoft.com/dsltools/Attack">
+<attackGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ea2d19e0-7e0e-4e0e-8e2c-83098b8bacb5" name="Customer UI" xmlns="http://schemas.microsoft.com/dsltools/Attack">
   <elements>
     <endPoint Id="cf57c388-09df-4fd5-9f82-1f1c27a5c5c8" name="end" />
     <startPoint Id="fd7e19bc-a077-40f4-b157-72da1d800a3d" name="start">
@@ -27,10 +27,10 @@
       </targetFlowElements>
       <postConditions>
         <stateHasPostConditions Id="4d23a4e3-e73c-4533-9171-06ce97cf80ee">
-          <postCondition Id="743cc929-d4bc-44a2-804c-aef4e0e9dfa9" name="password1" />
+          <postCondition Id="743cc929-d4bc-44a2-804c-aef4e0e9dfa9" name="password" />
         </stateHasPostConditions>
         <stateHasPostConditions Id="aeb70bb3-6617-4c23-b3f3-5a657fe5f3dd">
-          <postCondition Id="11013a30-6ec6-43fc-8fb2-fb54b374f3f5" name="userID" />
+          <postCondition Id="11013a30-6ec6-43fc-8fb2-fb54b374f3f5" name="UserID" />
         </stateHasPostConditions>
       </postConditions>
     </state>
@@ -76,7 +76,7 @@
       </targetFlowElements>
       <preConditions>
         <taskHasPreConditions Id="857f1bc2-bb66-4639-8408-85cfbbff9ed9">
-          <preCondition Id="be3bd5c3-9c4b-42fd-a712-bafc996c8670" name="PT skill" />
+          <preCondition Id="be3bd5c3-9c4b-42fd-a712-bafc996c8670" name="PT Skill" />
         </taskHasPreConditions>
       </preConditions>
     </task>

@@ -34,3 +34,6 @@ agentHasCondition( 'Bank Account.Auditor', 'Bank Account.Auditor password' ).
 agentHasLegitimateAccesses( 'Bank Account.Auditor', 'Bank Account.Bank Accounts', '[RO access to all accounts]' ).
 threatAgent( 'Bank Account.Hacker' ).
 agentHasPort( 'Bank Account.Hacker', 'Bank Account.hBrowser' ).
+agentHasCondition( 'Bank Account.Hacker', 'Bank Account.Cost(1000)' ).
+agentHasCondition( 'Bank Account.Hacker', 'Bank Account.Can Find 0days' ).
+agentHasCondition( 'Bank Account.Hacker', 'Bank Account.PT Skill' ).

@@ -36,6 +36,11 @@
           <stateMoniker Id="4a7a1765-48e5-4d33-8aad-c1a6be671120" />
         </flowRelationship>
       </targetFlowElements>
+      <preConditions>
+        <taskHasPreConditions Id="325e6185-2d8e-4e82-bbd1-33db01f9ef83">
+          <preCondition Id="04add7d4-9c63-43e0-92f7-ac44133a6d1e" name="PT Skill" />
+        </taskHasPreConditions>
+      </preConditions>
     </task>
   </elements>
 </attackGraph>

@@ -24,7 +24,7 @@ namespace JA.Risk
 			}
 			else if (names.ContainsKey(Name))
 			{
-				context.LogError(string.Format("Objects {0} share a name", Name),
+				context.LogError(string.Format("Objects {0} risk model share a name", Name),
 					"NameNotUnique", this);
 			}
 			else
@@ -37,7 +37,7 @@ namespace JA.Risk
 					context.LogError(string.Format("Object of type {0} does not have a name", c.GetType()), 
 							"NameBlank", c);
 				} else if (names.ContainsKey(c.Name)) {
-					context.LogError(string.Format("Objects {0} share a name", c.Name),
+					context.LogError(string.Format("Objects {0} container share a name", c.Name),
 						"NameNotUnique", c);
 				} else
 				{
@@ -52,7 +52,7 @@ namespace JA.Risk
 					}
 					else if (names.ContainsKey(p.Name))
 					{
-						context.LogError(string.Format("Objects {0} share a name", p.Name),
+						context.LogError(string.Format("Objects {0} port share a name", p.Name),
 							"NameNotUnique", p);
 					}
 					else
@@ -71,7 +71,7 @@ namespace JA.Risk
 				}
 				else if (names.ContainsKey(c.Name))
 				{
-					context.LogError(string.Format("Objects {0} share a name", c.Name),
+					context.LogError(string.Format("Objects {0} threat agent share a name", c.Name),
 						"NameNotUnique", c);
 				}
 				else
@@ -87,7 +87,7 @@ namespace JA.Risk
 					}
 					else if (names.ContainsKey(p.Name))
 					{
-						context.LogError(string.Format("Objects {0} share a name", p.Name),
+						context.LogError(string.Format("Objects {0} port share a name", p.Name),
 							"NameNotUnique", p);
 					}
 					else
@@ -102,11 +102,11 @@ namespace JA.Risk
 						context.LogError(string.Format("Object of type {0} does not have a name", k.GetType()),
 								"NameBlank", k);
 					}
-					else if (names.ContainsKey(k.Name))
+					/* else if (names.ContainsKey(k.Name))
 					{
-						context.LogError(string.Format("Objects {0} share a name", k.Name),
+						context.LogError(string.Format("Objects {0} agent condition share a name", k.Name),
 							"NameNotUnique", k);
-					}
+					} */
 					else
 					{
 						names.Add(k.Name, k);
@@ -123,7 +123,7 @@ namespace JA.Risk
 				}
 				else if (names.ContainsKey(c.Name))
 				{
-					context.LogError(string.Format("Objects {0} share a name", c.Name),
+					context.LogError(string.Format("Objects {0} asset share a name", c.Name),
 						"NameNotUnique", c);
 				}
 				else
@@ -133,6 +133,7 @@ namespace JA.Risk
 			}
 		}
 
+		/*
 		public void Activate()
 		{
 			foreach ( ThreatAgent t in ThreatAgents)
@@ -140,5 +141,6 @@ namespace JA.Risk
 				t.Activate(null);
 			}
 		}
+		*/
 	}
 }
