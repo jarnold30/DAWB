@@ -61,19 +61,23 @@ namespace JA.Risk
             string templateFile = Path.GetTempFileName();
             string templateContent = File.ReadAllText(origTemplateFile);
 
-            // now substitute the real filename for the ZZZZZZZZZZ placeholder
+            // now substitute the real filename for the ZZ placeholder
             // Warning !! hideous hack!!
-            templateContent = templateContent.Replace("ZZZZZZZZZZ", inputFile);
+            templateContent = templateContent.Replace("ZZ", inputFile);
             File.WriteAllText(templateFile, templateContent);
 
             // run the text template processor
-            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\TextTransform",
-                "-dp " + dpName + "!" + dpNamespace + "!" + dpPath
-                + " -out " + outputFile
-                + " " + templateFile);
+            // run the text template processor
+            string tpArgs = "-dp \"" + dpName + "!" + dpNamespace + "!" + dpPath
+                + "\" -out \"" + outputFile
+                + "\" \"" + templateFile + "\"";
+            //Console.WriteLine("Transforming with" + tpArgs);
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\TextTransform",
+                tpArgs);
 
             //delete the temporary file
-            File.Delete(templateFile);
+            //File.Delete(templateFile);
+
         }
 
         protected override IList<MenuCommand> GetMenuCommands()

@@ -57,7 +57,7 @@
       </targetFlowElements>
       <postConditions>
         <stateHasPostConditions Id="ab52c269-db0e-4fd7-a5be-098ed0c42bba">
-          <postCondition Id="65b26a8a-f796-47e2-a742-122d22f51be9" name="access to own account" />
+          <postCondition Id="65b26a8a-f796-47e2-a742-122d22f51be9" name="Customer Access" />
         </stateHasPostConditions>
       </postConditions>
     </state>
@@ -76,14 +76,14 @@
       </targetFlowElements>
       <preConditions>
         <taskHasPreConditions Id="857f1bc2-bb66-4639-8408-85cfbbff9ed9">
-          <preCondition Id="be3bd5c3-9c4b-42fd-a712-bafc996c8670" name="PT Skill" />
+          <preCondition Id="be3bd5c3-9c4b-42fd-a712-bafc996c8670" name="Common.PT Skill" />
         </taskHasPreConditions>
       </preConditions>
     </task>
     <state Id="db694417-77b8-4572-bf60-5faf5fc709f2" name="complete control">
       <postConditions>
         <stateHasPostConditions Id="2367bf74-1f63-4f1a-af8b-cfc2b6b708c6">
-          <postCondition Id="e22f3b9c-2537-4ded-9918-25ee954a5749" name="RW access to all accounts" />
+          <postCondition Id="e22f3b9c-2537-4ded-9918-25ee954a5749" name="Common.*" />
         </stateHasPostConditions>
       </postConditions>
     </state>

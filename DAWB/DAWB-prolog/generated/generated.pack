@@ -1,0 +1,10 @@
+﻿#include @"generated\generated.ph"
+% privately used packages
+#include @"risk\risk.ph"
+% private interfaces
+% private classes
+% implementations
+#include @"generated\risk1.pro"
+#include @"generated\customerUI.pro"
+#include @"generated\auditorUI.pro"
+#include @"generated\dB.pro"

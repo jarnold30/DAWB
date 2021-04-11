@@ -1,0 +1,18 @@
+﻿#include @"..\DAWB-prolog\attack\attack.ph"
+
+% privately used packages
+#include @"pfc\list\list.ph"
+#include @"pfc\collection\M\setM_redBlack\setM_redBlack.ph"
+#include @"risk\risk.ph"
+% private interfaces
+% private classes
+% implementations
+#include @"attack\flow.pro"
+#include @"attack\state.pro"
+#include @"attack\flowElement.pro"
+#include @"attack\AttackWalker.pro"
+#include @"attack\slot.pro"
+#include @"attack\task.pro"
+#include @"attack\endPoint.pro"
+#include @"attack\start.pro"
+#include @"..\DAWB-prolog\attack\attack.pro"

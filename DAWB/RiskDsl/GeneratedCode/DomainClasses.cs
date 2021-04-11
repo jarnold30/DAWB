@@ -1620,6 +1620,7 @@ namespace JA.Risk
 		/// This describes the internal functions provided by the container or threat agent,
 		/// i.e. how access on one port converts to access on another one.
 		/// </summary>
+		[System.ComponentModel.Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(System.Drawing.Design.UITypeEditor))]
 		[DslDesign::DisplayNameResource("JA.Risk.ObjectWithPorts/InternalFunctions.DisplayName", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("JA.Risk.ObjectWithPorts/InternalFunctions.Description", typeof(global::JA.Risk.RiskDomainModel), "JA.Risk.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("cd227b9c-ef08-487c-82c9-3d8146582054")]

@@ -651,6 +651,38 @@ namespace JA.Risk
 		#endregion
 		
 		#region Connector styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Line pen settings for this connector.
+			DslDiagrams::PenSettings linePen = new DslDiagrams::PenSettings();
+			linePen.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.DarkGray);
+			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLineDecorator, linePen);
+			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLine, linePen);
+			DslDiagrams::BrushSettings lineBrush = new DslDiagrams::BrushSettings();
+			lineBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.DarkGray);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ConnectionLineDecorator, lineBrush);
+			
+			DslDiagrams::BrushSettings textBrush = new DslDiagrams::BrushSettings();
+			textBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.DarkGray);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeText, textBrush);
+		
+		}
+		
+		/// <summary>
+		/// Initializes resources associated with this connector instance.
+		/// </summary>
+		protected override void InitializeInstanceResources()
+		{
+			base.InitializeInstanceResources();
+			this.SetDecorators(null, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorEmptyArrow, new DslDiagrams::SizeD(0.1,0.1), false);
+		}
+		
 		#endregion
 		
 		#region Constructors, domain class Id

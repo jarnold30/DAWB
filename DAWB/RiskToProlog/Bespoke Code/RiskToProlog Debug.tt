@@ -1,0 +1,120 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" hostspecific="true" #>
+<#@ output extension=".pl" #> 
+<#@ Risk processor="RiskDirectiveProcessor" requires="FileName='C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\Testbed\Risk1.Risk';Validation='menu'" #>
+%%
+%% Risk model: <#= this.RiskModel.Name #>
+%%
+%% declare some predicates as multifile and discontiguous to aboud warnings when loaded and allow use of multiple files
+:- multifile container/2, containerHasPort/3, interaction/4, threatAgent/2, agentHasCondition/3, agentHasPort/3, assetHasCondition/3.
+:- multifile agentHasLegitimateAccesses/4, containerHasCondition/3, containerHasAssets/3, agentHasLegitimateAccesses/3.
+:- multifile containerFunction/4, cond/2.
+:- discontiguous container/2, containerHasPort/3, interaction/4, threatAgent/2, agentHasCondition/3, agentHasPort/3, assetHasCondition/3.
+:- discontiguous agentHasLegitimateAccesses/4, containerHasCondition/3, containerHasAssets/3, agentHasLegitimateAccesses/3.
+:- discontiguous containerFunction/4, cond/2.
+:- dynamic agentHasCondition/3.
+<#
+/* Utility program to write condition names */
+string writeConditionName(string Name) {
+	if (Name.Contains(".")) {
+		string[] strings = Name.Split('.');
+		return "cond('" +strings[0] +"', '" + strings[1] +"')";
+	} else {
+		return "cond('Common', '" +Name +"')";
+	}
+}
+#>
+%% Here is a list of containers in the model:
+<# foreach (Container container in this.RiskModel.Containers) { #>
+container( '<#= this.RiskModel.Name #>', '<#= container.Name #>' ).
+<# if ( container.Type != null && container.Type.Length >0 ) { #>
+containerType( '<#= this.RiskModel.Name #>', '<#= container.Name #>', '<#= container.Type #>' ).
+<# } #>
+<# if ( container.InternalFunctions != null && container.InternalFunctions.Length >0 ) { 
+foreach ( string line in container.InternalFunctions.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.RemoveEmptyEntries) ) { 
+string[] separator = new string[]{":-"};
+string[] lineElements = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+char[] charsToTrim = { '.', ' ', '\'' };
+string inputConditions = lineElements[1].Trim(charsToTrim);
+string outputConditions = lineElements[0].Trim(charsToTrim);
+#>
+containerFunction( '<#= this.RiskModel.Name #>', '<#= container.Name #>', <#= writeConditionName(outputConditions) #>, [ <#= writeConditionName(inputConditions) #> ] ).
+<# } 
+} #>
+<# foreach ( Condition cond in container.Conditions ) { 
+string condName = writeConditionName(cond.Name); #>
+<#= condName #> .
+containerHasCondition( '<#= this.RiskModel.Name #>', '<#= container.Name #>', <#= condName #> ).
+<# } #>
+<# foreach (Port port in container.Ports) { #>
+containerHasPort( '<#= this.RiskModel.Name #>', '<#= container.Name #>', '<#= port.Name #>' ).
+<# System.Collections.ObjectModel.ReadOnlyCollection<Interaction> interactions = Interaction.GetLinksToSourcePort( port );
+foreach (Interaction interaction in interactions) { #>
+interaction( '<#= this.RiskModel.Name #>', '<#= port.Name #>', '<#= interaction.SourcePort.Name #>', '<#= interaction.Attack #>' ).
+<# } #>
+<# } #>
+<# foreach (Asset asset in container.Assets) { #>
+containerHasAssets( '<#= this.RiskModel.Name #>', '<#= container.Name #>', '<#= asset.Name #>' ).
+<# } #>
+<# foreach (Container contained in container.TargetContainers) { 
+	Contains contains = Contains.GetLink(container, contained);
+#>
+containerHasContainer( '<#= this.RiskModel.Name #>', '<#= container.Name #>', '<#= contained.Name #>', '<#= contains.Attack #>', '<#= contains.Number #>' ).
+<# } #>
+<# foreach (Container subclass in container.Subclasses) { #>
+containerHasSubclasses( '<#= this.RiskModel.Name #>', '<#= container.Name #>', '<#= subclass.Name #>' ).
+<# } #>
+<# } #>
+
+%% Here is a list of assets in the model:
+<# foreach (Asset asset in this.RiskModel.Assets) {#>
+asset( '<#= this.RiskModel.Name #>', '<#= asset.Name #>' ).
+<# if ( asset.Number != null && asset.Number.Length >0 ) { #>
+assetNumber( '<#= this.RiskModel.Name #>', '<#= asset.Name #>', '<#= asset.Number #>' ).
+<# } #>
+<# if ( asset.SingleConfidentialityValue != null && asset.SingleConfidentialityValue.Length >0 ) { #>
+assetSingleConfidentialityValue( '<#= this.RiskModel.Name #>', '<#= asset.Name #>', '<#= asset.SingleConfidentialityValue #>' ).
+<# } #>
+<# if ( asset.SingleIntegrityValue != null && asset.SingleIntegrityValue.Length >0 ) { #>
+assetSingleIntegrityValue( '<#= this.RiskModel.Name #>', '<#= asset.Name #>', '<#= asset.SingleIntegrityValue #>' ).
+<# } #>
+<# if ( asset.SingleAvailabilityValue != null && asset.SingleAvailabilityValue.Length >0 ) { #>
+assetSingleAvailabilityValue( '<#= this.RiskModel.Name #>', '<#= asset.Name #>', '<#= asset.SingleAvailabilityValue #>' ).
+<# } #>
+<# foreach ( Condition cond in asset.Conditions ) { 
+string condName = writeConditionName(cond.Name); #>
+<#= condName #> .
+assetHasCondition( '<#= this.RiskModel.Name #>', '<#= asset.Name #>', <#= condName #> ).
+<# } #>
+<# } #>
+
+%% Here is a list of threat agents in the model:
+<# foreach (ThreatAgent agent in this.RiskModel.ThreatAgents) {#>
+threatAgent( '<#= this.RiskModel.Name #>', '<#= agent.Name #>' ).
+<# if ( agent.Number != null && agent.Number.Length >0 ) { #>
+agentNumber( '<#= this.RiskModel.Name #>', '<#= agent.Name #>', '<#= agent.Number #>' ).
+<# } #>
+<# if ( agent.InternalFunctions != null && agent.InternalFunctions.Length >0 ) { #>
+agentInternalFunctions( '<#= this.RiskModel.Name #>', '<#= agent.Name #>', '<#= agent.InternalFunctions #>' ).
+<# } #>
+<# foreach (Port port in agent.Ports) { #>
+agentHasPort( '<#= this.RiskModel.Name #>', '<#= agent.Name #>', '<#= port.Name #>' ).
+<# System.Collections.ObjectModel.ReadOnlyCollection<Interaction> interactions = Interaction.GetLinksToSourcePort( port );
+foreach (Interaction interaction in interactions) { #>
+interaction( '<#= this.RiskModel.Name #>', '<#= port.Name #>', '<#= interaction.SourcePort.Name #>', '<#= interaction.Attack #>' ).
+<# } #>
+<# } #>
+<# foreach ( Condition cond in agent.Conditions ) { 
+string condName = writeConditionName(cond.Name); #>
+<#= condName #> .
+agentHasCondition( '<#= this.RiskModel.Name #>', '<#= agent.Name #>', <#= condName #> ).
+<# } #>
+<# System.Collections.ObjectModel.ReadOnlyCollection<LegitimateAccess> accesses = LegitimateAccess.GetLinksToAssets( agent ); #>
+agentHasLegitimateAccesses( '<#= this.RiskModel.Name #>', '<#= agent.Name #>', [
+<# bool first=true;
+foreach (LegitimateAccess access in accesses) { 
+foreach (string cond in access.Conditions.Split(',')) { #>
+<# if (!first) { #> , <# } #> '<#= access.Asset.Name #>.<#= cond.Trim() #>'
+<# first = false; } 
+} #>
+] ).
+<# } #>

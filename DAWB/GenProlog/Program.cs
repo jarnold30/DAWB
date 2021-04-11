@@ -32,13 +32,13 @@ namespace GenProlog
                 switch (extension)
                 {
                     case "Attack":
-                        origTemplateFile = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\AttackToProlog\AttackToProlog.tt";
+                        origTemplateFile = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\AttackToProlog\Bespoke Code\AttackToProlog.tt";
                         dpName = "AttackDirectiveProcessor";
                         dpNamespace = "JA.Attack.AttackDirectiveProcessor";
                         dpPath = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\DAWB\bin\Debug\JA.Attack.DSL.dll";
                         break;
                     case "Risk":
-                        origTemplateFile = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\RiskToProlog\GeneratedCode\RiskToProlog.tt";
+                        origTemplateFile = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\RiskToProlog\Bespoke Code\RiskToProlog.tt";
                         dpName = "RiskDirectiveProcessor";
                         dpNamespace = "JA.Risk.RiskDirectiveProcessor";
                         dpPath = @"C:\Users\johna\OneDrive\Documents\GitHub\DAWB\DAWB\DAWB\bin\Debug\JA.Risk.DSL.dll";
@@ -52,9 +52,9 @@ namespace GenProlog
                 string templateFile = Path.GetTempFileName();
                 string templateContent = File.ReadAllText(origTemplateFile);
 
-                // now substitute the real filename for the ZZZZZZZZZZ placeholder
+                // now substitute the real filename for the ZZ placeholder
                 // Warning !! hideous hack!!
-                templateContent = templateContent.Replace("ZZZZZZZZZZ", inputFile);
+                templateContent = templateContent.Replace("ZZ", inputFile);
                 File.WriteAllText(templateFile, templateContent);
 
                 // run the text template processor
@@ -62,7 +62,7 @@ namespace GenProlog
                     + "\" -out \"" + outputFile
                     + "\" \"" + templateFile + "\"";
                 //Console.WriteLine("Transforming with" + tpArgs);
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\TextTransform",
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\TextTransform",
                     tpArgs);
 
                 //delete the temporary file

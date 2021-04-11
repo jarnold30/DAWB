@@ -37,14 +37,14 @@
         <elementListCompartment Id="b3040de2-1eeb-4fbc-925c-974a686968d4" absoluteBounds="3.14, 4.01, 1.4700000000000002, 0.44169108072916663" name="PreConditions" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </taskShape>
-    <flowConnector Id="c5de0e7b-6cce-4a27-a086-c92bab781428" edgePoints="[(2.11113642901182 : 1.22227285802364); (2.11113642901182 : 3.77584554036458); (3.125 : 3.77584554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <flowConnector Id="c5de0e7b-6cce-4a27-a086-c92bab781428" edgePoints="[(2.11113642901182 : 1.22227285802364); (2.11113642901182 : 3.77584554036458); (3.125 : 3.77584554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <flowRelationshipMoniker Id="cbc8fcde-8c0e-4b22-a73c-b11c98a9c6e8" />
       <nodes>
         <startShapeMoniker Id="2a55f185-2a0d-48c2-972f-f2d2628dc970" />
         <taskShapeMoniker Id="5386ef61-8c72-4c14-a77c-2f353d397088" />
       </nodes>
     </flowConnector>
-    <flowConnector Id="59ffa6b0-f1c2-4913-b913-b9652de61a85" edgePoints="[(4.625 : 3.77584554036458); (6.75 : 3.77584554036458); (6.75 : 2.42669108072917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <flowConnector Id="59ffa6b0-f1c2-4913-b913-b9652de61a85" edgePoints="[(4.625 : 3.77584554036458); (6.75 : 3.77584554036458); (6.75 : 2.42669108072917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <flowRelationshipMoniker Id="9424b3f6-54e9-4f82-acc2-dd764acddfb6" />
       <nodes>
         <taskShapeMoniker Id="5386ef61-8c72-4c14-a77c-2f353d397088" />

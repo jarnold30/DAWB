@@ -23,7 +23,7 @@
     <state Id="6a0d1392-c466-44db-bee1-d02c54a51ae0" name="Logged In">
       <postConditions>
         <stateHasPostConditions Id="17f2fa93-3cb6-40c5-b4ac-5e5c1d096e42">
-          <postCondition Id="1fe889d8-e25e-4c8f-830f-e5bab8ea38a1" name="*" />
+          <postCondition Id="1fe889d8-e25e-4c8f-830f-e5bab8ea38a1" name="Common.*" />
         </stateHasPostConditions>
       </postConditions>
     </state>

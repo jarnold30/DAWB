@@ -129,6 +129,14 @@
       <Properties>
         <DomainProperty Id="cd227b9c-ef08-487c-82c9-3d8146582054" Description="This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one." Name="InternalFunctions" DisplayName="Internal Functions">
           <Notes>This describes the internal functions provided by the container or threat agent, i.e. how access on one port converts to access on another one.</Notes>
+          <Attributes>
+            <ClrAttribute Name="System.ComponentModel.Editor">
+              <Parameters>
+                <AttributeParameter Value="typeof(System.ComponentModel.Design.MultilineStringEditor)" />
+                <AttributeParameter Value="typeof(System.Drawing.Design.UITypeEditor)" />
+              </Parameters>
+            </ClrAttribute>
+          </Attributes>
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -409,7 +417,7 @@
         <TextDecorator Name="Attack" DisplayName="Attack" DefaultText="Attack" />
       </ConnectorHasDecorators>
     </Connector>
-    <Connector Id="b26f6584-d13d-4a74-bc7d-af4b11d83100" Description="Description for JA.Risk.ContainsAsset" Name="ContainsAsset" DisplayName="Contains Asset" Namespace="JA.Risk" FixedTooltipText="Contains Asset" />
+    <Connector Id="b26f6584-d13d-4a74-bc7d-af4b11d83100" Description="Description for JA.Risk.ContainsAsset" Name="ContainsAsset" DisplayName="Contains Asset" Namespace="JA.Risk" FixedTooltipText="Contains Asset" TextColor="DarkGray" Color="DarkGray" TargetEndStyle="EmptyArrow" />
     <Connector Id="90a4d4ab-fdda-4dcf-850a-479a7fbfbd84" Description="Shows the assets a threat agent may legitimately access" Name="LegitimateAccessConnector" DisplayName="Legitimate Access Connector" Namespace="JA.Risk" FixedTooltipText="Legitimate Access Connector" Color="DarkGreen" TargetEndStyle="FilledArrow">
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
         <TextDecorator Name="Conditions" DisplayName="Conditions" DefaultText="Conditions" />

@@ -2,10 +2,10 @@
 <riskModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="38f9b74b-f1a1-4771-b68e-c450b46a3365" name="Bank Account" xmlns="http://schemas.microsoft.com/dsltools/Risk">
   <containers>
     <riskModelHasContainers Id="1c2e9bef-6383-458a-ace7-7c52db56aa23">
-      <container Id="9e68a621-0715-4d2e-816c-3d74f143be0f" name="Web App" internalFunctions="1">
+      <container Id="9e68a621-0715-4d2e-816c-3d74f143be0f" name="Web App" internalFunctions="'Bank Accounts.access to own account' :- 'Customer UI.Customer Access'&#xD;&#xA;'Bank Accounts.RO access to all accounts' :- 'Auditor UI.Auditor Access'">
         <conditions>
           <objectWithConditionsHasConditions Id="0d84806f-d2ca-4634-9742-e52361d17488">
-            <condition Id="242624d9-4f6e-49b4-80c7-fc088f7ef26b" name="DB password" />
+            <condition Id="242624d9-4f6e-49b4-80c7-fc088f7ef26b" name="DB.DB password" />
           </objectWithConditionsHasConditions>
         </conditions>
         <ports>
@@ -25,6 +25,11 @@
             <port Id="0705444a-720e-46fc-97fc-28e356a49f1e" name="Auditor UI" />
           </objectHasPorts>
         </ports>
+        <assets>
+          <containerReferencesAssets Id="2d9ab610-6527-40bf-8dbb-6feb53065e09">
+            <assetMoniker name="/Bank Account/Bank Accounts" />
+          </containerReferencesAssets>
+        </assets>
       </container>
     </riskModelHasContainers>
     <riskModelHasContainers Id="84e3943b-9dd7-45f0-a5d0-7a85ffa8b681">
@@ -61,7 +66,7 @@
   </assets>
   <threatAgents>
     <riskModelHasThreatAgents Id="b06205ae-2009-4257-a09a-bff02c05bec4">
-      <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer" internalFunctions="2">
+      <threatAgent Id="f873699e-c935-4ab2-b8be-053e5e8fdef2" name="Customer">
         <ports>
           <objectHasPorts Id="49812879-7ff0-43dc-aa80-8b6f07703a48">
             <port Id="69280083-379e-4bf0-a494-98a3aec44b79" name="cBrowser">
@@ -84,7 +89,7 @@
       <threatAgent Id="1cb2c577-4e40-4cf7-9a3d-28373e2d2497" name="Auditor">
         <conditions>
           <objectWithConditionsHasConditions Id="539fef1c-3e0e-48ed-bcfa-38e6cae55b3f">
-            <condition Id="5dfe2ffa-9405-483f-ae6c-153f4ef00122" name="Auditor password" />
+            <condition Id="5dfe2ffa-9405-483f-ae6c-153f4ef00122" name="Auditor UI.Auditor password" />
           </objectWithConditionsHasConditions>
         </conditions>
         <ports>
@@ -99,7 +104,7 @@
           </objectHasPorts>
         </ports>
         <assets>
-          <legitimateAccess Id="3ece7178-a6a2-4a86-b2c5-942a7af59436" conditions="RO access to all accounts">
+          <legitimateAccess Id="3ece7178-a6a2-4a86-b2c5-942a7af59436" conditions="RO access to all accounts, access to own account">
             <assetMoniker name="/Bank Account/Bank Accounts" />
           </legitimateAccess>
         </assets>

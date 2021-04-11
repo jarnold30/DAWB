@@ -1,0 +1,15 @@
+﻿#include @"risk\risk.ph"
+% privately used packages
+#include @"pfc\collection\M\setM_redBlack\setM_redBlack.ph"
+#include @"pfc\list\list.ph"
+#include @"attack\attack.ph"
+#include @"common\common.ph"
+#include @"pfc\core.ph"
+% private interfaces
+% private classes
+% implementations
+#include @"risk\asset.pro"
+#include @"risk\port.pro"
+#include @"risk\container.pro"
+#include @"risk\agent.pro"
+#include @"risk\riskWalker.pro"
