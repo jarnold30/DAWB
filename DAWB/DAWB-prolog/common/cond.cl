@@ -6,8 +6,4 @@ class cond : cond
 constructors
     new : (diagram Diagram, name Name).
 
-properties
-    diagram : diagram.
-    name : name.
-
 end class cond

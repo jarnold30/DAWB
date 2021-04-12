@@ -17,7 +17,7 @@ clauses
         Cond_DBPassword = cond::new('DB', 'DB Password'),
         Flow_Start_AppLogin = flow::new(Start_DB_Start, Task_DB_AppLogin),
         Flow_AppLogin_LoggedIn = flow::new(Task_DB_AppLogin, State_DB_Loggedin),
-        Task_DB_AppLogin:preConditions:add(Cond_DBPassword),
-        State_DB_Loggedin:postCondisions:add(Cond_Star).
+        Task_DB_AppLogin:preConditions:insert(Cond_DBPassword),
+        State_DB_Loggedin:postConditions:insert(Cond_Star).
 
 end implement dB

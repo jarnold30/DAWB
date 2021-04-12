@@ -8,5 +8,6 @@ domains
     diagram = string.
     aDiagram = diagram.
     rDiagram = diagram.
+    effect = effect(cond, cond*).
 
 end class common

@@ -6,5 +6,6 @@ interface asset
 properties
     rDiagram : rDiagram.
     name : name.
+    number : string.
 
 end interface asset

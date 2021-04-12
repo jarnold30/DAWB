@@ -6,10 +6,12 @@ implement asset
 facts
     rDiagram : rDiagram.
     name : name.
+    number : string.
 
 clauses
     new(RDiagram, Name) :-
         rDiagram := RDiagram,
-        name := Name.
+        name := Name,
+        number = '1'.
 
 end implement asset

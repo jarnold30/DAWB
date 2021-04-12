@@ -2,15 +2,6 @@
 
 implement attack
     open core, cond, start, task, state, endPoint, flow
-
-class predicates
-    taskHasPreConditions : (task, cond* PreConditions).
-    stateHasPostConditions : (state, cond* PostConditions).
-
-clauses /* DB */
-    taskHasPreConditions(DB_AppLogin, [DB_DBPassword]).
-    stateHasPostConditions(DB_LoggedIn, [Common_Star]).
-
 end implement attack
 
 goal
@@ -20,4 +11,6 @@ goal
     DB_DBPassword = cond::new('DB', 'DB Password'),
     DBStart_DBAppLogin = flow::new(DB_Start, DB_AppLogin),
     DB_LoggedIn = state::new('DB', 'Logged In'),
-    DBAppLogin_DBLoggedIn = flow::new(DB_AppLogin, DB_LoggedIn).
+    DBAppLogin_DBLoggedIn = flow::new(DB_AppLogin, DB_LoggedIn),
+    DB_AppLogin:preConditions:insert(DB_DBPassword),
+    DB_LoggedIn:postConditions:insert(Common_Star).

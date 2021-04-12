@@ -46,12 +46,12 @@ clauses
     gatherConditionsForAgent(Agent, State) :-
         agentSeesStart(Agent, _Port, Start),
         attackFlow2(Agent, Start, State),
-        addConditions(Agent, State:postConditions).
+        addConditions(Agent, State:postConditions:asList).
 
 %% register the fact that an agent has now achieved some conditions by reaching a state
     addConditions(_Agent, []).
     addConditions(Agent, [H | Tail]) :-
-        (Agent:conditions:isMember(H) or Agent:conditions:add(H)),
+        (Agent:conditions:contains(H) or Agent:conditions:insert(H)),
         addConditions(Agent, Tail).
 
 end implement attackWalker

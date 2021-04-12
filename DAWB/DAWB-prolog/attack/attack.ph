@@ -11,7 +11,6 @@
 % exported interfaces
 #include @"attack\flow.i"
 #include @"attack\state.i"
-#include @"attack\flowElement.i"
 #include @"attack\endPoint.i"
 #include @"attack\start.i"
 #include @"attack\task.i"
@@ -19,7 +18,6 @@
 % exported classes
 #include @"attack\flow.cl"
 #include @"attack\state.cl"
-#include @"attack\flowElement.cl"
 #include @"attack\attackWalker.cl"
 #include @"attack\slot.cl"
 #include @"attack\task.cl"

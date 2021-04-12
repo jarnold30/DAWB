@@ -6,7 +6,7 @@ implement slot
 facts
     aDiagram : aDiagram.
     name : name.
-    myType : name.
+    myType : name := "slot".
 
 clauses
     new(ADiagram, Name) :-

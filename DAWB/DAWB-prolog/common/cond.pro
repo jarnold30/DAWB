@@ -1,7 +1,7 @@
 ﻿% Copyright
 
 implement cond
-    open core
+    open core, common
 
 facts
     diagram : diagram.
@@ -9,7 +9,7 @@ facts
 
 clauses
     new(Diagram, Name) :-
-        Diagram := Diagram,
+        diagram := Diagram,
         name := Name.
 
 end implement cond

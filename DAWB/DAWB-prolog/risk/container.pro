@@ -6,12 +6,18 @@ implement container
 facts
     rDiagram : rDiagram.
     name : name.
-    functions : setM{function*}.
+    effects : setM{effect}.
+    ports : setM{port}.
+    assets : setM{asset}.
+    conditions : setM{cond}.
 
 clauses
     new(RDiagram, Name) :-
         rDiagram := RDiagram,
         name := Name,
-        functions := setM_redBlack::new().
+        effects := setM_redBlack::new(),
+        ports := setM_redBlack::new(),
+        assets := setM_redBlack::new(),
+        conditions = setM_redBlack::new().
 
 end implement container

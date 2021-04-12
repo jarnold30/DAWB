@@ -8,7 +8,7 @@ properties
     name : name.
 
 predicates
-    hasStart : (start Start).
+    hasStart : (start Start) nondeterm (i) (o).
     addStart : (start Start).
 
 end interface port
