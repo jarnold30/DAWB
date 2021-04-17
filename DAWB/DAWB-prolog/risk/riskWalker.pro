@@ -14,14 +14,14 @@ clauses
         Container:assets:contains(Asset),
         Conditions = [ cond(Asset, Condition) || assetCondsForAgent(ThreatAgent, Container, Asset, cond(Asset, Condition)) ].
     assetCondsForAgent(ThreatAgent, Container, Asset, cond(Asset, Condition)) :-
-        matchAgentToContainerConds(ThreatAgent, Container:conditions).
-    matchAgentToContainerConds(_Agent, []).
-    matchAgentToContainerConds(Agent, [H | T]) :-
-        matchAgentToContainerCond(Agent, H),
-        matchAgentToContainerConds(Agent, T).
-    matchAgentToContainerCond(Agent, Cond) :-
+        matchAgentToConds(ThreatAgent, Container:conditions).
+    matchAgentToConds(_Agent, []).
+    matchAgentToConds(Agent, [H | T]) :-
+        matchAgentToCond(Agent, H),
+        matchAgentToConds(Agent, T).
+    matchAgentToCond(Agent, Cond) :-
         Agent:conditions:contains(Cond).
-    matchAgentToContainerCond(Agent, Cond) :-
+    matchAgentToCond(Agent, Cond) :-
         Agent:conditions:contains(Cond_Wildcard),
         Cond_Wildcard:name = '*'.
 
