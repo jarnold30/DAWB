@@ -8,6 +8,7 @@
 % private interfaces
 % private classes
 % implementations
+#include @"risk\interaction.pro"
 #include @"risk\asset.pro"
 #include @"risk\port.pro"
 #include @"risk\container.pro"

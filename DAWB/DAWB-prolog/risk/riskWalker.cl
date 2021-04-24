@@ -12,6 +12,5 @@ predicates
     connected : (agent, container).
     connected2 : (container, container).
     agentHasAccessToPort : (agent, port) nondeterm (i,o) (i,i).
-    interaction : (port, port, name) nondeterm.
 
 end class riskWalker

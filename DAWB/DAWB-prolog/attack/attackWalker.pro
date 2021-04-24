@@ -3,7 +3,7 @@
 %%
 
 implement attackWalker
-    open core, common, attack, flow, start, endPoint, state, slot, agent, port, riskWalker, flow
+    open core, common, attack, flow, start, endPoint, state, slot, agent, port, riskWalker
 
 clauses
 %% in this clause, Port is both a port and the name of a port in a risk diagram, and the name of the corresponding attack diagram.

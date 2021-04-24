@@ -9,7 +9,7 @@ clauses
         CP:acceptEmpty := true,
         CP:addOption_help("-help"),
         % define command line options here
-        if ErrorMessage = isSome(CP:parse()) then
+        if ErrorMessage = CP:parse():isSome() then
             stdio::write(ErrorMessage)
         else
             % place your own code here

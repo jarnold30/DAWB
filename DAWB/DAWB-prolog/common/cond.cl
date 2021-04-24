@@ -4,6 +4,6 @@ class cond : cond
     open core, common
 
 constructors
-    new : (diagram Diagram, name Name).
+    new : (owner Owner, name Name).
 
 end class cond

@@ -12,9 +12,9 @@ clauses
     path(ThreatAgent, Asset, Conditions) :-
         connected2(ThreatAgent, Container),
         Container:assets:contains(Asset),
-        Conditions = [ cond(Asset, Condition) || assetCondsForAgent(ThreatAgent, Container, Asset, cond(Asset, Condition)) ].
-    assetCondsForAgent(ThreatAgent, Container, Asset, cond(Asset, Condition)) :-
-        matchAgentToConds(ThreatAgent, Container:conditions).
+        assetCondsForAgent(ThreatAgent, Container, Asset, Conditions).
+    assetCondsForAgent(ThreatAgent, Container, Asset, Conditions) :-
+        matchAgentToContainerFunctions(ThreatAgent, Container).
     matchAgentToConds(_Agent, []).
     matchAgentToConds(Agent, [H | T]) :-
         matchAgentToCond(Agent, H),
@@ -29,11 +29,11 @@ clauses
     connected(ThreatAgent, Container) :-
         ThreatAgent:ports:contains(P1),
         Container:ports:contains(P2),
-        interaction(P2, P1, _).
+        interaction::tryGetInteractionObj(P2, P1).
     connected(Container1, Container2) :-
         Container1:ports:contains(P1),
         Container2:ports:contains(P2),
-        interaction(P2, P1, _).
+        interaction::tryGetInteractionObj(P2, P1).
 
 %% find a multi link path from a agent to the owning container
     connected2(Container1, Container2) :-
@@ -45,6 +45,6 @@ clauses
 %% Now let us look at the ports a threat agent/container has
     agentHasAccessToPort(Threat, ContP) :-
         Threat:ports:contains(AP1),
-        interaction(ContP, AP1, _).
+        interaction::tryGetInteractionObj(ContP, AP1).
 
 end implement riskWalker

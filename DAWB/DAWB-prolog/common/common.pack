@@ -1,8 +1,10 @@
 ﻿#include @"..\DAWB-prolog\common\common.ph"
 
 % privately used packages
+#include @"pfc\collection\collection.ph"
 % private interfaces
 % private classes
 % implementations
+#include @"common\effect.pro"
 #include @"common\cond.pro"
 #include @"..\DAWB-prolog\common\common.pro"

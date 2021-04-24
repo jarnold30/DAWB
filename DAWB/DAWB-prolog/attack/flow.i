@@ -1,7 +1,7 @@
 ﻿% Copyright
 
 interface flow
-    open core, common, slot
+    open core, slot
 
 properties
     source : slot.

@@ -1,5 +1,6 @@
 ﻿#include @"generated\generated.ph"
 % privately used packages
+#include @"pfc\collection\M\setM_redBlack\setM_redBlack.ph"
 #include @"risk\risk.ph"
 % private interfaces
 % private classes

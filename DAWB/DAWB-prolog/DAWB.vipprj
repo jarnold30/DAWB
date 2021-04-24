@@ -11,6 +11,7 @@
     <item-map filename="$(ProDir)Lib\win32.lib" />
     <item-map filename="$(ProDir)pfc\application\Exe\exe.pack" />
     <item-map filename="$(ProDir)pfc\basis\iterator\iterator.pack" />
+    <item-map filename="$(ProDir)pfc\basis\uncollectable\uncollectable.pack" />
     <item-map filename="$(ProDir)pfc\binary\binary.pack" />
     <item-map filename="$(ProDir)pfc\boolean\boolean.pack" />
     <item-map filename="$(ProDir)pfc\collection\algebraic\redBlackSet\redBlackSet.pack" />
@@ -19,6 +20,7 @@
     <item-map filename="$(ProDir)pfc\collection\collection.pack" />
     <item-map filename="$(ProDir)pfc\collection\M\arrayM_inline\arrayM_inline.pack" />
     <item-map filename="$(ProDir)pfc\collection\M\mapM_redBlack\mapM_redBlack.pack" />
+    <item-map filename="$(ProDir)pfc\collection\M\queueM_fact\queueM_fact.pack" />
     <item-map filename="$(ProDir)pfc\collection\M\setM_redBlack\setM_redBlack.pack" />
     <item-map filename="$(ProDir)pfc\collection\M\varM\varM.pack" />
     <item-map filename="$(ProDir)pfc\collection\support\collectionMsupport\collectionMsupport.pack" />
@@ -26,6 +28,8 @@
     <item-map filename="$(ProDir)pfc\collection\support\mapMSupport\mapMSupport.pack" />
     <item-map filename="$(ProDir)pfc\collection\support\mapsupport\mapsupport.pack" />
     <item-map filename="$(ProDir)pfc\collection\support\modifiableSupport\modifiableSupport.pack" />
+    <item-map filename="$(ProDir)pfc\com\comSupport\comSupport.pack" />
+    <item-map filename="$(ProDir)pfc\com\exceptionHandling\exceptionHandling.pack" />
     <item-map filename="$(ProDir)pfc\commandLineParser\commandLineParser.pack" />
     <item-map filename="$(ProDir)pfc\console\console.pack" />
     <item-map filename="$(ProDir)pfc\core.pack" />
@@ -33,8 +37,10 @@
     <item-map filename="$(ProDir)pfc\exception\exception.pack" />
     <item-map filename="$(ProDir)pfc\exception\exceptionDump\exceptionDump.pack" />
     <item-map filename="$(ProDir)pfc\fileSystem\fileSystem.pack" />
+    <item-map filename="$(ProDir)pfc\guid\guid.pack" />
     <item-map filename="$(ProDir)pfc\list\list.pack" />
     <item-map filename="$(ProDir)pfc\math\math.pack" />
+    <item-map filename="$(ProDir)pfc\math\random\random.pack" />
     <item-map filename="$(ProDir)pfc\memory\memory.pack" />
     <item-map filename="$(ProDir)pfc\memory\segmented\segmented.pack" />
     <item-map filename="$(ProDir)pfc\memory\segmented\segmented_binary\segmented_binary.pack" />
@@ -43,6 +49,7 @@
     <item-map filename="$(ProDir)pfc\memory\weakReference\weakReference.pack" />
     <item-map filename="$(ProDir)pfc\multithread\criticalSectionSupport\criticalSectionSupport.pack" />
     <item-map filename="$(ProDir)pfc\multiThread\multiThread.pack" />
+    <item-map filename="$(ProDir)pfc\multiThread\srwLock\srwLock.pack" />
     <item-map filename="$(ProDir)pfc\namedValue\namedValue.pack" />
     <item-map filename="$(ProDir)pfc\presenter\presenter.pack" />
     <item-map filename="$(ProDir)pfc\programControl\programControl.pack" />
@@ -56,12 +63,21 @@
     <item-map filename="$(ProDir)pfc\stream\stream.pack" />
     <item-map filename="$(ProDir)pfc\string\string.pack" />
     <item-map filename="$(ProDir)pfc\string8\string8.pack" />
+    <item-map filename="$(ProDir)pfc\time\iso8601Parser\iso8601Parser.pack" />
     <item-map filename="$(ProDir)pfc\time\time.pack" />
     <item-map filename="$(ProDir)pfc\vpi\vpiDomains\vpiDomains.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\basicInterfaces\basicInterfaces.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\com_api.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\comDomains\comDomains.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\iStream_api\iStream_api.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\safeArray_api\safeArray_api.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\standardInterfaces\IEnumXXXX\iEnumXXXX.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\com_api\standardInterfaces\standardInterfaces.pack" />
     <item-map filename="$(ProDir)pfc\windowsapi\console_api\console_api.pack" />
     <item-map filename="$(ProDir)pfc\WindowsAPI\exe_api\exe_api.pack" />
     <item-map filename="$(ProDir)pfc\windowsapi\fileSystem_api\fileSystem_api.pack" />
     <item-map filename="$(ProDir)pfc\windowsapi\gui_api\gui_api.pack" />
+    <item-map filename="$(ProDir)pfc\windowsApi\guid_api\guid_api.pack" />
     <item-map filename="$(ProDir)pfc\windowsApi\hash_api\hash_api.pack" />
     <item-map filename="$(ProDir)pfc\WindowsAPI\locale_api\locale_api.pack" />
     <item-map filename="$(ProDir)pfc\windowsapi\memory_api\memory_api.pack" />

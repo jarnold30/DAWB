@@ -1,7 +1,6 @@
 ﻿% Copyright
 
 class attackWalker
-    open attack
 
 predicates
     agentSeesStart : (agent Agent, port Port, start Start) nondeterm (i,i,i) (i,o,i) (i,i,o) (i,o,o).

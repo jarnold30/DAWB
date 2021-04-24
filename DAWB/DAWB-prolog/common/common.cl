@@ -8,6 +8,9 @@ domains
     diagram = string.
     aDiagram = diagram.
     rDiagram = diagram.
-    effect = effect(cond, cond*).
+    owner =
+        commonO;
+        assetO(asset Asset);
+        aDiagramO(aDiagram ADiagram).
 
 end class common

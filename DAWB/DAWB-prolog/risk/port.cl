@@ -1,7 +1,7 @@
 ﻿% Copyright
 
 class port : port
-    open core, common, start
+    open core, common
 
 constructors
     new : (rDiagram RDiagram, name Name).

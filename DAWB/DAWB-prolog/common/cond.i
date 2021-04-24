@@ -4,7 +4,7 @@ interface cond
     open core, common
 
 properties
-    diagram : diagram.
+    owner : owner.
     name : name.
 
 end interface cond

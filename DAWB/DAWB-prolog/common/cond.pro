@@ -4,12 +4,15 @@ implement cond
     open core, common
 
 facts
-    diagram : diagram.
+    owner : owner.
     name : name.
 
 clauses
-    new(Diagram, Name) :-
-        diagram := Diagram,
-        name := Name.
+    new(Owner, Name) :-
+        owner := Owner,
+        name := Name,
+        if Owner = assetO(Asset) then
+            Asset:policies:insert(This)
+        end if.
 
 end implement cond

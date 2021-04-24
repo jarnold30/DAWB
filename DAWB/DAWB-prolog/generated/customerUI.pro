@@ -4,7 +4,6 @@
 %% declare some predicates as multifile and discontiguous to avoid warnings when loaded and allow use of multiple files
 
 implement customerUI
-    open attack
 
 class predicates
     run : ().
@@ -20,11 +19,11 @@ clauses
         State_CustomerUI_registered = state::new('Customer UI', 'registered'),
         State_CustomerUI_loggedin = state::new('Customer UI', 'logged in'),
         State_CustomerUI_completecontrol = state::new('Customer UI', 'complete control'),
-        Cond_password = cond::new('Customer UI', 'password'),
-        Cond_UserID = cond::new('Customer UI', 'UserID'),
-        Cond_CustomerAccess = cond::new('Customer UI', 'Customer Access'),
-        Cond_Star = cond::new('Common', "*"),
-        Cond_PTSkill = cond::new('Common', 'PT Skill'),
+        Cond_password = cond::new(common::aDiagramO('Customer UI'), 'password'),
+        Cond_UserID = cond::new(common::aDiagramO('Customer UI'), 'UserID'),
+        Cond_CustomerAccess = cond::new(common::aDiagramO('Customer UI'), 'Customer Access'),
+        Cond_Star = cond::new(common::commonO, "*"),
+        Cond_PTSkill = cond::new(common::commonO, 'PT Skill'),
         State_CustomerUI_loggedin:postConditions:insert(Cond_CustomerAccess),
         State_CustomerUI_registered:postConditions:insert(Cond_password),
         State_CustomerUI_registered:postConditions:insert(Cond_UserID),

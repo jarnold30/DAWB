@@ -1,7 +1,7 @@
 ﻿% Copyright
 
 class task : task
-    open core, common, setM{cond}
+    open core, common
 
 constructors
     new : (aDiagram ADiagram, name Name).
